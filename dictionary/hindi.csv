@@ -1,0 +1,962 @@
+word,translation,pronunciation
+awesome,बेहतरीन,behthrin
+cool,ज़बरदस्त,jbrdsth
+hello,हेलो,helo
+hi,हाय,hai
+bye,बाई,bai
+don't,नहीं,nahi
+great,बड़ा,br+r+a
+amazing,अद्भुत,adbhut
+unbelievable,असंभव,asmbhv
+all,सब,sb
+every,हर,hr
+each,हर एक,hr aek
+some,कुछ,kutxh
+many,कई,kai
+much,क्तिना,kitna
+most,बहुत,bhut
+few,कुछ,kutxh
+least,थोड़ा,thor+r+a
+greatest,सबसे बड़ा,sbse br+r+a
+eventually,आख़िरकार,aakhirkaar
+often,अक्सर,aksr
+soon,जल्दी,jald hi
+maybe,हो सकता है,ho skta hai
+potentially,संभाव्यता,smbhavytha
+possibly,मुमकिन है,mumkin hai
+probably,शायद,shayd
+and,और,aoor
+or,या,ya
+if,अगर,agr
+in,अंदर,andr
+of,का,ka
+to,को,ko
+with,के साथ,ke sath
+for,के लिए,ke liye
+not,नहीं,nahi
+but,लेकिन,lekin
+although,हालांकि,haalanki
+always,हमेशा,hamesha
+the,वह,wo+h
+that,वह,wo+h
+this,यह,yeh
+these,यह सब,yeh sb
+those,वह सब,wo+h sb
+who,कोन,koon
+what,क्या,kya
+when,कब,kb
+where,कहां,kahan
+why,क्यों,kyun
+how,कैसे,kaese
+I,मैं,mai
+you,तुम,tum
+me,मैं,mai
+they,वह,wo+h
+them,उन्हें,unhen
+him,उसे,use
+her,उसे,use
+he,वह,wo+h
+she,वह,wo+h
+we,हम,hm
+us,हम सब,hm sb
+first,पहला,pehla
+second,दूसरा,dusra
+third,तीसरा,teesra
+fourth,चौथा,chautha
+fifth,पांचवां,pantxwan'
+sixth,छठा,txhata
+seventh,सातवां,satwan'
+eighth,आठवां,aathwan'
+nineth,नवां,nawan'
+tenth,दसवां,nawan'
+hundred,सौ,saw
+thousand,हज़ार,hjaar
+million,दस लाख,ds lakh
+billion,एक अरब,aik arb
+could,सकता है,skta hai
+would,चाहें गे,txahen' ge
+should,चाहिए,txahiee
+eternal,अनादि,anadi'
+finite,सीमित,simi't
+up,ऊपर,uupr
+down,नीचे,nitxe
+left,बाएं,baen'
+right,दाएं,daen'
+top,ऊपर,uupr
+bottom,नीचे,nitxe
+at,पर,pr
+while,जबकि,jbke
+during,दौरान,dauraan
+over,ऊपर,uupr
+above,ऊपर,uupr
+below,नीचे,nitxe
+before,पहले,pehle
+after,बाद,bad
+between,बीच में,beetx main'
+inside,भीतर,bheetr
+outside,बाहर,bahr
+around,चारों ओर,txaroon' aoor
+old,पुराना,purana
+new,नया,nya
+ahead,आगे,aage
+alone,अकेला,akaila
+together,एक साथ,aik sath
+behind,पीछे,pitxhe
+in front of,सामने,samne
+rough,खुरदुरा,khurdura
+smooth,चिकना,txikna
+sharp,तेज़,teez
+dull,सुस्त,susth
+thin,पतला,ptla
+thick,मोटा,mota
+cool,ठंडा,thand+a
+warm,गरम,garm
+available,उपलब्ध,uplabdh
+unavailable,अनुपलब्ध,anuplabdh
+average,औसत,aust
+away,दूर,duur
+far,दूर,duur
+near,पास,pas
+super,बेहतरीन,beht+hreen
+backward,पीछे,peetxhe
+forward,आगे,aage
+big,बड़ा,br+r+a
+small,छोटा,txhota
+heavy,भारी,bhari
+light,हल्का,hlka
+round,गोल,gol
+straight,सीधा,sidha
+curved,मुड़ा हुवा,mur+r+a huwa
+jagged,खुरदुरा,khurdura
+advanced,आधुनिक,aadhunik
+almost,लग भग,lg bhg
+simple,सरल,srl
+complex,जटिल,jtil
+difficult,जटिल,jtil
+easy,सरल,srl
+fast,तेज,teez
+slow,धीरे,dhiire
+normal,साधारण,sadharn
+unique,अनोखा,anokha
+bright,चमकदार,txamkdar
+dim,मध्यम,mdhym
+capable,योग्य,yog'eye'
+certain,निश्चित,nishtxit
+clean,साफ़,saf
+dirty,गंदा,gnda
+nice,अच्छा,atxtxha
+mean,मतलबी,mtlabi
+good,अच्छा,atxtxha
+bad,बुरा,bura
+positive,सकारात्मक,skaratmk
+negative,नकारात्मक,nkaratmk
+clever,चालाक,txalaak
+ignorant,अनजान,anjan
+thoughtful,विचारशील,vitxarshil
+passionate,उत्साहित,utsahi'th
+interesting,दिलचस्प,di'ltxasp
+exciting,उत्साहित,utsahi'th
+contageous,छूत,txuuth
+special,खास,khas
+creative,सृजनशील,sere'jnashil
+engaging,आकर्षक,aakars+hak
+cool,ज़बरदस्त,jbrdsth
+dark,अंधेरा,andhera
+deep,गहरा,gehra
+shallow,ऊपरी,uupri
+different,अलग,alg
+similar,एक समान,aik saman
+diffuse,फैलाना,fhailana
+doubtful,संदेह,sandeh
+certain,निश्चित,nishtxit
+dry,सूखा,suh+a
+wet,गीला,gila
+subtle,सूक्ष्म,shukshm'
+obvious,जाहिर,zahir
+flat,चपटा,txpta
+empty,खाली,h+ali
+full,पूरा,pura
+right,सही,sahi
+wrong,गलत,ghalat
+stiff,सख़्त,sah+th
+flexible,नरम,narm
+elegant,सुंदर,sundr
+long,लम्बा,lmba
+short,छोटा,txota
+electric,बिजली,bijli
+fixed/static,स्थिर,isthir
+dynamic,गतिशील,gatishiil
+end,अंत,anth
+start/beginning,शुरुआत,shuru'at
+middle,बीच,biitx
+enjoyable,मज़ेदार,mazedar
+loose,ढीला,d+hila
+expected,अपेक्षित,apekshit
+surprising,आश्चर्य,aas+htxarye'
+exalted,महान,mahaan
+external,बाहरी,ba'hri
+internal,अंदर,andar
+false,गलत,ghalat
+true,सही,sahi
+standard,मानक,manak
+fake,नकली,nqli
+synthetic,बनावटी,banauwati
+natural,प्राकृतिक,prakratik
+strong,मज़बूत,majboot
+weak,कमज़ोर,kmjoor
+fluent,सहज,sahj
+novice,अनाड़ी,anar+r+i
+edible,खाने लायक,khane laek
+inedible,न खाने लायक,na khane laek
+lost,खोया,khoya
+found,पाया,paya
+fragile,नाज़ुक,nazuk
+firm,मज़बूत,majboot
+free,आज़ाद,aajad
+fresh,ताज़ा,taza
+friendly/kind,दयालु,dayalu
+funny,मजेदार,mazedar
+fuzzy,धुंदला,dhundla
+fuzzy,चक्राना,txakrana
+generic,सामान्य,samaniye
+specific,असामान्य,asamaniye
+helpful,सहायक,sahayak
+hurtful,हानिकारक,hanikarak
+graceful,आकर्षक,aakars+hak
+casual,साधारण,sadharn
+formal,सामान्य,samaniye
+tight,तंग,tang
+hairy,रोएंदार,roendar
+hairless,बिना बाल के,bina bal ke
+happy,खुश,h+ush
+sad,उदास,udas
+angry,गुस्सा,gussa
+confused,परेशान,pareshan
+patient,सबर,sbr
+calm,शांत,shaanth
+wild,जंगली,jangli
+hard,ठोस,thos
+soft,नरम,narm
+solid,ठोस,thos
+liquid,तरल,taral
+gaseous,गैस,ges
+hearty,ज़िंदादिल,zindadil
+robust,मजबूत,mazbut
+quality,गुण,gun
+high,ऊंचा,uuntxa
+low,नीचे,nitxe
+on,चालू,txalu
+off,बंद,band
+hot,गरम,garam
+freezing,जमना,jmna
+hungry,भूखा,bhukha
+thirsty,प्यासा,piyasa
+last,आखिरी,aah+ri
+late,देर,de+r
+early,जल्दी,jaldi
+significant,महत्वपूर्ण,mahatvapuurn'
+loud,जोरदार,zordar
+quiet,शांत,chant
+primary,प्राथमिक,prathami'k
+secondary,माध्यमिक,madhyami'k
+main,मुख्य,mukhye
+constant,स्थिर,isthir
+ready,तैयार,taiyar
+narrow,तंग,tang
+wide,चौड़ा,txaur+r+a
+necessary,ज़रूरी,jaruri
+offensive,अपमानजनक,apmanjnak
+opposite,विपरीत,vi'prit
+against,विरुद्ध,virudh
+again,दुबारा,dubara
+ordinary,साधारण,sadharn
+passive,निष्क्रिय,nishkriye'
+possible,संभव,smbhav
+probable,संभावित,smbhavit
+impossible,असंभव,asmbhav
+correct,सही,sahi
+incorrect,ग़लत,ghalat
+safe,सुरक्षित,surakshit
+amazing,अद्भुत,adbhut
+ancient,प्राचीन,pratxin
+wishy washy,उलझन,ulajhna
+whole,पूरा,pura
+useful,उपयोगी,upyogi
+mental,मानसिक,mansik
+physical,शारीरिक,sharirik
+spiritual,आध्यात्मिक,aadhyatmi'k
+optional,वैकल्पिक,veiklpi'k
+required,ज़रूरी,jaruri
+accomplish,पूरा करना,pura krna
+act,कार्य,karye'
+adapt,ढलना,d+hlna
+add,जोड़ना,jor+r+na
+adjust,ढालना,d+halna
+advise,राय देना,rai dena
+aggregate,इकट्ठा,ikattha
+agree,राज़ी,raji
+alternate,एकान्तर,aikantra'
+approve,मंजूर,mnjur
+approximate,लग भग,lg bhg
+ask,पूछना,putxna
+assume,कल्पना करना,klpana krna
+attach,जोड़ना,jor+r+na
+attempt,चेष्टा,txes+tha
+attend,उपस्थित होना,upsthith hona
+attend,ध्यान देना,dheyaan dena
+awaken,जगाना,jgana
+balance,संतुलन,sntulan
+be,होना,hona
+believe,विश्वास करना,vis+hwas krna
+bend,मोड़ना,mor+r+na
+benefit,फायदा,fhaida
+blend,मिलाना,milana
+borrow,उधार लेना,udhaar lena
+bounce,उछलना,utxhalna
+break,टूटना,tutna
+build,बनाना,bnana
+browse,जांचना,jantxna
+bundle up,पैक करना,pec krna
+buy,खरीदना,h+aridna
+call,बुलाना,bulana
+carry,उठाना,uthana
+catch,पकड़ना,pkar+r+na
+categorize,वर्गीकृत करना,vrgikirit krna
+cause,कारण,karan'
+change,परिवर्तन,privrtn
+check,जांच करना,jantx krna
+continue,जारी रहना,jari rkhna
+chip,टुकड़े करना,tukr+r+e krna
+choose,चुनें,txunen'
+chop,काटना,katna
+classify,वर्गीकृत करना,vrgikirit krna
+clean,साफ़,saf
+climb,चढना,txar+r+na
+clone,नकल बनाना,naql bnana
+collect,इकट्ठा करना,ikattha krna
+come,आना,aana
+compute,हिसाब करना,hisab krna
+communicate,संपर्क करना,smprk krna
+congratulate,बधाई देना,bdhai dena
+consider,ध्यान रखना,dheyaan rakhna
+count,गिनती करना,ginti krna
+crack,दरार,drar
+crawl,रेंगना,rein'gna
+cover,ढांकना,d+ha'nkna
+create,बनाना,bnana
+cross,पार करना,par krna
+dance,नाच,naatx
+decide,फ़ैसला करना,fhesla krna
+delay,देर,deer
+deliver,पहुंचाना,pahuntxana
+demonstrate,दिखाना,dikhana
+digest,हजम करना,hajm krna
+divide,बांटना,ba'ntna
+draw,चित्र बनाना,txitr bnana
+dream,सपना,spna
+drink,पीना,piina
+drip,टपकना,tapkna
+drive,गाड़ी चलाना,gar+r+i txalana
+drop,गिराना,girana
+drum,ढोल बजाना,d+hol bjana
+eat,खाना,khana
+do,करना,krna
+drain,निकासी करना,nikasi krna
+energize,जोशीला करना,joshila krna
+engage,काम पर लगाना,kaam pr lgana
+enter,दाखिल करना,dakhil krna
+estimate,अंदाज़ा करना,andaza krna
+exchange,अदला बदली करना,adla bdli krna
+exit,निकलना,niklna
+expect,आशा करना,aasha krna
+explain,समझाना,samjhana
+explore,खोजना,khojna
+extend,बढ़ाना,br+r+ana
+fall,गिरना,girna
+rise,उभरना,ubhrna
+feed,खिलाना,khilana
+feel,महसूस करना,mehsus krna
+fill,भरना,bharna
+figure stuff out,खोज लगाना,khoj lgana
+find,खोजना,khojna
+float,तैरना,teirna
+flow,बहना,behna
+focus,ध्यान लगाना,dheyaan lgana
+follow,पीछा करना,peetxha krna
+forget,भूलना,bhuulna
+fork,बांटना,ba'ntna
+form,उत्पन्न होना,uthpan'an hona
+discover,खोजना,khojna
+doubt,शक करना,shak krna
+fund,चंदा करना,txanda krna
+gather,जमा करना,jma krna
+get,पाना,pana
+breathe,सांस लेना,sans lena
+give,देना,dena
+go,जाना,jana
+grab,पकड़ना,pakar+r+na
+allow,अनुमति देना,anumati dena
+deny,मना करना,mana krna
+grasp,पकड़ना,pakar+r+na
+graze,चरना,txrna
+group,टोली बनाना,toli bnana
+grow,बढ़ना,bar+r+hna
+guide,राह दिखाना,rah dikhana
+have,रखना,rkhna
+hear,सुनना,sunna
+help,मदद,madad
+hold,पकड़ना,pkar+r+na
+hunt,शिकार करना,shikar krna
+imagine,कल्पना करना,klpana krna
+include,शामिल करना,shamil krna
+integrate,एक करना,eek krna
+intend,इरादा करना,irada krna
+interpret,व्याख्या करना,viyakhiya krna
+introduce,परिचय कराना,paritxe karana
+involve,शामिल करना,shamil krna
+join,शामिल होना,shamil hona
+jump,कूदना,khuudna
+keep,रखना,rkhna
+know,जानना,janna
+laugh,हसना,hsna
+lay down,नीचे रखना,neetxe rakhna
+lead,लेजाना,lejana
+learn,सीखना,seekhna
+leave,छोड़ना,txhor+r+na
+lift,उठाना,ut+hana
+like,पसंद करना,pasand krna
+listen,सुनना,sunna
+live,जीना,jeena
+look,देखना,deekhna
+love,प्यार करना,piyar krna
+maintain,बनाए रखना,banae rkhna
+make,बनाना,bnana
+manage,संभालना,samn'bhalna
+map,योजना बनाना,yojna bnana
+master,माहिर होना,mahir hona
+measure,मापना,napna
+mind,बुरा मानना,bura manna
+model,नमूना बनाना,namuna bnana
+move,हिलना,hilna
+multiply,बढ़ाना,br+r+ana
+navigate,राह दिखाना,rah dikhana
+need,जरूरत,jazurth
+negate,नकारना,nkarna
+note/notice,ध्यान देना,dheyaan dena
+nudge,इशारा करना,ishara krna
+organize,आयोजित करना,aayogit krna
+overcome,काबू पाना,k+abu pana
+participate,हिस्सा लेना,hissa lena
+pass,गुज़रना,guzrna
+pour,उंडेलना,und+elna
+pray,प्रार्थना करना,prarthna krna
+prove,साबित करना,sabit krna
+push,धकेलना,dhakhelna
+reach,पहुंचना,pohuntxna
+read,पढ़ना,par+r+hna
+receive,लेना,lena
+reduce,कम करना,km krna
+release,छोड़ना,txhor+r+na
+remember,याद रखना,yad rakhna
+remove,हटाना,htana
+rent,किराया,kiraya
+repeat,दोहराना,dohrana
+request,निवेदन करना,nivedan krna
+respect,सम्मान,smman
+respond,जवाब देना,jawab dena
+rest,आराम,aaram
+restart,पुनर्प्रारंभ करना,punarprarmbhv krna
+restore,बहाल करना,bhal krna
+resume,चलने देना,txalne dena
+return,वापसी,wapsi
+reverse,उलटा,ulta
+rewind,पीछे करना,peetxhe krna
+rotate,घूमना,ghoomna
+satisfy,संतुष्ट करना,sunthusht krna
+bless,वरदान देना,vrdaan dena
+save,बचाना,btxana
+say,कहना,kehna
+sell,बेचना,beetxna
+send,भेजना,bheejna
+set,लगाना,lgana
+shade,छाया देना,txhaya dena
+share,बांटना,ba'ntna
+sing,गाना,gaana
+sit,बैठना,bait+hna
+stand,खड़ा होना,khar+r+a hona
+stay,रहना,rehna
+step,कदम उठाना,kadm ut+hana
+think,सोचना,sotxna
+try,कोशिश,kos+his+h
+turn,मोड़,mor+r+
+understand,समझना,samajhna
+update,अद्यतन,adhyatn
+use,उपयोग,upyog
+verify,परखना,prakhna
+vibrate,कांपना,ka'npna
+wait,इंतिज़ार,intezar
+wait for,का इंतिज़ार करना,ka intezar krna
+walk,चलना,txalna
+wander,फिरना,phirna
+want,चाहना,txahna
+wash,धोना,dhona
+watch,देखना,dekhna
+wield,पकड़ना,pakar+r+na
+work,काम करना,kaam krna
+write,लिखना,likhna
+yawn,जंभाई,jahwai
+yield,पैदावार,paidawar
+yield,जाने देना,jane dena
+attempt,कोशिश,kos+his+h
+cure,इलाज,ilaaj
+dedicate,समर्पित करना,smarpit krna
+finish,समाप्त करना,samapth krna
+harvest,फ़सल काटना,fhasal katna
+roll,घूमना,ghoomna
+shape,आकार,aakaar
+shine,चमक,txamak
+shop,दुकान,dukaan
+sleep,नींद,neendh
+smell,सूंघना,suun'ghna
+study,पढ़ना,par+r+hna
+taste,स्वाद,suvad
+test,परीक्षा,pariksha
+combine,जोड़ना,jor+r+na
+evolve,विकसित करना,viksit krna
+align,सीध में रखना,seedh mai rakhna
+produce,उत्पादन करना,uthpadn krna
+consume,उपभोग करना,upyog krna
+throw,फेंकना,phen'kna
+mirror,नक़ल करना,nql krna
+snore,खर्राटे लेना,h+arrate lena
+boyfriend,दोस्त,dost
+girlfriend,दोस्त,dost
+husband,पति,pti
+wife,पत्नी,ptni
+mom,माँ,maa'n
+dad,पिता,pita
+mother,माँ,maa'n
+father,पिता,pita
+aunt,मामी,mami
+author,लेखक,lekhak
+baby,बच्चा,batxtxa
+adult,बालिग,balig
+brother,भाई,bhai
+parent,माता पिता,mata pita
+child,बच्चा,batxtxa
+cousin,चचेरा भाई,txatxera bhai
+niece,भांजी,bhanji
+nephew,भतीजा,bhathija
+elder,बड़ा,br+r+a
+male,नर,nr
+female,महिला,mahila
+man,आदमी,aadmi
+woman,औरत,aaurat
+air,हवा,hawaa
+animal,जानवर,janwar
+ant,चींटी,txiinti
+arm,हाथ,hath
+aromatics,खुशबूदार,h+us+hbudar
+ash,राख,rak+h
+asteroid/comet,धूमकेतु,dhoomketu
+atom,कण,kn'
+beach,तट,tht+
+beak,चोंच,txoonch
+bear,भालू,bhaalu
+beard,दाढ़ी,dar+r+i
+beast,जानवर,janwar
+bee,मधुमक्खी,madhu makhkhi
+belly,पेट,pet
+wind,हवा,hawa
+wing,पर,pr
+womb,कोख,kokh
+berry,बेर,bair
+bird,चिड़िया,txir+r+iya
+squirrel,गिलहरी,gilahree
+snail,घोंघा,ghongha
+mind,मन,mn
+soul,आत्मा,aatma
+body,वस्तु,vastu
+gut,पेट,pet
+brain,दिमाग,dimaag
+bone,हड्डी,had+d+i
+blood,खून,h+uun
+bug,कीड़ा,kiir+r+a
+worm,कीड़ा,kiir+r+a
+butterfly,तितली,titli
+wolf,भेड़िया,bher+r+iya
+breeze,हवा,hawa
+cat,बिल्ली,billi
+cell,कोशिका,kos+hika
+chemical,रासायनिक,rasayanik
+cliff,चोटी,txoti
+cloud,बादल,badal
+coyote,कोयोटी,coyooti
+crow,कौआ,kawwa
+deer/elk/moose,हिरन,hi'rn
+desert,रेगिस्तान,raigistaan
+dirt,धूल,dhuul
+shadow,साया,saaya
+darkness,अंधेरा,andhera
+dawn,सवेरा,sawera
+day,दिन,din
+daytime,दिन,din
+daydream,सपना,sapna
+dog,कुत्ता,kutta
+dove,कबूतर,kabutar
+dusk,सांझ,sanjh
+eagle/hawk,बाज़,baj
+owl,उल्लू,ulluu
+ear,कान,kaan
+earth,धरती,dharti
+egg,अंडा,and+a
+seed,बीज,beej
+tadpole,मेंढक,meend+k
+plant,पौधा,paudha
+tree,दरख़्त,darakh+t
+bush,झाड़ी,jhar+r+i
+water,पानी,pani
+river,नदी,nadi
+elbow,कोहनी,kohni
+chip,टुकड़ा,tukr+r+a
+exercise,प्रश्न,pras+han
+eye,आंख,aankh
+eyelash,पलकें,palkein
+vein,नस,ns
+finger,उंगली,ungli
+face,चेहरा,txehra
+weather season,मौसम,mausam
+feet,पांव,paun
+fire,आग,aag
+fish,मछली,matxhli
+flame,शोला,s+hoola
+flower,फूल,phuul
+fly,उड़ना,ur+r+na
+foot,पैर,pair
+forest,जंगल,jungal
+fruit,फल,phal
+gas,गैस,ges
+gills,गलफड़े,galphar+r+e
+grass,घास,ghans
+gust,झोंका,jhonka
+hail,ओले,oole
+hair,बाल,bal
+hand,हाथ,hath
+hare,खरगोश,h+argos+h
+head,सर,sar
+tail,दुम,dum
+heart,दिल,dil
+hedgehog/groundhog,कांटेदार जंगली चूहा,kaantedar jangali txuha
+hill,पहाड़ी,pahar+r+i
+horizon,क्षितिज,s+hi'tij
+ice,बर्फ,barf
+lake,झील,jheel
+land,जमीन,zamin
+leaf,पत्ता,pattha
+leg,टांग,tang
+lip,होंठ,hont
+lizard,छिपकली,txhipkali
+Mars,मंगल,mangal
+Earth,पृथ्वी,pirithvi
+Venus,शुक्र,s+huku'r
+Saturn,शनि,s+hani
+milky way galaxy,आकाशगंगा,aakas+hganga
+moon,चांद,txand
+sun,सूरज,suraj
+star,तारा,tara
+planet,ग्रह,gre+h
+metal,धातु,dhatu
+ocean,सागर,sagar
+mountain,पहाड़ी,pahar+r+i
+mouth,मुंह,mun'h
+neck,गरदन,gardn
+nose,नाक,nak
+nut,अखरोट,ah+rot
+outer space,अंतरिक्ष,antaris+hik
+pond,तालाब,talab
+rain,बारिश,baris+h
+road,सड़क,sar+r+akh
+rock,चट्टान,txat+t+an
+rodent/mouse/rat,चूहा,txuha
+sand,रेत,ret
+bark,भौंकना,bhaunkna
+hug,गले लगाना,gale lagana
+kiss,चुम्मा,txumma
+bag,थैला,thaila
+ball,गेंद,gaindh
+boat,नाव,naav
+book,पुस्तक,pustak
+bottle,शीशी,s+his+hi
+bowl,कटोरा,katora
+box,डिब्बा,d+ibba
+bread,रोटी,rot+i
+bucket,बाल्टी,balt+i
+camera,कैमरा,camra
+calendar,जंत्री,jantri
+clock,घड़ी,ghar+r+i
+case,मामला,mamla
+cheese,पनीर,panir
+chicken,मुर्गी,murgi
+beef,गोमांस,gomans
+cup,प्याला,piyala
+dish/plate,थाली,thali
+dictionary,शब्दकोश,s+hab'dhkosh
+door,दरवाजा,darwaza
+drum,ढोल,d+hool
+guitar,गिटार,gitar
+electronics,इलेक्ट्रानिक्स,ilect+ronics
+faucet,नल,nal
+flute,बांसुरी,bansuri
+food,खाना,khana
+glass,कांच,kantxh
+house,घर,ghar
+meat,मांस,mans
+milk,दूध,dudh
+plane,सतह,satah
+circle,दायरा,daira
+triangle,त्रिकोण,trikon
+square,चौकोर,txaukor
+rectangle,आयत,aayat
+line,रेखा,reekha
+axis,धुरी,dhuri
+curve,मोड़,mor+r+'
+direction,दिशा,dis+ha
+speed,गति,gati
+source,स्रोत,sroth
+target,लक्ष्य,laks+hy'
+cycle,चक्र,txakr'
+wave,लहर,lhr
+spiral,घुमावदार,ghumaudar
+distance,दूरी,duri
+edge,किनारा,kinara
+side,कोना,kona
+surface,सतह,satah
+height,ऊंचाई,uuntxai
+width,चौड़ाई,txaur+r+ai
+neighborhood,पड़ोसी,par+r+ausi
+parallel,समानांतर,smanantr
+perpendicular,लम्बवत,lmbavt
+position,पद,pdh
+range,पहुंच,pahuntx
+ratio/proportion,अनुपात,anupat
+ring,अंगूठी,ang'gut+hi
+shape,आकार,aakaar
+ability,योग्यता,yog'yta
+adjustment,ढालना,d+halna
+now,अभी,abhi
+alternative,एकान्तर,aikantra'
+amount,रकम,raqm
+answer,उत्तर,uttar
+approximate,अनुमानित,anumanit
+previous,पिछला,pitxhla
+next,अगला,agla
+aspect,पहलू,pehlu
+assumption,कल्पना,klpana
+attention,ध्यान,dheyan
+awareness,जागरूकता,jagruukta
+base,आधार,aadhar
+behavior,बुनियाद,bunyad
+belief,विश्वास,vis+hwas
+benefit,फायदा,faida
+bit,टुकड़ा,tukr+r+a
+block,बाधा,badha
+break,अंतराल,antral
+bring,लाना,lana
+burner,ज्वालक,jawalak
+burnt,जला हुआ,jala huwa
+capacity,क्षमता,s+hamata
+category,वर्ग,varg
+cement,सीमेंट,ciment+
+censored,सेंसर करना,sensar krna
+change,परिवर्तन,parivrtan
+character,चरित्र,charitr'
+choice,चुनाव,txunaw
+cold,ठंड,t+hand+
+concept,कल्पना,klpana
+condition,स्थिति,isthiti
+congratulations,बधाई,badhai
+connection,संपर्क,sanpa'rk
+container,पात्र,pat'r
+cover,ढक्कन,d+hakkn
+cozy,आरामदायक,aaramdayak
+crack,दरार,darar
+crown,ताज,taj
+decision,फेसला,faisla
+decoration,सजावट,sajawat
+density,घनत्व,ghantv
+depth,गहराई,gehrai
+doubt,शक,shak
+certainty,यक़ीन,yak+een
+drain,नाली,nali
+dream,सपना,sapna
+drink,पीना,pina
+drip,टपकना,tapkna
+drive,गाड़ी चलाना,gar+r+i txalana
+drop,गिरना,girna
+effect,प्रभाव,prabhaw
+energy,ऊर्जा,uurja
+environment,वातावरण,vatawaran
+estimate,अनुमान,anumaan
+feature,लक्षण,laks+han'
+floor,फर्श,fars+h
+force,शक्ति,s+hakti
+friend,मित्र,mitra'
+front,सामने,samne
+fun,मनोरंजन,manoranjan
+future,भविष्य,bhavishay'
+game,खेल,khel
+gap,फ़ासला,fasla
+gesture,इशारा,is+hara
+goal,लक्ष्य,laks+hay'
+grammar,व्याकरण,wyakarn
+ground,जमीन,jameen
+group,टोली,toli
+guide,राह दिखाना,rah dikhana
+habit,आदत,aadat
+heat,गर्मी,grmi
+hint,इशारा,is+hara
+home,घर,ghar
+hope,आशा,aas+ha
+hour,घंटा,ghant+a
+human,इंसान,insan
+ideal,आदर्श,aadars+h
+imagination,कल्पना,klpana
+information,जानकारी,jankari
+intensity,जोर,zoor
+intention,इरादा,irada
+interest,रुचि,rutxi
+joke,मज़ाक,majaak
+juice,रस,ras
+knowledge,ज्ञान,giyaan
+language,भाषा,bhas+ha
+letter,पत्र,pt'r
+life,जिंदगी,jindagi
+light,रोशनी,rous+ni
+limit,सीमा,seema
+list,सूची,sutxi
+love,प्रेम,preem
+marriage,शादी,s+hadi
+mass,वजन,wazn
+material,चीज़,txiiz
+memory,याद,yaad
+memory,यादगार,yadgaar
+mind,मन,mn
+minute,मिनट,mina't
+model,नमूना,namuna
+money,पैसे,paese
+monk,साधु,sadhu
+month,महीना,mahina
+moon,चांद,txand
+motivation,प्रेरणा,prerna
+mud,कीचड़,kitxar+r+
+narrow,तंग,tang
+nature,प्रकृति,prakrati
+necessity,ज़रूरत,jarurat
+need,ज़रूरत,jarurat
+nest,घोंसला,ghonsla
+neurotransmitter,न्यूरोट्रांसमीटर,niyorotransmit+r
+night,रात,rat
+northern,उत्तरी,uttari
+southern,दक्षिणी,daks+hini
+eastern,पूर्वी,purvi
+western,पश्चिमी,pas+htximi
+number,अंक,ankh'
+overcome,काबू पाना,k+abu pana
+part/piece,टुकड़ा,tukr+r+a
+particle,कण,kn'
+past,अतीत,atit
+path,रास्ता,rasta
+pause,रुकना,rukna
+pebble,कंकड़,kankar+r+
+pile/stack,ढेर,d+heer
+place,जगह,jagah
+potential,क्षमता,s+hamata
+power,शक्ति,s+hakti
+practice,अभ्यास,abhyas
+present,वर्तमान,vartaman
+probability,संभावना,sambhavna
+process,प्रक्रिया,prakriya
+program,कार्यक्रम,karyakarm
+pronunciation,उच्चारण,utxtxarn
+question,सवाल,sawal
+quiet,ख़ामोशी,h+amos+hi
+reason,कारण,karan
+logic,तर्क,tark
+reduce,कम करना,km krna
+reflection,परावर्तन,pravrtn
+room,कमरा,kmra
+second,दूसरा,dusra
+shade,छाया,txhaya
+step,कदम,kadm
+still,स्थिर,i+'sthir
+story,कहानी,kahani
+sword,तलवार,talwar
+system,प्रणाली,pranali
+talk,बातचीत,battxit
+thing,वस्तु,vstu
+traffic,यातायात,yatayat
+noise,शोर,s+hor
+cricket,क्रिकेट,kriket
+value,मूल्य,mulye'
+voice,आवाज़,aavaj
+wall,दीवार,diwar
+will,करूं गा,karun ga
+win,जीत,jiit
+faith,विश्वास,vis+hwas
+courage,हिम्मत,himmat
+humility,दीनता,diinta
+compassion,दया,daya
+wonder,आश्चर्य,aas+htxarye'
+wood,लकड़ी,lakr+r+i
+wool,ऊन,uun
+word,शब्द,s+habd
+worth,क़ीमत,k+imat
+year,साल,sal
+rhythm,ताल,tal
+beat,ताल,tal
+adventure,साहसिक,sahsik
+context,संदर्भ,sndarbhv'
+cave,गुफा,ghufa
+universe,ब्रम्हांड,brahmand+
+mushroom,कुकुरमुत्ता,kukurmutta
+god,भगवान,bhgwan
+creation,सृष्टि,sris+ht+i
+matter,पदार्थ,padarth
+chaos,बिगाड़,bigar+r+
+Monday,सोमवार,somwar
+Tuesday,मंगलवार,mangalwar
+Wednesday,बुधवार,budhwar
+Thursday,गुरूवार,guruwar
+Friday,शुक्रवार,s+hukurwar
+Saturday,शनिवार,s+haniwar
+Sunday,रविवार,raviwar
+January,जनवरी,jnwari
+February,फरवरी,frwari
+March,मार्च,martxh
+April,अप्रैल,aprel
+May,मई,maee
+June,जून,juun
+July,जुलाई,julai
+August,अगस्त,agast+
+September,सितंबर,sitmbar
+October,अक्टूबर,aktubar
+November,नवंबर,navambr
+December,दिसंबर,dismbr
+peace,अमन,amn
+forgiveness,माफी,mafi
+thank you,धन्यवाद,dhnyawad
+you're welcome,आप का स्वागत है,aap ka suwagt hai
+please,कृप्या,kripya
+sorry,क्षमा,s+hama
+one,एक,aik
+two,दो,doo
+three,तीन,teen
+four,चार,char
+five,पांच,pantxh
+six,छह,txheh
+seven,सात,sat
+eight,आठ,aat+h
+nine,नौ,nau
+ten,दस,ds
+eleven,ग्यारह,giyarah
+twelve,बारह,barah

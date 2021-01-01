@@ -1,0 +1,960 @@
+word,translation,pronunciation
+awesome,ཧ་ཅང་བཟང་།,ha txaq zaq
+cool,དཔེ་ཡག་པོ།,pe+ yag po
+hello,ཝ་ཡེ།,wa ye+
+hi,བཀྲ་ཤིས་བདེ་ལེགས།,ta xi c+e+ le+k
+bye,བཞུགས་ཨ།,jug aa
+don't,མ་བྱེད།,ma dje+
+great,ཧ་ཅང་ལེགས།,ha  txaq le+k
+amazing,ངོ་མཚར་ཆེ།,qo tshar txe+
+unbelievable,ཡིད་ཆེས་དཀའ།,yi txhe+ kah
+all,ཚང་མ།,tshaq ma
+every,ཡོངས་རྫོགས།,yoq dzog
+each,རེ་རེ།,re+ re+
+some,ཁ་ཤས།,kha je+
+many,མང་པོ།,maq po
+much,མང་པོ།,maq po
+most,མང་ཆེས།,maq txhe+
+few,ཉུང་ཤས།,nyuq xe+
+least,ཉུང་མཐའ།,nyuq ca
+greatest,ཆེ་ཤོས།,txhe+ xoe
+eventually,མཐའ་མར།,ca mar+
+often,ཡང་ཡང་།,yaq yaq
+soon,མགྱོགས་པོ།,gyog po
+maybe,གཅིག་བྱས་ན།,txig dje+ na
+potentially,ནུས་ཅན་གྱིས།,nu txe+n gyi+
+possibly,ཕལ་ཆེར།,phal tse+r+
+probably,ཕལ་ཆེར།,phal tse+r+
+and,དང་།,c+aq
+or,ཡང་ན།,yaq na
+if,གལ་སྲིད།,gal si+
+in,ནང་ལ།,naq la
+of,གྱི། ཀྱི། གི ཡི། འི།,gyi
+to,ལ།,la
+with,མཉམ་དུ།,nyam c+u
+for,ཆེད་དུ།,txhe+ c+u
+not,མ་རེད།,ma re+
+but,ཡིན་ན་ཡང་།,yin na yaq
+although,འོན་ཀྱང་།,hhon kyaq
+always,རྟག་པར།,t+ag par+
+the,འདི། དེ།,c+i
+that,དེ།,c+e+
+this,འདི།,c+i
+these,འདི་ཚོ།,c+i tsho
+those,དེ་ཚོ།,c+e+ tsho
+who,སུ།,su
+what,ག་རེ།,ga re+
+when,ག་དུས།,ga c+u
+where,ག་བ་ལ།,ga wa la
+why,ག་རེ་བྱས་ནས།,ga re+ dje+ ne+
+how,གང་འདྲ།,gaq da
+I,ང་།,qa
+you,ཁྱོད།,khoe
+me,ང་ལ།,qa la
+they,ཁོ་ཚོ།,k+ho tsho
+them,ཁོ་ཚོ་ལ།,kho tsho la
+him,ཁོ་ལ།,kho la
+her,མོ་ལ།,mo la
+he,ཁོ།,kho
+she,མོ།,mo
+we,ང་ཚོ།,qa tsho
+us,ང་ཚོ་ལ།,qa tsho la
+first,དང་པོ།,c+aq po
+second,གཉིས་པ།,nyi+ pa
+third,གསུམ་པ།,sum pa
+fourth,བཞི་པ།,ji pa
+fifth,ལྔ་པ།,qa pa
+sixth,དྲུག་པ།,dug pa
+seventh,བདུན་པ།,c+un pa
+eighth,བརྒྱད་པ།,gye+ pa
+nineth,དགུ་པ།,gu pa
+tenth,བཅུ་པ།,txu pa
+hundred,བརྒྱ།,gya
+thousand,སྟོང་།,t+oq
+million,ས་ཡ།,sa ya
+billion,ཁྲག་ཁྲིག་ཆེན་པོ།,t+hag t+hig txhe+n po
+eternal,རྟག་པ།,t+ag pa
+finite,ཚད་ཡོད་ཅན།,tshe yo txen
+up,ཐོད་ལ།,coe la
+down,འོག་ལ།,hhog la
+left,གཡོན།,yoen
+right,གཡས།,ye
+top,རྩེ།,tse+
+bottom,གཤམ།,xam
+at,ལ།,la
+while,སྐབས།,kab
+during,དེའི་སྐབས།,c+ei kab
+over,ཐོག།,cog
+above,སྒང་ལ།,gaq la
+below,འོག་ལ།,hhog la
+before,སྔོན་ལ།,qon la
+after,རྗེས་ལ།,dje+ la
+between,དཀྱིལ་ལ།,kyi la
+inside,ནང་ལ།,naq la
+outside,ཕྱི་ལ།,txhi la
+around,ཉེ་འཁོར་དུ།,nye+ khor+ c+u
+old,རྙིང་པ།,nyiq pa
+new,གསར་པ།,sar+ pa
+ahead,མདུན་ལ།,c+un la
+alone,གཅིག་པུ།,txig pu
+together,མཉམ་དུ།,nyam c+u
+behind,རྒྱབ་ལ།,gyab la
+in front of,མདུན་དུ།,c+un c+u
+rough,རྩུབ་པོ།,tshub po
+smooth,འཇམ་པོ།,djam po
+sharp,རྣོ་བོ།,n+o po
+dull,གླེན་པ།,le+n pa
+thin,སྲབ་པོ།,srab po
+thick,མཐུག་པོ།,cug po
+cool,བསིལ་པོ།,sil po
+warm,དྲོ་པོ།,do po
+available,ཐོབ་རུང་བ།,cob ruq wa
+unavailable,ཐོབ་མི་རུང་བ།,cob mi ruq wa
+average,འབྲིང་འབྲིང་།,diq diq
+away,འགྱངས་སར།,gyaq sar+
+far,ཐག་རིང་པོ།,cag riq po
+near,ཐག་ཉེ་པོ།,cag nye+ po
+super,དཔེ།,pe+
+backward,རྒྱབ་ཕྱོགས་སུ།,gyab txhog su
+forward,མདུན་ཕྱོགས་སུ།,c+un txhog su
+big,ཆེན་པོ།,txhe+n po
+small,ཆུང་ཆུང་།,txhuq txhuq
+heavy,ལྗིད་པོ།,dji po
+light,ཡང་པོ།,yaq po
+round,སྒོར་སྒོར།,gor+ gor+
+straight,ཁ་ཐུག།,kha cug
+curved,གུག་གུག།,gug gug
+jagged,སོག་ལེའི་དབྱིབས།,sog le+i yib
+advanced,ཡར་ཐོན་ཅན།,yar+ con txen
+almost,ཕལ་ཆེར།,phal txhe+r+
+simple,ལས་སླ་པོ།,le la po
+complex,རྙོག་འཛིངས་ཅན།,nyog dziq txen
+difficult,ཁག་པོ།,khag po
+easy,ལས་སླ་པོ།,le la po
+fast,མགྱོགས་པོ།,gyog po
+slow,དལ་པོ།,c+al po
+normal,སྤྱིར་བཏང།,txir+ t+aq
+unique,དམིགས་བསལ།,mig sal
+bright,འོད་ལྷམ་ལྷམ།,hhoe lham lham
+dim,རབ་རིབ་ཅན།,rab rib txen
+capable,ཐུབ་པ།,cub pa
+certain,ངེས་ཅན།,qe+ txen
+clean,གཙང་མ།,tsaq ma
+dirty,རྫོར་པོ།,dzor+po
+nice,ཡག་པོ།,yag po
+mean,སྡུག་ཅག,c+ug txag
+good,ལེགས་པོ།,le+g po
+bad,སྡུག་ཅག,c+ug txag
+positive,ངེས་གཏན།,qe+ t+en
+negative,མི་མཐུན་པ།,mi cun pa
+clever,སྤྱང་པོ།,txaq po
+ignorant,བླུན་པོ།,lun po
+thoughtful,བློ་ལྡན།,lo c+en
+passionate,སེམས་ཚོར་སྐྱེནཔོ།,se+m tshor+ kye+n po
+interesting,བློ་ལ་འཐད་པོ།,lo la ce+ po
+exciting,སྤྲོ་སེམས་འཁོལ་བ།,to se+m khol wa
+contageous,འགོ་ཉེན་ཅན།,go nye+n txen
+special,དམིགས་བསལ།,mig sal
+creative,གསར་གཏོད་ཀྱི།,sar+ t+oe kyi
+engaging,བློ་ལ་བབ་པོ།,lo la bab po
+cool,རྫིག་པོ།,dzig po
+dark,ནག་ཁུང་།,nag khuq
+deep,གཏིང་ཟབ་པོ།,t+iq zab po
+shallow,གཏིང་ཐུང་ངུ་།,t+iq cuq qu
+different,གཞན་པ།,jen pa
+similar,འདྲ་པོ།,da po
+diffuse,གྲམ་པ།,dam pa
+doubtful,ཐེ་ཚོམ་ཅན།,ce+ tshom txen
+certain,ངེས་ཅན།,qe+ txen
+dry,སྐམ་པོ།,kam po
+wet,རློན་པ།,lon pa
+subtle,ཕྲ་མོ།,t+ha mo
+obvious,མངོན་གསལ་ཅན།,qon sal txen
+flat,ལེབ་མོ།,le+b mo
+empty,སྟོང་པ།,t+oq pa
+full,ཆ་ཚང་གང་བ།,txha tshaq gaq wa
+right,འགྲིག་པ།,dig pa
+wrong,ནོར་བ།,nor+ wa
+stiff,གྱོང་པོ།,gyoq po
+flexible,མཉེན་པོ།,nyen po
+elegant,མཛེས་ཉམས་ཅན།,dze+ nyam txen
+long,རིང་པོ།,riq po
+short,ཐུང་ཐུང་།,cuq cuq
+electric,གློག་གི།,log gi
+fixed/static,བརྟན་པོ།,t+en po
+dynamic,སྒུལ་ཤུགས་ལྡན་པའི།,gul xug c+en pi+
+end,རྫོགས་པ།,dzog pa
+start/beginning,འགོ་འཛུགས་པ།,go dzug pa
+middle,འབྲིང་བ།,diq wa
+enjoyable,སྐྱིད་པོ་གཏོང་རུང་བ།,kyi po t+oq ruq wa
+loose,ལྷུག་ལྷུག,lhug lhug
+expected,རེ་བ་བྱས་པ།,re+ wa dje+ pa
+surprising,ཧ་ལས་དགོས་པའི།,ha le goe  pi
+exhalted,གོ་གནས་སྤར་བ།,go ne par wa
+external,ཕྱི་ཡི།,txhi yi
+internal,ནང་གི,naq gi
+FALSE,རྫུན།,dzun
+TRUE,བདེན་པ།,c+en pa
+standard,ཚད་གཞི།,tshe ji
+fake,རྫུན་མ།,dzun ma
+synthetic,བཅོས་མ།,txoe ma
+natural,རང་བཞིན་གྱིས།,raq jin gi
+strong,སྟོབས་ཤུགས།,t+ob xug
+weak,སྐྱོ་པོ།,kyo po
+fluent,ཆུ་རྒྱུག་རྒྱུག,txhu gyug gyug
+novice,ལས་དང་པོ་བ།,le c+aq po wa
+edible,ཟ་རུང་།,za ruq
+inedible,ཟ་མི་རུང་བ།,za mi ruq wa
+lost,བརླགས་པ།,lag pa
+found,རྙེད་པ།,nye+ pa
+fragile,ཆག་ཉེན་ཅན།,txhag nye+n txen
+firm,བརྟན་པོ།,t+en po
+free,རང་དབང་།,raq waq
+fresh,སོས་པ།,soe pa
+friendly/kind,བཟང་པོ།,zaq po
+funny,གད་མོ་བྲོ་པོ།,ge mo do po
+fuzzy,བ་སྤུ་ཟིང་ཟིང་།,ba pu ziq ziq
+fuzzy,རབ་རིབ།,rabrib
+generic,སྤྱིར་བཏང་གི,txi t+aq gi
+specific,བྱེ་བྲག་པ།,dje dag pa
+helpful,ཕན་ཐོགས་ཅན།,phen t+hogpa
+hurtful,གནོད་འཚེ་ཅན།,n+o tshe+ txen
+graceful,བརྗིད་ཉམས་ཅན།,dji nyam txen
+casual,ངེས་མེད་ཀྱི།,qe+ me+ kyi
+formal,ལམ་ལུགས་ཀྱི།,lam lug kyi
+tight,དམ་པོ།,c+am po
+hairy,སྤུ་ཅན།,pu txen
+hairless,སྤུ་མེད།,pu me+
+happy,སྐྱིད་པོ།,kyi po
+sad,ཡིད་སྐྱོ་བ།,yi kyo wa
+angry,ཁྲོ་བ།,tho wa
+confused,མགོ་འཐོམ་པ།,go com pa
+patient,བཟོད་སྲན་ཅན།,zo sren txen
+calm,ཞི་འཇམ་ཅན།,ji djam txen
+wild,རྒོད་པོ།,goe po
+hard,མཁྲེགས་པོ།,thre+g po
+soft,སོབ་སོབ།,sob sob
+solid,མཁྲེགས་རྡོག,thre+g c+og
+liquid,གཤེར་གཟུགས་ཅན།,xer+ zug txen
+gaseous,རླངས་གཟུགས་ཅན།,laq zug txen
+hearty,སྙིང་ཐག་པའི།,nyiq cag pi
+robust,ཤེད་གཟུགས་ཅན།,xe+ zug txen
+quality,སྤུས་ཚད།,pu tshe
+high,མཐོ་པོ།,co po
+low,དམའ་བོ།,ma po
+on,སྤར་བ།,par+ wa
+off,གསོད་པ།,soe pa
+hot,ཚ་པོ།,tsha po
+freezing,ཧ་ཅང་གྲང་མོ།,ha txaq daq mo
+hungry,ལྟོགས་པ།,t+og pa
+thirsty,སྐོམ་པ།,kom pa
+last,མཐའ་མ།,ca ma
+late,ཕྱི་པོ།,txhi po
+early,སྔ་པོ།,qa po
+significant,གལ་གནད་ཅན།,gal n+e txen
+loud,སྐད་སྒྲ་ཆེན་པོ།,ke da txhe+n po
+quiet,ཁ་ཁུ་སིམ་པོ།,kha khu sim po
+primary,གཞི་རྩའི།,ji tsai
+secondary,རིམ་པ་གཉིས་པ།,rim pa nyi pa
+main,གཙོ་བོ།,tso wo
+constant,བར་མཚམས་མེད་པའི།,bar+ tsham me+ pi
+ready,གྲ་སྒྲིག,da dig
+narrow,དོག་པོ།,c+og po
+wide,གུ་ཡངས་པོ།,gu yaq po
+necessary,དགོས་གནད་ཅན།,goe n+e txen
+offensive,ཁྲིམས་འགལ་གྱི།,thim gal gi
+opposite,ལྡོག་ཕྱོགས།,c+og txhog
+against,ཁ་གཏད།,kha t+e
+again,ཡང་བསྐྱར།,yaq kyar+
+ordinary,དཀྱུས་མ།,kyu ma
+passive,མངོན་དུ་མ་གྱུར་པའི།,qon c+u ma gyur+ pi
+possible,སྲིད་པ།,si pa
+probable,འབྱུང་སྲིད་པའི།,djuq si pi
+impossible,འབྱུང་མི་སྲིད་པ།,djuq mi si pi
+correct,ཏག་ཏག,t+ag t+ag
+incorrect,ནོར་བ།,nor+ wa
+safe,ཉེན་ཁ་མེད་པ།,nye+n kha me+ pa
+amazing,ཡ་མཚན་པོ།,ya tshen po
+ancient,སྔ་རབས་ཀྱི།,qa rab
+wishy washy,རློན་པ།,lon pa
+whole,ཡོངས་རྫོགས།,yoq dzog
+useful,བེད་སྤྱོད་ཅན།,be+ txoe txen
+mental,བསམ་བློའི།,sam loi
+physical,གཟུགས་པོའི།,zug poi
+spiritual,ཆོས་ཀྱི།,txhoe kyi
+optional,འདམ་ཀའི།,c+am kai
+required,ཉེ་བར་མཁོ་བ།,nye+ bar kho wa
+accomplish,མཐར་སྐྱེལ་བྱེད་པ།,car+ kye+l dje+ pa
+act,ལད་ཟློས་བྱེད་པ།,le c+oe bje+ pa
+adapt,རན་པོ་བཟོ་བ།,ren po zo wa
+add,སྣོན་པ།,n+on pa
+adjust,སྙོམ་སྒྲིག་བྱེད་པ།,nyo dig dje pa
+advise,སློབ་སྟོན་བྱེད་པ།,lob t+on dje+ pa
+aggregate,ཕྱོགས་སྡོམ་རྒྱག་པ།,txhog c+om gyag pa
+agree,མོས་མཐུན་བྱེད་པ།,mo cun dje+ pa
+alternate,རེས་མོས་བྱེད་པ།,re+ mo dje+ pa
+approve,ངོས་ལེན་བྱེད་པ།,qo le+n dje+ pa
+approximate,རོབ་རྩིས་ཀྱི།,rob tsi kyi
+ask,འདྲི་བ།,di wa
+assume,ཡིན་ཤག་བྱེད་པ།,yin xag dje+ pa
+attach,མཐུད་པ།,cu pa
+attempt,འབད་པ།,be+ pa
+attend,བཅར་བ།,txar+ wa
+attend,དོ་སྣང་བྱེད་པ།,c+o naq dje+ pa
+awaken,གཉིད་ལས་སློང་བ།,nyi le lo+q wa
+balance,རྒྱ་མ།,gya ma
+be,ཡིན་པ།,yin pa
+believe,ཡི་ཆེས།,yi txhe+
+bend,བཀུག་པ།,kug pa
+benefit,ཕན་ཐོགས་པ།,phen cog pa
+blend,བསྲེ་བ།,sre wa
+borrow,གཡར་བ།,yar+ wa
+bounce,འཕར་བ།,phar+ wa
+break,བཅག་པ།,txag pa
+build,རྩིག་པ།,tsig pa
+browse,སྤྲོ་བ་སྐྱེད་ཕྱིར་ཀློག་པ།,to wa kye txhir+ lo+g pa
+bundle up,དྲོ་བོ་གྱོན་པ།,do po gyon pa
+buy,ཉོ་བ།,nyo wa
+call,སྐད་གཏོང་བ།,kye t+oq wa
+carry,འཁྱེར་བ།,khe+r+ wa
+catch,འཛིན་པ།,dzin pa
+categorize,སྡེ་ཚན་དུ་དབྱེ་བ།,c+e+ tshen c+u ye+ wa
+cause,རྒྱུ།,gyu
+change,འགྱུར་བ།,gyur+ wa
+check,ཞིབ་བཤེར།,jib xe+r+
+continue,མུ་མཐུད།,mu cu
+chip,གཞོག་པ།,jog pa
+choose,འདམ་པ།,c+am pa
+chop,བཙབ་པ།,tsab pa
+classify,གྲལ་རིམ་དུ་དབྱེ་བ།,dal rim c+u ye+ wa
+clean,གཙང་མ།,tsaq ma
+climb,འཛེག་པ།,dze+g pa
+clone,འདྲ་པོ་བཟོ་བ།,da po zo wa
+collect,འདུ་བ།,c+u wa
+come,ཡོང་བ།,yoq wa
+compute,བརྩི་བ།,tsi wa
+communicate,འབྲེལ་བ་བྱེད་པ།,de+l wa dje+ pa
+congratulate,དགའ་བསུ་ཞུ་བ།,ga su ju wa
+consider,བསམ་བློ་གཏོང་བ།,sam lo t+oq wa
+count,བརྩི་བ།,tsi wa
+crack,གས་ཆག་ཤོར་བ།,ge txag xor+ wa
+crawl,འཕྱེ་བ།,txe+ wa
+cover,གཡོག་པ།,yo+g pa
+create,བཟོ་བ།,zo wa
+cross,རྒལ་བ།,gal wa
+dance,ཞབས་བྲོ།,jab do
+decide,ཐག་གཅོད་པ།,cag txoe pa
+delay,ཕྱིར་བཤོལ།,txhir+ xol
+deliver,སྐྱེལ་བ།,kye+l wa
+demonstrate,དངོས་སུ་སྟོན་པ།,qo su t+on pa
+digest,འཇུ་བ།,dju wa
+divide,དབྱེ་བ།,ye+ wa
+draw,རི་མོ་འབྲི་བ།,ri mo di wa
+dream,རྨི་ལ་རྨི་བ།,mi+ lam mi+ wa
+drink,འཐུང་བ།,cuq wa
+drip,ཐིགས་པ་རྒྱག་པ།,cig pa gyag pa
+drive,སྣུམ་འཁོར་གཏོང་བ།,n+umkhor t+oq wa
+drop,སྐྱུར་བ།,kyur+ wa
+drum,རྔ་རྡུང་བ།,qa c+uq wa
+eat,ཟ་བ།,za wa
+do,བྱེད་པ།,dje+ pa
+drain,ཆུ་འཐེན་པ།,txu ce+n pa
+energize,ནུས་ཤུགས་སྟེར་བ།,nu xug t+e+r+ wa
+engage,དོ་སྣང་སྤྲོད་པ།,c+o naq toe pa
+enter,འཛུལ་བ།,dzul wa
+estimate,བརྩི་བ།,tsi wa
+exchange,བརྗེ་བ།,dje+ wa
+exit,ཐོན་སྒོ།,con go
+expect,རེ་བ་བྱེད་པ།,re+ wa dje+ pa
+explain,འགྲེལ་བཤད་བྱེད་པ།,de+l xe+ dje+ pa
+explore,འཚོལ་ཞིབ་བྱེད་པ།,tshol jib dje+ pa
+extend,རྒྱས་སུ་གཏོང་བ།,gye su t+ong wa
+fall,ལྷུང་བ།,lhuq wa
+rise,འཆར་བ།,txar+ wa
+feed,ཟས་སྤྲོད་པ།,ze toe pa
+feel,ཚོར་བ།,tsor+ wa
+fill,འགེང་པ།,ge+q pa
+figure stuff out,དོན་དག་གསལ་པོ་བཟོ་བ།,c+on dag sal po zo wa
+find,རྙེད་པ།,nye+ pa
+float,ལྡིང་བ།,c+iq wa
+flow,རྒྱུག་པ།,gyug pa
+focus,འདུ་གནས།,c+u n+e+
+follow,རྗེས་སུ་འབྲང་བ།,dje+ su daq wa
+forget,བརྗེད་པ།,dje+ pa
+fork,ཁ་གྱེས་པ།,kha gye+ pa
+form,གཟུགས།,zug
+discover,གསར་དུ་རྙེད་པ།,sar+ c+u nye+ pa
+doubt,དོགས་པ།,c+og pa
+fund,མ་རྩ་གཏོང་བ།,ma tsa t+oq wa
+gather,འདུ་བ།,c+u wa
+get,ཐོབ་པ།,cob pa
+breathe,དབུགས་གཏོང་བ།,wug t+oq wa
+give,སྤྲོད་པ།,toe pa
+go,འགྲོ་བ།,do wa
+grab,གློ་བུར་དུ་འཛིན་པ།,lo bur+ c+u dzin pa
+allow,གནང་བ་སྤྲོད་པ།,n+aq wa toe pa
+deny,ངོས་ལེན་མི་བྱེད་པ།,qo le+n mi dje+ pa
+grasp,ཁོང་དུ་ཆུད་པ།,khoq c+u txu pa
+graze,སྔོ་རྩྭ་ཟ་བ།,qo tsa za wa
+group,སྡེ་ཚན་སྒྲིག་པ།,c+e+ tshen dig pa
+grow,འཚར་བ།,tshar+ wa
+guide,ལམ་སྟོན་བྱེད་པ།,lam t+on dje+ pa
+have,ཡོད་པ།,yo pa
+hear,ཐོས་པ།,coe pa
+help,རོགས་པ་བྱེད་པ།,rog pa dje+ pa
+hold,བཟུང་བ།,zuq wa
+hunt,ཁྱི་ར་བརྒྱག་པ།,khi ra gyag pa
+imagine,ཚོད་དཔག་བྱེད་པ།,tshoe pag dje+ pa
+include,ཁོངས་སུ་འཚུད་པ།,khoq su tsu pa
+integrate,འདུས་གྲུབ་བྱེད་པ།,c+u dub dje+ pa
+intend,འདུན་པ་བྱེད་པ།,c+un pa dje+ pa
+interpret,གོ་དོན་འགྲེལ་བ།,go c+on de+l wa
+introduce,ངོ་སྤྲོད་བྱེད་པ།,qo toe dje+ pa
+involve,འཚུད་པ།,tsu pa
+join,ཚོགས་ཞུགས་བྱེད་པ།,tso jug dje+ pa
+jump,མཆོང་བ།,txhoq wa
+keep,ཉར་བ།,nyar+ wa
+know,ཤེས་པ།,xe+ pa
+laugh,གད་མོ།,ge mo
+lay down,སྙལ་བ།,n+yel wa
+lead,འགོ་ཁྲིད་པ།,go thi pa
+learn,སྦྱོང་བ།,djoq wa
+leave,ཐོན་པ།,con pa
+lift,འདེགས་པ།,c+eg pa
+like,སྣང་བ་འགྲོ་བ།,n+aq wa do wa
+listen,ཉན་པ།,nyen pa
+live,སྡོད་པ།,c+o pa
+look,ལྟ་བ།,t+a wa
+love,དགའ་པོ་བྱེད་པ།,ga po dje+ pa
+maintain,རྒྱུན་མཐུད་པ།,gyun cu pa
+make,བཟོ་བ།,zo wa
+manage,སྟངས་འཛིན་བྱེད་པ།,t+aq dzin dje+ pa
+map,ཞིབ་འཆར་འགོད་པ།,jib xe+r+ goe pa
+master,ཕུལ་བྱུང་།,phul djuq
+measure,ཚད་འཇལ་བ།,tshe djal wa
+mind,སེམས་གཏོད་པ།,se+m t+oe pa
+model,འདྲ་གཟུགས་བཟོ་བ།,da zug zo wa
+move,གཡོ་སྒུལ།,yo+ gul
+multiply,སྒྱུར་བ།,gyur+ wa
+navigate,ཁ་ལོ་སྒྱུར་བ།,kha lo gyur+ wa
+need,དགོས་པ།,goe pa
+negate,དགག་པ་རྒྱག་པ།,gag pa gyag pa
+note/notice,ཐོ་རྒྱག་པ། /གསལ་བསྒྲགས།,co gyag pa/sal dag
+nudge,གྲུ་སུག་རྒྱག་པ།,du sug gyag pa
+organize,གོ་སྒྲིག་བྱེད་པ།,go dig dje+ pa
+overcome,དབང་དུ་སྡུད་པ།,waq c+u c+ue pa
+participate,མཉམ་ཞུགས་བྱེད་པ།,nyam jug dje+ pa
+pass,འགུལ་སྐྱོད་བྱེད་པ།,gul kyoe dje+ pa
+pop,འཐོར་བ།,cor+ wa
+pour,བླུག་པ།,lu+g pa
+pray,སྨོན་ལ་རྒྱག་པ།,m+on lam gyag pa
+prove,ཁུངས་སྐྱེལ་བ།,khuq kye+l wa
+push,འབུད་རྒྱག་གཏོང་བ།,bu gyag t+oq wa
+reach,སྙོབ་པ།,n+yob pa
+read,ཀློག་པ།,log pa
+receive,འབྱོར་བ།,djor+ wa
+reduce,ཉུང་དུ་གཏོང་བ།,nyuq c+u t+oq wa
+release,གློད་པ།,loe pa
+remember,དྲན་པ།,den pa
+remove,སེལ་བ།,se+l wa
+rent,གཡར་གླ།,yar+ wa
+repeat,བསྐྱར་ཟློས་བྱེད་པ།,kyar+ c+oe dje+ pa
+request,རེ་སྐུལ་བྱེད་པ།,re kul dje+ pa
+respect,གུས་ཞབས་བྱེད་པ།,gu jab dje+ pa
+respond,ལན་འདེབས་པ།,len c+eb pa
+rest,ངལ་གསོ།,qal so
+restart,བསྐྱར་འགོ་འཛུགས་པ།,kyar+ go dzug pa
+restore,བསྐྱར་གསོ་བྱེད་པ།,kyar+ so dje+ pa
+resume,སླར་མུ་མཐུད་པ།,lar+ mu cue pa
+return,ཕྱིར་ལོག་པ།,txhir+ log pa
+reverse,ཕྱིར་འཁོར་བ།,txhir+ khor+ wa
+rewind,བསྐྱར་དཀྲི་བ།,kyar+ ti wa
+rotate,སྐོར་བ།,kor+ wa
+satisfy,འདོད་པ་སྐོང་བ།,c+oe pa koq wa
+bless,རབ་གནས་གནང་བ།,rab n+e n+aq wa
+save,སྐྱོབ་པ།,kyob pa
+say,ལབ་པ།,lab pa
+sell,འཚོང་བ།,tshoq wa
+send,གཏོང་བ།,t+oq wa
+set,སྒྲིག་པ།,dig pa
+shade,གྲིབ་མདངས་རྒྱག་པ།,dib dhaq gyag pa
+share,བགོ་བཤའ་རྒྱག་པ།,go xa gyag pa
+sing,གཞས་གཏོང་བ།,je t+oq wa
+sit,སྡོད་པ།,c+oe pa
+stand,ལང་བ།,laq wa
+start,འགོ་འཛུགས་པ།,go dzug pa
+stay,གནས་སྡོད་བྱེད་པ།,n+e c+oe dje+ pa
+step,གོམ་པ་སྤོ་བ།,gom pa po wa
+think,བསམ་མནོ་གཏོང་བ།,sam n+o t+oq wa
+try,ཐབས་ཤེས་བྱེད་པ།,cab xe+ dje+ pa
+turn,སྒྱུར་བ།,gyur+ wa
+understand,ཧ་གོ་བ།,ha go wa
+update,དུས་བསྟུན་ཁ་གསབ་བྱེད་པ།,c+u t+un kha sab dje+ pa
+use,བེད་སྤྱོད་པ།,be+ txoe pa
+verify,བདེན་དཔང་བྱེད་པ།,c+en paq dje+ pa
+vibrate,འདར་འགུལ་རྒྱག་པ།,c+ar+ kul gyag pa
+wait,སྒུག་པ།,gug pa
+wait for,ཆེད་དུ་སྒུག་པ།,txhe+ c+u gug pa
+walk,གོམ་པ་རྒྱག་པ།,gom pa gyag pa
+wander,འཁྱམ་པ།,khyam pa
+want,དགོས་པ།,goe pa
+wash,འཁྲུད་པ།,thu pa
+watch,ལྟ་བ།,t+a wa
+wield,དབང་ཆར་སྤྱོད་པ།,waq txar+ toe pa
+work,ལས་ཀ་བྱེད་པ།,le ka dje+ pa
+write,འབྲི་བ།,di wa
+yawn,ཨ་སྟོང་རྒྱག་པ།,aa toq gyag pa
+yield,ཐོན་སྐྱེད་འབབ་པ།,con ke+ bab pa
+yield,གྲུབ་འབྲས།,dub de
+attempt,འབད་པ།,be pa
+cure,སྨན་བཅོས།,m+en txoe
+dedicate,བསྔོ་བ།,qo wa
+finish,ཚར་བ།,tsar+ wa
+harvest,སྟོན་ཐོག,t+on cog
+roll,སྒྲིལ་བ།,dil wa
+shape,དབྱིབས།,yib
+shine,འོད་འཕྲོ་བ།,hhoe tho wa
+shop,འཚོང་ཁང་།,tshoq khaq
+sleep,ཉལ་བ།,nyal wa
+smell,དྲི་མ།,dima
+study,སློབ་སྦྱོང་།,lob djoq
+taste,བྲོ་བ།,do wa
+test,ཚོད་ལྟ།,tsoe t+a
+combine,སྡེབ་པ།,deb pa
+evolve,རིམ་གྱིས་འབྱུང་བ།,rim gyi djuq wa
+align,རུ་སྒྲིག་པ།,ru dig pa
+produce,བཟོ་སྐྲུན་བྱེད་པ།,zo tun dje+ pa
+consume,ལོངས་སུ་སྤྱོད་པ།,loq su tsoe pa
+throw,དཡུག་པ།,yuk pa
+mirror,གཟུགས་བརྙན་འཆར་བ།,zug nyen txhar+ wa
+snore,སྔུར་བ།,ngur+ wa
+boyfriend,དགའ་རོགས། (བུ),ga rog (bu)
+girlfriend,དགའ་རོགས། (བུ་མོ།),ga rog (bu mo)
+husband,ཁྱོ་ག།,kyo ga
+wife,ཆུང་མ།,txhuq ma
+mom,ཨ་མ།,aa ma
+dad,ཨ་ཕ།,aa pha
+mother,ཨ་མ་ལགས།,aa ma lag
+father,པ་ལགས།,pa lag
+aunt,ཨ་ནེ།,aa ne+
+author,རྩོམ་པ་པོ།,tsom pa po
+baby,ཕྲུ་གུ།,thu gu
+adult,རྒན་པ།,gen pa
+brother,ཅོ་ཅོ།,txo txo
+parent,ཕ་མ།,pha ma
+child,བྱིས་པ།,dji pa
+cousin,ཕ་མ་སྤུན་ཕྲུག,pha ma pun thug
+niece,ཚ་མོ།,tsa mo
+nephew,ཚ་བོ།,tso wo
+elder,རྒན་པ།,gen pa
+male,ཕོ།,pho
+female,མོ།,mo
+man,སྐྱེས་པ།,ke+ pa
+woman,སྐྱེས་མ།,ke+ ma
+air,རླུང་།,luq
+animal,དུད་འགྲོ།,c+u do
+ant,གྲོག་མ།,dog ma
+arm,དཔུང་པ།,puq pa
+aromatics,དྲི་ཞིམ་པོ།,di jim po
+ash,གོ་ཐལ།,go cal
+asteroid/comet,སྐར་ཕྲན།/སྐར་མ་དུ་བ།,kar+ then/ kar+ ma c+u wa
+atom,རྡུལ་ཕྲན།,c+ul then
+beach,མཚོ་ངོགས།,tso qog
+beak,མཆུ་ཏོ།,tshu t+o
+bear,དོམ།,c+om
+beard,རྒྱ།,gya
+beast,གཅན་གཟན།,tsen zen
+bee,སྦྲང་བུ།,daq bu
+belly,ལྟོ་བ།,t+o wa
+wind,རླུང་།,luq
+wing,ཤོག་པ།,xog pa
+womb,མངལ།,qal
+berry,ལུམ་འབྲས།,lum de
+bird,བྱ།,dja
+squirrel,འཇག་མ་གི་ལི།,djag ma gi li
+snail,འབུ་སྐྱོགས་ལྟོ།,bu kyog t+o
+mind,སེམས།,se+m
+soul,རྣམ་ཤེས།,nam xe+
+body,གཟུགས་པོ།,zug po
+gut,བློ་ཁོག,lo khog
+brain,ཀླད་པ།,le pa
+bone,རུས་པ།,ru pa
+blood,ཁྲག,thag
+bug,འབུ་སྲིན།,bu sin
+worm,སྲིན་འབུ།,sin bu
+butterfly,ཕྱེ་མ་ལེབ།,txhe+ ma leb
+wolf,སྤྱང་ཀི།,txaq ki
+breeze,བསེར་བུ།,se+r+ bu
+cat,ཞི་མི།,ji mi
+cell,སྦུབས་ཕྲན།,bub then
+chemical,རྫས་སྦྱོར་གྱི།,dze djor+ gi
+cliff,བྲག་གཡང་།,dag yaq
+cloud,སྤྲིན་པ།,tin pa
+coyote,ཉེ་འདབས་ཀྱི་སྤྱང་ཀི།,nye+ c+ab ki txaq ki
+crow,ཕོ་རོག,pho rog
+deer/elk/moose,ཤ་བ།,xa wa
+desert,བྱེ་ཐང་།,dje+ caq
+dirt,བཙོག་པ།,tsog pa
+shadow,གྲིབ་མ།,dib ma
+darkness,ནག་ཁུང་།,nag khuq
+dawn,སྐྱ་རེངས།,kya re+q
+day,ཉིན།,nyin
+daytime,ཉིན་དགུང་།,nyin guq
+daydream,ཉིན་མོའི་རྨི་ལམ།,nyin moi+ m+i lam
+dog,ཁྱི།,khyi
+dove,ཕུག་རོན།,phug ron
+dusk,སྲོད།,soe
+eagle/hawk,བྱ་རྒོད།,dja goe
+owl,འུག་པ།,hhug pa
+ear,ཨམ་ཅོག,am txog
+earth,ས།,sa
+egg,སྒོ་ང་།,go qa
+seed,ས་བོན།,sa bon
+tadpole,ལྕོང་མོ།,txoq mo
+plant,རྩི་ཤིང་།,tsi xiq
+tree,ཤིང་སྡོང་།,xiq c+oq
+bush,ཤིང་ཕྲན།,xiq then
+water,ཆུ།,txhu
+river,གཙང་ཆུ།,tsaq ma
+elbow,གྲུ་མོ།,du mo
+chip,ལྟིག་གཞོག,t+ig jog
+exercise,ལག་ལེན་བསྟར་བ།,lag len t+ar+ wa
+eye,མིག,mig
+eyelash,རྫི་མ།,dzi ma
+vein,སྡོད་རྩ།,c+oe tsa
+finger,མཛུབ་མོ།,dzub mo
+face,གདོང་པ།,c+oq pa
+weather season,ནམ་དུས།,nam c+ue
+feet,རྐང་པ་དག,kaq pa dag
+fire,མེ།,me+
+fish,ཉ།,nya
+flame,མེ་རླབས།,me+ lab
+flower,མེ་ཏོག,me+ t+og
+fly,འཕུར་བ།,phur+ wa
+foot,རྐང་པ།,kaq pa
+forest,ནགས་ཚལ།,nag tshal
+fruit,ཤིང་ཏོག,xiq t+og
+gas,རླངས་གཟུགས།,laq zug
+gills,ཉ་སྐྱོགས།,nya kyoq
+grass,རྩྭ།,tsa
+gust,རླུང་འཚུབ།,luq tshub
+hail,སེར་བ།,se+r wa
+hair,སྐྲ།,ta
+hand,ལག་པ།,lag pa
+hare,རི་བོང་།,ri boq
+head,མགོ།,go
+tail,མཇུག་མ།,djug ma
+heart,སེམས་པ།,se+m pa
+hedgehog/groundhog,ཟེར་མོ།,ze+r+ mo
+hill,རི།,ri
+horizon,གནམ་གྱི་མཐའ་མཚམས།,n+am gyi ca tsham
+ice,འཁྱགས་པ།,khyag pa
+lake,མཚོ།,tsho
+land,ས་ཆ།,sa txha
+leaf,ལོ་མ།,lo ma
+leg,རྐང་པ།,kaq pa
+lip,མཆུ་ཏོ།,txhu t+o
+lizard,རྩངས་པ་ཁ་རལ།,tsaq pa kha ral
+Mars,གཟའ་ཆེན་མིག་དམར།,za txhe+n mig m+ar+
+Earth,འཛམ་གླིང་།,dzam liq
+Venus,གཟའ་ཆེན་པ་སངས།,za txhe+n pa saq
+Saturn,གཟའ་ཆེན་སྤེན་པ།,za txhe+n pe+n pa
+milky way galaxy,དགུ་ཚིགས་ཁྱིམ་རྒྱུད།,gu tsig khim gyu
+moon,ཟླ་བ།,c+a wa
+sun,ཉི་མ།,nyima
+star,སྐར་མ།,kar+ ma
+planet,རྒྱུ་སྐར།,gyu kar+
+metal,ལྕགས།,txag
+ocean,རྒྱ་མཚོ།,gya tso
+mountain,གངས་རི།,gaq ri
+mouth,ཁ།,kha
+neck,མཇིང་པ།,djiq pa
+nose,སྣ།,n+a
+nut,བསྟར་ཀ།།,t+ar+ ka
+outer space,ཕྱི་རིམ་བར་སྟོང་།,txhi rim bar+ t+oq
+pond,རྫིང་བུ།,dziq bu
+rain,ཆར་པ།,txhar+ pa
+road,རྒྱ་ལམ།,gya lam
+rock,བྲག་རྡོ།,dag c+o
+rodent/mouse/rat,ཙི་ཙི།,tsi tsi
+sand,བྱེ་མ།,dje+ ma
+bark,ཁྱིའི་ཟུག་སྐད།,khi+ zug ke
+hug,འཐམ་པ།,cam pa
+kiss,འོ།,hho
+bag,དཔེ་ཁུག,pe+ khug
+ball,སྤོ་ལོ།,po lo
+boat,གྲུ།,du
+book,དེབ།,c+eb
+bottle,ཤེལ་དམ།,xe+l c+am
+bowl,ཕོར་པ།,phor+ pa
+box,སྒམ།,gam
+bread,བག་ལེབ།,bag leb
+bucket,ཟོམ།,zom
+camera,པར་ཆས།,par txhe
+calendar,ལོ་ཐོ།,lo co
+clock,ཆུ་ཚོད་འཁོར་ལོ།,txhu txoe khor+ lo
+case,སྣོད།,n+oe
+cheese,ཕྱུ་ར།,txhu ra
+chicken,བྱ་ཤ།།,dja xa
+beef,གླང་ཤ།,laq xa
+cup,ཕོར་པ།,phor+ pa
+dish/plate,སྡེར་མ།,c+e+r+ ma
+dictionary,ཚིག་མཛོད།,tsig dzoe
+door,སྒོ།,go
+drum,རྔ་།,qa
+guitar,སྒྲ་སྙན།,da n+yen
+electronics,གློག་དཔྱད་རིག་གནས།,log txe rig n+e
+faucet,ཀ་ལའི་མགོ,ka lai+ go
+flute,གླིང་བུ།,liq bu
+food,ཁ་ལག།,kha lag
+glass,ཤེལ་ཕོར།,xe+l phor+
+house,ཁང་པ།,khaq pa
+meat,ཤ།།,xa
+milk,འོ་མ།,hho ma
+plane,སྙོམས་ངོས།,n+yom qoe
+circle,སྒོར་སྒོར།,gor gor
+triangle,གྲུ་གསུམ།,du sum
+square,གྲུ་བཞི།,du ji
+rectangle,གྲུ་བཞི་ནར་མོ།,du ji nar+ mo
+line,ཐིག,cig
+axis,ཚངས་ཐིག,tsaq cig
+curve,གུག་གུག,gug gug
+direction,ཕྱོགས།,txhog
+speed,མགྱོགས་ཚད།,gyog tse
+source,འབྱུང་ཁུངས།,djuq khuq
+target,དམིགས་ས།,mig sa
+cycle,རྐང་འཁོར།,kaq khor+
+wave,རླབས།,lab
+spiral,གཅུས་སྒྲིམ་ཅན།,txu dim txen
+distance,རྒྱང་ཐག,gyaq cag
+edge,མཐའ།,ca
+side,ངོས།,qoe
+surface,ཕྱིའི་རྣམ་པ།,txhi n+am pa
+height,མཐོ་ཚད།,co tse
+width,ཁ་ཞེང་།,kha je+q
+neighborhood,ཉེ་འདབས།,nye+ c+ab
+parallel,འདྲ་མཚུངས་ཀྱི།,da tsuq ki
+perpendicular,ཐད་ལངས།,ce laq
+position,གོ་གནས།,go n+e
+range,ཚད་གཞི།,tse ji
+ratio/proportion,སྡུར་ཚད།,c+ur+ tse
+ring,ཨ་ལོང་།,aa loq
+shape,དབྱིབས།,yib
+ability,ནུས་པ།,nue pa
+adjustment,སྙོམས་སྒྲིག,n+yom dig
+now,ད་ལྟ།,c+a t+a
+alternative,རེས་མོས་ཀྱི།,re+ moe kyi
+amount,དངུལ་འབོར།,qul bor
+answer,ལན།,len
+approximate,རོབ་རྩིས་ཀྱི།,rob tsi ki
+previous,སྔོན་གྱི།,qon gi
+next,རྗེས་མ།,dje+ ma
+aspect,གནས་སྟངས།,n+e t+aq
+assumption,ཡིན་ཤག,yin xag
+attention,དམིགས་གཏད།,m+ig sal
+awareness,དོ་སྣང་།,c+o n+aq
+base,རྨང་གཞི།,m+aq ji
+behavior,སྤྱོད་ལམ།,txoe lam
+belief,ཡིད་ཆེས།,yi txe+
+benefit,ཕན་ཐོགས་པ།,phen cog pa
+bit,ཅུང་ཟད།,txuq ze
+block,དུམ་བུ།,c+um bu
+break,བཅག་པ།,txag pa
+bring,འཁྱེར་བ།,khe+r+ wa
+burner,མེ་ཁུང་།,me+ khuq
+burnt,འཚིག་པ།,tshig pa
+capacity,ཤོང་ཚད།,xoq tshe
+category,སྡེ་ཚན།,c+e+ tshen
+cement,ཨར་འདམ།,aar+ c+am
+censored,ཞིབ་བཤེར།,jib xe+r+
+change,འགྱུར་བ།,gyur+ wa
+character,གཤིས་ཀ,xi ka
+choice,འདམ་ང།,c+am qa
+cold,ཆམ་པ།,txham pa
+concept,ལྟ་ཚུལ།,t+a tsul
+condition,གནས་སྟངས།,n+e t+aq
+congratulations,བཀྲ་ཤིས་བདེ་ལེགས།,ta xi c+e+ le+g
+connection,འབྲེལ་བ།,de+l wa
+container,སྣོད།,n+oe
+cover,ཕྱི་སྐོགས།,txhi kog
+cozy,བག་ཕེབས།,bag phe+b
+crack,སེར་ཁ།,se+r+  kha
+crown,པྲོག་ཞུ།,tog ju
+decision,ཐག་གཅོད།,cag txoe
+decoration,རྒྱན་བཀོད།,gyen koe
+density,མཐུག་པོ།,cug po
+depth,གཏིང་།,t+iq
+doubt,དོགས་པ།,c+og pa
+certainty,ངེས་ཅན།,qe+ txen
+drain,ཆུ་འཐེན་པ།,txhu ce+n pa
+dream,རྨི་ལམ།,m+i lam
+drink,འཐུང་བ།,cuq wa
+drip,འཛག་པ།,dzag pa
+drive,སྣུམ་འཁོར་གཏོང་བ།,n+um khor+ t+oq wa
+drop,སྐུལ་ཤུགས།,kul xug
+effect,འབྲས་བུ།,de bu
+energy,ནུས་པ།,nu pa
+environment,ཁོར་ཡུག།,khor+ yug
+estimate,ཚོད་དཔག,tshoe pag
+feature,ཁྱད་ཆོས།,khe txhoe
+floor,ཞལ་ལ།,jal la
+force,ཤུགས།,xug
+friend,གྲོགས་པོ།,dog po
+front,མདུན་དུ།,c+un c+u
+fun,སྐྱིད་ཚོར།,ki tsor+
+future,མ་འོངས།,ma hhoq
+game,རྩེད་མོ།,tse+ mo
+gap,བར་སྟོང་།,bar+ t+oq
+gesture,བརྡ་སྟོན།,c+a t+on
+goal,དམིགས་ཡུལ།,m+ig yul
+grammar,བརྡ་སྤྲོད།,c+a toe
+ground,ཐང་།,caq
+group,ཚོགས་པ།,tsog pa
+guide,ལམ་སྟོན་པ།,lam t+on
+habit,གོམས་གཤིས།,gom xi
+heat,ཚ་དྲོད།,tsa doe
+hint,གོ་བརྡ།,go c+a
+home,ཁྱིམ།,khim
+hope,རེ་བ།,re+ wa
+hour,ཆུ་ཚོད།,txu tsoe
+human,མི།,mi
+ideal,རྣམ་དག,n+am c+ag
+imagination,འཁྲུལ་གཟུགས།,thul zug
+information,གནས་ཚུལ།,n+e tsul
+intensity,དྲག་ཚད།,dag tse
+intention,འདུན་པ།,c+un pa
+interest,དང་ཞེན།,c+aq je+n
+joke,ཀྱལ་ཀ,kyal ka
+juice,ཤིང་ཏོག་ཁུ་བ།,xiq t+og khu wa
+knowledge,ཡོན་ཏན།,yon t+en
+language,སྐད་ཡིག,ke yig
+letter,ཡི་གེ,yi ge+
+life,མི་ཚེ།,mi tse+
+light,འོད།,hhoe
+limit,ཚད།,tshe
+list,ཐོ་གཞུང་།,co juq
+love,བརྩེ་དུངས།,tse+ c+uq
+marriage,ཆང་ས།,txhaq sa
+mass,བོངས་ཚད།,boq tse
+material,དངོས་པོ།,qoe po
+memory,དྲན་པ།,den pa
+memory,དྲན་ཤེས།,den xe+
+mind,སེམས།,se+m
+minute,སྐར་མ།,kar ma
+model,མ་དཔེ།,ma pe+
+money,དངུལ།,qul
+monk,གྲྭ་བ།,da wa
+month,ཟླ་བ།,c+a wa
+moon,ཟླ་བ།,c+a wa
+motivation,ཀུན་ནས་སློང་བའི་བྱ་སྤྱོད།,kun ne loq wi dja txoe
+mud,འདམ་བག,c+am bag
+narrow,དོག་པོ།,c+og po
+nature,རང་བཞིན།,raq jin
+necessity,དགོས་མཁོ།,goe kho
+need,དགོས་པ།,goe pa
+nest,ཚང་།,x+aq
+neurotransmitter,དབང་རྩའི་བརྡ་རྫས།,waq tsai c+a dze
+night,མཚན་མོ།,tshen mo
+northern,བྱང་ཕྱོགས་ཀྱི།,djaq txog ki
+southern,ལྷོ་ཕྱོགས་ཀྱི།,lho txog ki
+eastern,ཤར་ཕྱོགས་ཀྱི།,xar+ txog ki
+western,ནུབ་ཕྱོགས་ཀྱི།,nub txog ki
+number,ཨང་གྲངས།,aa daq
+overcome,དབང་དུ་སྡུད་པ།,waq c+u c+u pa
+part/piece,ཆ་ཤས།,txha xe
+particle,ཕྲ་རབ།,tha rab
+past,འདས་པ།,c+e pa
+path,ལམ།,lam
+pause,བར་མཚམས་དུས་ཐུང་།,bar+ tsam c+u cuq
+pebble,ཆུ་རྡེའུ།,txu c+e+ hhu
+pile/stack,ཕུང་གསོག,phuq sog
+place,ས་གནས།,sa n+e
+potential,ནུས་པ་ཅན་གྱི།,n+ue pa txen gi
+power,ནུས་པ།,n+ue pa
+practice,སྦྱོང་བརྡར།,djoq c+ar+
+present,ད་ལྟ་བ།,c+a t+a wa
+probability,ཡིན་རུང་།,yin ruq
+process,བྱ་བའི་རྒྱུད་རིམ།,dja wi gyu rim
+program,ལས་རིམ།,le rim
+pronunciation,སྒྲ་གདངས།,da c+aq
+question,དྲི་བ།,di wa
+quiet,ཁ་ཁུ་སིམ་པོ།,kha khu sim po
+reason,རྒྱུ་མཚན།,gyu tsen
+logic,རིག་པ།,rig pa
+reduce,འཕྲི་བ།,thi wa
+reflection,གཟུགས་བརྙན།,zug n+yen
+room,ཁང་མིག,khaq mig
+second,གཉིས་པ།,n+yi pa
+shade,གྲིབ་ནག,dib nag
+step,གོམ་པ།,gom pa
+still,མི་གཡོ་བ།,mi yo wa
+story,སྒྲུང་།,duq
+sword,རལ་གྲི།,ral di
+system,ལམ་ལུག,lam lug
+talk,བཤད་པ།,xe pa
+thing,ཅ་ལག,txa lag
+traffic,ཉོ་ཚོང་།,nyo tsoq
+noise,སྐད་ཅོར།,ke txor+
+cricket,ཅོག་ཅོག་པ།,txog txog pa
+value,རིན་ཐང་།,rin caq
+voice,སྐད།,ke
+wall,གྱང་།,gyaq
+win,རྒྱལ་ཁ།,gyal kha
+faith,དད་པ།,c+e pa
+courage,བློ་ཁོག,lo khog
+humility,སྙེམ་ཚུང།,n+ye+m txhuq
+compassion,བྱམས་པ།,djam pa
+wonder,ངོ་མཚར།,qo tshar+
+wood,ཤིང།,xiq
+wool,བལ།,bal
+word,ཚིག,tshig
+worth,ཪིན་ཐང་།,rin caq
+year,ལོ།,lo
+rhythm,འགྲོས།,doe
+beat,འགྲོས་སྟངས།,doe t+aq
+adventure,བློ་སྟོབས་སྐྱེད་རུང་གི་བྱ་ལས།,lo t+ob ke+ ruq gi dja le
+context,སྐབས་དོན།,kab c+on
+cave,བྲག་ཕུག,dag phug
+universe,འཇིག་རྟེན།,djig t+en
+mushroom,ཤ་མོ།,xa mo
+god,ལྷ།,lha
+creation,གསར་བསྐྲུན།,sar+ tun
+matter,གནད་དོན།,n+e c+on
+chaos,མགོ་རྙོག,go n+yog
+Monday,གཟའ་ཟླ་བ།,za c+a wa
+Tuesday,གཟའ་མིག་དམར།,za mig mar+
+Wednesday,གཟའ་ལྷག་པ།,za lhagpa
+Thursday,གཟའ་ཕུར་བུ།,za phur+ bu
+Friday,གཟའ་པ་སངས།,za pa saq
+Saturday,གཟའ་སྤེན་པ།,za pe+n pa
+Sunday,གཟའ་ཉི་མ།,za nyi ma
+January,སྤྱི་ཟླ་དང་པོ།,txi c+a c+aq po
+February,སྤྱི་ཟླ་གཉིས་པ།,txi c+a nyi pa
+March,སྤྱི་ཟླ་གསུམ་པ།,txi c+a sum pa
+April,སྤྱི་ཟླ་བཞི་པ།,txi c+a ji pa
+May,སྤྱི་ཟླ་ལྔ་པ།,txi c+a qa pa
+June,སྤྱི་ཟླ་དྲུག་པ།,txi c+a dug pa
+July,སྤྱི་ཟླ་བདུན་པ།,txi c+a c+un pa
+August,སྤྱི་ཟླ་བརྒྱད་པ།,txi c+a gye pa
+September,སྤྱི་ཟླ་དགུ་པ།,txi c+a gu pa
+October,སྤྱི་ཟླ་བཅུ་པ།,txi c+a txu pa
+November,སྤྱི་ཟླ་བཅུ་གཅིག,txi c+a txu txig
+December,སྤྱི་ཟླ་བཅུ་གཉིས།,txi c+a txu n+yi
+peace,ཞི་བདེ།,ji c+e+
+forgiveness,དགོངས་ཡངས།,goq yaq
+thank you,ཐུགས་རྗེ་ཆེ།,cug dje+ txhe+
+you're welcome,དགའ་བསུ་ཡོད།,ga su yoe
+please,སྐུ་མཁྱེན།,ku khe+n
+sorry,དགོངས་པ་མ་འཚོམ།,goq pa ma tsom
+one,གཅིག,txig
+two,གཉིས།,n+yi
+three,གསུམ།,sum
+four,བཞི།,ji
+five,ལྔ།,qaa
+six,དྲུག,dug
+seven,བདུན།,c+un
+eight,བརྒྱད།,gye
+nine,དགུ།,gu
+ten,བཅུ།,txu
+eleven,བཅུ་གཅིག,txu txig
+twelve,བཅུ་གཉིས།,txu n+yi

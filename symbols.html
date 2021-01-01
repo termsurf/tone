@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 1200px;
+      }
+
+      @font-face {
+        font-family: Hanakana;
+        src: url('font.otf');
+      }
+
+      @font-face {
+        font-family: Noto;
+        src: url('noto.ttf');
+      }
+
+      .list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1060px;
+        background: #fafafa;
+        padding: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+      }
+
+      .row:nth-child(2n + 1) {
+        background: #fafafa;
+      }
+
+      .row:nth-child(2n) {
+        background: #fff;
+      }
+
+      .hanakana {
+        font-size: 120px;
+        font-family: Hanakana;
+        width: 80px;
+      }
+
+      .ascii {
+        font-size: 20px;
+        font-family: Noto;
+        padding-left: 20px;
+        opacity: 0.7;
+        width: 80px;
+      }
+
+      .description {
+        font-size: 12px;
+        font-family: Noto;
+        opacity: 0.4;
+        width: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='list'><div id='content'></div></div>
+    <script src='form.js'></script>
+    <script>
+      list.forEach(({ text, code, name }) => {
+        let c = document.querySelector('#content')
+        let d = document.createElement('div')
+        d.classList.add('row')
+        d.innerHTML = `
+        <span class='hanakana'>${code}</span>
+        <span class='ascii'>${text}</span>
+        <span class='description'>${name}</span>
+        `
+        c.appendChild(d)
+      })
+
+      window.DONE = true
+    </script>
+  </body>
+</html>
