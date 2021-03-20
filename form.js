@@ -1,11 +1,11 @@
 
 const list = [
-  { text: "e~^", code: "\u0506", name: 'German e sound with high tone' },
-  { text: "e~_", code: "\u050a", name: 'German e sound with low tone' },
-  { text: "e~", code: "\u0501", name: 'German e sound' },
-  { text: "(e~^)", code: "\u0507", name: 'German e sound with high tone and stress' },
-  { text: "(e~_)", code: "\u050b", name: 'German e sound with low tone and stress' },
-  { text: "(e~)", code: "\u0503", name: 'German e sound with stress' },
+  { text: "a~^", code: "\u0506", name: 'German e sound with high tone' },
+  { text: "a~_", code: "\u050a", name: 'German e sound with low tone' },
+  { text: "a~", code: "\u0501", name: 'German e sound' },
+  { text: "(a~^)", code: "\u0507", name: 'German e sound with high tone and stress' },
+  { text: "(a~_)", code: "\u050b", name: 'German e sound with low tone and stress' },
+  { text: "(a~)", code: "\u0503", name: 'German e sound with stress' },
   { text: "i+^", code: "\u03d4", name: 'Short i with high tone' },
   { text: "i+_", code: "\u03d8", name: 'Short i with low tone' },
   { tick: 28, text: "i+", code: "\u03d0", name: 'Short i' },
