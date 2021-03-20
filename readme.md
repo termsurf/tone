@@ -7,8 +7,8 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/hanakana.js/blob/build/title.png?raw=true' width='500'/>
-  <img src='https://github.com/mountbuild/hanakana.js/blob/build/description.png?raw=true' width='500'/>
+  <img src='https://github.com/mountbuild/hanakana/blob/build/title.png?raw=true' width='500'/>
+  <img src='https://github.com/mountbuild/hanakana/blob/build/description.png?raw=true' width='500'/>
 </p>
 
 <br/>
@@ -27,7 +27,7 @@
 
 <h3 id="summary">Summary</h3>
 
-Hanákana is a Universal Writing System (UWS), capable of representing all human voice sounds in a concise and readable script. This means you can write any language in Hanákana script (constructed language or natural language) and read it without having to learn that language's specific quirks. Hanákana is a sound-based script like the [Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when you read see a symbol/letter, you know exactly how it is pronounced. There are no weird edge cases or specific words for which you have to memorize the sound. You simply learn the script and can pronounce the words and texts. You can find how to pronounce the letters in the [PDF guide](https://github.com/mountbuild/hanakana.js/blob/build/guide.pdf) or partly on [leaf.surf](https://leaf.surf).
+Hanákana is a Universal Writing System (UWS), capable of representing all human voice sounds in a concise and readable script. This means you can write any language in Hanákana script (constructed language or natural language) and read it without having to learn that language's specific quirks. Hanákana is a sound-based script like the [Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when you read see a symbol/letter, you know exactly how it is pronounced. There are no weird edge cases or specific words for which you have to memorize the sound. You simply learn the script and can pronounce the words and texts. You can find how to pronounce the letters in the [PDF guide](https://github.com/mountbuild/hanakana/blob/build/guide.pdf) or partly on [leaf.surf](https://leaf.surf).
 
 You may note that Linguistics also has the International Phonetic Alphabet ([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)), which seems to accomplish a similar thing. But the IPA is not for writing anything but the most detailed pronunciation guides, not for writing sentences or long texts. Hanákana is meant for the later, for writing like you would in a normal language.
 
@@ -35,24 +35,20 @@ The ASCII encoding is mapped to IPA for your knowledge at [ovo.js](https://githu
 
 Ideally Hanákana would be included in the Unicode standard. But [that is unlikely](http://www.unicode.org/pending/proposals.html) until it is used widely. We have suggested it be used as a writing system [on Mars](https://twitter.com/mountbuild/status/1372723474741927938) 😂.
 
-<p align="center">
-  <img src="https://github.com/mountbuild/hanakana.js/blob/build/transform.gif?raw=true" height="300" />
-</p>
-
 These are the 32 main sounds. Everything else are variations of these sounds.
 
 ```
-hawk a
-game e
-need i
+beat i
+lake e
+call a
 home o
 tune u
 
-last a
+kick i
 mess e
-tick i
-luck u
-book o
+last a
+duck u
+cook o
 
 moon m
 note n
@@ -79,36 +75,11 @@ then th
 joke j (sure as in measure)
 ```
 
-```
-variation on m
-sanskrit,अहिंसा,ahiṃsā,nonviolence
+These "variations" are accomplished in a structured way, see the [guide](https://github.com/mountbuild/hanakana/blob/build/guide.pdf). Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
 
-variation on sh
-sanskrit,उपनिषद्,upaniṣad
-
-variation on sh
-sanskrit,शिव,śiva
-
-variation on r
-sanskrit,कृष्ण,kṛṣṇa
-
-variation on t
-sanskrit,हठ,haṭha
-
-variation on n
-sanskrit,पुराण,purāṇa
-
-variation on d
-Sanskrit,ढोल,ḍhola
-
-variation on h
-arabic,حديث‎,ḥadīṯ
-
-variation on h
-arabic,شيخ‎,šayḫ,elder
-```
-
-These "variations" are accomplished in a structured way. Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
+<p align="center">
+  <img src="https://github.com/mountbuild/hanakana/blob/build/transform.gif?raw=true" height="300" />
+</p>
 
 ## Usage
 
@@ -148,7 +119,7 @@ Take note of the `dictionary` folder in this project, which has the beginnings o
 ## Symbols
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana.js/blob/build/symbols.png?raw=true" />
+  <img src="https://github.com/mountbuild/hanakana/blob/build/symbols.png?raw=true" />
 </p>
 
 <h3 id="license">License</h3>
@@ -169,7 +140,7 @@ limitations under the License.
 
 <h3 id="mount">Mount</h3>
 
-Hanakana.js is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds hanakana.js's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
+Hanakana.js is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds hanakana's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
 
 <br/>
 <br/>
