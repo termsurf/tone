@@ -116,6 +116,12 @@ Take note of the `dictionary` folder in this project, which has the beginnings o
   <img src="https://github.com/mountbuild/hanakana/blob/build/symbols.png?raw=true" />
 </p>
 
+## Example
+
+<p align="center">
+  <img src="https://github.com/mountbuild/hanakana/blob/build/verse.png?raw=true" />
+</p>
+
 <h3 id="license">License</h3>
 
 Copyright 2021 <a href='https://mount.build'>Mount</a>
