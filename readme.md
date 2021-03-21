@@ -119,7 +119,7 @@ Take note of the `dictionary` folder in this project, which has the beginnings o
 ## Example
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/verse.png?raw=true" />
+  <img src="https://github.com/mountbuild/hanakana/blob/build/example.jpg?raw=true" />
 </p>
 
 <h3 id="license">License</h3>
