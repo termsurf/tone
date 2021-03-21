@@ -105,7 +105,7 @@ hanakana view example.txt
 ```
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/tutorial.gif?raw=true" height="300" />
+  <img src="https://github.com/mountbuild/hanakana/blob/build/tutorial.gif?raw=true" />
 </p>
 
 To use it in pure JavaScript:
