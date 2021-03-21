@@ -1,8 +1,14 @@
 {
   "name": "@mountbuild/hanakana",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "form.js",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "files": [
+    "form.js",
+    "font.otf",
+    "bin/index.js",
+    "bin/index.html"
+  ]
 }
