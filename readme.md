@@ -82,6 +82,31 @@ joke j (sure as in measure)
 ## Usage
 
 ```bash
+npm install @mountbuild/hanakana -g
+```
+
+To get access to the font for your own system:
+
+```bash
+hanakana use hanakana.otf
+```
+
+To print Hanakana-font-ready text in the terminal, use:
+
+```bash
+hanakana print "he+lo wrld"
+hanakana print "$(<story.txt)"
+```
+
+To view it in the browser fully rendered:
+
+```bash
+hanakana view example.txt
+```
+
+To use it in pure JavaScript:
+
+```bash
 npm install @mountbuild/hanakana
 ```
 
