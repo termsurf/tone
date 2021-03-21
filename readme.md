@@ -104,6 +104,10 @@ To view it in the browser fully rendered:
 hanakana view example.txt
 ```
 
+<p align="center">
+  <img src="https://github.com/mountbuild/hanakana/blob/build/tutorial.gif?raw=true" height="300" />
+</p>
+
 To use it in pure JavaScript:
 
 ```bash
