@@ -412,14 +412,14 @@ const list = [
   { text: "y", code: "\u0180", name: 'Y sound' },
   { text: "y+", code: "\u0182", name: 'Slight y sound' },
   { text: " ", code: "\u0020", name: 'Hanakana Space' },
-  { text: ".", code: "\u0021", name: 'Hanakana Period' },
+  { text: "$", code: "\u0021", name: 'Hanakana Period' },
   { text: ",", code: "\u0024", name: 'Hanakana comma' },
   { text: "(", code: "\u0023", name: 'Hanakana opening parenthesis' },
   { text: ")", code: "\u002b", name: 'Hanakana closing parenthesis' },
   { text: "[", code: "\u0026", name: 'Hanakana opening bracket' },
   { text: "]", code: "\u0027", name: 'Hanakana closing bracket' },
   { text: "|", code: "\u0025", name: 'Hanakana pipe' },
-  { text: "@", code: "\u0028", name: 'Hanakana at sign' },
+  { text: "#", code: "\u0028", name: 'Hanakana at sign' },
   { text: "/", code: "\u0029", name: 'Hanakana forward slash' },
   { text: "\\", code: "\u002a", name: 'Hanakana backward slash' },
   { text: ":", code: "\u0022", name: 'Hanakana colon' }
@@ -431,7 +431,7 @@ list.forEach(({ text }) => {
 })
 
 const form = text => {
-  let remaining = text
+  let remaining = text.replace(/([A-Z])/g, (_, $1) => `${$1.toLowerCase()}+`)
   let output = []
   a:
   while (remaining.length) {
