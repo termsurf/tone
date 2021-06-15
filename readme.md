@@ -28,7 +28,7 @@ You may note that Linguistics also has the International Phonetic Alphabet ([IPA
 <br/>
 <br/>
 
-<p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="100" src="https://github.com/mountbuild/hanakana/blob/build/book.png?raw=true"/></a></p>
+<p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/mountbuild/hanakana/blob/build/book.png?raw=true"/></a></p>
 
 <br/>
 <br/>
