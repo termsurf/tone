@@ -30,9 +30,6 @@ You may note that Linguistics also has the International Phonetic Alphabet ([IPA
 
 <p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/mountbuild/hanakana/blob/build/book.png?raw=true"/></a></p>
 
-<br/>
-<br/>
-
 <h3 id="sounds-32">The 32 Sounds</h3>
 
 These are the 32 main sounds. Everything else are variations of these sounds. These "variations" are accomplished in a structured way, see the [guide](https://github.com/mountbuild/hanakana/blob/build/guide.pdf). Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
