@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Write in Hanákana</title>
+    <style>
+      @font-face {
+        font-family: "Hanakana";
+        src: url("font.otf") format("opentype");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+
+      *:focus {
+        border: none;
+        outline: none;
+      }
+
+      html, body {
+        height: 100%;
+      }
+
+      #editor {
+        display: flex;
+        width: 100%;
+        height: calc(100% - 100px);
+      }
+
+      #editor > * {
+        flex: 1;
+        height: calc(100% - 100px);
+        padding: 50px;
+        resize: none;
+        display: block;
+      }
+
+      #hanakana {
+        font-family: Hanakana;
+        font-size: 50px;
+      }
+
+      #hanakana > div {
+        min-height: 20px;
+      }
+
+      #link {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #link a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="form.js"></script>
+    <script>
+      function handle(event) {
+        const text = []
+        event.target.value.split(/\n/).forEach(line => {
+          line = line.split(/ /).map(form).join(' ')
+          text.push(`<div>${line}</div>`)
+        })
+        document.querySelector('#hanakana').innerHTML = text.join('\n')
+      }
+    </script>
+    <section id="editor">
+      <textarea id="ascii" placeholder="type ... :)" oninput="handle(event)"></textarea>
+      <div id="hanakana"></div>
+    </section>
+    <div id="link"><a href="https://github.com/mountbuild/hanakana">guide</a></div>
+    <script>document.querySelector('#ascii').focus()</script>
+  </body>
+</html>
