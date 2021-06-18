@@ -7,7 +7,7 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/tone-script/blob/build/tone.png?raw=true' width='500'/>
+  <img src='https://github.com/mountbuild/tone-script/blob/build/tone.png?raw=true'/>
 </p>
 
 <br/>
