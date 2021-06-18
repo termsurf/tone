@@ -1,9 +1,9 @@
 {
-  "name": "@mountbuild/hanakana",
-  "version": "1.4.0",
+  "name": "@mountbuild/tone-script",
+  "version": "1.0.0",
   "main": "form.js",
   "bin": {
-    "hanakana": "bin/index.js"
+    "tone-script": "bin/index.js"
   },
   "dependencies": {
     "express": "^4.17.1"
@@ -11,7 +11,6 @@
   "files": [
     "form.js",
     "font.otf",
-    "package-lock.json",
     "bin/index.js",
     "bin/index.html"
   ]

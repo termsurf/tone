@@ -7,8 +7,8 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/mountbuild/hanakana/blob/build/title.png?raw=true' width='500'/>
-  <img src='https://github.com/mountbuild/hanakana/blob/build/description.png?raw=true' width='500'/>
+  <img src='https://github.com/mountbuild/tone-script/blob/build/title.png?raw=true' width='500'/>
+  <img src='https://github.com/mountbuild/tone-script/blob/build/description.png?raw=true' width='500'/>
 </p>
 
 <br/>
@@ -17,22 +17,22 @@
 
 <h3 id="summary">Summary</h3>
 
-Hanákana is a Universal Writing System (UWS), capable of representing all human voice sounds in a concise and readable script. This means you can write any language in Hanákana script (constructed language or natural language) and read it without having to learn that language's specific quirks. Hanákana is a sound-based script like the [Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when you read see a symbol/letter, you know exactly how it is pronounced. There are no weird edge cases or specific words for which you have to memorize the sound. You simply learn the script and can pronounce the words and texts. You can find how to pronounce the letters in the [PDF guide](https://github.com/mountbuild/hanakana/blob/build/guide.pdf) or partly on [leaf.surf](https://leaf.surf). Print out the [exercises](https://github.com/mountbuild/hanakana/blob/build/exercise.pdf) to learn how to write and pronounce them too! Try typing it interactively [here](https://mountbuild.github.io/hanakana)!
+Tone script is a Universal Writing System (UWS), capable of representing all human voice sounds in a concise and readable script. This means you can write any language in tone script script (constructed language or natural language) and read it without having to learn that language's specific quirks. Tone script is a sound-based script like the [Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when you read see a symbol/letter, you know exactly how it is pronounced. There are no weird edge cases or specific words for which you have to memorize the sound. You simply learn the script and can pronounce the words and texts. You can find how to pronounce the letters in the [PDF guide](https://github.com/mountbuild/tone-script/blob/build/guide.pdf) or partly on [leaf.surf](https://leaf.surf). Print out the [exercises](https://github.com/mountbuild/tone-script/blob/build/exercise.pdf) to learn how to write and pronounce them too! Try typing it interactively [here](https://mountbuild.github.io/tone-script)!
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/example.jpg?raw=true" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/example.jpg?raw=true" />
 </p>
 
-You may note that Linguistics also has the International Phonetic Alphabet ([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)), which seems to accomplish a similar thing. But the IPA is not for writing anything but the most detailed pronunciation guides, not for writing sentences or long texts. Hanákana is meant for the later, for writing like you would in a normal language. The ASCII encoding is mapped to IPA for your knowledge at [ovo.js](https://github.com/mountbuild/ovo.js). Ideally Hanákana would be included in the Unicode standard. But [that is unlikely](http://www.unicode.org/pending/proposals.html) until it is used widely. We have suggested it be used as a writing system [on Mars](https://twitter.com/mountbuild/status/1372723474741927938) 😂. Here is a [book](https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638) using it as well.
+You may note that Linguistics also has the International Phonetic Alphabet ([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)), which seems to accomplish a similar thing. But the IPA is not for writing anything but the most detailed pronunciation guides, not for writing sentences or long texts. Tone script is meant for the later, for writing like you would in a normal language. The ASCII encoding is mapped to IPA for your knowledge at [ovo.js](https://github.com/mountbuild/ovo.js). Ideally, tone script would be included in the Unicode standard. But [that is unlikely](http://www.unicode.org/pending/proposals.html) until it is used widely. We have suggested it be used as a writing system [on Mars](https://twitter.com/mountbuild/status/1372723474741927938) 😂. Here is a [book](https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638) using it as well.
 
 <br/>
 <br/>
 
-<p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/mountbuild/hanakana/blob/build/book.png?raw=true"/></a></p>
+<p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/mountbuild/tone-script/blob/build/book.png?raw=true"/></a></p>
 
 <h3 id="sounds-32">The 32 Sounds</h3>
 
-These are the 32 main sounds. Everything else are variations of these sounds. These "variations" are accomplished in a structured way, see the [guide](https://github.com/mountbuild/hanakana/blob/build/guide.pdf). Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
+These are the 32 main sounds. Everything else are variations of these sounds. These "variations" are accomplished in a structured way, see the [guide](https://github.com/mountbuild/tone-script/blob/build/guide.pdf). Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
 
 ```
 beat i
@@ -73,26 +73,26 @@ joke j (sure as in measure)
 ```
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/transform.gif?raw=true" height="300" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/transform.gif?raw=true" height="300" />
 </p>
 
 ## Usage
 
 ```bash
-npm install @mountbuild/hanakana -g
+npm install @mountbuild/tone-script -g
 ```
 
-To get access to the font for your own system, either just click and download the [font.otf](https://github.com/mountbuild/hanakana/blob/build/font.otf) directly, or do this to copy it after you've installed the NPM package:
+To get access to the font for your own system, either just click and download the [font.otf](https://github.com/mountbuild/tone-script/blob/build/font.otf) directly, or do this to copy it after you've installed the NPM package:
 
 ```bash
-hanakana use hanakana.otf
+tone-script use tone-script.otf
 ```
 
 To print Hanakana-font-ready text in the terminal, use:
 
 ```bash
-hanakana print "he+lo wrld"
-hanakana print "$(<story.txt)"
+tone-script print "he+lo wrld"
+tone-script print "$(<story.txt)"
 ```
 
 Note, you need to write it in Hanakana ASCII, which you can see by looking at the form.js file.
@@ -100,23 +100,23 @@ Note, you need to write it in Hanakana ASCII, which you can see by looking at th
 To view it in the browser fully rendered:
 
 ```bash
-hanakana view example.txt
+tone-script view example.txt
 ```
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/tutorial.gif?raw=true" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/tutorial.gif?raw=true" />
 </p>
 
 To use it in pure JavaScript:
 
 ```bash
-npm install @mountbuild/hanakana
+npm install @mountbuild/tone-script
 ```
 
 Then in JavaScript or Node.js land:
 
 ```js
-const toHanakana = require('@mountbuild/hanakana')
+const toHanakana = require('@mountbuild/tone-script')
 
 document.body.innerHTML = toHanakana('he+lo wrld')
 ```
@@ -143,7 +143,7 @@ document.body.innerHTML = lines.split(/\n/)
 Here are the consonants and vowels in their main form (without tone or stress markers).
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/symbols.png?raw=true" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/symbols.png?raw=true" />
 </p>
 
 Note, to add "aspiration" to a sound, you add the corresponding "h" symbol after the main symbol. To add nasalization to a vowel, you add a full arc below the vowel. Long vowels are made by writing two vowel letters.
@@ -153,7 +153,7 @@ Note, to add "aspiration" to a sound, you add the corresponding "h" symbol after
 Here is a focus on the vowels with their tone and accent marks.
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/tones.png?raw=true" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/tones.png?raw=true" />
 </p>
 
 ## Phonology
@@ -161,7 +161,7 @@ Here is a focus on the vowels with their tone and accent marks.
 Here is the consonant IPA phonology chart mapping.
 
 <p align="center">
-  <img src="https://github.com/mountbuild/hanakana/blob/build/phonology.png?raw=true" />
+  <img src="https://github.com/mountbuild/tone-script/blob/build/phonology.png?raw=true" />
 </p>
 
 <h3 id="license">License</h3>
@@ -182,7 +182,7 @@ limitations under the License.
 
 <h3 id="mount">Mount</h3>
 
-Hanakana.js is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds hanakana's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
+Hanakana.js is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds tone-script's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
 
 <br/>
 <br/>
