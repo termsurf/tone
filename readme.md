@@ -177,24 +177,3 @@ Tone script is being developed by the folks at [Mount](https://mount.build), a C
 
 <br/>
 <br/>
-
-<p align='center'>
-  <a href='https://twitter.com/mountbuild'>
-    <img src='https://mount.build/slate/twitter.png' height='64' />
-  </a>　　　　
-  <a href='https://etsy.com/shop/mountbuild'>
-    <img src='https://mount.build/slate/etsy.png' height='64' />
-  </a>　　　　
-  <a href='https://github.com/mountbuild'>
-    <img src='https://mount.build/slate/github.png' height='64' />
-  </a>　　　
-  <a href='https://www.amazon.com/s?rh=p_27%3AMount+Build'>
-    <img src='https://mount.build/slate/amazon.png' height='64' />
-  </a>　　　
-  <a href='https://www.facebook.com/mountbuild'>
-    <img src='https://mount.build/slate/facebook.png' height='64' />
-  </a>
-</p>
-
-<br/>
-<br/>
