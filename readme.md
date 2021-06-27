@@ -87,14 +87,14 @@ To get access to the font for your own system, either just click and download th
 tone-script use tone-script.otf
 ```
 
-To print Hanakana-font-ready text in the terminal, use:
+To print tone-script-font-ready text in the terminal, use:
 
 ```bash
 tone-script print "he+lo wrld"
 tone-script print "$(<story.txt)"
 ```
 
-Note, you need to write it in Hanakana ASCII, which you can see by looking at the form.js file.
+Note, you need to write it in tone script ASCII (called "call script"), which you can see by looking at the form.js file.
 
 To view it in the browser fully rendered:
 
@@ -115,9 +115,9 @@ npm install @mountbuild/tone-script
 Then in JavaScript or Node.js land:
 
 ```js
-const toHanakana = require('@mountbuild/tone-script')
+const toTone = require('@mountbuild/tone-script')
 
-document.body.innerHTML = toHanakana('he+lo wrld')
+document.body.innerHTML = toTone('he+lo wrld')
 ```
 
 Here is how you might use it more robustly:
@@ -129,7 +129,7 @@ wi+c c+u+ klaud so klos, yu ka+n si, tu+tx, a+nd test
 fidiq yor e+nrdji tu c+u+ stoun wi+c hest
 ma+unt holdz i+t xep, laik c+u+ sikri+t bal`
   .split(/\n+/)
-  .map(line => line.split(/\s+/).map(toHanakana).join(' '))
+  .map(line => line.split(/\s+/).map(toTone).join(' '))
   .join('\n')
 
 document.body.innerHTML = lines.split(/\n/)
@@ -173,7 +173,7 @@ limitations under the License.
 
 <h3 id="mount">Mount</h3>
 
-Hanakana.js is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds tone-script's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
+Tone script is being developed by the folks at [Mount](https://mount.build), a California-based project for helping humanity master information and computation. Mount started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. Mount funds tone script's development. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/mountbuild) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/mountbuild), [Twitter](https://twitter.com/mountbuild), and [LinkedIn](https://www.linkedin.com/company/mountbuild). Check out our other GitHub projects as well!
 
 <br/>
 <br/>
