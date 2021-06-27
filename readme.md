@@ -145,15 +145,7 @@ Here are the consonants and vowels in their main form (without tone or stress ma
   <img src="https://github.com/mountbuild/tone-script/blob/build/symbols.png?raw=true" />
 </p>
 
-Note, to add "aspiration" to a sound, you add the corresponding "h" symbol after the main symbol. To add nasalization to a vowel, you add a full arc below the vowel. Long vowels are made by writing two vowel letters.
-
-## Vowels
-
-Here is a focus on the vowels with their tone and accent marks.
-
-<p align="center">
-  <img src="https://github.com/mountbuild/tone-script/blob/build/tones.png?raw=true" />
-</p>
+Note, to add "aspiration" to a sound, you add the corresponding "h" symbol after the main symbol. To add nasalization to a vowel, you add a two dots below the vowel. Long vowels are made by writing two vowel letters.
 
 ## Phonology
 
