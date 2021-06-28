@@ -155,6 +155,14 @@ Here is the consonant IPA phonology chart mapping.
   <img src="https://github.com/mountbuild/tone-script/blob/build/phonology.png?raw=true" />
 </p>
 
+## Vowel Symbols
+
+Here are all the possible vowel combinations. The combination elements are: tone (1, 2, 3, 4, or 5, 1 being the lowest, 5 being the highest), nasality, and stress. In languages with only 3 tones you can just use tones 2, 3, and 4, but in languages with 5 tones you need all 5. Nasality is done with two dots under the vowel. Stress is done with one dot above the vowel. Low tones "fall" and so are on the right, while high tones "rise", and so are on the left.
+
+<p align="center">
+  <img src="https://github.com/mountbuild/tone-script/blob/build/vowels.png?raw=true" />
+</p>
+
 <h3 id="license">License</h3>
 
 Copyright 2021 <a href='https://mount.build'>Mount</a>
