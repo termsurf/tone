@@ -1,0 +1,14 @@
+{
+  "name": "@drumwork/tone",
+  "version": "4.0.19",
+  "main": "form.js",
+  "dependencies": {
+    "@lancejpollard/script-tree": "^1.0.1"
+  },
+  "files": [
+    "form.js"
+  ],
+  "devDependencies": {
+    "puppeteer": "^14.4.0"
+  }
+}

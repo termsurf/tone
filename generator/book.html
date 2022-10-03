@@ -1,0 +1,1784 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        width: 6in;
+        height: 9in;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @font-face {
+        font-family: Hanakana;
+        src: url('../font.otf');
+      }
+
+      @font-face {
+        font-family: Noto;
+        src: url('noto.ttf');
+      }
+
+      @page {
+        margin: 0;
+        padding: 0;
+        size: 6in 9in;
+      }
+
+      .page {
+        page-break-after: always;
+        font-family: Noto;
+        height: 9in;
+      }
+
+      .left-page {
+        padding: 16mm 16mm 16mm 13mm;
+        page-break-after: always;
+        position: relative;
+      }
+
+      .right-page {
+        padding: 16mm 13mm 16mm 16mm;
+        page-break-after: always;
+        position: relative;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 70px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        top: -70px;
+      }
+
+      .author {
+        font-size: 20px;
+        position: relative;
+        top: 20px;
+      }
+
+      .symbol {
+        font-family: Hanakana;
+        font-size: 560px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        top: -55px;
+      }
+
+      .description {
+        position: relative;
+        top: -10px;
+        opacity: 0.7;
+        text-align: center;
+      }
+
+      .hanakana {
+        font-family: Hanakana;
+        font-size: 100px;
+      }
+
+      .hanakana2 {
+        font-family: Hanakana;
+        font-size: 300px;
+        height: 160px;
+        position: relative;
+        top: -100px;
+      }
+
+      .ovo {
+        opacity: 0.6;
+        padding: 10px 0px;
+      }
+
+      .word-description {
+        opacity: 0.3;
+        padding: 0px 0px 10px;
+      }
+
+      .tones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tone {
+        display: inline-block;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .tone-hanakana {
+        padding: 0px;
+        font-family: hanakana;
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src='../form.js'></script>
+    <script src='ovo.js'></script>
+    <script>
+      const LIST = [
+        {
+          symbol: form('m'),
+          description: `This symbol is pronounced by closing the lips and making sound subtly through your nose. This is the "m" sound in English.`,
+          words: [
+            {
+              ovo: ovo('mun'),
+              language: 'English',
+              meaning: 'The moon',
+              hanakana: form('mun')
+            },
+            {
+              ovo: ovo('mek'),
+              language: 'English',
+              meaning: 'To make',
+              hanakana: form('mek')
+            },
+            {
+              ovo: ovo('me+x'),
+              language: 'English',
+              meaning: 'To mesh',
+              hanakana: form('me+x')
+            },
+            {
+              ovo: ovo('mold'),
+              language: 'English',
+              meaning: 'To mold something',
+              hanakana: form('mold')
+            }
+          ]
+        },
+        {
+          symbol: form('n'),
+          description: `This symbol is pronounced by putting your tongue on the roof of your hard palette near your teeth, and making the sound subtly through your nose. This is the "n" sound in English.`,
+          words: [
+            {
+              ovo: ovo('not'),
+              language: 'English',
+              meaning: 'A note',
+              hanakana: form('not')
+            },
+            {
+              ovo: ovo('ne+st'),
+              language: 'English',
+              meaning: 'A nest',
+              hanakana: form('ne+st')
+            },
+            {
+              ovo: ovo('nid'),
+              language: 'English',
+              meaning: 'To need',
+              hanakana: form('nid')
+            },
+            {
+              ovo: ovo('noiz'),
+              language: 'English',
+              meaning: 'Noise',
+              hanakana: form('noiz')
+            }
+          ]
+        },
+        {
+          symbol: form('q'),
+          description: `This symbol is pronounced by putting the back of tongue on the roof of your throat, like you are swallowing, and making the sound subtly through your nose. This is the "ng" sound in English.`,
+          words: [
+            {
+              ovo: ovo('riq'),
+              language: 'English',
+              meaning: 'To ring',
+              hanakana: form('riq')
+            },
+            {
+              ovo: ovo('qa'),
+              language: 'Tibetan',
+              meaning: 'I',
+              hanakana: form('qa')
+            },
+            {
+              ovo: ovo('siqiq'),
+              language: 'English',
+              meaning: 'Singing',
+              hanakana: form('siqiq')
+            },
+            {
+              ovo: ovo('qrti+'),
+              language: 'Indonesian',
+              meaning: 'To understand',
+              hanakana: form('qrti+')
+            }
+          ]
+        },
+        {
+          symbol: form('g'),
+          description: `This symbol is pronounced by putting the back of your tongue on the roof of your throat quickly, with your voice. This is the "g" sound in English.`,
+          words: [
+            {
+              ovo: ovo('gad'),
+              language: 'English',
+              meaning: 'God',
+              hanakana: form('gad')
+            },
+            {
+              ovo: ovo('gem'),
+              language: 'English',
+              meaning: 'Game',
+              hanakana: form('gem')
+            },
+            {
+              ovo: ovo('grin'),
+              language: 'English',
+              meaning: 'Green',
+              hanakana: form('grin')
+            },
+            {
+              ovo: ovo('fi+g'),
+              language: 'English',
+              meaning: 'Fig (the fruit)',
+              hanakana: form('fi+g')
+            }
+          ]
+        },
+        {
+          symbol: form('d'),
+          description: `This symbol is pronounced by putting the tip of the tongue on the roof of your hard palette behind your teeth quickly, with your voice. This is the "d" sound in English.`,
+          words: [
+            {
+              ovo: ovo('drim'),
+              language: 'English',
+              meaning: 'A dream',
+              hanakana: form('drim')
+            },
+            {
+              ovo: ovo('dark'),
+              language: 'English',
+              meaning: 'The dark',
+              hanakana: form('dark')
+            },
+            {
+              ovo: ovo('dan'),
+              language: 'English',
+              meaning: 'Dawn',
+              hanakana: form('dan')
+            },
+            {
+              ovo: ovo('dru+m'),
+              language: 'English',
+              meaning: 'Drum',
+              hanakana: form('dru+m')
+            }
+          ]
+        },
+        {
+          symbol: form('b'),
+          description: `This symbol is pronounced by putting your lips together quickly and releasing, with your voice. This is the "b" sound in English.`,
+          words: [
+            {
+              ovo: ovo('bo+k'),
+              language: 'English',
+              meaning: 'A book',
+              hanakana: form('bo+k')
+            },
+            {
+              ovo: ovo('bi+ld'),
+              language: 'English',
+              meaning: 'To build',
+              hanakana: form('bi+ld')
+            },
+            {
+              ovo: ovo('bu+g'),
+              language: 'English',
+              meaning: 'A bug',
+              hanakana: form('bu+g')
+            },
+            {
+              ovo: ovo('bitx'),
+              language: 'English',
+              meaning: 'The beach',
+              hanakana: form('bitx')
+            }
+          ]
+        },
+        {
+          symbol: form('p'),
+          description: `This symbol is pronounced by putting your lips together quickly and releasing, without your voice. This is the "p" sound in English.`,
+          words: [
+            {
+              ovo: ovo('pitx'),
+              language: 'English',
+              meaning: 'A peach',
+              hanakana: form('pitx')
+            },
+            {
+              ovo: ovo('pre'),
+              language: 'English',
+              meaning: 'To pray',
+              hanakana: form('pre')
+            },
+            {
+              ovo: ovo('sport'),
+              language: 'English',
+              meaning: 'A sport',
+              hanakana: form('sport')
+            },
+            {
+              ovo: ovo('plap'),
+              language: 'English',
+              meaning: 'To plop',
+              hanakana: form('plap')
+            }
+          ]
+        },
+        {
+          symbol: form('t'),
+          description: `This symbol is pronounced by putting the tip of the tongue on the roof of your hard palette behind your teeth quickly, without your voice. This is the "t" sound in English.`,
+          words: [
+            {
+              ovo: ovo('tim'),
+              language: 'English',
+              meaning: 'The team',
+              hanakana: form('tim')
+            },
+            {
+              ovo: ovo('pu+t(e)nxl'),
+              language: 'English',
+              meaning: 'Potential',
+              hanakana: form('pu+t(e)nxl')
+            },
+            {
+              ovo: ovo('heart'),
+              language: 'English',
+              meaning: 'Heart',
+              hanakana: form('hart')
+            },
+            {
+              ovo: ovo('trel'),
+              language: 'English',
+              meaning: 'A trail',
+              hanakana: form('trel')
+            }
+          ]
+        },
+        {
+          symbol: form('k'),
+          description: `This symbol is pronounced by putting the back of your tongue on the roof of your throat quickly, without your voice. This is the "k" sound in English.`,
+          words: [
+            {
+              ovo: ovo('kiz'),
+              language: 'English',
+              meaning: 'Keys',
+              hanakana: form('kiz')
+            },
+            {
+              ovo: ovo('skai'),
+              language: 'English',
+              meaning: 'The sky',
+              hanakana: form('skai')
+            },
+            {
+              ovo: ovo('brek'),
+              language: 'English',
+              meaning: 'To break',
+              hanakana: form('brek')
+            },
+            {
+              ovo: ovo('kli+k'),
+              language: 'English',
+              meaning: 'To click',
+              hanakana: form('kli+k')
+            }
+          ]
+        },
+        {
+          symbol: form('h'),
+          description: `This symbol is pronounced by breathing silently without voice or blocking the flow of air. This is the "h" sound in English.`,
+          words: [
+            {
+              ovo: ovo('hi+nt'),
+              language: 'English',
+              meaning: 'A hint',
+              hanakana: form('hi+nt')
+            },
+            {
+              ovo: ovo('hyuma+ni+ti'),
+              language: 'English',
+              meaning: 'Humanity',
+              hanakana: form('hyuma+ni+ti')
+            },
+            {
+              ovo: ovo('hai'),
+              language: 'English',
+              meaning: 'Hi',
+              hanakana: form('hai')
+            },
+            {
+              ovo: ovo('prha+ps'),
+              language: 'English',
+              meaning: 'Perhaps',
+              hanakana: form('prha+ps')
+            }
+          ]
+        },
+        {
+          symbol: form('s'),
+          description: `This symbol is pronounced by breathing silently without voice or blocking the flow of air, while tightening the middle of your tongue to the hard palette of your mouth. This is the "s" sound in English.`,
+          words: [
+            {
+              ovo: ovo('slip'),
+              language: 'English',
+              meaning: 'To sleep',
+              hanakana: form('slip')
+            },
+            {
+              ovo: ovo('tas'),
+              language: 'English',
+              meaning: 'Toss',
+              hanakana: form('tas')
+            },
+            {
+              ovo: ovo('pasu+bi+lu+ti'),
+              language: 'English',
+              meaning: 'Possability',
+              hanakana: form('pasu+bi+lu+ti')
+            },
+            {
+              ovo: ovo('si'),
+              language: 'English',
+              meaning: 'To see',
+              hanakana: form('si')
+            }
+          ]
+        },
+        {
+          symbol: form('f'),
+          description: `This symbol is pronounced by breathing silently without voice or blocking the flow of air, while pressing your top teeth to your lower lip on the inside. This is the "f" sound in English.`,
+          words: [
+            {
+              ovo: ovo('fri'),
+              language: 'English',
+              meaning: 'Free',
+              hanakana: form('fri')
+            },
+            {
+              ovo: ovo('inu+f'),
+              language: 'English',
+              meaning: 'Enough',
+              hanakana: form('inu+f')
+            },
+            {
+              ovo: ovo('fair'),
+              language: 'English',
+              meaning: 'Fire',
+              hanakana: form('fair')
+            },
+            {
+              ovo: ovo('snoflek'),
+              language: 'English',
+              meaning: 'Snowflake',
+              hanakana: form('snoflek')
+            }
+          ]
+        },
+        {
+          symbol: form('v'),
+          description: `This symbol is pronounced by breathing with voice but blocking the flow of air, while pressing your top teeth to your lower lip on the inside. This is the "v" sound in English.`,
+          words: [
+            {
+              ovo: ovo('vaib'),
+              language: 'English',
+              meaning: 'Vibe',
+              hanakana: form('vaib')
+            },
+            {
+              ovo: ovo('nrv(a)nu+'),
+              language: 'English',
+              meaning: 'Nirvana',
+              hanakana: form('nrv(a)nu+')
+            },
+            {
+              ovo: ovo('vrtxyu'),
+              language: 'English',
+              meaning: 'Virtue',
+              hanakana: form('vrtxyu')
+            },
+            {
+              ovo: ovo('lu+v'),
+              language: 'English',
+              meaning: 'Love',
+              hanakana: form('lu+v')
+            }
+          ]
+        },
+        {
+          symbol: form('z'),
+          description: `This symbol is pronounced by with your voice by sort of clenching your teeth and letting air out above your tongue. This is the "z" sound in English.`,
+          words: [
+            {
+              ovo: ovo('zon'),
+              language: 'English',
+              meaning: 'Zone',
+              hanakana: form('zon')
+            },
+            {
+              ovo: ovo('grez'),
+              language: 'English',
+              meaning: 'To graze',
+              hanakana: form('grez')
+            },
+            {
+              ovo: ovo('dri+zl'),
+              language: 'English',
+              meaning: 'To drizzle',
+              hanakana: form('dri+zl')
+            },
+            {
+              ovo: ovo('zu'),
+              language: 'English',
+              meaning: 'Zoo',
+              hanakana: form('zu')
+            }
+          ]
+        },
+        {
+          symbol: form('y'),
+          description: `This symbol is pronounced by with your voice without clenching your teeth and pushing your tongue toward the roof of your mouth yet letting air out above it. This is the "y" sound in English.`,
+          words: [
+            {
+              ovo: ovo('ye+lo'),
+              language: 'English',
+              meaning: 'Yellow',
+              hanakana: form('ye+lo')
+            },
+            {
+              ovo: ovo('plaiyu+'),
+              language: 'Spanish',
+              meaning: 'The beach',
+              hanakana: form('plaiyu+')
+            },
+            {
+              ovo: ovo('kaiya+k'),
+              language: 'English',
+              meaning: 'Kayak',
+              hanakana: form('kaiya+k')
+            },
+            {
+              ovo: ovo('ye+s'),
+              language: 'English',
+              meaning: 'Yes',
+              hanakana: form('ye+s')
+            }
+          ]
+        },
+        {
+          symbol: form('w'),
+          description: `This symbol is pronounced by turning your lips into a tight circle and sweeping air through it as it morphs into the next vowel. This is the "w" sound in English.`,
+          words: [
+            {
+              ovo: ovo('wi+nd'),
+              language: 'English',
+              meaning: 'Wind',
+              hanakana: form('wi+nd')
+            },
+            {
+              ovo: ovo('ba+kwrds'),
+              language: 'English',
+              meaning: 'Backwards',
+              hanakana: form('ba+kwrds')
+            },
+            {
+              ovo: ovo('wrk'),
+              language: 'English',
+              meaning: 'Work',
+              hanakana: form('wrk')
+            },
+            {
+              ovo: ovo('wai'),
+              language: 'English',
+              meaning: 'Why',
+              hanakana: form('wai')
+            }
+          ]
+        },
+        {
+          symbol: form('c'),
+          description: `This symbol is pronounced by putting your tongue up slightly in between your teeth and pushing air through them. This is the voiceless "th" sound in English.`,
+          words: [
+            {
+              ovo: ovo('ciqk'),
+              language: 'English',
+              meaning: 'Think',
+              hanakana: form('ciqk')
+            },
+            {
+              ovo: ovo('wi+ci+n'),
+              language: 'English',
+              meaning: 'Within',
+              hanakana: form('wi+ci+n')
+            },
+            {
+              ovo: ovo('bla+ksmi+c'),
+              language: 'English',
+              meaning: 'Blacksmith',
+              hanakana: form('bla+ksmi+c')
+            },
+            {
+              ovo: ovo('crou'),
+              language: 'English',
+              meaning: 'Throw',
+              hanakana: form('crou')
+            }
+          ]
+        },
+        {
+          symbol: form('x'),
+          description: `This symbol is pronounced by pressing air between your tongue and the top of the back of your teeth, like the sound of rushing water. This is the voiceless "sh" sound in English.`,
+          words: [
+            {
+              ovo: ovo('xi+p'),
+              language: 'English',
+              meaning: 'Ship',
+              hanakana: form('xi+p')
+            },
+            {
+              ovo: ovo('oxi+n'),
+              language: 'English',
+              meaning: 'Ocean',
+              hanakana: form('oxi+n')
+            },
+            {
+              ovo: ovo('flori+x'),
+              language: 'English',
+              meaning: 'Flourish',
+              hanakana: form('flori+x')
+            },
+            {
+              ovo: ovo('xo'),
+              language: 'English',
+              meaning: 'Show',
+              hanakana: form('xo')
+            }
+          ]
+        },
+        {
+          symbol: form('r'),
+          description: `This symbol is pronounced by curling your tongue slightly and letting air flow smoothly out of your mouth. This is the "r" sound in English.`,
+          words: [
+            {
+              ovo: ovo('rid'),
+              language: 'English',
+              meaning: 'Read',
+              hanakana: form('rid')
+            },
+            {
+              ovo: ovo('fore+vr'),
+              language: 'English',
+              meaning: 'Forever',
+              hanakana: form('fore+vr')
+            },
+            {
+              ovo: ovo('rul'),
+              language: 'English',
+              meaning: 'Rule',
+              hanakana: form('rul')
+            },
+            {
+              ovo: ovo('hu+ntr'),
+              language: 'English',
+              meaning: 'Hunter',
+              hanakana: form('hu+ntr')
+            }
+          ]
+        },
+        {
+          symbol: form('l'),
+          description: `This symbol is pronounced by pressing the tip of your tongue firmly on the front roof of your mouth and breathing air smoothly out of your mouth. This is the "l" sound in English.`,
+          words: [
+            {
+              ovo: ovo('lu+v'),
+              language: 'English',
+              meaning: 'Love',
+              hanakana: form('lu+v')
+            },
+            {
+              ovo: ovo('fil'),
+              language: 'English',
+              meaning: 'To feel',
+              hanakana: form('fil')
+            },
+            {
+              ovo: ovo('fold'),
+              language: 'English',
+              meaning: 'Fold',
+              hanakana: form('fold')
+            },
+            {
+              ovo: ovo('liqk'),
+              language: 'English',
+              meaning: 'Link',
+              hanakana: form('liqk')
+            }
+          ]
+        },
+        {
+          symbol: form('c+'),
+          description: `This symbol is pronounced by putting your tongue up slightly in between your teeth and pushing air through them. This is the voiced "th" sound in English.`,
+          words: [
+            {
+              ovo: ovo('c+e+n'),
+              language: 'English',
+              meaning: 'Then',
+              hanakana: form('c+e+n')
+            },
+            {
+              ovo: ovo('kloc+'),
+              language: 'English',
+              meaning: 'To clothe',
+              hanakana: form('kloc+')
+            },
+            {
+              ovo: ovo('e+c+\'kuruu'),
+              language: 'Arabic',
+              meaning: 'Remember',
+              hanakana: form('e+c+\'kuruu')
+            },
+            {
+              ovo: ovo('u+c+i\'b'),
+              language: 'Arabic',
+              meaning: 'A wolf',
+              hanakana: form('u+c+i\'b')
+            }
+          ]
+        },
+        {
+          symbol: form('j'),
+          description: `This symbol is pronounced by pressing air between your tongue and the top of the back of your teeth, like the sound of rushing water. This is the voiced "j" sound in English.`,
+          words: [
+            {
+              ovo: ovo('djok'),
+              language: 'English',
+              meaning: 'A joke',
+              hanakana: form('djok')
+            },
+            {
+              ovo: ovo('me+jr'),
+              language: 'English',
+              meaning: 'To measure',
+              hanakana: form('me+jr')
+            },
+            {
+              ovo: ovo('srdj'),
+              language: 'English',
+              meaning: 'Surge',
+              hanakana: form('srdj')
+            },
+            {
+              ovo: ovo('dje+m'),
+              language: 'English',
+              meaning: 'Gem',
+              hanakana: form('dje+m')
+            }
+          ]
+        },
+        {
+          symbol: form('f~'),
+          description: `This symbol is pronounced by putting the tip of your tongue on the arch of your hard palette, and breathing the "l" sound through the sides of your tongue. This is the Navajo "ł" sound.`,
+          words: [
+            {
+              ovo: ovo('f~i+d'),
+              language: 'Navajo',
+              meaning: 'Smoke of a fire',
+              hanakana: form('f~i+d')
+            },
+            {
+              ovo: ovo('ni^f~tx\'i'),
+              language: 'Navajo',
+              meaning: 'Wind, air, gas, or spirit',
+              hanakana: form('ni^f~tx\'i')
+            },
+            {
+              ovo: ovo('f~o^o^\''),
+              language: 'Navajo',
+              meaning: 'A fish (as in a fish in the water)',
+              hanakana: form('f~o^o^\'')
+            },
+            {
+              ovo: ovo('f~e^\'e^tsoh'),
+              language: 'Navajo',
+              meaning: 'Rat (as in a rodent)',
+              hanakana: form('f~e^\'e^tsoh')
+            }
+          ]
+        },
+        {
+          symbol: form('j+'),
+          description: `This symbol is pronounced by putting the tip of your tongue on the arch of your hard palette, and breathing the "l" sound through the sides of your tongue with your voice. This is the Zulu "dl" sound.`,
+          words: [
+            {
+              ovo: ovo('j+aala'),
+              language: 'Zulu',
+              meaning: 'To eat',
+              hanakana: form('j+aala')
+            },
+            {
+              ovo: ovo('ij+ozi'),
+              language: 'Zulu',
+              meaning: 'Ancestral spirit',
+              hanakana: form('ij+ozi')
+            },
+            {
+              ovo: ovo('inj+ebe'),
+              language: 'Zulu',
+              meaning: 'Ear',
+              hanakana: form('inj+ebe')
+            },
+            {
+              ovo: ovo('ij+aka'),
+              language: 'Zulu',
+              meaning: 'Loincloth',
+              hanakana: form('ij+aka')
+            }
+          ]
+        },
+        {
+          symbol: form('k*'),
+          description: `This is a click sound like making an "l" shape in your mouth, but letting it snap down like a clock tick.`,
+          words: [
+            {
+              ovo: ovo('kk*hela'),
+              language: 'Xhosa',
+              meaning: 'To adapt',
+              hanakana: form('kk*hela')
+            },
+            {
+              ovo: ovo('kk*hama'),
+              language: 'Xhosa',
+              meaning: 'To bear fruit',
+              hanakana: form('kk*hama')
+            },
+            {
+              ovo: ovo('gk*hiba'),
+              language: 'Xhosa',
+              meaning: 'To complete',
+              hanakana: form('gk*hiba')
+            },
+            {
+              ovo: ovo('kk*huba'),
+              language: 'Xhosa',
+              meaning: 'To drive',
+              hanakana: form('kk*huba')
+            }
+          ]
+        },
+        {
+          symbol: form('l*'),
+          description: `This is a click sound like making sucking sound.`,
+          words: [
+            {
+              ovo: ovo('ql*hi'),
+              language: 'Xhosa',
+              meaning: 'Still',
+              hanakana: form('ql*hi')
+            },
+            {
+              ovo: ovo('ql*hola'),
+              language: 'Xhosa',
+              meaning: 'To be loud',
+              hanakana: form('ql*hola')
+            },
+            {
+              ovo: ovo('gl*heka'),
+              language: 'Xhosa',
+              meaning: 'To mock',
+              hanakana: form('gl*heka')
+            },
+            {
+              ovo: ovo('gl*huma'),
+              language: 'Xhosa',
+              meaning: 'To jump',
+              hanakana: form('gl*huma')
+            }
+          ]
+        },
+        {
+          symbol: form('t*'),
+          description: `This is a click sound like making sucking sound with your t shaped mouth.`,
+          words: [
+            {
+              ovo: ovo('t*h+ore'),
+              language: 'Khoekhoe',
+              meaning: 'To prophesize',
+              hanakana: form('t*h+ore')
+            },
+            {
+              ovo: ovo('t*heta'),
+              language: 'Hadza',
+              meaning: 'To be happy',
+              hanakana: form('t*heta')
+            },
+            {
+              ovo: ovo('gt*hina'),
+              language: 'Zulu',
+              meaning: 'To end',
+              hanakana: form('gt*hina')
+            },
+            {
+              ovo: ovo('gt*hona'),
+              language: 'Zulu',
+              meaning: 'To make fun of',
+              hanakana: form('gt*hona')
+            }
+          ]
+        },
+        {
+          symbol: form('p*'),
+          description: `This is a click sound like making popping sound with your lips.`,
+          words: [
+            {
+              ovo: ovo('kp*oo_o'),
+              language: '!Xóõ',
+              meaning: 'To dream',
+              hanakana: form('kp*oo_o')
+            },
+            {
+              ovo: ovo('k+p*o^u'),
+              language: '!Xóõ',
+              meaning: 'Wild cat',
+              hanakana: form('k+p*o^u')
+            },
+            {
+              ovo: ovo('\'qp*aa_je'),
+              language: '!Xóõ',
+              meaning: 'Tree',
+              hanakana: form('\'qp*aa_je')
+            },
+            {
+              ovo: ovo('gp*kh+a_na'),
+              language: '!Xóõ',
+              meaning: 'To make fire with sticks',
+              hanakana: form('gp*kh+a_na')
+            }
+          ]
+        },
+        {
+          symbol: form('\''),
+          description: `This is the blocking of a sound.`,
+          words: [
+            {
+              ovo: ovo('u\'o'),
+              language: 'English',
+              meaning: 'Uh-oh',
+              hanakana: form('u\'o')
+            },
+            {
+              ovo: ovo('a\'fe+l'),
+              language: 'Hebrew',
+              meaning: 'Dark',
+              hanakana: form('a\'fe+l')
+            },
+            {
+              ovo: ovo('tiv\'ii'),
+              language: 'Hebrew',
+              meaning: 'Natural',
+              hanakana: form('tiv\'ii')
+            },
+            {
+              ovo: ovo('ragu\'a'),
+              language: 'Hebrew',
+              meaning: 'Calm',
+              hanakana: form('ragu\'a')
+            }
+          ]
+        },
+        {
+          symbol: form('r+'),
+          description: `This is the r sound where you put the tip of your tongue on the highest part of the ridge in the middle of your mouth while you say it. It is the Indian "r" sound.`,
+          words: [
+            {
+              ovo: ovo('amr+ta'),
+              language: 'Sanskrit',
+              meaning: 'Immortality',
+              hanakana: form('amr+ta')
+            },
+            {
+              ovo: ovo('lr+r+'),
+              language: 'Sanskrit',
+              meaning: 'A mother',
+              hanakana: form('lr+r+')
+            },
+            {
+              ovo: ovo('dr+x~'),
+              language: 'Sanskrit',
+              meaning: 'A sight',
+              hanakana: form('dr+x~')
+            },
+            {
+              ovo: ovo('r+xi'),
+              language: 'Sanskrit',
+              meaning: 'A sage',
+              hanakana: form('r+xi')
+            }
+          ]
+        },
+        {
+          symbol: form('r~'),
+          description: `This is the French "r" sound where you make it in the back of your mouth before your throat.`,
+          words: [
+            {
+              ovo: ovo('r~uj'),
+              language: 'French',
+              meaning: 'Red',
+              hanakana: form('r~uj')
+            },
+            {
+              ovo: ovo('fr~e+r~'),
+              language: 'French',
+              meaning: 'A brother',
+              hanakana: form('fr~e+r~')
+            },
+            {
+              ovo: ovo('i+mr~a'),
+              language: 'Hebrew',
+              meaning: 'Promise',
+              hanakana: form('i+mr~a')
+            },
+            {
+              ovo: ovo('r~u\'ah+'),
+              language: 'Hebrew',
+              meaning: 'Mind',
+              hanakana: form('r~u\'ah+')
+            }
+          ]
+        },
+        {
+          symbol: form('m+'),
+          description: `This is the nasal Indian "m" sound.`,
+          words: [
+            {
+              ovo: ovo('miimaam+saa'),
+              language: 'Sanskrit',
+              meaning: 'Critical investigation or reflection',
+              hanakana: form('miimaam+saa')
+            },
+            {
+              ovo: ovo('sam+jnyaa'),
+              language: 'Sanskrit',
+              meaning: 'Perception',
+              hanakana: form('sam+jnyaa')
+            },
+            {
+              ovo: ovo('sam+saara'),
+              language: 'Sanskrit',
+              meaning: 'The world',
+              hanakana: form('sam+saara')
+            },
+            {
+              ovo: ovo('ahim+saa'),
+              language: 'Sanskrit',
+              meaning: 'Nonviolence',
+              hanakana: form('ahim+saa')
+            }
+          ]
+        },
+        {
+          symbol: form('n+'),
+          description: `This is the retroflex Indian "n" sound, where you say the "n" sound with the tip of your tongue high up on the roof of your mouth.`,
+          words: [
+            {
+              ovo: ovo('n+a'),
+              language: 'Sanskrit',
+              meaning: 'Knowledge',
+              hanakana: form('n+a')
+            },
+            {
+              ovo: ovo('djuurn+i'),
+              language: 'Sanskrit',
+              meaning: 'A blaze',
+              hanakana: form('djuurn+i')
+            },
+            {
+              ovo: ovo('aaran+a'),
+              language: 'Sanskrit',
+              meaning: 'Depth',
+              hanakana: form('aaran+a')
+            },
+            {
+              ovo: ovo('n+ii'),
+              language: 'Sanskrit',
+              meaning: 'To get',
+              hanakana: form('n+ii')
+            }
+          ]
+        },
+        {
+          symbol: form('x~'),
+          description: `This is the Chinese or Indian "sh" sound.`,
+          words: [
+            {
+              ovo: ovo('x~udha'),
+              language: 'Sanskrit',
+              meaning: 'Holy',
+              hanakana: form('x~udha')
+            },
+            {
+              ovo: ovo('x~iva'),
+              language: 'Sanskrit',
+              meaning: 'The great god',
+              hanakana: form('x~iva')
+            },
+            {
+              ovo: ovo('x~ya^q'),
+              language: 'Chinese',
+              meaning: 'Fragrant',
+              hanakana: form('x~ya^q')
+            },
+            {
+              ovo: ovo('x~ya^a_a^q'),
+              language: 'Chinese',
+              meaning: 'To enjoy',
+              hanakana: form('x~ya^a_a^q')
+            }
+          ]
+        },
+        {
+          symbol: form('x+'),
+          description: `This is the Indian retroflex "sh" sound.`,
+          words: [
+            {
+              ovo: ovo('akx+a'),
+              language: 'Sanskrit',
+              meaning: 'Sense organ',
+              hanakana: form('akx+a')
+            },
+            {
+              ovo: ovo('arx+an+a'),
+              language: 'Sanskrit',
+              meaning: 'Moveable',
+              hanakana: form('arx+an+a')
+            },
+            {
+              ovo: ovo('r+x+u'),
+              language: 'Sanskrit',
+              meaning: 'To glow',
+              hanakana: form('r+x+u')
+            },
+            {
+              ovo: ovo('parox+n+ii'),
+              language: 'Sanskrit',
+              meaning: 'A cockroach',
+              hanakana: form('parox+n+ii')
+            }
+          ]
+        },
+        {
+          symbol: form('t+'),
+          description: `This is the Indian retroflex "t" sound.`,
+          words: [
+            {
+              ovo: ovo('t+a'),
+              language: 'Sanskrit',
+              meaning: 'An oath',
+              hanakana: form('t+a')
+            },
+            {
+              ovo: ovo('t+at+t+ura'),
+              language: 'Sanskrit',
+              meaning: 'The sound of a drum',
+              hanakana: form('t+at+t+ura')
+            },
+            {
+              ovo: ovo('ax+t+i'),
+              language: 'Sanskrit',
+              meaning: 'A seed',
+              hanakana: form('ax+t+i')
+            },
+            {
+              ovo: ovo('gox+t+hii'),
+              language: 'Sanskrit',
+              meaning: 'A meeting',
+              hanakana: form('gox+t+hii')
+            }
+          ]
+        },
+        {
+          symbol: form('h+'),
+          description: `This is the harsh h in Hebrew speech.`,
+          words: [
+            {
+              ovo: ovo('h+aazak+'),
+              language: 'Hebrew',
+              meaning: 'Courage',
+              hanakana: form('h+aazak+')
+            },
+            {
+              ovo: ovo('h+afer~\''),
+              language: 'Hebrew',
+              meaning: 'To be ashamed',
+              hanakana: form('h+afer~\'')
+            },
+            {
+              ovo: ovo('reh+e+m'),
+              language: 'Hebrew',
+              meaning: 'Womb',
+              hanakana: form('reh+e+m')
+            },
+            {
+              ovo: ovo('h+e+re+k'),
+              language: 'Hebrew',
+              meaning: 'Bug',
+              hanakana: form('h+e+re+k')
+            }
+          ]
+        },
+        {
+          symbol: form('i'),
+          description: `This is a high English "ee" sound in with the mouth in a smile position.`,
+          words: [
+            {
+              ovo: ovo('nid'),
+              language: 'English',
+              meaning: 'Need',
+              hanakana: form('nid')
+            },
+            {
+              ovo: ovo('si'),
+              language: 'English',
+              meaning: 'See',
+              hanakana: form('si')
+            },
+            {
+              ovo: ovo('si+mpli+si+ti'),
+              language: 'English',
+              meaning: 'Simplicity',
+              hanakana: form('si+mpli+si+ti')
+            },
+            {
+              ovo: ovo('ai'),
+              language: 'English',
+              meaning: 'I',
+              hanakana: form('ai')
+            }
+          ]
+        },
+        {
+          symbol: form('e'),
+          description: `This is a medium English "ey" sound in with the mouth in a half smile position.`,
+          words: [
+            {
+              ovo: ovo('he'),
+              language: 'English',
+              meaning: 'Hey',
+              hanakana: form('he')
+            },
+            {
+              ovo: ovo('ku+ngr(a+)dyulet'),
+              language: 'English',
+              meaning: 'Congratulate',
+              hanakana: form('ku+ngr(a+)dyulet')
+            },
+            {
+              ovo: ovo('ple'),
+              language: 'English',
+              meaning: 'Play',
+              hanakana: form('ple')
+            },
+            {
+              ovo: ovo('endjl'),
+              language: 'English',
+              meaning: 'Angel',
+              hanakana: form('endjl')
+            }
+          ]
+        },
+        {
+          symbol: form('a'),
+          description: `This is a deep English "a" sound in with the mouth open in a default position.`,
+          words: [
+            {
+              ovo: ovo('hak'),
+              language: 'English',
+              meaning: 'Hawk',
+              hanakana: form('hak')
+            },
+            {
+              ovo: ovo('fac+r'),
+              language: 'English',
+              meaning: 'Father',
+              hanakana: form('fac+r')
+            },
+            {
+              ovo: ovo('al'),
+              language: 'English',
+              meaning: 'All',
+              hanakana: form('al')
+            },
+            {
+              ovo: ovo('tak'),
+              language: 'English',
+              meaning: 'Talk',
+              hanakana: form('tak')
+            }
+          ]
+        },
+        {
+          symbol: form('o'),
+          description: `This is a solid English "oh" sound in with the mouth in a circle shape.`,
+          words: [
+            {
+              ovo: ovo('bon'),
+              language: 'English',
+              meaning: 'Bone',
+              hanakana: form('bon')
+            },
+            {
+              ovo: ovo('onr'),
+              language: 'English',
+              meaning: 'Owner',
+              hanakana: form('onr')
+            },
+            {
+              ovo: ovo('ru+port'),
+              language: 'English',
+              meaning: 'Report',
+              hanakana: form('ru+port')
+            },
+            {
+              ovo: ovo('soldjr'),
+              language: 'English',
+              meaning: 'Soldier',
+              hanakana: form('soldjr')
+            }
+          ]
+        },
+        {
+          symbol: form('u'),
+          description: `This is a deep English "uu" sound in with the mouth in a tight circle shape.`,
+          words: [
+            {
+              ovo: ovo('sup'),
+              language: 'English',
+              meaning: 'Soup',
+              hanakana: form('sup')
+            },
+            {
+              ovo: ovo('kul'),
+              language: 'English',
+              meaning: 'Cool',
+              hanakana: form('kul')
+            },
+            {
+              ovo: ovo('pudl'),
+              language: 'English',
+              meaning: 'Poodle',
+              hanakana: form('pudl')
+            },
+            {
+              ovo: ovo('du'),
+              language: 'English',
+              meaning: 'Do',
+              hanakana: form('du')
+            }
+          ]
+        },
+        {
+          symbol: form('i+'),
+          description: `This is a high but shallow English "ih" sound in with the mouth in a smile position.`,
+          words: [
+            {
+              ovo: ovo('bi+t'),
+              language: 'English',
+              meaning: 'bit',
+              hanakana: form('bi+t')
+            },
+            {
+              ovo: ovo('i+n'),
+              language: 'English',
+              meaning: 'In',
+              hanakana: form('i+n')
+            },
+            {
+              ovo: ovo('si+gni+fu+knt'),
+              language: 'English',
+              meaning: 'Significant',
+              hanakana: form('si+gni+fu+knt')
+            },
+            {
+              ovo: ovo('wi+ndo'),
+              language: 'English',
+              meaning: 'Window',
+              hanakana: form('wi+ndo')
+            }
+          ]
+        },
+        {
+          symbol: form('e+'),
+          description: `This is a medium English "eh" sound in with the mouth in a half smile position.`,
+          words: [
+            {
+              ovo: ovo('pe+t'),
+              language: 'English',
+              meaning: 'Pet',
+              hanakana: form('pe+t')
+            },
+            {
+              ovo: ovo('kre+di+t'),
+              language: 'English',
+              meaning: 'Credit',
+              hanakana: form('kre+di+t')
+            },
+            {
+              ovo: ovo('e+nd'),
+              language: 'English',
+              meaning: 'End',
+              hanakana: form('e+nd')
+            },
+            {
+              ovo: ovo('u+ge+n'),
+              language: 'English',
+              meaning: 'Again',
+              hanakana: form('u+ge+n')
+            }
+          ]
+        },
+        {
+          symbol: form('a+'),
+          description: `This is a high English "a" sound in with the mouth open in a default position.`,
+          words: [
+            {
+              ovo: ovo('ka+t'),
+              language: 'English',
+              meaning: 'Cat',
+              hanakana: form('ka+t')
+            },
+            {
+              ovo: ovo('kla+s'),
+              language: 'English',
+              meaning: 'Class',
+              hanakana: form('kla+s')
+            },
+            {
+              ovo: ovo('ma+n'),
+              language: 'English',
+              meaning: 'All',
+              hanakana: form('ma+n')
+            },
+            {
+              ovo: ovo('a+nt'),
+              language: 'English',
+              meaning: 'Ant',
+              hanakana: form('a+nt')
+            }
+          ]
+        },
+        {
+          symbol: form('o+'),
+          description: `This is a pushing English "oo" sound in with the mouth in a circle u shape.`,
+          words: [
+            {
+              ovo: ovo('bo+k'),
+              language: 'English',
+              meaning: 'book',
+              hanakana: form('bo+k')
+            },
+            {
+              ovo: ovo('u+ndrsto+d'),
+              language: 'English',
+              meaning: 'Understood',
+              hanakana: form('u+ndrsto+d')
+            },
+            {
+              ovo: ovo('fo+t'),
+              language: 'English',
+              meaning: 'foot',
+              hanakana: form('fo+t')
+            },
+            {
+              ovo: ovo('po+t'),
+              language: 'English',
+              meaning: 'Put',
+              hanakana: form('po+t')
+            }
+          ]
+        },
+        {
+          symbol: form('u+'),
+          description: `This is a shallow English "uh" sound in with the mouth in a relaxed open shape.`,
+          words: [
+            {
+              ovo: ovo('u+ndrnic'),
+              language: 'English',
+              meaning: 'Underneath',
+              hanakana: form('u+ndrnic')
+            },
+            {
+              ovo: ovo('u+p'),
+              language: 'English',
+              meaning: 'Up',
+              hanakana: form('u+p')
+            },
+            {
+              ovo: ovo('a+nu+kh(a)ndu+'),
+              language: 'English',
+              meaning: 'Anaconda',
+              hanakana: form('a+nu+kh(a)ndu+')
+            },
+            {
+              ovo: ovo('hu+t'),
+              language: 'English',
+              meaning: 'Hut',
+              hanakana: form('hu+t')
+            }
+          ]
+        },
+        {
+          symbol: form('i~'),
+          description: `This is a Northern European vowel sound.`,
+          words: [
+            {
+              ovo: ovo('bi~xar'),
+              language: 'German',
+              meaning: 'Butcher',
+              hanakana: form('bi~xar')
+            },
+            {
+              ovo: ovo('i~bar'),
+              language: 'German',
+              meaning: 'Above',
+              hanakana: form('i~bar')
+            },
+            {
+              ovo: ovo('xli~sl'),
+              language: 'German',
+              meaning: 'Key',
+              hanakana: form('xli~sl')
+            },
+            {
+              ovo: ovo('mi~le'),
+              language: 'German',
+              meaning: 'Mill',
+              hanakana: form('mi~le')
+            }
+          ]
+        },
+        {
+          symbol: form('a~'),
+          description: `This is a Northern European vowel sound.`,
+          words: [
+            {
+              ovo: ovo('a~ks'),
+              language: 'Danish',
+              meaning: 'Axe',
+              hanakana: form('a~ks')
+            },
+            {
+              ovo: ovo('a~rn'),
+              language: 'Danish',
+              meaning: 'Eagle',
+              hanakana: form('a~rn')
+            },
+            {
+              ovo: ovo('bya~rn'),
+              language: 'Danish',
+              meaning: 'Bear',
+              hanakana: form('bya~rn')
+            },
+            {
+              ovo: ovo('a~rkn'),
+              language: 'Danish',
+              meaning: 'Desert',
+              hanakana: form('a~rkn')
+            }
+          ]
+        },
+        {
+          symbol: form('o~'),
+          description: `This is a Northern European vowel sound.`,
+          words: [
+            {
+              ovo: ovo('bo~d'),
+              language: 'Danish',
+              meaning: 'Boat',
+              hanakana: form('bo~d')
+            },
+            {
+              ovo: ovo('bo~l'),
+              language: 'Danish',
+              meaning: 'Bonfire',
+              hanakana: form('bo~l')
+            },
+            {
+              ovo: ovo('lo~s'),
+              language: 'Danish',
+              meaning: 'Lock',
+              hanakana: form('lo~s')
+            },
+            {
+              ovo: ovo('do~b'),
+              language: 'Danish',
+              meaning: 'Baptism',
+              hanakana: form('do~b')
+            }
+          ]
+        },
+      ]
+
+      document.write(`<div class='page right-page'></div>`)
+      document.write(`<div class='page left-page'></div>`)
+      document.write(`<div class='page right-page'>
+        <div class='title'>
+          <div>
+            <div class='name'>Hanákana</div>
+            <div class='author'>Lance Pollard</div>
+          </div>
+        </div>
+      </div>`)
+
+      document.write(`<div class='page left-page'>
+<p>Every time you start to learn a new language, unless you are born speaking it natively, you have to learn how it is written. This takes an enormous amount of effort, days if not weeks. Even if the language uses the Latin alphabet, there are subtle variations in it's usage that make it impossible to imply the rules you learned in English to reading Chinese Pinyin or IAST Sanskrit. According to traditional methodology, this is part of the sludge that you must work through in order to get to learning words, and ultimately how to speak a language.<p/>
+<p>The real secret to learning languages, however, is that there is no need to learn how it is written. All languages use the same basic sounds allowed by the human mouth and vocal chords, in order to construct their words and ultimately to express their information. They may have slight variations on some fundamental sound building blocks, but there are only about 32 very obvious sounds which differ significant in their quality. You can double that count as a rough estimate for how many sound variations there are (not including tones). Learning just those 60 or 70 sounds is all you need to learn any language in the world. You don't need to learn their writing system or a new Romanization scheme.</p>
+<p>Learning to pronounce words is not hard. It does not take weeks of dedicated learning. It takes what we will suggest is only one day of learning the writing system outlined in this book. Once you learn that, you can pick up any Hanákana dictionary for any language on Earth and instantly be able to pronounce those words in the foreign language. From there you can go on to the real difficult task of language learning, learning the grammar. But learning how to pronounce the words does not require learning how to read the language.</p>
+</div>`)
+
+      document.write(`<div class='page right-page'>
+<p>This book is a reference guide to the Hanákana writing system, the solution to this problem of learning to pronounce words in any language. In a way it is similar to the International Phonetic Alphabet (IPA), but it is not as technical. Hanákana does not aim to be the standard for representing exact linguistic utterances. Instead it aims to be a common ground that covers 99% of speaking use cases of any language on Earth, so that you can read, write, and pronounce them with ease.<p/>
+<p>It begins with the 22 basic consonants, followed by the 10 common verbs, for a total of 32 primitive sound forms. It then goes into the rest of the sound variations and the clicks and silences that give you the full spectrum of human vocal sounds. Once you finish this book, which can be done in one sitting in a day, you will be able to read and write and pronounce any language in the world that you choose.</p>
+<p>Note that there are only 3 core symbol forms, the "n" shape, the "m" shape, and the "s" shape. From these we add tails, dots, and arcs to get the sound variations. Knowing this is all you need to know to memorize how to write the language. Mapping the sounds to the letter shapes is what the rest of this books is about.</p>
+</div>`)
+
+      document.write(`<div class='page left-page'></div>`)
+      document.write(`<div class='page right-page'>
+        <div class='title'>
+          <div>
+        <div class='hanakana2'>${form('a+')}</div>
+        <div class='hanakana2'>${form('i~')}</div>
+        <div class='hanakana2'>${form('u+')}</div>
+        </div>
+        </div>
+      </div>`)
+
+      LIST.forEach(item => {
+        const leftPage = item.words.map(word => {
+          return `
+          <div class='word'>
+            <div class='hanakana'>${word.hanakana}</div>
+            <div class='ovo'>${word.ovo}</div>
+            <div class='word-description'>${word.meaning} in ${word.language}</div>
+          </div>
+          `
+        }).join('\n')
+        const rightPage = `
+        <div class='page right-page'>
+          <div class='symbol'>${item.symbol}</div>
+          <div class='description'>${item.description}</div>
+        </div>
+        `
+
+        document.write(`<div class='page left-page'>${leftPage}</div>`)
+        document.write(rightPage)
+      })
+
+      const TONE_LIST = [
+        ['i', 'i^', 'i_', '(i)', '(i^)', '(i_)'],
+        ['e', 'e^', 'e_', '(e)', '(e^)', '(e_)'],
+        ['a', 'a^', 'a_', '(a)', '(a^)', '(a_)'],
+        ['o', 'o^', 'o_', '(o)', '(o^)', '(o_)'],
+        ['u', 'u^', 'u_', '(u)', '(u^)', '(u_)'],
+      ]
+
+      document.write(`<div class='page left-page'>`)
+
+      TONE_LIST.forEach(tones => {
+        const [a, b, c, d, e, f] = tones
+        document.write(`<div class='tones'>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(a)}</div>
+            <div class='tone-ovo'>${ovo(a)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(b)}</div>
+            <div class='tone-ovo'>${ovo(b)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(c)}</div>
+            <div class='tone-ovo'>${ovo(c)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(d)}</div>
+            <div class='tone-ovo'>${ovo(d)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(e)}</div>
+            <div class='tone-ovo'>${ovo(e)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(f)}</div>
+            <div class='tone-ovo'>${ovo(f)}</div>
+          </div>
+        </div>`)
+      })
+
+      document.write(`</div>`)
+
+      const CONSONANT_LIST = [
+        ['b', 'b!', 'b?', 'p', 'p!', 'g'],
+        ['g?', 'k', 'k!', 't', 't!', 'd'],
+        ['d?']
+      ]
+
+      document.write(`<div class='page right-page'>`)
+
+      CONSONANT_LIST.forEach(tones => {
+        const [a, b, c, d, e, f] = tones
+        document.write(`<div class='tones'>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(a)}</div>
+            <div class='tone-ovo'>${ovo(a)}</div>
+          </div>
+        `)
+        if (b) {
+          document.write(`
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(b)}</div>
+            <div class='tone-ovo'>${ovo(b)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(c)}</div>
+            <div class='tone-ovo'>${ovo(c)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(d)}</div>
+            <div class='tone-ovo'>${ovo(d)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(e)}</div>
+            <div class='tone-ovo'>${ovo(e)}</div>
+          </div>
+          <div class='tone'>
+            <div class='tone-hanakana'>${form(f)}</div>
+            <div class='tone-ovo'>${ovo(f)}</div>
+          </div>`)
+        }
+
+        document.write(`</div>`)
+      })
+
+      document.write(`</div>`)
+
+      window.DONE = true
+    </script>
+  </body>
+</html>

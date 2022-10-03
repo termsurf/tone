@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 1200px;
+      }
+
+      @font-face {
+        font-family: Hanakana;
+        src: url('../font.otf');
+      }
+
+      @font-face {
+        font-family: Noto;
+        src: url('../noto.ttf');
+      }
+
+      @media print {
+        .page {
+          page-break-after: always;
+        }
+      }
+
+      .list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #content {
+        background: #fafafa;
+        padding: 20px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 936px;
+        height: 100px;
+        padding: 20px;
+      }
+
+      .row:nth-child(2n + 1) {
+        background: #fafafa;
+      }
+
+      .row:nth-child(2n) {
+        background: #fff;
+      }
+
+      .hanakana {
+        font-size: 120px;
+        font-family: Hanakana;
+        width: 100px;
+        position: relative;
+        top: -6px;
+        margin-left: 30px;
+      }
+
+      .def {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .ascii {
+        font-size: 32px;
+        font-family: Noto;
+        opacity: 0.7;
+        padding-bottom: 10px;
+        margin-left: 30px;
+        display: block;
+        width: 200px;
+      }
+
+      .description {
+        display: block;
+        font-size: 18px;
+        padding-top: 10px;
+        font-family: Noto;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='list'><div id='content'></div></div>
+    <script>
+
+const SYMBOL = [
+  { i: "i#--", o: "\u1478", name: 'German i with extra low tone' },
+  { i: "i#-", o: "\u03d6", name: 'German i with low tone' },
+  { i: "i#++", o: "\u147c", name: 'German i with extra high tone' },
+  { i: "i#+", o: "\u03da", name: 'German i with high tone' },
+  { i: "i#", o: "\u03d1", name: 'German i' },
+  { i: "(i#--)", o: "\u1479", name: 'German i with extra low tone and stress' },
+  { i: "(i#-)", o: "\u03d7", name: 'German i with low tone and stress' },
+  { i: "(i#++)", o: "\u147d", name: 'German i with extra high tone and stress' },
+  { i: "(i#+)", o: "\u03db", name: 'German i with high tone and stress' },
+  { i: "(i#)", o: "\u03d3", name: 'German i with stress' },
+
+  { i: "I--", o: "\u147a", name: 'Short i with extra low tone' },
+  { i: "I-", o: "\u03d4", name: 'Short i with low tone' },
+  { i: "I++", o: "\u147e", name: 'Short i with extra high tone' },
+  { i: "I+", o: "\u03d8", name: 'Short i with high tone' },
+  { i: "I", o: "\u03d0", name: 'Short i' },
+  { i: "(I--)", o: "\u147b", name: 'Short i with extra low tone and stress' },
+  { i: "(I-)", o: "\u03d5", name: 'Short i with low tone and stress' },
+  { i: "(I++)", o: "\u147f", name: 'Short i with extra high tone and stress' },
+  { i: "(I+)", o: "\u03d9", name: 'Short i with high tone and stress' },
+  { i: "(I)", o: "\u03d2", name: 'Short i with stress' },
+
+  { i: "i--", o: "\u153a", name: 'I sound with extra low tone' },
+  { i: "i-", o: "\u0474", name: 'I sound with low tone' },
+  { i: "i++", o: "\u153e", name: 'I sound with extra high tone' },
+  { i: "i+", o: "\u0478", name: 'I sound with high tone' },
+  { i: "i", o: "\u0470", name: 'I sound' },
+  { i: "(i--)", o: "\u153b", name: 'I sound with extra low tone and stress' },
+  { i: "(i-)", o: "\u0475", name: 'I sound with low tone and stress' },
+  { i: "(i++)", o: "\u153f", name: 'I sound with extra high tone and stress' },
+  { i: "(i+)", o: "\u0479", name: 'I sound with high tone and stress' },
+  { i: "(i)", o: "\u0472", name: 'I sound with stress' },
+
+  { i: "e#--", o: "\u1518", name: 'Danish oe with extra low tone' },
+  { i: "e#-", o: "\u0456", name: 'Danish oe with low tone' },
+  { i: "e#++", o: "\u151c", name: 'Danish oe with extra high tone' },
+  { i: "e#+", o: "\u045a", name: 'Danish oe with high tone' },
+  { i: "e#", o: "\u0451", name: 'Danish oe' },
+  { i: "(e#--)", o: "\u1519", name: 'Danish oe with extra low tone and stress' },
+  { i: "(e#-)", o: "\u0457", name: 'Danish oe with low tone and stress' },
+  { i: "(e#++)", o: "\u151d", name: 'Danish oe with extra high tone and stress' },
+  { i: "(e#+)", o: "\u045b", name: 'Danish oe with high tone and stress' },
+  { i: "(e#)", o: "\u0453", name: 'Danish oe with stress' },
+
+  { i: "E--", o: "\u151a", name: 'Short e with extra low tone' },
+  { i: "E-", o: "\u0454", name: 'Short e with low tone' },
+  { i: "E++", o: "\u151e", name: 'Short e with extra high tone' },
+  { i: "E+", o: "\u0458", name: 'Short e with high tone' },
+  { i: "E", o: "\u0450", name: 'Short e' },
+  { i: "(E--)", o: "\u151b", name: 'Short e with extra low tone and stress' },
+  { i: "(E-)", o: "\u0455", name: 'Short e with low tone and stress' },
+  { i: "(E++)", o: "\u151f", name: 'Short e with extra high tone and stress' },
+  { i: "(E+)", o: "\u0459", name: 'Short e with high tone and stress' },
+  { i: "(E)", o: "\u0452", name: 'Short e with stress' },
+
+  { i: "e--", o: "\u14da", name: 'E sound with extra low tone' },
+  { i: "e-", o: "\u0414", name: 'E sound with low tone' },
+  { i: "e++", o: "\u14de", name: 'E sound with extra high tone' },
+  { i: "e+", o: "\u0418", name: 'E sound with high tone' },
+  { i: "e", o: "\u0410", name: 'E sound' },
+  { i: "(e--)", o: "\u14db", name: 'E sound with extra low tone and stress' },
+  { i: "(e-)", o: "\u0415", name: 'E sound with low tone and stress' },
+  { i: "(e++)", o: "\u14df", name: 'E sound with extra high tone and stress' },
+  { i: "(e+)", o: "\u0419", name: 'E sound with high tone and stress' },
+  { i: "(e)", o: "\u0412", name: 'E sound with stress' },
+
+  { i: "a#--", o: "\u1598", name: 'German e sound with extra low tone' },
+  { i: "a#-", o: "\u0506", name: 'German e sound with low tone' },
+  { i: "a#++", o: "\u159c", name: 'German e sound with extra high tone' },
+  { i: "a#+", o: "\u050a", name: 'German e sound with high tone' },
+  { i: "a#", o: "\u0501", name: 'German e sound' },
+  { i: "(a#--)", o: "\u1599", name: 'German e sound with extra low tone and stress' },
+  { i: "(a#-)", o: "\u0507", name: 'German e sound with low tone and stress' },
+  { i: "(a#++)", o: "\u159d", name: 'German e sound with extra high tone and stress' },
+  { i: "(a#+)", o: "\u050b", name: 'German e sound with high tone and stress' },
+  { i: "(a#)", o: "\u0503", name: 'German e sound with stress' },
+
+  { i: "A--", o: "\u149a", name: 'Short a with extra low tone' },
+  { i: "A-", o: "\u03b4", name: 'Short a with low tone' },
+  { i: "A++", o: "\u149e", name: 'Short a with extra high tone' },
+  { i: "A+", o: "\u03b8", name: 'Short a with high tone' },
+  { i: "A", o: "\u03b0", name: 'Short a' },
+  { i: "(A--)", o: "\u149b", name: 'Short a with extra low tone and stress' },
+  { i: "(A-)", o: "\u03b5", name: 'Short a with low tone and stress' },
+  { i: "(A++)", o: "\u149f", name: 'Short a with extra high tone and stress' },
+  { i: "(A+)", o: "\u03b9", name: 'Short a with high tone and stress' },
+  { i: "(A)", o: "\u03b2", name: 'Short a with stress' },
+
+  { i: "a--", o: "\u159a", name: 'A sound with extra low tone' },
+  { i: "a-", o: "\u0504", name: 'A sound with low tone' },
+  { i: "a++", o: "\u159e", name: 'A sound with extra high tone' },
+  { i: "a+", o: "\u0508", name: 'A sound with high tone' },
+  { i: "a", o: "\u0500", name: 'A sound' },
+  { i: "(a--)", o: "\u159b", name: 'A sound with extra low tone and stress' },
+  { i: "(a-)", o: "\u0505", name: 'A sound with low tone and stress' },
+  { i: "(a++)", o: "\u159f", name: 'A sound with extra high tone and stress' },
+  { i: "(a+)", o: "\u0509", name: 'A sound with high tone and stress' },
+  { i: "(a)", o: "\u0502", name: 'A sound with stress' },
+
+  { i: "o#--", o: "\u145a", name: 'German o with extra low tone' },
+  { i: "o#-", o: "\u0394", name: 'German o with low tone' },
+  { i: "o#++", o: "\u145e", name: 'German o with extra high tone' },
+  { i: "o#+", o: "\u0398", name: 'German o with high tone' },
+  { i: "o#", o: "\u0390", name: 'German o' },
+  { i: "(o#--)", o: "\u145b", name: 'German o with extra low tone and stress' },
+  { i: "(o#-)", o: "\u0395", name: 'German o with low tone and stress' },
+  { i: "(o#++)", o: "\u145f", name: 'German o with extra high tone and stress' },
+  { i: "(o#+)", o: "\u0399", name: 'German o with high tone and stress' },
+  { i: "(o#)", o: "\u0392", name: 'German o with stress' },
+
+  { i: "O--", o: "\u155a", name: 'Short o with extra low tone' },
+  { i: "O-", o: "\u04c4", name: 'Short o with low tone' },
+  { i: "O++", o: "\u155e", name: 'Short o with extra high tone' },
+  { i: "O+", o: "\u04c8", name: 'Short o with high tone' },
+  { i: "O", o: "\u04c0", name: 'Short o' },
+  { i: "(O--)", o: "\u155b", name: 'Short o with extra low tone and stress' },
+  { i: "(O-)", o: "\u04c5", name: 'Short o with low tone and stress' },
+  { i: "(O++)", o: "\u155f", name: 'Short o with extra high tone and stress' },
+  { i: "(O+)", o: "\u04c9", name: 'Short o with high tone and stress' },
+  { i: "(O)", o: "\u04c2", name: 'Short o stress' },
+
+  { i: "o--", o: "\u157a", name: 'O sound with extra low tone' },
+  { i: "o-", o: "\u04e4", name: 'O sound with low tone' },
+  { i: "o++", o: "\u157e", name: 'O sound with extra high tone' },
+  { i: "o+", o: "\u04e8", name: 'O sound with high tone' },
+  { i: "o", o: "\u04e0", name: 'O sound' },
+  { i: "(o--)", o: "\u157b", name: 'O sound with extra low tone and stress' },
+  { i: "(o-)", o: "\u04e5", name: 'O sound with low tone and stress' },
+  { i: "(o++)", o: "\u157f", name: 'O sound with extra high tone and stress' },
+  { i: "(o+)", o: "\u04e9", name: 'O sound with high tone and stress' },
+  { i: "(o)", o: "\u04e2", name: 'O sound with stress' },
+
+  { i: "u#--", o: "\u14fa", name: 'English r with extra low tone' },
+  { i: "u#-", o: "\u0434", name: 'English r with low tone' },
+  { i: "u#++", o: "\u14fe", name: 'English r with extra high tone' },
+  { i: "u#+", o: "\u0438", name: 'English r with high tone' },
+  { i: "u#", o: "\u0430", name: 'English r' },
+  { i: "(u#--)", o: "\u14fb", name: 'English r with extra low tone and stress' },
+  { i: "(u#-)", o: "\u0435", name: 'English r with low tone and stress' },
+  { i: "(u#++)", o: "\u14ff", name: 'English r with extra high tone and stress' },
+  { i: "(u#+)", o: "\u0439", name: 'English r with high tone and stress' },
+  { i: "(u#)", o: "\u0432", name: 'English r with stress' },
+
+  { i: "U--", o: "\u15ba", name: 'Short u with extra low tone' },
+  { i: "U-", o: "\u04a4", name: 'Short u with low tone' },
+  { i: "U++", o: "\u15be", name: 'Short u with extra high tone' },
+  { i: "U+", o: "\u04a8", name: 'Short u with high tone' },
+  { i: "U", o: "\u04a0", name: 'Short u' },
+  { i: "(U--)", o: "\u15bb", name: 'Short u with extra low tone and stress' },
+  { i: "(U-)", o: "\u04a5", name: 'Short u with low tone and stress' },
+  { i: "(U++)", o: "\u15bf", name: 'Short u with extra high tone and stress' },
+  { i: "(U+)", o: "\u04a9", name: 'Short u with high tone and stress' },
+  { i: "(U)", o: "\u04a2", name: 'Short u with stress' },
+
+  { i: "u--", o: "\u14ba", name: 'U sound with extra low tone' },
+  { i: "u-", o: "\u03f4", name: 'U sound with low tone' },
+  { i: "u++", o: "\u14be", name: 'U sound with extra high tone' },
+  { i: "u+", o: "\u03f8", name: 'U sound with high tone' },
+  { i: "u", o: "\u03f0", name: 'U sound' },
+  { i: "(u--)", o: "\u14bb", name: 'U sound with extra low tone and stress' },
+  { i: "(u-)", o: "\u03f5", name: 'U sound with low tone and stress' },
+  { i: "(u++)", o: "\u14bf", name: 'U sound with extra high tone and stress' },
+  { i: "(u+)", o: "\u03f9", name: 'U sound with high tone and stress' },
+  { i: "(u)", o: "\u03f2", name: 'U sound with stress' },
+
+  { i: "M", o: "\u0102", name: 'Nasalization' },
+  { i: "m", o: "\u0100", name: 'M sound' },
+  { i: "N", o: "\u0142", name: 'Indian n sound' },
+  { i: "n", o: "\u0140", name: 'N sound' },
+  { i: "q", o: "\u0160", name: 'Ng sound' },
+  { i: "Q~", o: "\u0132", name: 'Arabic voiced pharyngeal fricative' },
+  { i: "Q", o: "\u01a0", name: 'French r sound' },
+  { i: "g?", o: "\u013c", name: 'Implosive g sound' },
+  { i: "g@", o: "\u1357", name: 'Tense g sound' },
+  { i: "g", o: "\u0130", name: 'G sound' },
+  { i: "'", o: "\u01b0", name: 'Lack of sound, glottal stop' },
+  { i: "~", o: "\u01a2", name: 'Arabic pharyngealization' },
+  { i: "d!", o: "\u006c", name: 'Ejective d sound' },
+  { i: "d?", o: "\u0068", name: 'Implosive d sound' },
+  { i: "d*", o: "\u0064", name: 'Click d sound' },
+  { i: "D", o: "\u0062", name: 'Indian d sound' },
+  { i: "d@", o: "\u1237", name: 'Tense d sound' },
+  { i: "d", o: "\u0060", name: 'D sound' },
+  { i: "b?", o: "\u004c", name: 'Implosive b sound' },
+  { i: "b!", o: "\u004c", name: 'Ejective b sound' },
+  { i: "b@", o: "\u1217", name: 'Tense b sound' },
+  { i: "b", o: "\u0040", name: 'B sound' },
+  { i: "p!", o: "\u003c", name: 'Ejective p sound' },
+  { i: "p*", o: "\u0034", name: 'Click p sound' },
+  { i: "p@", o: "\u1207", name: 'Tense p sound' },
+  { i: "p", o: "\u0030", name: 'P sound' },
+  { i: "T!", o: "\u00d9", name: 'Ejective T sound' },
+  { i: "T", o: "\u00d2", name: 'Indian t sound' },
+  { i: "t!", o: "\u00d8", name: 'Ejective t sound' },
+  { i: "t*", o: "\u00d4", name: 'Click t sound' },
+  { i: "t@", o: "\u1297", name: 'Tense t sound' },
+  { i: "t", o: "\u00d0", name: 'T sound' },
+  { i: "k!", o: "\u005c", name: 'Ejective k sound' },
+  { i: "k*", o: "\u0054", name: 'Click k sound' },
+  { i: "K!", o: "\u005d", name: 'Arabic ejective Q sound' },
+  { i: "K", o: "\u0052", name: 'Arabic Q sound' },
+  { i: "k@", o: "\u1227", name: 'Tense k sound' },
+  { i: "k", o: "\u0050", name: 'K sound' },
+  { i: "H!", o: "\u012d", name: 'Ejective H sound' },
+  { i: "H", o: "\u0122", name: 'Hebrew harsh h sound' },
+  { i: "h", o: "\u0120", name: 'H sound' },
+  { i: "J", o: "\u0152", name: 'Indian j sound' },
+  { i: "j", o: "\u0150", name: 'J sound' },
+  { i: "S!", o: "\u007d", name: 'Navajo ls sound ejective' },
+  { i: "s!", o: "\u007c", name: 'Navajo s sound ejective' },
+  { i: "S", o: "\u0072", name: 'Navajo s sound' },
+  { i: "s@", o: "\u1247", name: 'Tense s sound' },
+  { i: "s", o: "\u0070", name: 'S sound' },
+  { i: "F", o: "\u00c2", name: 'Labial f sound' },
+  { i: "f", o: "\u00c0", name: 'f sound' },
+  { i: "V", o: "\u00f2", name: 'Labial v sound' },
+  { i: "v", o: "\u00f0", name: 'V sound' },
+  { i: "Z", o: "\u0092", name: 'Zulu dl sound' },
+  { i: "z", o: "\u0090", name: 'Z sound' },
+  { i: "C", o: "\u00b0", name: 'Voiced th sound' },
+  { i: "c", o: "\u0080", name: 'Unvoiced th sound' },
+  { i: "L", o: "\u0172", name: 'Indian l sound' },
+  { i: "l*", o: "\u0174", name: 'Click l sound' },
+  { i: "l", o: "\u0170", name: 'L sound' },
+  { i: "R", o: "\u00e2", name: 'Indian r sound' },
+  { i: "r", o: "\u00e0", name: 'Single rolling r sound' },
+  { i: "x!", o: "\u019c", name: 'Ejective sh sound' },
+  { i: "X!", o: "\u0199", name: 'Ejective X sound' },
+  { i: "X", o: "\u0192", name: 'Indian sh sound' },
+  { i: "x@", o: "\u1417", name: 'Tense sh sound' },
+  { i: "x", o: "\u0190", name: 'Sh sound' },
+  { i: "w", o: "\u0110", name: 'W sound' },
+  { i: "W", o: "\u0112", name: 'Welsh w sound' },
+  { i: "y", o: "\u0180", name: 'Y sound' },
+  { i: "Y", o: "\u0182", name: 'Slight y sound' },
+  { i: "$", o: "\u01b2", name: 'Stop sound' },
+  { i: " ", o: "\u0020", name: 'Hanakana Space' },
+  { i: ".", o: "\u0021", name: 'Hanakana Period' },
+  { i: ",", o: "\u0024", name: 'Hanakana comma' },
+  { i: "(", o: "\u0023", name: 'Hanakana opening parenthesis' },
+  { i: ")", o: "\u002b", name: 'Hanakana closing parenthesis' },
+  { i: "[", o: "\u0026", name: 'Hanakana opening bracket' },
+  { i: "]", o: "\u0027", name: 'Hanakana closing bracket' },
+  { i: "|", o: "\u0025", name: 'Hanakana pipe' },
+  { i: "#", o: "\u0028", name: 'Hanakana at sign' },
+  { i: "/", o: "\u0029", name: 'Hanakana forward slash' },
+  { i: "\\", o: "\u002a", name: 'Hanakana backward slash' },
+  { i: ":", o: "\u0022", name: 'Hanakana colon' }
+]
+
+      SYMBOL.forEach(({ i, o, name }, idx) => {
+        let c = document.querySelector('#content')
+        let d = document.createElement('div')
+        d.classList.add('row')
+        if ((idx + 1) % 10 === 0) {
+          d.classList.add('page')
+        }
+        d.innerHTML = `
+        <span class='hanakana'>${o}</span>
+        <span class='def'>
+          <span class='ascii'>${i == ' ' ? '(space)' : i}</span>
+          <span class='description'>${name}</span>
+        </span>
+        `
+        c.appendChild(d)
+        // if (idx % 8 === 0) {
+        //   let d2 = document.createElement('div')
+        //   d2.textContent = '&nbsp;'
+        //   c.appendChild(d2)
+        // }
+      })
+
+      window.DONE = true
+    </script>
+  </body>
+</html>

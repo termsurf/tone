@@ -1,0 +1,6916 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      @font-face {
+        font-family: ToneEtch;
+        src: url('./text/ToneEtchTest.otf');
+      }
+
+      @font-face {
+        font-family: Noto;
+        src: url('./text/NotoSansMono-Regular.ttf');
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Noto;
+        height: 100vh;
+        width: 100vw;
+        line-height: 1.7;
+        color: white;
+        background: #444;
+        font-size: 18px;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        background: #444;
+        padding: 32px 0px;
+      }
+
+      .header {
+        color: white;
+        text-align: center;
+        display: block;
+        padding-bottom: 24px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        padding: 8px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        flex-shrink: 1;
+      }
+
+      p {
+        padding: 12px;
+        margin: 0px;
+      }
+
+      .note {
+        text-align: center;
+        padding-bottom: 24px;
+      }
+
+      .note a {
+        color: white;
+      }
+
+      .word {
+        padding: 12px 16px;
+        border: 4px solid #444;
+        width: 420px;
+        flex-shrink: 0;
+        background: #333;
+      }
+
+      .tone {
+        font-family: ToneEtch;
+        /* letter-spacing: 1.4px; */
+        flex-shrink: 1;
+        font-size: 32px;
+      }
+
+      .meaning {
+        opacity: 0.5;
+      }
+
+      .language {
+        font-size: 12px;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class='header' href='https://github.com/teamdrumwork/tone'>Back to GitHub Repo</a>
+      <p class='note'>Let us know about any mistakes and corrections by posting a <a href='https://github.com/teamdrumwork/tone/issues/new'>GitHub Issue</a>.</p>
+      <div class="content"></div>
+    </div>
+    <script>
+const WORDS = [
+  {
+    "sound": "O",
+    "pronunciation": "fOl",
+    "native": "foule",
+    "language": "french",
+    "meaning": "crowd"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "bOk",
+    "native": "book",
+    "language": "english",
+    "meaning": "book"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "wOd",
+    "native": "would",
+    "language": "english",
+    "meaning": "would"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "klAwd",
+    "native": "cloud",
+    "language": "english",
+    "meaning": "cloud"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "kAt",
+    "native": "cat",
+    "language": "english",
+    "meaning": "cat"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "weyt",
+    "native": "wait",
+    "language": "english",
+    "meaning": "wait"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "dey",
+    "native": "day",
+    "language": "english",
+    "meaning": "day"
+  },
+  {
+    "sound": "ay",
+    "pronunciation": "hay",
+    "native": "hi",
+    "language": "english",
+    "meaning": "hi"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "perro",
+    "native": "perro",
+    "language": "spanish",
+    "meaning": "dog"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "arroz",
+    "native": "arroz",
+    "language": "spanish",
+    "meaning": "rice"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "garra",
+    "native": "garra",
+    "language": "spanish",
+    "meaning": "claw"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "zorro",
+    "native": "zorro",
+    "language": "spanish",
+    "meaning": "fox"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "torre",
+    "native": "torre",
+    "language": "spanish",
+    "meaning": "tower"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "correo",
+    "native": "correo",
+    "language": "spanish",
+    "meaning": "mail"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "tye9rra",
+    "native": "tierra",
+    "language": "spanish",
+    "meaning": "land"
+  },
+  {
+    "sound": "u#",
+    "pronunciation": "2i",
+    "native": "rí",
+    "language": "igbo",
+    "meaning": "eat"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "saic",
+    "native": "saith",
+    "language": "welch",
+    "meaning": "seven"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "wUnbUCO",
+    "native": "ஒன்பது",
+    "language": "tamil",
+    "meaning": "nine"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "juG",
+    "native": "jour",
+    "language": "french",
+    "meaning": "day"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "jaq",
+    "native": "llan",
+    "language": "zapotec",
+    "meaning": "anger"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9ut",
+    "native": "goed",
+    "language": "afrikaans",
+    "meaning": "good"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "me9leh9",
+    "native": "מֶלֶך",
+    "language": "hebrew",
+    "meaning": "king"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9weh9",
+    "native": "chwech",
+    "language": "welsh",
+    "meaning": "six"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9ala",
+    "native": "xala",
+    "language": "nuxalk",
+    "meaning": "fern"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "h9ah9ak94",
+    "native": "xaxaq'",
+    "language": "nuxalk",
+    "meaning": "goose"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4ak9aasi",
+    "native": "k'aqaasi",
+    "language": "nuxalk",
+    "meaning": "crow"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "eqk4p4ts",
+    "native": "ank'pts",
+    "language": "nuxalk",
+    "meaning": "mouse"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "h9its4lh",
+    "native": "xits'lh",
+    "language": "nuxalk",
+    "meaning": "metal (iron)"
+  },
+  {
+    "sound": "kw!",
+    "pronunciation": "kw6ni",
+    "native": "kw'ni",
+    "language": "nuxalk",
+    "meaning": "seal (animal)"
+  },
+  {
+    "sound": "Kw!",
+    "pronunciation": "asak9w6s",
+    "native": "asaqw's",
+    "language": "nuxalk",
+    "meaning": "water (bottom)"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7a3a",
+    "native": "ʘàa",
+    "language": "taa",
+    "meaning": "child"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7go3o",
+    "native": "ʘgòõ",
+    "language": "taa",
+    "meaning": "caterpillar"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7no400o",
+    "native": "ʘnó̰õ",
+    "language": "taa",
+    "meaning": "large louse"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7'a4a",
+    "native": "ʘ'áa",
+    "language": "taa",
+    "meaning": "to burn"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "hUn'",
+    "native": "hånd",
+    "language": "danish",
+    "meaning": "hand"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'il",
+    "native": "일",
+    "language": "korean",
+    "meaning": "one"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "ha'ts9i",
+    "native": "tahtli",
+    "language": "father",
+    "meaning": "nahuatl"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "ma'ni",
+    "native": "معنی",
+    "language": "persian",
+    "meaning": "meaning"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "o'o",
+    "native": "oo",
+    "language": "tagalog",
+    "meaning": "yes"
+  },
+  {
+    "sound": "'#",
+    "pronunciation": "'0unt1",
+    "native": "cunto",
+    "language": "somali",
+    "meaning": "food"
+  },
+  {
+    "sound": "'#",
+    "pronunciation": "ma'0azud",
+    "native": "marazhud",
+    "language": "somali",
+    "meaning": "rain"
+  },
+  {
+    "sound": "'#",
+    "pronunciation": "'0aqrab",
+    "native": "عَقْرَب",
+    "language": "arabic",
+    "meaning": "scorpion"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "a0r",
+    "native": "øre",
+    "language": "danish",
+    "meaning": "ear"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "ma0trk",
+    "native": "møtrik",
+    "language": "danish",
+    "meaning": "nut"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "la0bU",
+    "native": "løbe",
+    "language": "danish",
+    "meaning": "run"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "a0l",
+    "native": "øl",
+    "language": "danish",
+    "meaning": "beer"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "dra0phU",
+    "native": "dråbe",
+    "language": "danish",
+    "meaning": "drop"
+  },
+  {
+    "sound": "U",
+    "pronunciation": "t1jU",
+    "native": "tåge",
+    "language": "danish",
+    "meaning": "fog"
+  },
+  {
+    "sound": "ee",
+    "pronunciation": "leebU",
+    "native": "læbe",
+    "language": "danish",
+    "meaning": "lip"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "sl1",
+    "native": "slå",
+    "language": "danish",
+    "meaning": "beat"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "h1l",
+    "native": "hul",
+    "language": "danish",
+    "meaning": "hole"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "l1fd",
+    "native": "luft",
+    "language": "danish",
+    "meaning": "air"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "t1",
+    "native": "tå",
+    "language": "danish",
+    "meaning": "toe"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "fOyl",
+    "native": "fugl",
+    "language": "danish",
+    "meaning": "bird"
+  },
+  {
+    "sound": "Z",
+    "pronunciation": "umbiiz9i",
+    "native": "uḿbhidli",
+    "language": "zulu",
+    "meaning": "celebration"
+  },
+  {
+    "sound": "Z",
+    "pronunciation": "isa4a4anz9a",
+    "native": "isándla",
+    "language": "zulu",
+    "meaning": "hand"
+  },
+  {
+    "sound": "Z",
+    "pronunciation": "i4i4i3bu4u4u3z9a",
+    "native": "îbhûdla",
+    "language": "zulu",
+    "meaning": "scar"
+  },
+  {
+    "sound": "Z",
+    "pronunciation": "i4i4inz9u",
+    "native": "índlu",
+    "language": "zulu",
+    "meaning": "house"
+  },
+  {
+    "sound": "Z",
+    "pronunciation": "i4i4iz9aag5a",
+    "native": "ī́dlaká",
+    "language": "zulu",
+    "meaning": "loincloth"
+  },
+  {
+    "sound": "g?",
+    "pronunciation": "u4u4ug5udo4o4o3b5a",
+    "native": "úkudôba",
+    "language": "zulu",
+    "meaning": "fishing"
+  },
+  {
+    "sound": "g?",
+    "pronunciation": "i4i4ihhoog5o",
+    "native": "ī́hhoko",
+    "language": "zulu",
+    "meaning": "chicken coup"
+  },
+  {
+    "sound": "g?",
+    "pronunciation": "isiphiig5a",
+    "native": "isíphika",
+    "language": "zulu",
+    "meaning": "cape (garment)"
+  },
+  {
+    "sound": "b?",
+    "pronunciation": "i4i4i3du4u4ub5e",
+    "native": "îdúbe",
+    "language": "zulu",
+    "meaning": "zebra"
+  },
+  {
+    "sound": "b?",
+    "pronunciation": "i4i3sifu4u4u3b5a",
+    "native": "ísifûba",
+    "language": "zulu",
+    "meaning": "secret"
+  },
+  {
+    "sound": "b?",
+    "pronunciation": "i4i4i3b5i4i4i3zo",
+    "native": "îbîzo",
+    "language": "zulu",
+    "meaning": "name"
+  },
+  {
+    "sound": "b?",
+    "pronunciation": "u4ub5u4u4b5i4i",
+    "native": "úbubí",
+    "language": "zulu",
+    "meaning": "evil"
+  },
+  {
+    "sound": "b?",
+    "pronunciation": "u4ub5umto4o4o3ti",
+    "native": "úbumtôti",
+    "language": "zulu",
+    "meaning": "sweetness"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "i4isiis9a4a",
+    "native": "ísihlá",
+    "language": "zulu",
+    "meaning": "cluster"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "i4i4is9aas9a",
+    "native": "ī́hlahla",
+    "language": "zulu",
+    "meaning": "branch (of a tree)"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "u4u4us9u",
+    "native": "ū́hlu",
+    "language": "zulu",
+    "meaning": "ripple"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s9ij",
+    "native": "łizh",
+    "language": "navajo",
+    "meaning": "urine"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "aks9ak",
+    "native": "akłak",
+    "language": "inuktitut",
+    "meaning": "grizzly bear"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s9m",
+    "native": "lhm",
+    "language": "nuxalk",
+    "meaning": "to stand"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s9aas9",
+    "native": "llall",
+    "language": "welsh",
+    "meaning": "the other"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "as9mus9",
+    "native": "alhmulh",
+    "language": "nuxalk",
+    "meaning": "beads"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "i4iqd8hhuumbi",
+    "native": "íngqumbi",
+    "language": "zulu",
+    "meaning": "heap"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "isi4i4igd8hhi",
+    "native": "isígqi",
+    "language": "zulu",
+    "meaning": "sound of footsteps"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "i4i4i3d8ha4a4awe",
+    "native": "îqháwe",
+    "language": "zulu",
+    "meaning": "hero"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "u4u4u3gd8hho4o4o3zi",
+    "native": "ûgqôzi",
+    "language": "zulu",
+    "meaning": "inspiration"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "i4i4igd8hhuub5u4u",
+    "native": "ī́gqubú",
+    "language": "zulu",
+    "meaning": "grudge"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "u4u4ul8oolo",
+    "native": "ū́xolo",
+    "language": "zulu",
+    "meaning": "peace"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "i4i4il8hiib5a",
+    "native": "ī́xhiba",
+    "language": "zulu",
+    "meaning": "makeshift hut"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "i4i4i3l8u4u4u3g5u",
+    "native": "îxûku",
+    "language": "zulu",
+    "meaning": "crowd"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "u4u4ugl8hha",
+    "native": "ū́gxa",
+    "language": "zulu",
+    "meaning": "digging stick"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "i4i4iql8hhi",
+    "native": "íngxi",
+    "language": "zulu",
+    "meaning": "dirt"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4iqt8aazo",
+    "native": "íncazo",
+    "language": "zulu",
+    "meaning": "explanation"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4i4i3t8e4e4eb5o",
+    "native": "îcébo",
+    "language": "zulu",
+    "meaning": "plan of action or method"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4i4it8aala4a",
+    "native": "ī́calá",
+    "language": "zulu",
+    "meaning": "side"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4i4i3t8i4i4it8i",
+    "native": "îcíci",
+    "language": "zulu",
+    "meaning": "earring"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4iqt8hhoosa",
+    "native": "íngcosa",
+    "language": "zulu",
+    "meaning": "meat"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "i4i4it8hiib5i4i",
+    "native": "ī́chibí",
+    "language": "zulu",
+    "meaning": "lake"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "u4uhha4a4afu",
+    "native": "úhháfu",
+    "language": "zulu",
+    "meaning": "half"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "i4i3hho4olo",
+    "native": "îhhólo",
+    "language": "zulu",
+    "meaning": "hall"
+  },
+  {
+    "sound": "K",
+    "pronunciation": "k9iqak9",
+    "native": "qingaq",
+    "language": "inuktitut",
+    "meaning": "nose"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "ak4aju",
+    "native": "აკაჟუ",
+    "language": "georgian",
+    "meaning": "cashew"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "ank4Esi",
+    "native": "ანკესი",
+    "language": "georgian",
+    "meaning": "fishing rod"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "arak4i",
+    "native": "არაკი",
+    "language": "georgian",
+    "meaning": "fable"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s9o4o4'",
+    "native": "łóóʼ",
+    "language": "navajo",
+    "meaning": "fish"
+  },
+  {
+    "sound": "i&+",
+    "pronunciation": "a4txhI400I400h",
+    "native": "áchį́į́h",
+    "language": "navajo",
+    "meaning": "nose"
+  },
+  {
+    "sound": "o&+",
+    "pronunciation": "ak4o400o400'",
+    "native": "akʼǫ́ǫ́ʼ",
+    "language": "navajo",
+    "meaning": "seed"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "aka00a00zIz",
+    "native": "agąąziz",
+    "language": "navajo",
+    "meaning": "sleeve (of garment)"
+  },
+  {
+    "sound": "i&+",
+    "pronunciation": "as9nI400I400'",
+    "native": "ałnį́į́ʼ",
+    "language": "navajo",
+    "meaning": "center"
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "ama4",
+    "native": "amá",
+    "language": "navajo",
+    "meaning": "mother"
+  },
+  {
+    "sound": "tS!",
+    "pronunciation": "ats94a4a4h",
+    "native": "atłʼááh",
+    "language": "navajo",
+    "meaning": "bottom"
+  },
+  {
+    "sound": "a&a&",
+    "pronunciation": "ba00a00s",
+    "native": "bąąs",
+    "language": "navajo",
+    "meaning": "hoop"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "bIna4a4'",
+    "native": "binááʼ",
+    "language": "navajo",
+    "meaning": "acorn"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "tx6as9",
+    "native": "chʼał",
+    "language": "navajo",
+    "meaning": "frog"
+  },
+  {
+    "sound": "I+I+",
+    "pronunciation": "txhI4I4l",
+    "native": "chííl",
+    "language": "navajo",
+    "meaning": "snowstorm"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "ta00",
+    "native": "dą",
+    "language": "navajo",
+    "meaning": "spring (season)"
+  },
+  {
+    "sound": "a&+a&+",
+    "pronunciation": "ta400a400'",
+    "native": "dą́ą́ʼ",
+    "language": "navajo",
+    "meaning": "corn"
+  },
+  {
+    "sound": "o&",
+    "pronunciation": "tI4I4k4o00x",
+    "native": "dííkʼǫsh",
+    "language": "navajo",
+    "meaning": "yeast"
+  },
+  {
+    "sound": "e+e+",
+    "pronunciation": "tse4e4h",
+    "native": "dzééh",
+    "language": "navajo",
+    "meaning": "elk"
+  },
+  {
+    "sound": "e+e+",
+    "pronunciation": "e4e4'",
+    "native": "ééʼ",
+    "language": "navajo",
+    "meaning": "clothing"
+  },
+  {
+    "sound": "a+a",
+    "pronunciation": "ka4a",
+    "native": "gáa",
+    "language": "navajo",
+    "meaning": "crow caw"
+  },
+  {
+    "sound": "e+i+",
+    "pronunciation": "hak4e4I4",
+    "native": "hakʼéí",
+    "language": "navajo",
+    "meaning": "one's kin"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "Is9",
+    "native": "ił",
+    "language": "navajo",
+    "meaning": "pine needle"
+  },
+  {
+    "sound": "I&I&",
+    "pronunciation": "I00I00'a00'ii",
+    "native": "įįʼąʼii",
+    "language": "navajo",
+    "meaning": "magpie"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "I'I4I4'a400",
+    "native": "iʼííʼą́",
+    "language": "navajo",
+    "meaning": "sunset"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "hos9tx'I4'I4",
+    "native": "hołchʼíʼí",
+    "language": "navajo",
+    "meaning": "nettle"
+  },
+  {
+    "sound": "e+e+",
+    "pronunciation": "he4e4s9",
+    "native": "hééł",
+    "language": "navajo",
+    "meaning": "package"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "Ino4t6a4a4h",
+    "native": "inótʼááh",
+    "language": "navajo",
+    "meaning": "deception"
+  },
+  {
+    "sound": "o&+",
+    "pronunciation": "txa4tI4tlo400'II",
+    "native": "jádídlǫ́ʼii",
+    "language": "navajo",
+    "meaning": "wren (bird)"
+  },
+  {
+    "sound": "e+",
+    "pronunciation": "s9e4'e4tsoh",
+    "native": "łéʼétsoh",
+    "language": "navajo",
+    "meaning": "rat"
+  },
+  {
+    "sound": "I&+I&+",
+    "pronunciation": "s9I400I400'",
+    "native": "łį́į́ʼ",
+    "language": "navajo",
+    "meaning": "pet"
+  },
+  {
+    "sound": "o+",
+    "pronunciation": "mo4sI4",
+    "native": "mósí",
+    "language": "navajo",
+    "meaning": "cat"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "ndIk4a00'",
+    "native": "ndikʼąʼ",
+    "language": "navajo",
+    "meaning": "cotton"
+  },
+  {
+    "sound": "a&+",
+    "pronunciation": "sa400",
+    "native": "są́",
+    "language": "navajo",
+    "meaning": "old age"
+  },
+  {
+    "sound": "a&+a&+",
+    "pronunciation": "xa400a400'",
+    "native": "shą́ą́ʼ",
+    "language": "navajo",
+    "meaning": "sunshine"
+  },
+  {
+    "sound": "tS!",
+    "pronunciation": "tha4ts9'IId",
+    "native": "tátłʼid",
+    "language": "navajo",
+    "meaning": "algae"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "thees9",
+    "native": "teeł",
+    "language": "navajo",
+    "meaning": "reed"
+  },
+  {
+    "sound": "o&",
+    "pronunciation": "so00'",
+    "native": "sǫʼ",
+    "language": "navajo",
+    "meaning": "star"
+  },
+  {
+    "sound": "tS!",
+    "pronunciation": "ts9'o4o4s9",
+    "native": "tłʼóół",
+    "language": "navajo",
+    "meaning": "rope (chord)"
+  },
+  {
+    "sound": "o&",
+    "pronunciation": "to4kho00'I4",
+    "native": "tókǫʼí",
+    "language": "navajo",
+    "meaning": "petroleum"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4I4'II",
+    "native": "tsʼíʼii",
+    "language": "navajo",
+    "meaning": "mosquito"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4In",
+    "native": "tsʼin",
+    "language": "navajo",
+    "meaning": "bone"
+  },
+  {
+    "sound": "aa",
+    "pronunciation": "waa'",
+    "native": "waaʼ",
+    "language": "navajo",
+    "meaning": "spinach"
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "ya4",
+    "native": "yá",
+    "language": "navajo",
+    "meaning": "sky"
+  },
+  {
+    "sound": "E&",
+    "pronunciation": "xjE00",
+    "native": "chien",
+    "language": "french",
+    "meaning": "dog"
+  },
+  {
+    "sound": "E&",
+    "pronunciation": "fE00",
+    "native": "fiam",
+    "language": "french",
+    "meaning": "hunger"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "bla00",
+    "native": "blanc",
+    "language": "french",
+    "meaning": "white"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "pa00",
+    "native": "paon",
+    "language": "french",
+    "meaning": "peacock"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "ta00",
+    "native": "temps",
+    "language": "french",
+    "meaning": "time"
+  },
+  {
+    "sound": "o#&",
+    "pronunciation": "b100",
+    "native": "bon",
+    "language": "french",
+    "meaning": "good"
+  },
+  {
+    "sound": "o#&",
+    "pronunciation": "100bG",
+    "native": "ombre",
+    "language": "french",
+    "meaning": "darkness"
+  },
+  {
+    "sound": "E&",
+    "pronunciation": "pE00",
+    "native": "pain",
+    "language": "french",
+    "meaning": "bread"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "a00plUG",
+    "native": "ampleur",
+    "language": "french",
+    "meaning": "scale"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "a00",
+    "native": "an",
+    "language": "french",
+    "meaning": "year"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "sa00dal",
+    "native": "sandales",
+    "language": "french",
+    "meaning": "sandal (footwear)"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "ma00to",
+    "native": "manteau",
+    "language": "french",
+    "meaning": "coat"
+  },
+  {
+    "sound": "E&",
+    "pronunciation": "a00syE00",
+    "native": "ancien",
+    "language": "french",
+    "meaning": "ancient"
+  },
+  {
+    "sound": "o#&",
+    "pronunciation": "100t",
+    "native": "honte",
+    "language": "french",
+    "meaning": "shame"
+  },
+  {
+    "sound": "o#&",
+    "pronunciation": "tG100",
+    "native": "tronc",
+    "language": "french",
+    "meaning": "trunk"
+  },
+  {
+    "sound": "o#&",
+    "pronunciation": "s100",
+    "native": "son",
+    "language": "french",
+    "meaning": "sound"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "sykG",
+    "native": "sucre",
+    "language": "french",
+    "meaning": "sugar"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "faGin",
+    "native": "farine",
+    "language": "french",
+    "meaning": "flour"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guj",
+    "native": "rouge",
+    "language": "french",
+    "meaning": "red"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "kGeno",
+    "native": "créneau",
+    "language": "french",
+    "meaning": "slot"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gavi",
+    "native": "ravi",
+    "language": "french",
+    "meaning": "delighted"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "a9Goh9",
+    "native": "אָרֹךְ",
+    "language": "hebrew",
+    "meaning": "long"
+  },
+  {
+    "sound": "a",
+    "pronunciation": "a9dam",
+    "native": "אָדָם",
+    "language": "hebrew",
+    "meaning": "man"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "ye9led",
+    "native": "יֶלֶד",
+    "language": "hebrew",
+    "meaning": "child"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9a9ya",
+    "native": "חַיָּה",
+    "language": "hebrew",
+    "meaning": "animal"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "tsipo9G",
+    "native": "צִפּוֹר",
+    "language": "hebrew",
+    "meaning": "bird"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "nah9a9x",
+    "native": "נָחָשׁ",
+    "language": "hebrew",
+    "meaning": "snake"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "ets",
+    "native": "עֵץ",
+    "language": "hebrew",
+    "meaning": "tree"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "ya9'aG",
+    "native": "יַעַר",
+    "language": "hebrew",
+    "meaning": "forest"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "pGi",
+    "native": "פְּרִי",
+    "language": "hebrew",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "pe9Gah9",
+    "native": "פֶּרַח",
+    "language": "hebrew",
+    "meaning": "flower"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "basa9G",
+    "native": "בָּשָׂר",
+    "language": "hebrew",
+    "meaning": "flesh"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "se'aGa9",
+    "native": "שַׂעֲרָה",
+    "language": "hebrew",
+    "meaning": "hair"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gox",
+    "native": "רֹאשׁ",
+    "language": "hebrew",
+    "meaning": "head"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9ata9h9",
+    "native": "חֲתָךְ",
+    "language": "hebrew",
+    "meaning": "cut"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "la9h9ats",
+    "native": "לַחַץ",
+    "language": "hebrew",
+    "meaning": "pressure"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "kInt",
+    "native": "kind",
+    "language": "german",
+    "meaning": "child"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "hOnt",
+    "native": "hund",
+    "language": "german",
+    "meaning": "dog"
+  },
+  {
+    "sound": "x",
+    "pronunciation": "xlaqU",
+    "native": "schlange",
+    "language": "german",
+    "meaning": "snake"
+  },
+  {
+    "sound": "aO",
+    "pronunciation": "baOm",
+    "native": "baum",
+    "language": "german",
+    "meaning": "tree"
+  },
+  {
+    "sound": "aa",
+    "pronunciation": "gGaas",
+    "native": "gras",
+    "language": "german",
+    "meaning": "grass"
+  },
+  {
+    "sound": "aI",
+    "pronunciation": "flaIx",
+    "native": "fleisch",
+    "language": "german",
+    "meaning": "flesh"
+  },
+  {
+    "sound": "aI",
+    "pronunciation": "aI",
+    "native": "ei",
+    "language": "german",
+    "meaning": "egg"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "Gi90kUn",
+    "native": "rücken",
+    "language": "german",
+    "meaning": "back (body)"
+  },
+  {
+    "sound": "EE",
+    "pronunciation": "E9EnlIx",
+    "native": "ähnlich",
+    "language": "german",
+    "meaning": "similar"
+  },
+  {
+    "sound": "EE",
+    "pronunciation": "mE9Etxy9Un",
+    "native": "mädchen",
+    "language": "german",
+    "meaning": "girl"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "w1Gt",
+    "native": "wort",
+    "language": "german",
+    "meaning": "word"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "xli0sUl",
+    "native": "schlüssel",
+    "language": "german",
+    "meaning": "key"
+  },
+  {
+    "sound": "e#",
+    "pronunciation": "le0fUl",
+    "native": "löffel",
+    "language": "german",
+    "meaning": "spoon"
+  },
+  {
+    "sound": "i#i#",
+    "pronunciation": "i0i0bUn",
+    "native": "üben",
+    "language": "german",
+    "meaning": "to practice"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "hooh9",
+    "native": "hoch",
+    "language": "german",
+    "meaning": "high"
+  },
+  {
+    "sound": "lY",
+    "pronunciation": "lye9nUv",
+    "native": "leanabh",
+    "language": "scottish gaelic",
+    "meaning": "child"
+  },
+  {
+    "sound": "rY",
+    "pronunciation": "ma9ahUry9",
+    "native": "màthair",
+    "language": "scottish gaelic",
+    "meaning": "mother"
+  },
+  {
+    "sound": "ia",
+    "pronunciation": "ian",
+    "native": "eun",
+    "language": "scottish gaelic",
+    "meaning": "bird"
+  },
+  {
+    "sound": "OO",
+    "pronunciation": "krOOv",
+    "native": "craobh",
+    "language": "scottish gaelic",
+    "meaning": "tree"
+  },
+  {
+    "sound": "lY",
+    "pronunciation": "khO9ly9U",
+    "native": "coille",
+    "language": "scottish gaelic",
+    "meaning": "forest"
+  },
+  {
+    "sound": "lY",
+    "pronunciation": "tOly9ak",
+    "native": "duilleag",
+    "language": "scottish gaelic",
+    "meaning": "leaf"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "khra00a00v",
+    "native": "cnàmh",
+    "language": "scottish gaelic",
+    "meaning": "bone"
+  },
+  {
+    "sound": "OU",
+    "pronunciation": "O9Urk",
+    "native": "adharc",
+    "language": "scottish gaelic",
+    "meaning": "horn"
+  },
+  {
+    "sound": "kYh",
+    "pronunciation": "ky9haun",
+    "native": "ceann",
+    "language": "scottish gaelic",
+    "meaning": "head"
+  },
+  {
+    "sound": "uu",
+    "pronunciation": "suul",
+    "native": "sùil",
+    "language": "scottish gaelic",
+    "meaning": "eye"
+  },
+  {
+    "sound": "rY",
+    "pronunciation": "khry9iU",
+    "native": "cridhe",
+    "language": "scottish gaelic",
+    "meaning": "heart"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "trOm",
+    "native": "trwm",
+    "language": "welsh",
+    "meaning": "heavy"
+  },
+  {
+    "sound": "a",
+    "pronunciation": "plant",
+    "native": "plant",
+    "language": "welsh",
+    "meaning": "child"
+  },
+  {
+    "sound": "w",
+    "pronunciation": "gwraig",
+    "native": "gwraig",
+    "language": "welsh",
+    "meaning": "wife"
+  },
+  {
+    "sound": "phh",
+    "pronunciation": "phhUsk1d",
+    "native": "pysgod",
+    "language": "welsh",
+    "meaning": "fish"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "fruui0c",
+    "native": "ffrwyth",
+    "language": "welsh",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "rh",
+    "pronunciation": "rhisgl",
+    "native": "rhisgl",
+    "language": "welsh",
+    "meaning": "bark (of tree)"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "gwees9d",
+    "native": "gwellt",
+    "language": "welsh",
+    "meaning": "grass"
+  },
+  {
+    "sound": "rh",
+    "pronunciation": "rhaf",
+    "native": "rhaff",
+    "language": "welsh",
+    "meaning": "rope"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s91sd",
+    "native": "llost",
+    "language": "welsh",
+    "meaning": "tail"
+  },
+  {
+    "sound": "S",
+    "pronunciation": "s9U9gad",
+    "native": "llygad",
+    "language": "welsh",
+    "meaning": "eye"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "tr1id",
+    "native": "troed",
+    "language": "welsh",
+    "meaning": "foot"
+  },
+  {
+    "sound": "fY",
+    "pronunciation": "fy9arw0",
+    "native": "fear",
+    "language": "irish",
+    "meaning": "man (male)"
+  },
+  {
+    "sound": "dW",
+    "pronunciation": "dw0I9ny9U",
+    "native": "duine",
+    "language": "irish",
+    "meaning": "human"
+  },
+  {
+    "sound": "vW",
+    "pronunciation": "ly9a9Uvw0",
+    "native": "leanbh",
+    "language": "irish",
+    "meaning": "child"
+  },
+  {
+    "sound": "mW",
+    "pronunciation": "mw0aahUry9",
+    "native": "máthair",
+    "language": "irish",
+    "meaning": "mother"
+  },
+  {
+    "sound": "sW",
+    "pronunciation": "iUsw0k",
+    "native": "iasc",
+    "language": "irish",
+    "meaning": "fish"
+  },
+  {
+    "sound": "mW",
+    "pronunciation": "mw0a9drw0U",
+    "native": "madra",
+    "language": "irish",
+    "meaning": "dog"
+  },
+  {
+    "sound": "nW",
+    "pronunciation": "nw0A9hUry9",
+    "native": "nathair",
+    "language": "irish",
+    "meaning": "snake"
+  },
+  {
+    "sound": "rW",
+    "pronunciation": "krw0aanw0",
+    "native": "crann"
+  },
+  {
+    "sound": "bW",
+    "pronunciation": "bw0a9tw0U",
+    "native": "bata",
+    "language": "irish",
+    "meaning": "stick"
+  },
+  {
+    "sound": "tW",
+    "pronunciation": "tw01rw0U",
+    "native": "toradh",
+    "language": "irish",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "fY",
+    "pronunciation": "fy9eerw0",
+    "native": "féar",
+    "language": "irish",
+    "meaning": "grass"
+  },
+  {
+    "sound": "fW",
+    "pronunciation": "fw0Il",
+    "native": "fuil",
+    "language": "irish",
+    "meaning": "blood"
+  },
+  {
+    "sound": "vY",
+    "pronunciation": "knaavy9",
+    "native": "cnámh",
+    "language": "irish",
+    "meaning": "bone"
+  },
+  {
+    "sound": "vW",
+    "pronunciation": "1vw0",
+    "native": "ubh",
+    "language": "irish",
+    "meaning": "egg"
+  },
+  {
+    "sound": "lW",
+    "pronunciation": "lw0avw0",
+    "native": "lámh",
+    "language": "irish",
+    "meaning": "hand"
+  },
+  {
+    "sound": "kY",
+    "pronunciation": "x0i0roky9Iy",
+    "native": "широ́кий",
+    "language": "russian",
+    "meaning": "wide"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "j0E9ny9xyInU",
+    "native": "же́нщина",
+    "language": "russian",
+    "meaning": "woman"
+  },
+  {
+    "sound": "e#",
+    "pronunciation": "ry9Iby9e90nUk",
+    "native": "ребёнок",
+    "language": "russian",
+    "meaning": "child"
+  },
+  {
+    "sound": "vY",
+    "pronunciation": "zvy9ery9",
+    "native": "зверь",
+    "language": "russian",
+    "meaning": "animal"
+  },
+  {
+    "sound": "tY",
+    "pronunciation": "pty9i9tsU",
+    "native": "пти́ца",
+    "language": "russian",
+    "meaning": "bird"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "zmy9Iya9",
+    "native": "змея́",
+    "language": "russian",
+    "meaning": "snake"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "txy9erfy9",
+    "native": "червь",
+    "language": "russian",
+    "meaning": "worm"
+  },
+  {
+    "sound": "sY",
+    "pronunciation": "sy9emy9U",
+    "native": "се́мя",
+    "language": "russian",
+    "meaning": "seed"
+  },
+  {
+    "sound": "vY",
+    "pronunciation": "tsvy9Ito9k",
+    "native": "цвето́к",
+    "language": "russian",
+    "meaning": "flower"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "my9asU",
+    "native": "мя́со",
+    "language": "russian",
+    "meaning": "flesh"
+  },
+  {
+    "sound": "vY",
+    "pronunciation": "vy9Iry9O9fkU",
+    "native": "верёвка",
+    "language": "russian",
+    "meaning": "rope (chord)"
+  },
+  {
+    "sound": "hv",
+    "pronunciation": "hvost",
+    "native": "хвост",
+    "language": "russian",
+    "meaning": "tail"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "kri0lyo",
+    "native": "крыло́",
+    "language": "russian",
+    "meaning": "wing"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "koj0U",
+    "native": "ко́жа",
+    "language": "russian",
+    "meaning": "skin"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "maCi0r",
+    "native": "maður",
+    "language": "icelandic",
+    "meaning": "human"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "fi0kl",
+    "native": "fugl",
+    "language": "icelandic",
+    "meaning": "bird"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "hi0nti0r",
+    "native": "hundur",
+    "language": "icelandic",
+    "meaning": "dog"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "1rmi0r",
+    "native": "ormur",
+    "language": "icelandic",
+    "meaning": "worm"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "huC",
+    "native": "húð",
+    "language": "icelandic",
+    "meaning": "skin"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "fyACi0r",
+    "native": "fjöður",
+    "language": "icelandic",
+    "meaning": "feather"
+  },
+  {
+    "sound": "oo",
+    "pronunciation": "moodor",
+    "native": "mōdor",
+    "language": "old english",
+    "meaning": "mother"
+  },
+  {
+    "sound": "Q",
+    "pronunciation": "fuq9ol",
+    "native": "fugol",
+    "language": "old english",
+    "meaning": "bird"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "wAstm",
+    "native": "wæstm",
+    "language": "old english",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "L",
+    "pronunciation": "teel0",
+    "native": "தேள்",
+    "language": "tamil",
+    "meaning": "scorpion"
+  },
+  {
+    "sound": "LL",
+    "pronunciation": "pal0l0ikkuut0am",
+    "native": "பள்ளிக்கூடம்",
+    "language": "tamil",
+    "meaning": "school"
+  },
+  {
+    "sound": "LL",
+    "pronunciation": "mul0l0aqki",
+    "native": "முள்ளங்கி",
+    "language": "tamil",
+    "meaning": "radish"
+  },
+  {
+    "sound": "LL",
+    "pronunciation": "vel0l0ai",
+    "native": "வெள்ளை",
+    "language": "tamil",
+    "meaning": "white"
+  },
+  {
+    "sound": "L",
+    "pronunciation": "vaal0",
+    "native": "வாள்",
+    "language": "tamil",
+    "meaning": "sword"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "atix0t0am",
+    "native": "அதிஷ்டம்",
+    "language": "tamil",
+    "meaning": "luck"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "pux0pam",
+    "native": "புஷ்பம்",
+    "language": "tamil",
+    "meaning": "flower"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "txy9antoox0am",
+    "native": "சந்தோஷம்",
+    "language": "tamil",
+    "meaning": "happiness"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "vix0am",
+    "native": "விஷம்",
+    "language": "tamil",
+    "meaning": "poison"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "mut0t0ai",
+    "native": "முட்டை",
+    "language": "tamil",
+    "meaning": "eggs"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "txy9at0t0ai",
+    "native": "சட்டை",
+    "language": "tamil",
+    "meaning": "shirt"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "pat0t0aampuutxyi",
+    "native": "பட்டாம்பூச்சி",
+    "language": "tamil",
+    "meaning": "butterfly"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "pat0t0aatxy9u",
+    "native": "பட்டாசு",
+    "language": "tamil",
+    "meaning": "crackers"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "ot0t0akam",
+    "native": "ஒட்டகம்",
+    "language": "tamil",
+    "meaning": "camel"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "kan9",
+    "native": "கண்",
+    "language": "tamil",
+    "meaning": "eye"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "van9t0u",
+    "native": "வண்டு",
+    "language": "tamil",
+    "meaning": "beetle"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "pun9",
+    "native": "புண்",
+    "language": "tamil",
+    "meaning": "sore"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "kuun9t0u",
+    "native": "கூண்டு",
+    "language": "tamil",
+    "meaning": "cage"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "nan9t0u",
+    "native": "நண்டு",
+    "language": "tamil",
+    "meaning": "crab"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "uunytxy9al",
+    "native": "ஊஞ்சல்",
+    "language": "tamil",
+    "meaning": "swing"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "panytxy9u",
+    "native": "பஞ்சு",
+    "language": "tamil",
+    "meaning": "cotton"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "inytxy9i",
+    "native": "இஞ்சி",
+    "language": "tamil",
+    "meaning": "ginger"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "manytxy9al0",
+    "native": "மஞ்சள்",
+    "language": "tamil",
+    "meaning": "yellow"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "aatxy9iriyar",
+    "native": "ஆசிரியர்",
+    "language": "tamil",
+    "meaning": "teacher"
+  },
+  {
+    "sound": "NN",
+    "pronunciation": "tan9n9iir",
+    "native": "தண்ணீர்",
+    "language": "tamil",
+    "meaning": "water"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "txy9arkkarai",
+    "native": "சர்க்கரை",
+    "language": "tamil",
+    "meaning": "sugar"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "iyarrkai",
+    "native": "இயற்கை",
+    "language": "tamil",
+    "meaning": "nature"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "perroor",
+    "native": "பெற்றோர்",
+    "language": "tamil",
+    "meaning": "parents"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "naarrkaali",
+    "native": "நாற்காலி",
+    "language": "tamil",
+    "meaning": "chair"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "karrpuuram",
+    "native": "கற்பூரம்",
+    "language": "tamil",
+    "meaning": "camphor"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "naarrpatu",
+    "native": "நாற்பது",
+    "language": "tamil",
+    "meaning": "forty"
+  },
+  {
+    "sound": "r",
+    "pronunciation": "keervaraku",
+    "native": "கேழ்வரகு",
+    "language": "tamil",
+    "meaning": "ragi"
+  },
+  {
+    "sound": "r",
+    "pronunciation": "niirviirtxyi",
+    "native": "நீர்வீழ்ச்சி",
+    "language": "tamil",
+    "meaning": "waterfall"
+  },
+  {
+    "sound": "r",
+    "pronunciation": "itar",
+    "native": "இதழ்",
+    "language": "tamil",
+    "meaning": "lip"
+  },
+  {
+    "sound": "r",
+    "pronunciation": "taarpaan",
+    "native": "தாழ்ப்பான்",
+    "language": "tamil",
+    "meaning": "latch"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "aalsq9auut",
+    "native": "الصَّوت",
+    "language": "arabic",
+    "meaning": "sound"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "aalsq9abaahh",
+    "native": "الصَّباح",
+    "language": "arabic",
+    "meaning": "morning"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "'sq9far",
+    "native": "أصفَر",
+    "language": "arabic",
+    "meaning": "yellow"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9abii",
+    "native": "صَبيّ",
+    "language": "arabic",
+    "meaning": "boy"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "aalsq9k9r",
+    "native": "الصقر",
+    "language": "arabic",
+    "meaning": "hawk"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "aaldq9uhhii",
+    "native": "الضُّحي",
+    "language": "arabic",
+    "meaning": "morning"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "aaldq9ab'",
+    "native": "الضَّبع",
+    "language": "arabic",
+    "meaning": "hyena"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "aaldq9uu'",
+    "native": "الضوء",
+    "language": "arabic",
+    "meaning": "light"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "'abaydq9",
+    "native": "أَبيَض",
+    "language": "arabic",
+    "meaning": "white"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "'h9dq9r",
+    "native": "أخضر",
+    "language": "arabic",
+    "meaning": "green"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9iflu",
+    "native": "طِفْلُ",
+    "language": "arabic",
+    "meaning": "baby"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "bitq9riik9",
+    "native": "بِطْريق",
+    "language": "arabic",
+    "meaning": "penguin"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "'ah9tq9abuutq9",
+    "native": "أَخْطَبوط",
+    "language": "arabic",
+    "meaning": "octopus"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9aauus",
+    "native": "طاووس",
+    "language": "arabic",
+    "meaning": "peacock"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9aa'yrat",
+    "native": "طائرة",
+    "language": "arabic",
+    "meaning": "plane"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9abii",
+    "native": "ظَبيّ",
+    "language": "arabic",
+    "meaning": "antelope"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9all",
+    "native": "ظَلّ",
+    "language": "arabic",
+    "meaning": "shadow"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "miCq9allaat",
+    "native": "مِظَلَّة",
+    "language": "arabic",
+    "meaning": "umbrella"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9laam",
+    "native": "ظلام",
+    "language": "arabic",
+    "meaning": "dark"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9aahrat",
+    "native": "ظاهرة",
+    "language": "arabic",
+    "meaning": "phenomenon"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'inb",
+    "native": "عِنب",
+    "language": "arabic",
+    "meaning": "grape"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'alm",
+    "native": "عَلم",
+    "language": "arabic",
+    "meaning": "flag"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'usq9fuur",
+    "native": "عُصفُور",
+    "language": "arabic",
+    "meaning": "sparrow"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'asq9b",
+    "native": "عَصب",
+    "language": "arabic",
+    "meaning": "nerve"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'uiiuun",
+    "native": "عُيون",
+    "language": "arabic",
+    "meaning": "eyes"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guraabba",
+    "native": "غُرابَّ",
+    "language": "arabic",
+    "meaning": "crow"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guiiuum",
+    "native": "غُيوم",
+    "language": "arabic",
+    "meaning": "clouds"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gaabat",
+    "native": "غابة",
+    "language": "arabic",
+    "meaning": "forest"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gzaal",
+    "native": "غزال",
+    "language": "arabic",
+    "meaning": "deer"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guruub",
+    "native": "غُرُوب",
+    "language": "arabic",
+    "meaning": "sunset"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhisq9aan",
+    "native": "حِصان",
+    "language": "arabic",
+    "meaning": "horse"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhaafilat",
+    "native": "حافِلة",
+    "language": "arabic",
+    "meaning": "bus"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhuut",
+    "native": "حُوت",
+    "language": "arabic",
+    "meaning": "whale"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhimaar",
+    "native": "حِمار",
+    "language": "arabic",
+    "meaning": "donkey"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "k9mhh",
+    "native": "قمْح",
+    "language": "arabic",
+    "meaning": "wheat"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9abbaar",
+    "native": "صَبَّارْ",
+    "language": "arabic",
+    "meaning": "cactus"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9ak9ra",
+    "native": "صَقْرَ",
+    "language": "arabic",
+    "meaning": "hawk"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9ahhraa'i",
+    "native": "صَحْرَاءِ",
+    "language": "arabic",
+    "meaning": "desert"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9uufi",
+    "native": "صُوفِ",
+    "language": "arabic",
+    "meaning": "wool"
+  },
+  {
+    "sound": "sQ",
+    "pronunciation": "sq9ursq9uur",
+    "native": "صُرْصُورْ",
+    "language": "arabic",
+    "meaning": "cockroach"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "dq9abaaba",
+    "native": "ضَبَابَ",
+    "language": "arabic",
+    "meaning": "fog"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "dq9afdq9a'",
+    "native": "ضَفْضَعْ",
+    "language": "arabic",
+    "meaning": "frog"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "dq9ab'a",
+    "native": "ضَبْعَ",
+    "language": "arabic",
+    "meaning": "hyena"
+  },
+  {
+    "sound": "dQ",
+    "pronunciation": "dq9auu'i",
+    "native": "ضَوْءِ",
+    "language": "arabic",
+    "meaning": "light"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9uiiuuri",
+    "native": "طُيُورِ",
+    "language": "arabic",
+    "meaning": "birds"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9ifli",
+    "native": "طِفْلِ",
+    "language": "arabic",
+    "meaning": "child"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9aauus",
+    "native": "طَاوُوسْ",
+    "language": "arabic",
+    "meaning": "peacock"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9amaatq9imi",
+    "native": "طَمَاطِمِ",
+    "language": "arabic",
+    "meaning": "tomato"
+  },
+  {
+    "sound": "tQ",
+    "pronunciation": "tq9a'aami",
+    "native": "طَعَامِ",
+    "language": "arabic",
+    "meaning": "food"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9abay",
+    "native": "ظَبْيَ",
+    "language": "arabic",
+    "meaning": "antelope"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9illa",
+    "native": "ظِلَّ",
+    "language": "arabic",
+    "meaning": "shadow"
+  },
+  {
+    "sound": "CQ",
+    "pronunciation": "Cq9ama'i",
+    "native": "ظَمَأِ",
+    "language": "arabic",
+    "meaning": "thirst"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'asalu",
+    "native": "عَسَلُ",
+    "language": "arabic",
+    "meaning": "honey"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'inabi",
+    "native": "عِنَبِ",
+    "language": "arabic",
+    "meaning": "grape"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'aami",
+    "native": "عَامِ",
+    "language": "arabic",
+    "meaning": "year"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'uxxi",
+    "native": "عُشِّ",
+    "language": "arabic",
+    "meaning": "nest"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'unk9uudi",
+    "native": "عُنْقُودِ",
+    "language": "arabic",
+    "meaning": "cluster"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guiiuumi",
+    "native": "غُيُومِ",
+    "language": "arabic",
+    "meaning": "clouds"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Guraab",
+    "native": "غُرَابْ",
+    "language": "arabic",
+    "meaning": "crow"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gazaal",
+    "native": "غَزَالْ",
+    "language": "arabic",
+    "meaning": "deer"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gaabaata",
+    "native": "غَابَةَ",
+    "language": "arabic",
+    "meaning": "forest"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gusq9ni",
+    "native": "غُصْنِ",
+    "language": "arabic",
+    "meaning": "tree"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhaawt",
+    "native": "حَوَتْ",
+    "language": "arabic",
+    "meaning": "whale"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhaadjiba",
+    "native": "حَاجِبَ",
+    "language": "arabic",
+    "meaning": "eyebrow"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhalzuun",
+    "native": "حَلْزُونْ",
+    "language": "arabic",
+    "meaning": "snail"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhisq9aana",
+    "native": "حِصَانَ",
+    "language": "arabic",
+    "meaning": "horse"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhimaari",
+    "native": "حِمَارِ",
+    "language": "arabic",
+    "meaning": "donkey"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhaayawaani",
+    "native": "حَيَوَانِ",
+    "language": "arabic",
+    "meaning": "animal"
+  },
+  {
+    "sound": "hh",
+    "pronunciation": "hhadiik9aatin",
+    "native": "حَدِيقَةٍ",
+    "language": "arabic",
+    "meaning": "garden"
+  },
+  {
+    "sound": "U&O&",
+    "pronunciation": "korasU00O00",
+    "native": "coração",
+    "language": "portuguese (brazil)",
+    "meaning": "heart"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "iGma00",
+    "native": "irmã",
+    "language": "portuguese (brazil)",
+    "meaning": "sister"
+  },
+  {
+    "sound": "e&",
+    "pronunciation": "e900tri",
+    "native": "entre",
+    "language": "portuguese (brazil)",
+    "meaning": "between"
+  },
+  {
+    "sound": "U&",
+    "pronunciation": "ma9sU00",
+    "native": "maçã",
+    "language": "portuguese (brazil)",
+    "meaning": "apple"
+  },
+  {
+    "sound": "U&I&",
+    "pronunciation": "mU00I00",
+    "native": "mãe",
+    "language": "portuguese (brazil)",
+    "meaning": "mother"
+  },
+  {
+    "sound": "U&",
+    "pronunciation": "lU00mU",
+    "native": "lama",
+    "language": "portuguese (brazil)",
+    "meaning": "mud"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "koly9E9G",
+    "native": "colher",
+    "language": "portuguese (brazil)",
+    "meaning": "spoon"
+  },
+  {
+    "sound": "d?",
+    "pronunciation": "d5aya",
+    "native": "ɗaya",
+    "language": "hausa",
+    "meaning": "one"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "da4a4'i3ra4a4",
+    "native": "dā'ìr̃ā",
+    "language": "hausa",
+    "meaning": "circle"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4o3o3k4a4ri4",
+    "native": "ƙṑƙari",
+    "language": "hausa",
+    "meaning": "effort"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4a4sa4a4",
+    "native": "ƙasā",
+    "language": "hausa",
+    "meaning": "soil"
+  },
+  {
+    "sound": "d?",
+    "pronunciation": "d5a4a4",
+    "native": "ɗáː",
+    "language": "hausa",
+    "meaning": "son"
+  },
+  {
+    "sound": "d?",
+    "pronunciation": "d5i4go3o3",
+    "native": "ɗigṑ",
+    "language": "hausa",
+    "meaning": "a drop"
+  },
+  {
+    "sound": "kw",
+    "pronunciation": "'a3kwa3a3ti3",
+    "native": "àkwā̀tì",
+    "language": "hausa",
+    "meaning": "box"
+  },
+  {
+    "sound": "kw",
+    "pronunciation": "kwa3a3d5o4o4",
+    "native": "kwā̀ɗō",
+    "language": "hausa",
+    "meaning": "frog"
+  },
+  {
+    "sound": "kY",
+    "pronunciation": "ky9a4a3u",
+    "native": "kyâu",
+    "language": "hausa",
+    "meaning": "beauty"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4a3ho4o4",
+    "native": "ƙàhō",
+    "language": "hausa",
+    "meaning": "horn"
+  },
+  {
+    "sound": "a-a--",
+    "pronunciation": "'b5a3a33",
+    "native": "bà",
+    "language": "vietnamese",
+    "meaning": "grandmother"
+  },
+  {
+    "sound": "a+a+a++",
+    "pronunciation": "'b5a4a4a44y",
+    "native": "bãi",
+    "language": "vietnamese",
+    "meaning": "shore"
+  },
+  {
+    "sound": "aaa--",
+    "pronunciation": "'b5aaa33q",
+    "native": "bảng",
+    "language": "vietnamese",
+    "meaning": "a board"
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "'b5aa4yq",
+    "native": "bánh",
+    "language": "vietnamese",
+    "meaning": "vaguely defined term"
+  },
+  {
+    "sound": "UU+",
+    "pronunciation": "'b5UU4k99",
+    "native": "bấc",
+    "language": "vietnamese",
+    "meaning": "wick"
+  },
+  {
+    "sound": "UU-",
+    "pronunciation": "'b5UU3k99'",
+    "native": "bậc",
+    "language": "vietnamese",
+    "meaning": "stair step"
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "'b5aa4w",
+    "native": "báo",
+    "language": "vietnamese",
+    "meaning": "leopard"
+  },
+  {
+    "sound": "a+a+a++",
+    "pronunciation": "'b5a4a4a44wq9",
+    "native": "bão",
+    "language": "vietnamese",
+    "meaning": "storm"
+  },
+  {
+    "sound": "U-U--",
+    "pronunciation": "'b5U3U33y",
+    "native": "bầy",
+    "language": "vietnamese",
+    "meaning": "flock"
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "'b5aa4p99",
+    "native": "bắp",
+    "language": "vietnamese",
+    "meaning": "a blossom"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qoo",
+    "native": "ngô",
+    "language": "vietnamese",
+    "meaning": "corn"
+  },
+  {
+    "sound": "iU+",
+    "pronunciation": "'b5iU4w",
+    "native": "biếu",
+    "language": "vietnamese",
+    "meaning": "to cordially give"
+  },
+  {
+    "sound": "iU--",
+    "pronunciation": "'b5iU33n",
+    "native": "biển",
+    "language": "vietnamese",
+    "meaning": "sea/ocean"
+  },
+  {
+    "sound": "iU--",
+    "pronunciation": "'b5iU33w",
+    "native": "biểu",
+    "language": "vietnamese",
+    "meaning": "table of data"
+  },
+  {
+    "sound": "t.",
+    "pronunciation": "'b5iit00",
+    "native": "bit",
+    "language": "vietnamese",
+    "meaning": "bit (computing)"
+  },
+  {
+    "sound": "o#+o#++",
+    "pronunciation": "'b514144",
+    "native": "bó",
+    "language": "vietnamese",
+    "meaning": "to pack"
+  },
+  {
+    "sound": "o#o#-",
+    "pronunciation": "'b5113'",
+    "native": "bọ",
+    "language": "vietnamese",
+    "meaning": "bug"
+  },
+  {
+    "sound": "aa-",
+    "pronunciation": "'b5aa3wkp99'",
+    "native": "bọc",
+    "language": "vietnamese",
+    "meaning": "bundle"
+  },
+  {
+    "sound": "E-E--",
+    "pronunciation": "txy9E3E33",
+    "native": "chè",
+    "language": "vietnamese",
+    "meaning": "tea"
+  },
+  {
+    "sound": "U-U--",
+    "pronunciation": "txy9U3U33w",
+    "native": "chầu",
+    "language": "vietnamese",
+    "meaning": "party"
+  },
+  {
+    "sound": "E-E--",
+    "pronunciation": "txy9E3E33w",
+    "native": "chèo",
+    "language": "vietnamese",
+    "meaning": "oar"
+  },
+  {
+    "sound": "a-a--",
+    "pronunciation": "za3a33yq",
+    "native": "dành",
+    "language": "vietnamese",
+    "meaning": "to reserve for"
+  },
+  {
+    "sound": "E+E++",
+    "pronunciation": "zE4E44q9",
+    "native": "dẽ",
+    "language": "vietnamese",
+    "meaning": "lumpy"
+  },
+  {
+    "sound": "d?",
+    "pronunciation": "'d5aam",
+    "native": "đam",
+    "language": "vietnamese",
+    "meaning": "crab"
+  },
+  {
+    "sound": "d?",
+    "pronunciation": "'d5aaa3'",
+    "native": "đạn",
+    "language": "vietnamese",
+    "meaning": "a bullet"
+  },
+  {
+    "sound": "EE--",
+    "pronunciation": "'d5EE33",
+    "native": "đẻ",
+    "language": "vietnamese",
+    "meaning": "to give birth to"
+  },
+  {
+    "sound": "i-U--",
+    "pronunciation": "'d5i3U33",
+    "native": "đìa",
+    "language": "vietnamese",
+    "meaning": "a pond"
+  },
+  {
+    "sound": "o#o#-",
+    "pronunciation": "'d5113t00'",
+    "native": "đọt",
+    "language": "vietnamese",
+    "meaning": "a sprout"
+  },
+  {
+    "sound": "k.",
+    "pronunciation": "kra3a33ti3i33k99",
+    "native": "กระติก",
+    "language": "thai",
+    "meaning": "water jug"
+  },
+  {
+    "sound": "t.",
+    "pronunciation": "ko3o33t00",
+    "native": "กฎ",
+    "language": "thai",
+    "meaning": "inscription"
+  },
+  {
+    "sound": "i-i--",
+    "pronunciation": "ka3a33ti3i33kaa",
+    "native": "กติกา",
+    "language": "thai",
+    "meaning": "agreement"
+  },
+  {
+    "sound": "o-o--",
+    "pronunciation": "ka3a33no3o33k99",
+    "native": "กนก",
+    "language": "thai",
+    "meaning": "gold"
+  },
+  {
+    "sound": "o#+o#++",
+    "pronunciation": "l14144",
+    "native": "ล้อ",
+    "language": "thai",
+    "meaning": "to copy"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "th144133ykham",
+    "native": "ถ้อยคำ",
+    "language": "thai",
+    "meaning": "speech"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "tha4a44t00sa3a33na4a44kha4a44ti3i33'",
+    "native": "ทัศนคติ",
+    "language": "thai",
+    "meaning": "attitude"
+  },
+  {
+    "sound": "txYh",
+    "pronunciation": "txy9ha3a33nu33a4n",
+    "native": "ฉนวน",
+    "language": "thai",
+    "meaning": "corridor"
+  },
+  {
+    "sound": "txYh",
+    "pronunciation": "txy9hu44a33",
+    "native": "ชั่ว",
+    "language": "thai",
+    "meaning": "time"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "kha4a44rO4O44ha3a33",
+    "native": "คฤห",
+    "language": "thai",
+    "meaning": "home"
+  },
+  {
+    "sound": "'",
+    "pronunciation": "'oq",
+    "native": "องก์",
+    "language": "thai",
+    "meaning": "act"
+  },
+  {
+    "sound": "tl'",
+    "pronunciation": "tl6oo",
+    "native": "tlʼō",
+    "language": "tlingit",
+    "meaning": "grass"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "muxi0rra",
+    "native": "ሙሽራ",
+    "language": "amharic",
+    "meaning": "wedder"
+  },
+  {
+    "sound": "gg",
+    "pronunciation": "hi0gg",
+    "native": "ህግ",
+    "language": "amharic",
+    "meaning": "a law"
+  },
+  {
+    "sound": "T",
+    "pronunciation": "t0ikat0a",
+    "native": "टिकट",
+    "language": "hindi",
+    "meaning": "ticket"
+  },
+  {
+    "sound": "T",
+    "pronunciation": "t0okarii",
+    "native": "टोकरी",
+    "language": "hindi",
+    "meaning": "basket"
+  },
+  {
+    "sound": "T",
+    "pronunciation": "mat0ara",
+    "native": "मटर",
+    "language": "hindi",
+    "meaning": "pea"
+  },
+  {
+    "sound": "T",
+    "pronunciation": "phot0o",
+    "native": "फोटो",
+    "language": "hindi",
+    "meaning": "photo"
+  },
+  {
+    "sound": "T",
+    "pronunciation": "phut0abaala",
+    "native": "फुटबाल",
+    "language": "hindi",
+    "meaning": "football"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "t0haakura",
+    "native": "ठाकुर",
+    "language": "hindi",
+    "meaning": "nobleman"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "t0hokara",
+    "native": "ठोकर",
+    "language": "hindi",
+    "meaning": "tap"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "amguut0haa",
+    "native": "अंगूठा",
+    "language": "hindi",
+    "meaning": "thumb"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "bait0haka",
+    "native": "बैठक",
+    "language": "hindi",
+    "meaning": "meeting"
+  },
+  {
+    "sound": "TT",
+    "pronunciation": "txit0t0hii",
+    "native": "चिट्ठी",
+    "language": "hindi",
+    "meaning": "letter"
+  },
+  {
+    "sound": "D",
+    "pronunciation": "d0amaruu",
+    "native": "डमरू",
+    "language": "hindi",
+    "meaning": "damru"
+  },
+  {
+    "sound": "D",
+    "pronunciation": "d0okt0ara",
+    "native": "डॉक्टर",
+    "language": "hindi",
+    "meaning": "doctor"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "sar9aka",
+    "native": "सड़क",
+    "language": "hindi",
+    "meaning": "road"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "phephar9aa",
+    "native": "फेफड़ा",
+    "language": "hindi",
+    "meaning": "lung"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "daur9anaa",
+    "native": "दौड़ना",
+    "language": "hindi",
+    "meaning": "run"
+  },
+  {
+    "sound": "Dh",
+    "pronunciation": "d0haaii",
+    "native": "ढाई",
+    "language": "hindi",
+    "meaning": "two and a half"
+  },
+  {
+    "sound": "Dh",
+    "pronunciation": "d0hola",
+    "native": "ढोल",
+    "language": "hindi",
+    "meaning": "drum"
+  },
+  {
+    "sound": "Rh",
+    "pronunciation": "piir9hii",
+    "native": "पीढ़ी",
+    "language": "hindi",
+    "meaning": "generation"
+  },
+  {
+    "sound": "Rh",
+    "pronunciation": "bar9hottarii",
+    "native": "बढ़ोत्तरी",
+    "language": "hindi",
+    "meaning": "increase"
+  },
+  {
+    "sound": "Rh",
+    "pronunciation": "siir9hii",
+    "native": "सीढ़ी",
+    "language": "hindi",
+    "meaning": "ladder"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "xrex0t0a",
+    "native": "श्रेष्ट",
+    "language": "hindi",
+    "meaning": "best"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "bhaax0an9a",
+    "native": "भाषण",
+    "language": "hindi",
+    "meaning": "speech"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "x0at0akon9a",
+    "native": "षटकोण",
+    "language": "hindi",
+    "meaning": "hexagon"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "xex0a",
+    "native": "शेष",
+    "language": "hindi",
+    "meaning": "remaining"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "x0aan9maasika",
+    "native": "षाण्मासिक",
+    "language": "hindi",
+    "meaning": "six monthly"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "khatxara",
+    "native": "खच्चर",
+    "language": "hindi",
+    "meaning": "mule"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "khilaunaa",
+    "native": "खिलौना",
+    "language": "hindi",
+    "meaning": "toy"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "v0aixaakha",
+    "native": "वैशाख",
+    "language": "hindi",
+    "meaning": "indian month"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "xaakhaa",
+    "native": "शाखा",
+    "language": "hindi",
+    "meaning": "branch"
+  },
+  {
+    "sound": "Kh",
+    "pronunciation": "ak9habaara",
+    "native": "अख़बार",
+    "language": "hindi",
+    "meaning": "newspaper"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "ghara",
+    "native": "घर",
+    "language": "hindi",
+    "meaning": "house"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "ghod0aa",
+    "native": "घोडा",
+    "language": "hindi",
+    "meaning": "horse"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "baagha",
+    "native": "बाघ",
+    "language": "hindi",
+    "meaning": "tiger"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "baghiiraa",
+    "native": "बघीरा",
+    "language": "hindi",
+    "meaning": "strong"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "aaghaata",
+    "native": "आघात",
+    "language": "hindi",
+    "meaning": "shock"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "djha00d0aa",
+    "native": "झंडा",
+    "language": "hindi",
+    "meaning": "flag"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "djhiila",
+    "native": "झील",
+    "language": "hindi",
+    "meaning": "lake"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "samadjha",
+    "native": "समझ",
+    "language": "hindi",
+    "meaning": "sense"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "sudjhaav0a",
+    "native": "सुझाव",
+    "language": "hindi",
+    "meaning": "suggestion"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "djaanabuudjhakara",
+    "native": "जानबूझकर",
+    "language": "hindi",
+    "meaning": "intentionally"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "djahaadja",
+    "native": "जहाज",
+    "language": "hindi",
+    "meaning": "ship"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "djamaanaa",
+    "native": "जमाना",
+    "language": "hindi",
+    "meaning": "period"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "madjadura",
+    "native": "मजदुर",
+    "language": "hindi",
+    "meaning": "laborer"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "aadja",
+    "native": "आज",
+    "language": "hindi",
+    "meaning": "today"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "raadja",
+    "native": "राज",
+    "language": "hindi",
+    "meaning": "rule"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "txhatarii",
+    "native": "छतरी",
+    "language": "hindi",
+    "meaning": "umbrella"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "txhaatii",
+    "native": "छाती",
+    "language": "hindi",
+    "meaning": "chest"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "atxhaa",
+    "native": "अच्छा",
+    "language": "hindi",
+    "meaning": "good"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "utxhaala",
+    "native": "उछाल",
+    "language": "hindi",
+    "meaning": "bounce"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "gamatxhaa",
+    "native": "गमछा",
+    "language": "hindi",
+    "meaning": "towel"
+  },
+  {
+    "sound": "tx",
+    "pronunciation": "txiraaga",
+    "native": "चिराग",
+    "language": "hindi",
+    "meaning": "lamp"
+  },
+  {
+    "sound": "tx",
+    "pronunciation": "txaatxaa",
+    "native": "चाचा",
+    "language": "hindi",
+    "meaning": "uncle"
+  },
+  {
+    "sound": "tx",
+    "pronunciation": "batxaa",
+    "native": "बच्चा",
+    "language": "hindi",
+    "meaning": "baby"
+  },
+  {
+    "sound": "tx",
+    "pronunciation": "satxa",
+    "native": "सच",
+    "language": "hindi",
+    "meaning": "truth"
+  },
+  {
+    "sound": "tx",
+    "pronunciation": "maitxa",
+    "native": "मैच",
+    "language": "hindi",
+    "meaning": "match"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "thoka",
+    "native": "थोक",
+    "language": "hindi",
+    "meaning": "bulk"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "thuuka",
+    "native": "थूक",
+    "language": "hindi",
+    "meaning": "sputum"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "atithi",
+    "native": "अतिथि",
+    "language": "hindi",
+    "meaning": "guest"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "haathii",
+    "native": "हाथी",
+    "language": "hindi",
+    "meaning": "elephant"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "arthaata",
+    "native": "अर्थात",
+    "language": "hindi",
+    "meaning": "meaning"
+  },
+  {
+    "sound": "dh",
+    "pronunciation": "dhana",
+    "native": "धन",
+    "language": "hindi",
+    "meaning": "funds"
+  },
+  {
+    "sound": "dh",
+    "pronunciation": "dharma",
+    "native": "धर्म",
+    "language": "hindi",
+    "meaning": "religion"
+  },
+  {
+    "sound": "dh",
+    "pronunciation": "adhika",
+    "native": "अधिक",
+    "language": "hindi",
+    "meaning": "more"
+  },
+  {
+    "sound": "dh",
+    "pronunciation": "saadhanaa",
+    "native": "साधना",
+    "language": "hindi",
+    "meaning": "meditation"
+  },
+  {
+    "sound": "dh",
+    "pronunciation": "duudha",
+    "native": "दूध",
+    "language": "hindi",
+    "meaning": "milk"
+  },
+  {
+    "sound": "bh",
+    "pronunciation": "bhaax0aa",
+    "native": "भाषा",
+    "language": "hindi",
+    "meaning": "language"
+  },
+  {
+    "sound": "bh",
+    "pronunciation": "bhaara",
+    "native": "भार",
+    "language": "hindi",
+    "meaning": "burden"
+  },
+  {
+    "sound": "bh",
+    "pronunciation": "xubha",
+    "native": "शुभ",
+    "language": "hindi",
+    "meaning": "favorable"
+  },
+  {
+    "sound": "bh",
+    "pronunciation": "abhinetrii",
+    "native": "अभिनेत्री",
+    "language": "hindi",
+    "meaning": "actress"
+  },
+  {
+    "sound": "bh",
+    "pronunciation": "paribhaax0aa",
+    "native": "परिभाषा",
+    "language": "hindi",
+    "meaning": "definition"
+  },
+  {
+    "sound": "ph",
+    "pronunciation": "phala",
+    "native": "फल",
+    "language": "hindi",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "ph",
+    "pronunciation": "phalii",
+    "native": "फली",
+    "language": "hindi",
+    "meaning": "pod"
+  },
+  {
+    "sound": "ph",
+    "pronunciation": "aphasara",
+    "native": "अफसर",
+    "language": "hindi",
+    "meaning": "officer"
+  },
+  {
+    "sound": "ph",
+    "pronunciation": "tohaphaa",
+    "native": "तोहफा",
+    "language": "hindi",
+    "meaning": "gift"
+  },
+  {
+    "sound": "ph",
+    "pronunciation": "saphara",
+    "native": "सफर",
+    "language": "hindi",
+    "meaning": "travel"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "arpan9a",
+    "native": "अर्पण",
+    "language": "hindi",
+    "meaning": "offering"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "samarpan9a",
+    "native": "समर्पण",
+    "language": "hindi",
+    "meaning": "dedication"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "darpan9a",
+    "native": "दर्पण",
+    "language": "hindi",
+    "meaning": "mirror"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "raman9iika",
+    "native": "रमणीक",
+    "language": "hindi",
+    "meaning": "delightful"
+  },
+  {
+    "sound": "N",
+    "pronunciation": "man9i",
+    "native": "मणि",
+    "language": "hindi",
+    "meaning": "gem"
+  },
+  {
+    "sound": "ny",
+    "pronunciation": "txanytxala",
+    "native": "चञ्चल",
+    "language": "hindi",
+    "meaning": "fickle"
+  },
+  {
+    "sound": "ny",
+    "pronunciation": "nyata",
+    "native": "ञत",
+    "language": "hindi",
+    "meaning": "known"
+  },
+  {
+    "sound": "ny",
+    "pronunciation": "panytxa",
+    "native": "पञ्च",
+    "language": "hindi",
+    "meaning": "five"
+  },
+  {
+    "sound": "ny",
+    "pronunciation": "kunydja",
+    "native": "कुञ्ज",
+    "language": "hindi",
+    "meaning": "key"
+  },
+  {
+    "sound": "ny",
+    "pronunciation": "sanydjaya",
+    "native": "सञ्जय",
+    "language": "hindi",
+    "meaning": "mountain"
+  },
+  {
+    "sound": "bb",
+    "pronunciation": "abbaya9re",
+    "native": "abbaiàre",
+    "language": "italian",
+    "meaning": "to bark (like dog)"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "akka9do",
+    "native": "accado",
+    "language": "italian",
+    "meaning": "akkadian"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "attxa9kko",
+    "native": "acciacco",
+    "language": "italian",
+    "meaning": "ache"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "akko9ntxo",
+    "native": "acconcio",
+    "language": "italian",
+    "meaning": "dressed up"
+  },
+  {
+    "sound": "tt",
+    "pronunciation": "akkurate9ttsa",
+    "native": "accuratezza",
+    "language": "italian",
+    "meaning": "accuracy"
+  },
+  {
+    "sound": "dd",
+    "pronunciation": "addio",
+    "native": "addio",
+    "language": "italian",
+    "meaning": "goodbye"
+  },
+  {
+    "sound": "mm",
+    "pronunciation": "amme9ttere",
+    "native": "amméttere",
+    "language": "italian",
+    "meaning": "to admit"
+  },
+  {
+    "sound": "mm",
+    "pronunciation": "gommo9zo",
+    "native": "gommoso",
+    "language": "italian",
+    "meaning": "gummy"
+  },
+  {
+    "sound": "mm",
+    "pronunciation": "maremma",
+    "native": "maremma",
+    "language": "italian",
+    "meaning": "a marshy coastal plain"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "akkade9re",
+    "native": "accadére",
+    "language": "italian",
+    "meaning": "to happen"
+  },
+  {
+    "sound": "ff",
+    "pronunciation": "attxeffa9re",
+    "native": "acceffare",
+    "language": "italian",
+    "meaning": "to bite"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "okko9rrere",
+    "native": "occórrere",
+    "language": "italian",
+    "meaning": "to need"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "pakkya9no",
+    "native": "pacchiano",
+    "language": "italian",
+    "meaning": "tacky"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "rakkyu9dere",
+    "native": "racchiùdere",
+    "language": "italian",
+    "meaning": "to host"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "ka9llido",
+    "native": "callido",
+    "language": "italian",
+    "meaning": "shrewd"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "kolla9na",
+    "native": "collana",
+    "language": "italian",
+    "meaning": "necklace"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "modEllo",
+    "native": "modello",
+    "language": "italian",
+    "meaning": "model"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "novEllo",
+    "native": "novello",
+    "language": "italian",
+    "meaning": "new"
+  },
+  {
+    "sound": "vv",
+    "pronunciation": "avveni9re",
+    "native": "avvenìre",
+    "language": "italian",
+    "meaning": "to occur"
+  },
+  {
+    "sound": "vv",
+    "pronunciation": "riavvio",
+    "native": "riavvio",
+    "language": "italian",
+    "meaning": "restart"
+  },
+  {
+    "sound": "pp",
+    "pronunciation": "appanna9re",
+    "native": "appannàre",
+    "language": "italian",
+    "meaning": "to obscure"
+  },
+  {
+    "sound": "pp",
+    "pronunciation": "oppo9rre",
+    "native": "opporre",
+    "language": "italian",
+    "meaning": "to oppose"
+  },
+  {
+    "sound": "pp",
+    "pronunciation": "skoppya9re",
+    "native": "scoppiàre",
+    "language": "italian",
+    "meaning": "to burst"
+  },
+  {
+    "sound": "ss",
+    "pronunciation": "ettxE9sso",
+    "native": "eccesso",
+    "language": "italian",
+    "meaning": "excess"
+  },
+  {
+    "sound": "ss",
+    "pronunciation": "fissa9to",
+    "native": "fissato",
+    "language": "italian",
+    "meaning": "fixed (position)"
+  },
+  {
+    "sound": "ss",
+    "pronunciation": "masso9ne",
+    "native": "massone",
+    "language": "italian",
+    "meaning": "free mason"
+  },
+  {
+    "sound": "ss",
+    "pronunciation": "passa9re",
+    "native": "passàre",
+    "language": "italian",
+    "meaning": "to pass"
+  },
+  {
+    "sound": "dd",
+    "pronunciation": "addje9ttare",
+    "native": "aggettare",
+    "language": "italian",
+    "meaning": "to jut"
+  },
+  {
+    "sound": "dd",
+    "pronunciation": "para9ddjo",
+    "native": "paraggi",
+    "language": "italian",
+    "meaning": "neighborhood"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "erra9re",
+    "native": "erràre",
+    "language": "italian",
+    "meaning": "to wander"
+  },
+  {
+    "sound": "rr",
+    "pronunciation": "marro9ne",
+    "native": "marrone",
+    "language": "italian",
+    "meaning": "brown"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "1k4eane",
+    "native": "ოკეანე",
+    "language": "georgian",
+    "meaning": "ocean"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "1b1ba",
+    "native": "ობობა",
+    "language": "georgian",
+    "meaning": "spider"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "1khr1",
+    "native": "ოქრო",
+    "language": "georgian",
+    "meaning": "gold"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "ms1phli1",
+    "native": "მსოფლიო",
+    "language": "georgian",
+    "meaning": "world"
+  },
+  {
+    "sound": "o#",
+    "pronunciation": "ph1th1li",
+    "native": "ფოთოლი",
+    "language": "georgian",
+    "meaning": "leaf"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4at6a",
+    "native": "კატა",
+    "language": "georgian",
+    "meaning": "cat"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4ak4ali",
+    "native": "კაკალი",
+    "language": "georgian",
+    "meaning": "walnut"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "p4ik4nik4i",
+    "native": "პიკნიკი",
+    "language": "georgian",
+    "meaning": "picnic"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "p4Ep4Ela",
+    "native": "პეპელა",
+    "language": "georgian",
+    "meaning": "butterfly"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "p4lanEt6a",
+    "native": "პლანეტა",
+    "language": "georgian",
+    "meaning": "planet"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "Ep41kha",
+    "native": "ეპოქა",
+    "language": "georgian",
+    "meaning": "epoch"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "p41lusi",
+    "native": "პოლუსი",
+    "language": "georgian",
+    "meaning": "pole"
+  },
+  {
+    "sound": "p!",
+    "pronunciation": "nap4iri",
+    "native": "ნაპირი",
+    "language": "georgian",
+    "meaning": "shore"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "jiraphi",
+    "native": "ჟირაფი",
+    "language": "georgian",
+    "meaning": "giraffe"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "j1l1",
+    "native": "ჟოლო",
+    "language": "georgian",
+    "meaning": "raspberry"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "jak4Et6i",
+    "native": "ჟაკეტი",
+    "language": "georgian",
+    "meaning": "jacket"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "jangbadi",
+    "native": "ჟანგბადი",
+    "language": "georgian",
+    "meaning": "oxygen"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "t61t6i",
+    "native": "ტოტი",
+    "language": "georgian",
+    "meaning": "branch"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "t6it6vEli",
+    "native": "ტიტველი",
+    "language": "georgian",
+    "meaning": "naked"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "t6alGa",
+    "native": "ტალღა",
+    "language": "georgian",
+    "meaning": "wave"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "at6ami",
+    "native": "ატამი",
+    "language": "georgian",
+    "meaning": "peach"
+  },
+  {
+    "sound": "g",
+    "pronunciation": "g1ra",
+    "native": "გორა",
+    "language": "georgian",
+    "meaning": "hill"
+  },
+  {
+    "sound": "g",
+    "pronunciation": "g1g1",
+    "native": "გოგო",
+    "language": "georgian",
+    "meaning": "girl"
+  },
+  {
+    "sound": "g",
+    "pronunciation": "gargari",
+    "native": "გარგარი",
+    "language": "georgian",
+    "meaning": "apricot"
+  },
+  {
+    "sound": "g",
+    "pronunciation": "igivE",
+    "native": "იგივე",
+    "language": "georgian",
+    "meaning": "same"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "GrubEli",
+    "native": "ღრუბელი",
+    "language": "georgian",
+    "meaning": "cloud"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Gamura",
+    "native": "ღამურა",
+    "language": "georgian",
+    "meaning": "bat"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "Grma",
+    "native": "ღრმა",
+    "language": "georgian",
+    "meaning": "deep"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "aGmarthi",
+    "native": "აღმართი",
+    "language": "georgian",
+    "meaning": "ascent"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "k94ba",
+    "native": "ყბა",
+    "language": "georgian",
+    "meaning": "jaw"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "k94uri",
+    "native": "ყური",
+    "language": "georgian",
+    "meaning": "ear"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "khvEk94ana",
+    "native": "ქვეყანა",
+    "language": "georgian",
+    "meaning": "country"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "ik94o",
+    "native": "იყო",
+    "language": "georgian",
+    "meaning": "to be"
+  },
+  {
+    "sound": "ts",
+    "pronunciation": "tsa",
+    "native": "ცა",
+    "language": "georgian",
+    "meaning": "sky"
+  },
+  {
+    "sound": "K!",
+    "pronunciation": "tsik94vi",
+    "native": "ციყვი",
+    "language": "georgian",
+    "meaning": "squirrel"
+  },
+  {
+    "sound": "ts",
+    "pronunciation": "tsru",
+    "native": "ცრუ",
+    "language": "georgian",
+    "meaning": "false"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4k94ali",
+    "native": "წყალი",
+    "language": "georgian",
+    "meaning": "water"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4k94ar1",
+    "native": "წყარო",
+    "language": "georgian",
+    "meaning": "source"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4its4ila",
+    "native": "წიწილა",
+    "language": "georgian",
+    "meaning": "chicken"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4uthi",
+    "native": "წუთი",
+    "language": "georgian",
+    "meaning": "minute"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4Elits4adi",
+    "native": "წელიწადი",
+    "language": "georgian",
+    "meaning": "year"
+  },
+  {
+    "sound": "dz",
+    "pronunciation": "dzr1h9a",
+    "native": "ძროხა",
+    "language": "georgian",
+    "meaning": "caw"
+  },
+  {
+    "sound": "dz",
+    "pronunciation": "dziri",
+    "native": "ძირი",
+    "language": "georgian",
+    "meaning": "bottom"
+  },
+  {
+    "sound": "dz",
+    "pronunciation": "andza",
+    "native": "ანძა",
+    "language": "georgian",
+    "meaning": "mast"
+  },
+  {
+    "sound": "dz",
+    "pronunciation": "dzili",
+    "native": "ძილი",
+    "language": "georgian",
+    "meaning": "sleep"
+  },
+  {
+    "sound": "dz",
+    "pronunciation": "gandzi",
+    "native": "განძი",
+    "language": "georgian",
+    "meaning": "treasure"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "tx6aGi",
+    "native": "ჭაღი",
+    "language": "georgian",
+    "meaning": "chandelier"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "tx6Eri",
+    "native": "ჭერი",
+    "language": "georgian",
+    "meaning": "ceiling"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "nitx6i",
+    "native": "ნიჭი",
+    "language": "georgian",
+    "meaning": "talent"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "tx6iantx6vEla",
+    "native": "ჭიანჭველა",
+    "language": "georgian",
+    "meaning": "ant"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9E",
+    "native": "ხე",
+    "language": "georgian",
+    "meaning": "tree"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9ah9vi",
+    "native": "ხახვი",
+    "language": "georgian",
+    "meaning": "onion"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9Erh9Emali",
+    "native": "ხერხემალი",
+    "language": "georgian",
+    "meaning": "spine"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9mali",
+    "native": "ხმალი",
+    "language": "georgian",
+    "meaning": "sword"
+  },
+  {
+    "sound": "H",
+    "pronunciation": "h9ma",
+    "native": "ხმა",
+    "language": "georgian",
+    "meaning": "voice"
+  },
+  {
+    "sound": "aE",
+    "pronunciation": "haEri",
+    "native": "ჰაერი",
+    "language": "georgian",
+    "meaning": "air"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "halst6uh9i",
+    "native": "ჰალსტუხი",
+    "language": "georgian",
+    "meaning": "tie"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "himni",
+    "native": "ჰიმნი",
+    "language": "georgian",
+    "meaning": "anthem"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "hibridi",
+    "native": "ჰიბრიდი",
+    "language": "georgian",
+    "meaning": "hybrid"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "hip41p41t6ami",
+    "native": "ჰიპოპოტამი",
+    "language": "georgian",
+    "meaning": "hippo"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "dj1h9i",
+    "native": "ჯოხი",
+    "language": "georgian",
+    "meaning": "stick"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "djih9vi",
+    "native": "ჯიხვი",
+    "language": "georgian",
+    "meaning": "goat"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "abdjari",
+    "native": "აბჯარი",
+    "language": "georgian",
+    "meaning": "armor"
+  },
+  {
+    "sound": "dj",
+    "pronunciation": "h9ardji",
+    "native": "ხარჯი",
+    "language": "georgian",
+    "meaning": "expense"
+  },
+  {
+    "sound": "e#i#",
+    "pronunciation": "e90i0Cna",
+    "native": "auðna",
+    "language": "icelandic",
+    "meaning": "luck"
+  },
+  {
+    "sound": "UI",
+    "pronunciation": "e90i0i0CaiiUI",
+    "native": "auðæfi",
+    "language": "icelandic",
+    "meaning": "weatlh"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "aaCatl",
+    "native": "aðall",
+    "language": "icelandic",
+    "meaning": "nobility"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "parC",
+    "native": "barð",
+    "language": "icelandic",
+    "meaning": "edge"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "aCfErC",
+    "native": "aðferð",
+    "language": "icelandic",
+    "meaning": "method"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "paCkhaar",
+    "native": "baðkar",
+    "language": "icelandic",
+    "meaning": "bathtub"
+  },
+  {
+    "sound": "tt",
+    "pronunciation": "pEttI",
+    "native": "beddi",
+    "language": "icelandic",
+    "meaning": "camp bed"
+  },
+  {
+    "sound": "ei",
+    "pronunciation": "peiiCa",
+    "native": "beiða",
+    "language": "icelandic",
+    "meaning": "to ask"
+  },
+  {
+    "sound": "py",
+    "pronunciation": "pyatla",
+    "native": "bjalla",
+    "language": "icelandic",
+    "meaning": "bell"
+  },
+  {
+    "sound": "ou",
+    "pronunciation": "pyouur",
+    "native": "bjór",
+    "language": "icelandic",
+    "meaning": "beaver"
+  },
+  {
+    "sound": "e#",
+    "pronunciation": "pI9Cste0C",
+    "native": "biðstöð",
+    "language": "icelandic",
+    "meaning": "stop (e.g. bus stop)"
+  },
+  {
+    "sound": "ai",
+    "pronunciation": "plaiya",
+    "native": "blæja",
+    "language": "icelandic",
+    "meaning": "veil"
+  },
+  {
+    "sound": "tt",
+    "pronunciation": "preitt",
+    "native": "breidd",
+    "language": "icelandic",
+    "meaning": "width"
+  },
+  {
+    "sound": "ss",
+    "pronunciation": "plussa",
+    "native": "blússa",
+    "language": "icelandic",
+    "meaning": "blouse"
+  },
+  {
+    "sound": "nn",
+    "pronunciation": "prEnna",
+    "native": "brenna",
+    "language": "icelandic",
+    "meaning": "to burn"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "p1lla",
+    "native": "bolla",
+    "language": "icelandic",
+    "meaning": "bun (round bread)"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "praGC",
+    "native": "bragð",
+    "language": "icelandic",
+    "meaning": "taste"
+  },
+  {
+    "sound": "hk",
+    "pronunciation": "prEhka",
+    "native": "brekka",
+    "language": "icelandic",
+    "meaning": "a slope"
+  },
+  {
+    "sound": "tt",
+    "pronunciation": "pr1tti0r",
+    "native": "broddur",
+    "language": "icelandic",
+    "meaning": "spike"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "pi0rCi0r",
+    "native": "burður",
+    "language": "icelandic",
+    "meaning": "birth"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "pIGC",
+    "native": "byggð",
+    "language": "icelandic",
+    "meaning": "settlement"
+  },
+  {
+    "sound": "tn",
+    "pronunciation": "pistn",
+    "native": "býsn",
+    "language": "icelandic",
+    "meaning": "wonder/marvel"
+  },
+  {
+    "sound": "U",
+    "pronunciation": "tIrUC",
+    "native": "dirfð",
+    "language": "icelandic",
+    "meaning": "boldness"
+  },
+  {
+    "sound": "hk",
+    "pronunciation": "trI9hki0r",
+    "native": "drykkur",
+    "language": "icelandic",
+    "meaning": "drink/beverage"
+  },
+  {
+    "sound": "ll",
+    "pronunciation": "t1llarI",
+    "native": "dollari",
+    "language": "icelandic",
+    "meaning": "dollar"
+  },
+  {
+    "sound": "a#a#",
+    "pronunciation": "tra0a0yGi0r",
+    "native": "draugur",
+    "language": "icelandic",
+    "meaning": "ghost"
+  },
+  {
+    "sound": "e#e#",
+    "pronunciation": "tve0e0l",
+    "native": "dvöl",
+    "language": "icelandic",
+    "meaning": "stay (noun)"
+  },
+  {
+    "sound": "G",
+    "pronunciation": "tIGC",
+    "native": "dyggð",
+    "language": "icelandic",
+    "meaning": "virtue"
+  },
+  {
+    "sound": "hk",
+    "pronunciation": "te0hk",
+    "native": "dökk",
+    "language": "icelandic",
+    "meaning": "pool"
+  },
+  {
+    "sound": "kk",
+    "pronunciation": "Ekk",
+    "native": "egg",
+    "language": "icelandic",
+    "meaning": "egg"
+  },
+  {
+    "sound": "tn",
+    "pronunciation": "tutn",
+    "native": "dúnn",
+    "language": "icelandic",
+    "meaning": "down feathers"
+  },
+  {
+    "sound": "eii",
+    "pronunciation": "eiimi0r",
+    "native": "eimur",
+    "language": "icelandic",
+    "meaning": "steam/vapor"
+  },
+  {
+    "sound": "eii",
+    "pronunciation": "eiiCi0r",
+    "native": "eiður",
+    "language": "icelandic",
+    "meaning": "oath"
+  },
+  {
+    "sound": "e#e#",
+    "pronunciation": "E9ltste0e0C",
+    "native": "eldstöð",
+    "language": "icelandic",
+    "meaning": "volcano"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "ECya",
+    "native": "eðja",
+    "language": "icelandic",
+    "meaning": "sludge"
+  },
+  {
+    "sound": "fy",
+    "pronunciation": "fyatl",
+    "native": "fjall",
+    "language": "icelandic",
+    "meaning": "mountain"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "fIrC",
+    "native": "firð",
+    "language": "icelandic",
+    "meaning": "a distance"
+  },
+  {
+    "sound": "fy",
+    "pronunciation": "fye0e0l",
+    "native": "fjöl",
+    "language": "icelandic",
+    "meaning": "plank/board"
+  },
+  {
+    "sound": "pp",
+    "pronunciation": "flI9ppI9",
+    "native": "flibbi",
+    "language": "icelandic",
+    "meaning": "collar of a shirt"
+  },
+  {
+    "sound": "aii",
+    "pronunciation": "fra9iiCI",
+    "native": "fræði",
+    "language": "icelandic",
+    "meaning": "sciences"
+  },
+  {
+    "sound": "e#e#i#",
+    "pronunciation": "ke0e0i0C",
+    "native": "gauð",
+    "language": "icelandic",
+    "meaning": "wimp"
+  },
+  {
+    "sound": "ky",
+    "pronunciation": "kye0e0v",
+    "native": "gjöf",
+    "language": "icelandic",
+    "meaning": "gift"
+  },
+  {
+    "sound": "pp",
+    "pronunciation": "kru9ppa",
+    "native": "grúbba",
+    "language": "icelandic",
+    "meaning": "group"
+  },
+  {
+    "sound": "ky",
+    "pronunciation": "kyI9Cya",
+    "native": "gyðja",
+    "language": "icelandic",
+    "meaning": "goddess"
+  },
+  {
+    "sound": "e#i#",
+    "pronunciation": "he0i0st",
+    "native": "haust",
+    "language": "icelandic",
+    "meaning": "autumn/fall"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hruuCi0r",
+    "native": "hrúður",
+    "language": "icelandic",
+    "meaning": "scab"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hre0i0ql",
+    "native": "hröngl",
+    "language": "icelandic",
+    "meaning": "flimsy"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hriiC",
+    "native": "hríð",
+    "language": "icelandic",
+    "meaning": "snowstorm"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hr1ss",
+    "native": "hross",
+    "language": "icelandic",
+    "meaning": "horse"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hreiiCi0r",
+    "native": "hreiður",
+    "language": "icelandic",
+    "meaning": "nest"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "hre0i0i0n",
+    "native": "hraun",
+    "language": "icelandic",
+    "meaning": "lava"
+  },
+  {
+    "sound": "hw",
+    "pronunciation": "hwilt",
+    "native": "hvíld",
+    "language": "icelandic",
+    "meaning": "rest"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "khv1lv",
+    "native": "hvolf",
+    "language": "icelandic",
+    "meaning": "vault"
+  },
+  {
+    "sound": "hw",
+    "pronunciation": "hwe0nn",
+    "native": "hvönn",
+    "language": "icelandic",
+    "meaning": "angelica (plant)"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "caak",
+    "native": "þak",
+    "language": "icelandic",
+    "meaning": "roof"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "cEkn",
+    "native": "þegn",
+    "language": "icelandic",
+    "meaning": "servant"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "cE9hkyiqk",
+    "native": "þekking",
+    "language": "icelandic",
+    "meaning": "knowledge"
+  },
+  {
+    "sound": "cy",
+    "pronunciation": "cyouuC",
+    "native": "þjóð",
+    "language": "icelandic",
+    "meaning": "a nation"
+  },
+  {
+    "sound": "cy",
+    "pronunciation": "cye0e0l",
+    "native": "þjöl",
+    "language": "icelandic",
+    "meaning": "rasp"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "cvE9rmauul",
+    "native": "þvermál",
+    "language": "icelandic",
+    "meaning": "diameter"
+  },
+  {
+    "sound": "e#i#",
+    "pronunciation": "cre0i0qk",
+    "native": "þröng",
+    "language": "icelandic",
+    "meaning": "crowd"
+  },
+  {
+    "sound": "hr",
+    "pronunciation": "ci90hrka",
+    "native": "þurrka",
+    "language": "icelandic",
+    "meaning": "to dry"
+  },
+  {
+    "sound": "eii",
+    "pronunciation": "cveiiyItl",
+    "native": "þvegill",
+    "language": "icelandic",
+    "meaning": "mop"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "ciiCa",
+    "native": "þíða",
+    "language": "icelandic",
+    "meaning": "thaw"
+  },
+  {
+    "sound": "nn",
+    "pronunciation": "cInna",
+    "native": "þynna",
+    "language": "icelandic",
+    "meaning": "to thin"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "ci9iCiqk",
+    "native": "þýðing",
+    "language": "icelandic",
+    "meaning": "translation"
+  },
+  {
+    "sound": "e#",
+    "pronunciation": "e0kn",
+    "native": "ögn",
+    "language": "icelandic",
+    "meaning": "a tiny particle"
+  },
+  {
+    "sound": "e#e#",
+    "pronunciation": "e90rle0e0G",
+    "native": "örlög",
+    "language": "icelandic",
+    "meaning": "destiny"
+  },
+  {
+    "sound": "hl",
+    "pronunciation": "u9hlpa",
+    "native": "úlpa",
+    "language": "icelandic",
+    "meaning": "thick winter coat"
+  },
+  {
+    "sound": "i#",
+    "pronunciation": "u9lvi0r",
+    "native": "úlfur",
+    "language": "icelandic",
+    "meaning": "a wolf"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "uuC",
+    "native": "úð",
+    "language": "icelandic",
+    "meaning": "mind"
+  },
+  {
+    "sound": "a#",
+    "pronunciation": "a0l",
+    "native": "øl",
+    "language": "norwegian (bokmal)",
+    "meaning": "beer"
+  },
+  {
+    "sound": "a#i#",
+    "pronunciation": "a0i0",
+    "native": "øy",
+    "language": "norwegian (bokmal)",
+    "meaning": "an island"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "e0e0ny9",
+    "native": "ørn",
+    "language": "norwegian (bokmal)",
+    "meaning": "an eagle"
+  },
+  {
+    "sound": "i+i++",
+    "pronunciation": "'aathi4i44t00",
+    "native": "พระอาทิตย์",
+    "language": "thai",
+    "meaning": "sun"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "txy9an",
+    "native": "พระจันทร์",
+    "language": "thai",
+    "meaning": "moon"
+  },
+  {
+    "sound": "aa",
+    "pronunciation": "daaw",
+    "native": "ดาว",
+    "language": "thai",
+    "meaning": "star"
+  },
+  {
+    "sound": "o#+o#++",
+    "pronunciation": "th14144qfa4a44",
+    "native": "ท้องฟ้า",
+    "language": "thai",
+    "meaning": "sky"
+  },
+  {
+    "sound": "O+O++",
+    "pronunciation": "phO4O44ndin",
+    "native": "พื้นดิน",
+    "language": "thai",
+    "meaning": "land"
+  },
+  {
+    "sound": "a+a++",
+    "pronunciation": "tha4a44lee",
+    "native": "ทะเล",
+    "language": "thai",
+    "meaning": "sea"
+  },
+  {
+    "sound": "a+a++",
+    "pronunciation": "na4a44m",
+    "native": "น้ำ",
+    "language": "thai",
+    "meaning": "water"
+  },
+  {
+    "sound": "f",
+    "pronunciation": "fay",
+    "native": "ไฟ",
+    "language": "thai",
+    "meaning": "fire"
+  },
+  {
+    "sound": "o--o--o+",
+    "pronunciation": "fo33o33o4n",
+    "native": "ฝน",
+    "language": "thai",
+    "meaning": "rain"
+  },
+  {
+    "sound": "a--a--a+",
+    "pronunciation": "phuukha33a33a4w",
+    "native": "ภูเขา",
+    "language": "thai",
+    "meaning": "mountain"
+  },
+  {
+    "sound": "o#++o#++o#--",
+    "pronunciation": "k144144133nhi33i33i4n",
+    "native": "ก้อนหิน",
+    "language": "thai",
+    "meaning": "stone"
+  },
+  {
+    "sound": "a+a+a++",
+    "pronunciation": "to44o33nma4a4a44y",
+    "native": "ต้นไม้",
+    "language": "thai",
+    "meaning": "tree"
+  },
+  {
+    "sound": "a+a+a++",
+    "pronunciation": "bayma4a4a44y",
+    "native": "ใบไม้",
+    "language": "thai",
+    "meaning": "leaf"
+  },
+  {
+    "sound": "o--o--o+",
+    "pronunciation": "pho33o33o4nla4a44ma4a4a44y",
+    "native": "ผลไม้",
+    "language": "thai",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "e+e++",
+    "pronunciation": "ma4a44le4e44t00",
+    "native": "เมล็ด",
+    "language": "thai",
+    "meaning": "seed"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "tham",
+    "native": "ทำ",
+    "language": "thai",
+    "meaning": "to make"
+  },
+  {
+    "sound": "k.",
+    "pronunciation": "ra4a44k99",
+    "native": "รัก",
+    "language": "thai",
+    "meaning": "to love"
+  },
+  {
+    "sound": "uu",
+    "pronunciation": "duu",
+    "native": "ดู",
+    "language": "thai",
+    "meaning": "to see"
+  },
+  {
+    "sound": "i-a--",
+    "pronunciation": "pli3a33n",
+    "native": "เปลี่ยน",
+    "language": "thai",
+    "meaning": "to change"
+  },
+  {
+    "sound": "E-",
+    "pronunciation": "txy9E3",
+    "native": "ကြယ်",
+    "language": "burmese",
+    "meaning": "star"
+  },
+  {
+    "sound": "a&",
+    "pronunciation": "la00",
+    "native": "လ",
+    "language": "burmese",
+    "meaning": "moon"
+  },
+  {
+    "sound": "e-",
+    "pronunciation": "ne3",
+    "native": "နေ",
+    "language": "burmese",
+    "meaning": "sun"
+  },
+  {
+    "sound": "a+O",
+    "pronunciation": "ka4OqgI3q",
+    "native": "ကောင်းကင်",
+    "language": "burmese",
+    "meaning": "sky"
+  },
+  {
+    "sound": "e-",
+    "pronunciation": "mye3",
+    "native": "မြေ",
+    "language": "burmese",
+    "meaning": "land"
+  },
+  {
+    "sound": "I-",
+    "pronunciation": "pI3qlE3",
+    "native": "ပင်လယ်",
+    "language": "burmese",
+    "meaning": "sea"
+  },
+  {
+    "sound": "e-",
+    "pronunciation": "ye3",
+    "native": "ရေ",
+    "language": "burmese",
+    "meaning": "water"
+  },
+  {
+    "sound": "i+",
+    "pronunciation": "mi4",
+    "native": "မီး",
+    "language": "burmese",
+    "meaning": "fire"
+  },
+  {
+    "sound": "e-I",
+    "pronunciation": "te3Iq",
+    "native": "တိမ်",
+    "language": "burmese",
+    "meaning": "cloud"
+  },
+  {
+    "sound": "o+",
+    "pronunciation": "mo4",
+    "native": "မိုး",
+    "language": "burmese",
+    "meaning": "rain"
+  },
+  {
+    "sound": "a-O",
+    "pronunciation": "ta3Oq",
+    "native": "တောင်",
+    "language": "burmese",
+    "meaning": "mountain"
+  },
+  {
+    "sound": "aO",
+    "pronunciation": "txy9aO'",
+    "native": "ကျောက်",
+    "language": "burmese",
+    "meaning": "stone"
+  },
+  {
+    "sound": "I-",
+    "pronunciation": "cI'pI3q",
+    "native": "သစ်ပင်",
+    "language": "burmese",
+    "meaning": "tree"
+  },
+  {
+    "sound": "i+",
+    "pronunciation": "cI'ci4",
+    "native": "သစ်သီး",
+    "language": "burmese",
+    "meaning": "fruit"
+  },
+  {
+    "sound": "U",
+    "pronunciation": "'UywE'",
+    "native": "အရွက်",
+    "language": "burmese",
+    "meaning": "leaf"
+  },
+  {
+    "sound": "i&",
+    "pronunciation": "'Usi00",
+    "native": "အစေ့",
+    "language": "burmese",
+    "meaning": "seed"
+  },
+  {
+    "sound": "txYh",
+    "pronunciation": "txy9hI'",
+    "native": "ချစ်",
+    "language": "burmese",
+    "meaning": "to love"
+  },
+  {
+    "sound": "oO",
+    "pronunciation": "loO'",
+    "native": "လုပ်",
+    "language": "burmese",
+    "meaning": "to make"
+  },
+  {
+    "sound": "I-",
+    "pronunciation": "myI3q",
+    "native": "မြင်",
+    "language": "burmese",
+    "meaning": "to see"
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "sa4",
+    "native": "စား",
+    "language": "burmese",
+    "meaning": "to eat"
+  },
+  {
+    "sound": "eI",
+    "pronunciation": "'eI'",
+    "native": "အိပ်",
+    "language": "burmese",
+    "meaning": "to sleep"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "txy9a4",
+    "native": "ကြား",
+    "language": "burmese",
+    "meaning": "to hear"
+  },
+  {
+    "sound": "I+",
+    "pronunciation": "sI4qza4",
+    "native": "စဉ်းစား",
+    "language": "burmese",
+    "meaning": "to think"
+  },
+  {
+    "sound": "a-",
+    "pronunciation": "pya3q",
+    "native": "ပျံ",
+    "language": "burmese",
+    "meaning": "to fly"
+  },
+  {
+    "sound": "th",
+    "pronunciation": "tha3Iq",
+    "native": "ထိုင်",
+    "language": "burmese",
+    "meaning": "to sit"
+  },
+  {
+    "sound": "aO",
+    "pronunciation": "caO'",
+    "native": "သောက်",
+    "language": "burmese",
+    "meaning": "to drink"
+  },
+  {
+    "sound": "a+O",
+    "pronunciation": "pya4OqlE4",
+    "native": "ပြောင်းလဲ",
+    "language": "burmese",
+    "meaning": "to change"
+  },
+  {
+    "sound": "i&",
+    "pronunciation": "xi00",
+    "native": "ရှိ",
+    "language": "burmese",
+    "meaning": "to have"
+  },
+  {
+    "sound": "ts!",
+    "pronunciation": "ts4E9hai",
+    "native": "ፀሀይ",
+    "language": "amharic",
+    "meaning": "sun"
+  },
+  {
+    "sound": "tx!",
+    "pronunciation": "tx6E9rek4a",
+    "native": "ጨረቃ",
+    "language": "amharic",
+    "meaning": "moon"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "kObob",
+    "native": "ኮኮብ",
+    "language": "amharic",
+    "meaning": "star"
+  },
+  {
+    "sound": "k!",
+    "pronunciation": "k4i90t6i0l",
+    "native": "ቅጠል",
+    "language": "amharic",
+    "meaning": "leaf"
+  },
+  {
+    "sound": "t!",
+    "pronunciation": "mE9t6E9t6at",
+    "native": "መጠጣት",
+    "language": "amharic",
+    "meaning": "drink"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "k4t8Ela",
+    "native": "cela",
+    "language": "xhosa",
+    "meaning": "please"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "ik4l8Exa",
+    "native": "ixesha",
+    "language": "xhosa",
+    "meaning": "time"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "k4d81nda",
+    "native": "qonda",
+    "language": "xhosa",
+    "meaning": "understand"
+  },
+  {
+    "sound": "t*h",
+    "pronunciation": "k4t8hukumisa",
+    "native": "chukumisa",
+    "language": "xhosa",
+    "meaning": "touch"
+  },
+  {
+    "sound": "l*h",
+    "pronunciation": "ukukl8huluza",
+    "native": "ukuxhuluza",
+    "language": "xhosa",
+    "meaning": "epileptic"
+  },
+  {
+    "sound": "d*h",
+    "pronunciation": "ukukd8uba",
+    "native": "ukuqhuba",
+    "language": "xhosa",
+    "meaning": "drive/push"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "gt8ina",
+    "native": "gcina",
+    "language": "xhosa",
+    "meaning": "keep/save"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "igl8alaba",
+    "native": "igxalaba",
+    "language": "xhosa",
+    "meaning": "shoulder"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "gd8iba",
+    "native": "gqiba",
+    "language": "xhosa",
+    "meaning": "finish"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "q4d8oq4d8oza",
+    "native": "nkqonkqoza",
+    "language": "xhosa",
+    "meaning": "knock"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "iqt8iniba",
+    "native": "inciniba",
+    "language": "xhosa",
+    "meaning": "ostrich"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "iql8ina",
+    "native": "inxina",
+    "language": "xhosa",
+    "meaning": "mint"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "qd8abile",
+    "native": "nqabile",
+    "language": "xhosa",
+    "meaning": "rare"
+  },
+  {
+    "sound": "t*h",
+    "pronunciation": "iqt8ha",
+    "native": "ingca",
+    "language": "xhosa",
+    "meaning": "grass"
+  },
+  {
+    "sound": "l*h",
+    "pronunciation": "iql8holo",
+    "native": "ingxolo",
+    "language": "xhosa",
+    "meaning": "noise"
+  },
+  {
+    "sound": "d*h",
+    "pronunciation": "iqd8hele",
+    "native": "ingqele",
+    "language": "xhosa",
+    "meaning": "cold"
+  },
+  {
+    "sound": "t*",
+    "pronunciation": "iq4t8asa",
+    "native": "inkcasa",
+    "language": "xhosa",
+    "meaning": "taste"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "iq4l8athaq4l8atha",
+    "native": "inkxathankxatha",
+    "language": "xhosa",
+    "meaning": "complex/complicated"
+  },
+  {
+    "sound": "kY",
+    "pronunciation": "srama9oky9",
+    "native": "ស្រមោច",
+    "language": "khmer",
+    "meaning": "ant"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "djh1r",
+    "native": "ঝড়",
+    "language": "bengali",
+    "meaning": "storm"
+  },
+  {
+    "sound": "djh",
+    "pronunciation": "mE9jhe",
+    "native": "মেঝে",
+    "language": "bengali",
+    "meaning": "floor"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "gh1r",
+    "native": "ঘর",
+    "language": "bengali",
+    "meaning": "room"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "gh1ri",
+    "native": "ঘর",
+    "language": "bengali",
+    "meaning": "clock"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "megh",
+    "native": "মেঘ",
+    "language": "bengali",
+    "meaning": "cloud"
+  },
+  {
+    "sound": "gh",
+    "pronunciation": "gho9ra",
+    "native": "ঘোড়া",
+    "language": "bengali",
+    "meaning": "horse"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "khe9t0r",
+    "native": "ক্ষেত্র",
+    "language": "bengali",
+    "meaning": "field"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "kho",
+    "native": "কক্ষ",
+    "language": "bengali",
+    "meaning": "orb"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "khe9la",
+    "native": "খেলা",
+    "language": "bengali",
+    "meaning": "sport"
+  },
+  {
+    "sound": "kh",
+    "pronunciation": "makh1n",
+    "native": "মাখন",
+    "language": "bengali",
+    "meaning": "butter"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "ur9e",
+    "native": "উড়ে",
+    "language": "bengali",
+    "meaning": "fly"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "har9",
+    "native": "হাড়",
+    "language": "bengali",
+    "meaning": "bone"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "pa9har9",
+    "native": "পাহাড়",
+    "language": "bengali",
+    "meaning": "hill"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "ba9r9i",
+    "native": "বাড়ি",
+    "language": "bengali",
+    "meaning": "home"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "ghar9",
+    "native": "ঘাড়",
+    "language": "bengali",
+    "meaning": "neck"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "dr9i",
+    "native": "দড়ি",
+    "language": "bengali",
+    "meaning": "rope"
+  },
+  {
+    "sound": "R",
+    "pronunciation": "nE9kr9e",
+    "native": "নেকড়ে",
+    "language": "bengali",
+    "meaning": "wolf"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "kat0h",
+    "native": "কাঠ",
+    "language": "bengali",
+    "meaning": "wood"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "lat0hi9",
+    "native": "লাঠি",
+    "language": "bengali",
+    "meaning": "stick"
+  },
+  {
+    "sound": "Th",
+    "pronunciation": "t0hot",
+    "native": "ঠোঁট",
+    "language": "bengali",
+    "meaning": "lip"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "mo9umatxi",
+    "native": "মৌমাছি",
+    "language": "bengali",
+    "meaning": "bee"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "txhE9le",
+    "native": "ছেলে",
+    "language": "bengali",
+    "meaning": "boy"
+  },
+  {
+    "sound": "txh",
+    "pronunciation": "matxh",
+    "native": "মাছ",
+    "language": "bengali",
+    "meaning": "fish"
+  },
+  {
+    "sound": "D",
+    "pronunciation": "brahimad0a",
+    "native": "ਬ੍ਰਹਿਮੰਡ",
+    "language": "punjabi",
+    "meaning": "universe"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "kore9gto",
+    "native": "correcto",
+    "language": "spanish",
+    "meaning": "correct"
+  },
+  {
+    "sound": "tY",
+    "pronunciation": "rUssmatry9e9ty9",
+    "native": "рассмотре́ть",
+    "language": "russian",
+    "meaning": "to examine"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "my9I9nA9ty9",
+    "native": "менять",
+    "language": "russian",
+    "meaning": "to swap"
+  },
+  {
+    "sound": "tY",
+    "pronunciation": "pUmaga9ty9",
+    "native": "помогать",
+    "language": "russian",
+    "meaning": "to help"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "smy9Ix0attsU",
+    "native": "смешаться",
+    "language": "russian",
+    "meaning": "to blend"
+  },
+  {
+    "sound": "sY",
+    "pronunciation": "sy9ty9ImOly9i9rUvUty9",
+    "native": "стимулировать",
+    "language": "russian",
+    "meaning": "to stimulate"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "Utmy9Iny9A9ty9",
+    "native": "отменя́ть",
+    "language": "russian",
+    "meaning": "to cancel"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "Utmy9Itxy9A9t0y9",
+    "native": "отмечать",
+    "language": "russian",
+    "meaning": "to mark"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "nUj0i0ma9t0y9",
+    "native": "нажимать",
+    "language": "russian",
+    "meaning": "to press"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "zUtOma9ny9IvUty9",
+    "native": "затуманивать",
+    "language": "russian",
+    "meaning": "to obscure"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "kUmy9Iny9ty9i9rUvUty9",
+    "native": "комментировать",
+    "language": "russian",
+    "meaning": "to comment"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "pUny9Ima9ty9",
+    "native": "понимать",
+    "language": "russian",
+    "meaning": "to comprehend"
+  },
+  {
+    "sound": "rY",
+    "pronunciation": "rUssma9try9IvUty9",
+    "native": "рассматривать",
+    "language": "russian",
+    "meaning": "to consider"
+  },
+  {
+    "sound": "rY",
+    "pronunciation": "pry9IdOsma9try9IvUty9",
+    "native": "предусматривать",
+    "language": "russian",
+    "meaning": "to foresee"
+  },
+  {
+    "sound": "dY",
+    "pronunciation": "dy9ImUnstry9i9rUvUty9",
+    "native": "демонстрировать",
+    "language": "russian",
+    "meaning": "to demonstrate"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "dUkOmy9Iny9ty9i9rUvUty9",
+    "native": "документировать",
+    "language": "russian",
+    "meaning": "to document"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "sUmny9Iva9ttsU",
+    "native": "сомневаться",
+    "language": "russian",
+    "meaning": "to doubt"
+  },
+  {
+    "sound": "txY",
+    "pronunciation": "my9Itxy9ta9ty9",
+    "native": "мечтать",
+    "language": "russian",
+    "meaning": "to dream"
+  },
+  {
+    "sound": "mY",
+    "pronunciation": "zUtmy9Iva9ty9",
+    "native": "затмевать",
+    "language": "russian",
+    "meaning": "to eclipse"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "vi0di0ha9ty9",
+    "native": "выдыхать",
+    "language": "russian",
+    "meaning": "to exhale"
+  },
+  {
+    "sound": "dY",
+    "pronunciation": "nUhUdy9i9ty9",
+    "native": "находить",
+    "language": "russian",
+    "meaning": "to find"
+  },
+  {
+    "sound": "dY",
+    "pronunciation": "pUthUdy9i9ty9",
+    "native": "подходить",
+    "language": "russian",
+    "meaning": "to fit"
+  },
+  {
+    "sound": "hY",
+    "pronunciation": "fspi90hy9IvUty9",
+    "native": "вспыхивать",
+    "language": "russian",
+    "meaning": "to flash"
+  },
+  {
+    "sound": "rY",
+    "pronunciation": "hmury9ItsU",
+    "native": "хмуриться",
+    "language": "russian",
+    "meaning": "to frown"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "vzdi0haty9",
+    "native": "вздыхать",
+    "language": "russian",
+    "meaning": "to sigh"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "Oha9j0i0vUty9",
+    "native": "ухаживать",
+    "language": "russian",
+    "meaning": "to care"
+  },
+  {
+    "sound": "nY",
+    "pronunciation": "UhrUny9A9ty9",
+    "native": "охраня́ть",
+    "language": "russian",
+    "meaning": "to guard"
+  },
+  {
+    "sound": "lW",
+    "pronunciation": "Olw0Otx0x0a9ty9",
+    "native": "улучша́ть",
+    "language": "russian",
+    "meaning": "to improve"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "vmy9ex0i0vUtsU",
+    "native": "вме́шиваться",
+    "language": "russian",
+    "meaning": "to interfere"
+  },
+  {
+    "sound": "lW",
+    "pronunciation": "pry9Iglw0Ux0a9ty9",
+    "native": "приглаша́ть",
+    "language": "russian",
+    "meaning": "to invite"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "x0Oty9i9ty9",
+    "native": "шутить",
+    "language": "russian",
+    "meaning": "to joke"
+  },
+  {
+    "sound": "lW",
+    "pronunciation": "slw0u9x0Uty9",
+    "native": "слу́шать",
+    "language": "russian",
+    "meaning": "to listen"
+  },
+  {
+    "sound": "vY",
+    "pronunciation": "sUvy9Irx0E9nstvUvUt",
+    "native": "совершенствовать",
+    "language": "russian",
+    "meaning": "to master"
+  },
+  {
+    "sound": "X",
+    "pronunciation": "smy9e9x0i0vUty9",
+    "native": "смешивать",
+    "language": "russian",
+    "meaning": "to mix"
+  },
+  {
+    "sound": "bY",
+    "pronunciation": "Oby9Ij0da9ty9",
+    "native": "убеждать",
+    "language": "russian",
+    "meaning": "to persuade"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "nUgrUmUj0da9ty9",
+    "native": "нагромождать",
+    "language": "russian",
+    "meaning": "to pile up"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "sUj0a9ty9",
+    "native": "сажать",
+    "language": "russian",
+    "meaning": "to plant"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "IzUbrUj0a9ty9",
+    "native": "изображать",
+    "language": "russian",
+    "meaning": "to portray"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "OvUj0a9ty9",
+    "native": "уважать",
+    "language": "russian",
+    "meaning": "to respect"
+  },
+  {
+    "sound": "J",
+    "pronunciation": "nUgrUj0da9ty9",
+    "native": "награждать",
+    "language": "russian",
+    "meaning": "to reward"
+  },
+  {
+    "sound": "z",
+    "pronunciation": "zum",
+    "native": "zoom",
+    "language": "english",
+    "meaning": "zoom"
+  },
+  {
+    "sound": "s",
+    "pronunciation": "sik",
+    "native": "seek",
+    "language": "english",
+    "meaning": "seek"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "ma2k",
+    "native": "mark",
+    "language": "english",
+    "meaning": "mark"
+  },
+  {
+    "sound": "n",
+    "pronunciation": "nowt",
+    "native": "note",
+    "language": "english",
+    "meaning": "note"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "siq",
+    "native": "sing",
+    "language": "english",
+    "meaning": "sing"
+  },
+  {
+    "sound": "g",
+    "pronunciation": "gIft",
+    "native": "gift",
+    "language": "english",
+    "meaning": "gift"
+  },
+  {
+    "sound": "d",
+    "pronunciation": "did",
+    "native": "deed",
+    "language": "english",
+    "meaning": "deed"
+  },
+  {
+    "sound": "b",
+    "pronunciation": "bAnd",
+    "native": "band",
+    "language": "english",
+    "meaning": "band"
+  },
+  {
+    "sound": "p",
+    "pronunciation": "pley",
+    "native": "play",
+    "language": "english",
+    "meaning": "play"
+  },
+  {
+    "sound": "t",
+    "pronunciation": "taym",
+    "native": "time",
+    "language": "english",
+    "meaning": "time"
+  },
+  {
+    "sound": "k",
+    "pronunciation": "kiq",
+    "native": "king",
+    "language": "english",
+    "meaning": "king"
+  },
+  {
+    "sound": "h",
+    "pronunciation": "hil",
+    "native": "heal",
+    "language": "english",
+    "meaning": "heal"
+  },
+  {
+    "sound": "s",
+    "pronunciation": "sol",
+    "native": "soul",
+    "language": "english",
+    "meaning": "soul"
+  },
+  {
+    "sound": "f",
+    "pronunciation": "fayr",
+    "native": "fire",
+    "language": "english",
+    "meaning": "fire"
+  },
+  {
+    "sound": "v",
+    "pronunciation": "vayb",
+    "native": "vibe",
+    "language": "english",
+    "meaning": "vibe"
+  },
+  {
+    "sound": "z",
+    "pronunciation": "zown",
+    "native": "zone",
+    "language": "english",
+    "meaning": "zone"
+  },
+  {
+    "sound": "j",
+    "pronunciation": "mEjOr",
+    "native": "measure",
+    "language": "english",
+    "meaning": "measure"
+  },
+  {
+    "sound": "x",
+    "pronunciation": "xIp",
+    "native": "ship",
+    "language": "english",
+    "meaning": "ship"
+  },
+  {
+    "sound": "c",
+    "pronunciation": "cor",
+    "native": "thor",
+    "language": "english",
+    "meaning": "thor"
+  },
+  {
+    "sound": "C",
+    "pronunciation": "CIs",
+    "native": "this",
+    "language": "english",
+    "meaning": "this"
+  },
+  {
+    "sound": "w",
+    "pronunciation": "weyv",
+    "native": "wave",
+    "language": "english",
+    "meaning": "wave"
+  },
+  {
+    "sound": "y",
+    "pronunciation": "yard",
+    "native": "yard",
+    "language": "english",
+    "meaning": "yard"
+  },
+  {
+    "sound": "l",
+    "pronunciation": "lUv",
+    "native": "love",
+    "language": "english",
+    "meaning": "love"
+  },
+  {
+    "sound": "r",
+    "pronunciation": "rAt",
+    "native": "rat",
+    "language": "english",
+    "meaning": "rat"
+  },
+  {
+    "sound": "i",
+    "pronunciation": "sit",
+    "native": "seat",
+    "language": "english",
+    "meaning": "seat"
+  },
+  {
+    "sound": "e",
+    "pronunciation": "meyk",
+    "native": "make",
+    "language": "english",
+    "meaning": "make"
+  },
+  {
+    "sound": "a",
+    "pronunciation": "kal",
+    "native": "call",
+    "language": "english",
+    "meaning": "call"
+  },
+  {
+    "sound": "o",
+    "pronunciation": "wolf",
+    "native": "wolf",
+    "language": "english",
+    "meaning": "wolf"
+  },
+  {
+    "sound": "u",
+    "pronunciation": "tul",
+    "native": "tool",
+    "language": "english",
+    "meaning": "tool"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "A9ksEs",
+    "native": "access",
+    "language": "english",
+    "meaning": "access"
+  },
+  {
+    "sound": "U",
+    "pronunciation": "Utxi9v",
+    "native": "achieve",
+    "language": "english",
+    "meaning": "achieve"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "bigI9n",
+    "native": "begin",
+    "language": "english",
+    "meaning": "begin"
+  },
+  {
+    "sound": "O",
+    "pronunciation": "bOli9v",
+    "native": "believe",
+    "language": "english",
+    "meaning": "believe"
+  },
+  {
+    "sound": "u#",
+    "pronunciation": "bO2c",
+    "native": "birth",
+    "language": "english",
+    "meaning": "birth"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "kOntrA9st",
+    "native": "contrast",
+    "language": "english",
+    "meaning": "contrast"
+  },
+  {
+    "sound": "uw",
+    "pronunciation": "kuwl",
+    "native": "cool",
+    "language": "english",
+    "meaning": "cool"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "crave",
+    "native": "kreyv",
+    "language": "english",
+    "meaning": "crave"
+  },
+  {
+    "sound": "iey",
+    "pronunciation": "krie9yt",
+    "native": "create",
+    "language": "english",
+    "meaning": "create"
+  },
+  {
+    "sound": "A",
+    "pronunciation": "dAnts",
+    "native": "dance",
+    "language": "english",
+    "meaning": "dance"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "deyt",
+    "native": "date",
+    "language": "english",
+    "meaning": "date"
+  },
+  {
+    "sound": "ay",
+    "pronunciation": "dOsa9yd",
+    "native": "decide",
+    "language": "english",
+    "meaning": "decide"
+  },
+  {
+    "sound": "ow",
+    "pronunciation": "diko9wd",
+    "native": "decode",
+    "language": "english",
+    "meaning": "decode"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "dE9mOnstreyt",
+    "native": "demonstrate",
+    "language": "english",
+    "meaning": "demonstrate"
+  },
+  {
+    "sound": "U",
+    "pronunciation": "blUd",
+    "native": "blood",
+    "language": "english",
+    "meaning": "blood"
+  },
+  {
+    "sound": "Ou#",
+    "pronunciation": "blO2",
+    "native": "blur",
+    "language": "english",
+    "meaning": "blur"
+  },
+  {
+    "sound": "ou#",
+    "pronunciation": "bo2d",
+    "native": "board",
+    "language": "english",
+    "meaning": "board"
+  },
+  {
+    "sound": "ou#",
+    "pronunciation": "Abno92mUl",
+    "native": "abnormal",
+    "language": "english",
+    "meaning": "abnormal"
+  },
+  {
+    "sound": "yu",
+    "pronunciation": "byu9tUfUl",
+    "native": "beautiful",
+    "language": "english",
+    "meaning": "beautiful"
+  },
+  {
+    "sound": "u#ey",
+    "pronunciation": "2e9yvOn",
+    "native": "raven",
+    "language": "english",
+    "meaning": "raven"
+  },
+  {
+    "sound": "u#",
+    "pronunciation": "sinyo92Iti",
+    "native": "seniority",
+    "language": "english",
+    "meaning": "seniority"
+  },
+  {
+    "sound": "E",
+    "pronunciation": "kUnsE9ptxuwUlayz",
+    "native": "conceptualize",
+    "language": "english",
+    "meaning": "conceptualize"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "mAgnI9fOsInt",
+    "native": "magnificent",
+    "language": "english",
+    "meaning": "magnificent"
+  },
+  {
+    "sound": "Eu#",
+    "pronunciation": "2OpE92",
+    "native": "repair",
+    "language": "english",
+    "meaning": "repair"
+  },
+  {
+    "sound": "Aw",
+    "pronunciation": "fAwnde9yxOn",
+    "native": "foundation",
+    "language": "english",
+    "meaning": "foundation"
+  },
+  {
+    "sound": "u#i",
+    "pronunciation": "sp2iq",
+    "native": "spring",
+    "language": "english",
+    "meaning": "spring"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "wI9zdUm",
+    "native": "wisdom",
+    "language": "english",
+    "meaning": "wisdom"
+  },
+  {
+    "sound": "Ou#",
+    "pronunciation": "wa9yO2",
+    "native": "wire",
+    "language": "english",
+    "meaning": "wire"
+  },
+  {
+    "sound": "I",
+    "pronunciation": "sUfI9stUkeydId",
+    "native": "sophisticated",
+    "language": "english",
+    "meaning": "sophisticated"
+  },
+  {
+    "sound": "ey",
+    "pronunciation": "fe9ymIs",
+    "native": "famous",
+    "language": "english",
+    "meaning": "famous"
+  },
+  {
+    "sound": "ow",
+    "pronunciation": "fE9low",
+    "native": "fellow",
+    "language": "english",
+    "meaning": "fellow"
+  },
+  {
+    "sound": "ow",
+    "pronunciation": "blow",
+    "native": "blow",
+    "language": "english",
+    "meaning": "blow"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7oa",
+    "native": "ʘoa",
+    "language": "hoan",
+    "meaning": "eye"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "'p7nuu",
+    "native": "ʔʘnũ",
+    "language": "hoan",
+    "meaning": "head"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7u00",
+    "native": "ʘ̃ũ",
+    "language": "hoan",
+    "meaning": "one"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7h9ui",
+    "native": "ʘxui",
+    "language": "hoan",
+    "meaning": "tail"
+  },
+  {
+    "sound": "p*",
+    "pronunciation": "p7oa",
+    "native": "ʘ̰oa",
+    "language": "hoan",
+    "meaning": "fire"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "d8ho",
+    "native": "!ʰo",
+    "language": "hoan",
+    "meaning": "horn"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "d8k9'o00",
+    "native": "!qˀõ",
+    "language": "hoan",
+    "meaning": "nose"
+  },
+  {
+    "sound": "d*",
+    "pronunciation": "d8o00'o",
+    "native": "!o̰ʔo",
+    "language": "hoan",
+    "meaning": "claw"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "l8ho00a",
+    "native": "ǁʰo̰a",
+    "language": "hoan",
+    "meaning": "stone"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "l8oa",
+    "native": "ǁoa",
+    "language": "sandawe",
+    "meaning": "name"
+  },
+  {
+    "sound": "l*",
+    "pronunciation": "l8a00e",
+    "native": "ǁa̰e",
+    "language": "hoan",
+    "meaning": "meat"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qaa",
+    "native": "ង៉ា",
+    "language": "khmer",
+    "meaning": "baby"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qiU",
+    "native": "ងារ",
+    "language": "khmer",
+    "meaning": "job/position"
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "txhya4q",
+    "native": "斨",
+    "language": "chinese",
+    "meaning": "axe"
+  },
+  {
+    "sound": "a+a-",
+    "pronunciation": "txhya4a3q",
+    "native": "墙",
+    "language": "chinese",
+    "meaning": "wall"
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "xy9yaa4q",
+    "native": "橡",
+    "language": "chinese",
+    "meaning": "oak"
+  },
+  {
+    "sound": "a-",
+    "pronunciation": "xy9ya3q",
+    "native": "想",
+    "language": "chinese",
+    "meaning": "to think"
+  },
+  {
+    "sound": "O-",
+    "pronunciation": "txyO3q",
+    "native": "煚",
+    "language": "chinese",
+    "meaning": "fire"
+  },
+  {
+    "sound": "O+",
+    "pronunciation": "xy9yO4q",
+    "native": "兄",
+    "language": "chinese",
+    "meaning": "elder brother"
+  },
+  {
+    "sound": "OO+",
+    "pronunciation": "xy9yOO4q",
+    "native": "熊",
+    "language": "chinese",
+    "meaning": "bear"
+  },
+  {
+    "sound": "ii+",
+    "pronunciation": "xy9ii4q",
+    "native": "侀",
+    "language": "chinese",
+    "meaning": "shape"
+  },
+  {
+    "sound": "i+i-",
+    "pronunciation": "mi4i3q",
+    "native": "命",
+    "language": "chinese",
+    "meaning": "life"
+  },
+  {
+    "sound": "i+",
+    "pronunciation": "phi4q",
+    "native": "娉",
+    "language": "chinese",
+    "meaning": "graceful"
+  },
+  {
+    "sound": "i-",
+    "pronunciation": "pi3q",
+    "native": "秉",
+    "language": "chinese",
+    "meaning": "to grasp"
+  },
+  {
+    "sound": "a+u",
+    "pronunciation": "xy9ya4u",
+    "native": "宵",
+    "language": "chinese",
+    "meaning": "night"
+  },
+  {
+    "sound": "a+a-u",
+    "pronunciation": "txya4a3u",
+    "native": "教",
+    "language": "chinese",
+    "meaning": "religion"
+  },
+  {
+    "sound": "aa+u",
+    "pronunciation": "lyaa4u",
+    "native": "嫽",
+    "language": "chinese",
+    "meaning": "good"
+  },
+  {
+    "sound": "a-u",
+    "pronunciation": "xy9ya3u",
+    "native": "晓",
+    "language": "chinese",
+    "meaning": "dawn"
+  },
+  {
+    "sound": "A+",
+    "pronunciation": "thyA4n",
+    "native": "天",
+    "language": "chinese",
+    "meaning": "day"
+  },
+  {
+    "sound": "A-",
+    "pronunciation": "txyA3n",
+    "native": "囝",
+    "language": "chinese",
+    "meaning": "child"
+  },
+  {
+    "sound": "AA+",
+    "pronunciation": "thyAA4n",
+    "native": "屇",
+    "language": "chinese",
+    "meaning": "cave"
+  },
+  {
+    "sound": "A+A-",
+    "pronunciation": "txyA4A3n",
+    "native": "涧",
+    "language": "chinese",
+    "meaning": "mountain stream"
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "txya4",
+    "native": "家",
+    "language": "chinese",
+    "meaning": "home"
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "xy9yaa4",
+    "native": "舺",
+    "language": "chinese",
+    "meaning": "boat"
+  },
+  {
+    "sound": "e+",
+    "pronunciation": "thye4",
+    "native": "怗",
+    "language": "chinese",
+    "meaning": "peaceful"
+  },
+  {
+    "sound": "e-",
+    "pronunciation": "txye3",
+    "native": "毑",
+    "language": "chinese",
+    "meaning": "mother"
+  },
+  {
+    "sound": "ee+",
+    "pronunciation": "tyee4",
+    "native": "垤",
+    "language": "chinese",
+    "meaning": "anthill"
+  },
+  {
+    "sound": "e+e-",
+    "pronunciation": "xy9ye4e3",
+    "native": "嶰",
+    "language": "chinese",
+    "meaning": "mountain valley"
+  },
+  {
+    "sound": "ou-",
+    "pronunciation": "txyou3",
+    "native": "玖",
+    "language": "chinese",
+    "meaning": "black jade"
+  },
+  {
+    "sound": "ou+",
+    "pronunciation": "xy9you4",
+    "native": "庥",
+    "language": "chinese",
+    "meaning": "protection"
+  },
+  {
+    "sound": "ouu+",
+    "pronunciation": "txhyouu4",
+    "native": "厹",
+    "language": "chinese",
+    "meaning": "spear"
+  },
+  {
+    "sound": "ou+u-",
+    "pronunciation": "txyou4u3",
+    "native": "旧",
+    "language": "chinese",
+    "meaning": "old"
+  },
+  {
+    "sound": "ii+",
+    "pronunciation": "mii4n",
+    "native": "旻",
+    "language": "chinese",
+    "meaning": "heaven"
+  },
+  {
+    "sound": "i+i-",
+    "pronunciation": "txi4i3n",
+    "native": "溍",
+    "language": "chinese",
+    "meaning": "water"
+  },
+  {
+    "sound": "i+",
+    "pronunciation": "xy9i4n",
+    "native": "欣",
+    "language": "chinese",
+    "meaning": "happy"
+  },
+  {
+    "sound": "i-",
+    "pronunciation": "txhi3n",
+    "native": "昑",
+    "language": "chinese",
+    "meaning": "bright"
+  },
+  {
+    "sound": "U+",
+    "pronunciation": "khU4q",
+    "native": "坑",
+    "language": "chinese",
+    "meaning": "hole"
+  },
+  {
+    "sound": "U-",
+    "pronunciation": "mU3q",
+    "native": "猛",
+    "language": "chinese",
+    "meaning": "ferocious"
+  },
+  {
+    "sound": "UU+",
+    "pronunciation": "phUU4q",
+    "native": "朋",
+    "language": "chinese",
+    "meaning": "friend"
+  },
+  {
+    "sound": "U+U-",
+    "pronunciation": "mU4U3q",
+    "native": "梦",
+    "language": "chinese",
+    "meaning": "dream"
+  },
+  {
+    "sound": "e+i",
+    "pronunciation": "we4i",
+    "native": "威",
+    "language": "chinese",
+    "meaning": "power"
+  },
+  {
+    "sound": "e-i",
+    "pronunciation": "me3i",
+    "native": "嵄",
+    "language": "chinese",
+    "meaning": "mountain"
+  },
+  {
+    "sound": "ee+i",
+    "pronunciation": "wee4i",
+    "native": "嵬",
+    "language": "chinese",
+    "meaning": "rocky"
+  },
+  {
+    "sound": "e+e-i",
+    "pronunciation": "fe4e3i",
+    "native": "怫",
+    "language": "chinese",
+    "meaning": "anger"
+  },
+  {
+    "sound": "U+",
+    "pronunciation": "sU4n",
+    "native": "森",
+    "language": "chinese",
+    "meaning": "forest"
+  },
+  {
+    "sound": "U-",
+    "pronunciation": "xU3n",
+    "native": "沈",
+    "language": "chinese",
+    "meaning": "liquid"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qge",
+    "native": "nge",
+    "language": "swahili",
+    "meaning": "scorpion"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qgi9ri",
+    "native": "ngiri",
+    "language": "swahili",
+    "meaning": "warthog"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qgu9mi",
+    "native": "ngumi",
+    "language": "swahili",
+    "meaning": "fist"
+  },
+  {
+    "sound": "q",
+    "pronunciation": "qgwe9na",
+    "native": "ngwena",
+    "language": "swahili",
+    "meaning": "crocodile"
+  },
+  {
+    "sound": "n",
+    "pronunciation": "ndu9gu",
+    "native": "ndugu",
+    "language": "swahili",
+    "meaning": "relative"
+  },
+  {
+    "sound": "n",
+    "pronunciation": "nda9ma",
+    "native": "ndama",
+    "language": "swahili",
+    "meaning": "calf"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mba9be",
+    "native": "mbabe",
+    "language": "swahili",
+    "meaning": "hero"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mbayuwa9yu",
+    "native": "mbayuwayu",
+    "language": "swahili",
+    "meaning": "swallow (bird species)"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mbiliki9m1",
+    "native": "mbilikimo",
+    "language": "swahili",
+    "meaning": "dwarf"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mtxu9zi",
+    "native": "mchuzi",
+    "language": "",
+    "meaning": "swahili"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mfu9k1",
+    "native": "mfuko",
+    "language": "swahili",
+    "meaning": "bag/purse"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mg19mbea",
+    "native": "mgombea",
+    "language": "swahili",
+    "meaning": "candidate"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mhe9qga",
+    "native": "mhenga",
+    "language": "swahili",
+    "meaning": "ancestor"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mdjE9nzi",
+    "native": "mjenzi",
+    "language": "swahili",
+    "meaning": "builder"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mka9nda",
+    "native": "mkanda",
+    "language": "swahili",
+    "meaning": "belt"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mna9ra",
+    "native": "mnara",
+    "language": "swahili",
+    "meaning": "tower"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mra9di",
+    "native": "mradi",
+    "language": "swahili",
+    "meaning": "project"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mxi9ndi",
+    "native": "mshindi",
+    "language": "swahili",
+    "meaning": "winner (one who wins)"
+  },
+  {
+    "sound": "m",
+    "pronunciation": "mtaza9mo",
+    "native": "mtazamo",
+    "language": "swahili",
+    "meaning": "viewpoint"
+  },
+  {
+    "sound": "UU+",
+    "pronunciation": "kUU4n",
+    "native": "哏",
+    "language": "chinese",
+    "meaning": "\"funny\""
+  },
+  {
+    "sound": "U+U-",
+    "pronunciation": "pU4U3n",
+    "native": "坋",
+    "language": "chinese",
+    "meaning": "\"dust\""
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "ka4q",
+    "native": "冈",
+    "language": "chinese",
+    "meaning": "\"ridge\""
+  },
+  {
+    "sound": "a+a-",
+    "pronunciation": "ta4a3q",
+    "native": "凼",
+    "language": "chinese",
+    "meaning": "\"pool\""
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "phaa4q",
+    "native": "庬",
+    "language": "chinese",
+    "meaning": "\"huge\""
+  },
+  {
+    "sound": "a-",
+    "pronunciation": "ra3q",
+    "native": "壤",
+    "language": "chinese",
+    "meaning": "\"soil\""
+  },
+  {
+    "sound": "a+i",
+    "pronunciation": "ka4i",
+    "native": "垓",
+    "language": "chinese",
+    "meaning": "\"boundary\""
+  },
+  {
+    "sound": "aa+i",
+    "pronunciation": "phaa4i",
+    "native": "棑",
+    "language": "chinese",
+    "meaning": "\"raft\""
+  },
+  {
+    "sound": "a+a-i",
+    "pronunciation": "kha4a3i",
+    "native": "愒",
+    "language": "chinese",
+    "meaning": "\"to desire\""
+  },
+  {
+    "sound": "a+u",
+    "pronunciation": "h9a4u",
+    "native": "嚆",
+    "language": "chinese",
+    "meaning": "\"sound\""
+  },
+  {
+    "sound": "a+a-u",
+    "pronunciation": "t0x0a4a3u",
+    "native": "兆",
+    "language": "chinese",
+    "meaning": "\"omen\""
+  },
+  {
+    "sound": "aa+u",
+    "pronunciation": "thaa4u",
+    "native": "匋",
+    "language": "chinese",
+    "meaning": "\"pottery\""
+  },
+  {
+    "sound": "a-u",
+    "pronunciation": "pa3u",
+    "native": "宝",
+    "language": "chinese",
+    "meaning": "\"jewel\""
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "ya4n",
+    "native": "啱",
+    "language": "chinese",
+    "meaning": "\"correct\""
+  },
+  {
+    "sound": "a+a-",
+    "pronunciation": "kha4a3n",
+    "native": "墈",
+    "language": "chinese",
+    "meaning": "\"cliff\""
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "laa4n",
+    "native": "岚",
+    "language": "chinese",
+    "meaning": "\"mist\""
+  },
+  {
+    "sound": "a-",
+    "pronunciation": "kha3n",
+    "native": "坎",
+    "language": "chinese",
+    "meaning": "\"pit\""
+  },
+  {
+    "sound": "O+",
+    "pronunciation": "tsO4q",
+    "native": "宗",
+    "language": "chinese",
+    "meaning": "\"school\""
+  },
+  {
+    "sound": "OO+",
+    "pronunciation": "h9OO4q",
+    "native": "虹",
+    "language": "chinese",
+    "meaning": "\"rainbow\""
+  },
+  {
+    "sound": "O-",
+    "pronunciation": "tO3q",
+    "native": "懂",
+    "language": "chinese",
+    "meaning": "\"to understand\""
+  },
+  {
+    "sound": "O+O-",
+    "pronunciation": "tO4O3q",
+    "native": "湩",
+    "language": "chinese",
+    "meaning": "\"milk\""
+  },
+  {
+    "sound": "a+",
+    "pronunciation": "khwa4q",
+    "native": "筐",
+    "language": "chinese",
+    "meaning": "\"basket\""
+  },
+  {
+    "sound": "a+a-",
+    "pronunciation": "t0x0wa4a3q",
+    "native": "戆",
+    "language": "chinese",
+    "meaning": "\"simple\""
+  },
+  {
+    "sound": "aa+",
+    "pronunciation": "t0x0hwaa4q",
+    "native": "床",
+    "language": "chinese",
+    "meaning": "\"bed\""
+  },
+  {
+    "sound": "a-",
+    "pronunciation": "kwa3q",
+    "native": "犷",
+    "language": "chinese",
+    "meaning": "\"rough\""
+  },
+  {
+    "sound": "a+i",
+    "pronunciation": "t0x0hwa4i",
+    "native": "搋",
+    "language": "chinese",
+    "meaning": "\"to knead\""
+  },
+  {
+    "sound": "a+a-i",
+    "pronunciation": "khwa4a3i",
+    "native": "浍",
+    "language": "chinese",
+    "meaning": "\"drain\""
+  },
+  {
+    "sound": "a-i",
+    "pronunciation": "t0x0wa3i",
+    "native": "跩",
+    "language": "chinese",
+    "meaning": "\"to waddle\""
+  }
+]
+
+      const html = []
+      shuffleArray(WORDS).forEach(word => {
+        html.push(`
+          <div class='word'>
+            <div class='tone'>${word.pronunciation}</div>
+            <div class='native'>${word.native}</div>
+            <div class='meaning'>${word.meaning}</div>
+            <div class='language'>${word.language}</div>
+          </div>
+        `)
+      })
+
+      document.querySelector('.content').innerHTML = html.join('\n')
+
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array
+      }
+
+      window.DONE = true;
+    </script>
+    <!--pre class='content'>
+frUm mAunt yu faind CU stown,
+ritxiq tu CU klAwd
+no wEr an Orc duw yuw
+fil CU pAwOr Uv neytxOr al UrAwnd
+wIc CU klAwd sow klows,
+yuw kAn si, tUtx, En teyst
+fidiq yor EnOrdji
+tu CU stown wIc heyst
+mAwnt holdz Its xeyp,
+layk CU sikrIt bal
+
+fyE vAldr frAnda rougE. fa0CEsk ulfr i skougE.
+ur Er af Itlu yatnE. 1pt la0ypr rAInn au kyatnE.
+curs vAldr kvInna kvItlu. kautr vArCr faur af Itlu.
+ouss Er flAstra fArCa f1'r. En skalpr Er svArCa.
+
+rAIC kvECa r1ss1m vAsta. rEgInn stlou svArCEt bAsta.
+kaun Er batna b1'lvan. b1'l ga0rvEr naun f1'lvan.
+hagatl Er kaldastr k1tna. krIstr skoup hAImEnn f1tna.
+nauCr gErEr nAhpa k1stE. na0khttan kAlr i fr1stE.
+
+unya run1 sEgun
+fahI galI ragInakund1
+
+is k1'tlum bru brAICa. blIndan carf at lAICa.
+aur Er gumna gouCE. gEt Ek at 1'rr var frouCE.
+soul Er landa lyoumE. lutI Ek hElgum doumE.
+thtir Er AInEndr ausa. 1pt vArCr smICr blausa.
+
+unya run1 sEgun
+fahI galI ragInakund1
+
+byarkan Er laufgra0nstr lima. l1kI bar flArCa thhttima.
+maCr Er m1ldar aukI. mIkIl Er grAIp au haukI.
+l1'gr Er, fAtlr our fyatlE f1ss. En gutl Er1 n1ssEr.
+ir Er vEtrgra0nstr vICa. vAnt Er, Er brEnnr, at svICa.
+    </pre>
+-->
+  </body>
+</html>
