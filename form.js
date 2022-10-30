@@ -42,7 +42,7 @@ BASE_VOWEL_GLYPHS.forEach(g => {
         LONG_MARKS.forEach(l => {
           ACCENT_MARKS.forEach(a => {
             const i = `${g}${v}${n}${t}${l}${a}`
-            const [t1, t2] = D[t]
+            const [t1 = '', t2 = ''] = D[t]
             if (i.match(/([ou])#/)) {
               const x = RegExp.$1
               const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${t1}${D[n]}${t2}`
