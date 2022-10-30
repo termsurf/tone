@@ -2,12 +2,24 @@
 const st = require('@lancejpollard/script-tree')
 
 const D = {
-  '--': '44',
-  '-': '4',
-  '++': '33',
-  '+': '3',
+  '--*++': ['44', '55'],
+  '--*+': ['44', '5'],
+  '--*-': ['44', '6'],
+  '--': ['44', ''],
+  '-*++': ['4', '55'],
+  '-*+': ['4', '5'],
+  '-*--': ['4', '66'],
+  '-': ['4', ''],
+  '++*--': ['33', '66'],
+  '++*-': ['33', '6'],
+  '++*+': ['33', '5'],
+  '++': ['33', ''],
+  '+*--': ['3', '66'],
+  '+*-': ['3', '6'],
+  '+*++': ['3', '55'],
+  '+': ['3'],
   '^': '9', // accent mark
-  '#': '5',
+  '#': '0',
   '&': '^',
   '_': '%', // long vowel
   '': ''
@@ -15,26 +27,28 @@ const D = {
 
 const VOWELS = []
 const BASE_VOWEL_GLYPHS = ['I', 'E', 'A', 'O', 'U', 'i', 'e', 'a', 'o', 'u']
-const TONE_MARKS = ['--', '-', '++', '+', '']
+const TONE_MARKS = ['--*++', '--*+', '--', '-*++', '-*+', '-', '++*--', '++*-', '++*+', '++', '+*--', '+*-', '+*++', '+', '']
 const VARIANT_MARKS = ['#', '']
 const NASAL_MARKS = ['&', '']
 const LONG_MARKS = ['_', '']
 const ACCENT_MARKS = ['^', '']
 
+const T = TONE_MARKS
+
 BASE_VOWEL_GLYPHS.forEach(g => {
-  ACCENT_MARKS.forEach(a => {
-    LONG_MARKS.forEach(l => {
-      NASAL_MARKS.forEach(n => {
-        VARIANT_MARKS.forEach(v => {
-          TONE_MARKS.forEach(t => {
+  VARIANT_MARKS.forEach(v => {
+    NASAL_MARKS.forEach(n => {
+      TONE_MARKS.forEach(t => {
+        LONG_MARKS.forEach(l => {
+          ACCENT_MARKS.forEach(a => {
             const i = `${g}${v}${n}${t}${l}${a}`
-            // these two are treated specially, not getting the variant mark
+            const [t1, t2] = D[t]
             if (i.match(/([ou])#/)) {
               const x = RegExp.$1
-              const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}`
+              const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${t1}${D[n]}${t2}`
               VOWELS.push({ i, o })
             } else {
-              const o = `${g}${D[l]}${D[a]}${D[t]}${D[n]}${D[v]}`
+              const o = `${g}${D[l]}${D[a]}${t1}${D[n]}${D[v]}${t2}`
               VOWELS.push({ i, o })
             }
           })
