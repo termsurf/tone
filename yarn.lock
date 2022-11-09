@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@lancejpollard/script-tree@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@lancejpollard/script-tree/-/script-tree-1.0.2.tgz#e7c226e05e4b3f83755024d46591bd827d8884e3"
-  integrity sha512-quH5hUbpDB+LFAu/IaFTw3bgtJYKMpGt9shCb/EKHsQl0gFVZIZ5bNVc6ZWCsNXYBmAuHhegSZd0IaIm3mu+7Q==
+"@lancejpollard/script-tree@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@lancejpollard/script-tree/-/script-tree-1.0.3.tgz#fc6babdf38e086811fda5e52e21f428e581af427"
+  integrity sha512-INCZwHAd/kugMtKSIVjKHrfk5IERq4E6+3NzbgzlC3MOEQ0Ix6nEhk3o+QO/0wWZskP9zQ+WyMw8AXYvEWbyzw==
 
 "@types/node@*":
   version "17.0.43"
