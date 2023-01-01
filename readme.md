@@ -207,7 +207,7 @@ To get access to the font for your own system, just click and download the [Tone
 
 <h3 id="license">License</h3>
 
-Copyright 2021-2022 <a href='https://drum.work'>TreeSurf</a>
+Copyright 2021-2023 <a href='https://drum.work'>TreeSurf</a>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
