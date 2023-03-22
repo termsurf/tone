@@ -256,7 +256,7 @@ const CONSONANTS = [
   { i: ":", o: ":", name: 'Colon' }
 ]
 
-const list = [...VOWELS, ...CONSONANTS]
+const SYMBOLS = [...VOWELS, ...CONSONANTS]
 const tree = st.fork(list)
 const form = text => st.form(text, tree)
 
@@ -562,7 +562,7 @@ form.turn3 = {
   'j': 3,
 }
 
-form.list = list
+form.SYMBOLS = SYMBOLS
 
 form.VOWELS = VOWELS
 
@@ -577,6 +577,8 @@ const turn = (mark, term) => {
     .split('')
     .map(x => size[turn[x] - 1])
 }
+
+form.list = text => st.list(text, tree)
 
 form.turn = turn
 

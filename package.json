@@ -1,9 +1,9 @@
 {
   "name": "@drumwork/tone",
-  "version": "4.1.5",
+  "version": "4.2.0",
   "main": "form.js",
   "dependencies": {
-    "@lancejpollard/script-tree": "^1.0.3"
+    "@lancejpollard/script-tree": "^1.1.0"
   },
   "files": [
     "form.js"
