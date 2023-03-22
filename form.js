@@ -257,7 +257,7 @@ const CONSONANTS = [
 ]
 
 const SYMBOLS = [...VOWELS, ...CONSONANTS]
-const tree = st.fork(list)
+const tree = st.fork(SYMBOLS)
 const form = text => st.form(text, tree)
 
 form.turn36 = {
