@@ -166,7 +166,7 @@ const CONSONANTS = [
   { i: "k@", o: "k99", name: 'Tense k sound' },
   { i: "k.", o: "k9", name: 'Stop k sound' },
   { i: "k", o: "k", name: 'K sound' },
-  { i: "Hh", o: "h5%", name: 'Voiceless H sound (ħ)' },
+  { i: "Hh!", o: "h5%", name: 'Voiceless H sound (ħ)' },
   { i: "H!", o: "h593", name: 'Ejective H sound' },
   { i: "Hy~", o: "h53", name: 'Palatalized H sound' },
   { i: "Hw~", o: "h533", name: 'Labialized H sound' },
