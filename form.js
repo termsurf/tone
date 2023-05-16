@@ -7,9 +7,11 @@ const D = {
   '++': '33',
   '+': '3',
   '^': '9', // accent mark
-  '~': '5',
-  '&': '^',
+  '~': '5', // variant
+  '&': '0', // nasal
+  '@': '00', // non-syllabic
   '_': '%', // long vowel
+  '$': '^', // short vowel
   '': ''
 }
 
@@ -18,25 +20,30 @@ const BASE_VOWEL_GLYPHS = ['I', 'E', 'A', 'O', 'U', 'i', 'e', 'a', 'o', 'u']
 const TONE_MARKS = ['--', '-', '++', '+', '']
 const VARIANT_MARKS = ['~', '']
 const NASAL_MARKS = ['&', '']
-const LONG_MARKS = ['_', '']
+const DURATION_MARKS = ['_', '$', '']
+const SYLLABIC_MARKS = ['@', '']
 const ACCENT_MARKS = ['^', '']
 
 BASE_VOWEL_GLYPHS.forEach(g => {
   ACCENT_MARKS.forEach(a => {
-    LONG_MARKS.forEach(l => {
-      NASAL_MARKS.forEach(n => {
-        VARIANT_MARKS.forEach(v => {
-          TONE_MARKS.forEach(t => {
-            const i = `${g}${v}${n}${t}${l}${a}`
-            // these two are treated specially, not getting the variant mark
-            if (i.match(/([ou])#/)) {
-              const x = RegExp.$1
-              const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}`
-              VOWELS.push({ i, o })
-            } else {
-              const o = `${g}${D[l]}${D[a]}${D[t]}${D[n]}${D[v]}`
-              VOWELS.push({ i, o })
-            }
+    DURATION_MARKS.forEach(l => {
+      SYLLABIC_MARKS.forEach(s => {
+        NASAL_MARKS.forEach(n => {
+          VARIANT_MARKS.forEach(v => {
+            TONE_MARKS.forEach(t => {
+              const i = `${g}${v}${n}${t}${s}${l}${a}`
+              // these two are treated specially, not getting the variant mark
+              if (i.match(/([ou])#/)) {
+                const x = RegExp.$1
+                const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}`
+                VOWELS.push({ i, o })
+              } else {
+                const o = l === '$'
+                  ? `${g}${D[a]}${D[t]}${D[l]}${D[n]}${D[s]}${D[v]}`
+                  : `${g}${D[l]}${D[a]}${D[t]}${D[n]}${D[s]}${D[v]}`
+                VOWELS.push({ i, o })
+              }
+            })
           })
         })
       })
