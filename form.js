@@ -7,20 +7,20 @@ const D = {
   '++': '33',
   '+': '3',
   '^': '9', // accent mark
-  '~': '5', // variant
+  '$': '5', // variant
   '&': '0', // nasal
   '@': '00', // non-syllabic
   '_': '%', // long vowel
-  '$': '^', // short vowel
+  '!': '^', // short vowel
   '': ''
 }
 
 const VOWELS = []
 const BASE_VOWEL_GLYPHS = ['I', 'E', 'A', 'O', 'U', 'i', 'e', 'a', 'o', 'u']
 const TONE_MARKS = ['--', '-', '++', '+', '']
-const VARIANT_MARKS = ['~', '']
+const VARIANT_MARKS = ['$', '']
 const NASAL_MARKS = ['&', '']
-const DURATION_MARKS = ['_', '$', '']
+const DURATION_MARKS = ['_', '!', '']
 const SYLLABIC_MARKS = ['@', '']
 const ACCENT_MARKS = ['^', '']
 
@@ -35,12 +35,12 @@ BASE_VOWEL_GLYPHS.forEach(g => {
               // these two are treated specially, not getting the variant mark
               if (i.match(/([ou])~/)) {
                 const x = RegExp.$1
-                const o = l === '$'
+                const o = l === '!'
                   ? `${x === 'o' ? 1 : 2}${D[a]}${D[t]}${D[l]}${D[n]}${D[s]}`
                   : `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}${D[s]}`
                 VOWELS.push({ i, o })
               } else {
-                const o = l === '$'
+                const o = l === '!'
                   ? `${g}${D[a]}${D[t]}${D[l]}${D[n]}${D[s]}${D[v]}`
                   : `${g}${D[l]}${D[a]}${D[t]}${D[n]}${D[s]}${D[v]}`
                 VOWELS.push({ i, o })
