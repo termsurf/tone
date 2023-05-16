@@ -7,7 +7,7 @@ const D = {
   '++': '33',
   '+': '3',
   '^': '9', // accent mark
-  '#': '5',
+  '~': '5',
   '&': '^',
   '_': '%', // long vowel
   '': ''
@@ -16,7 +16,7 @@ const D = {
 const VOWELS = []
 const BASE_VOWEL_GLYPHS = ['I', 'E', 'A', 'O', 'U', 'i', 'e', 'a', 'o', 'u']
 const TONE_MARKS = ['--', '-', '++', '+', '']
-const VARIANT_MARKS = ['#', '']
+const VARIANT_MARKS = ['~', '']
 const NASAL_MARKS = ['&', '']
 const LONG_MARKS = ['_', '']
 const ACCENT_MARKS = ['^', '']
