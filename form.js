@@ -90,6 +90,7 @@ const CONSONANTS = [
   { i: "g", o: "g", name: 'G sound' },
   { i: "'", o: "'", name: 'Lack of sound, glottal stop' },
   { i: "'~", o: "'3", name: 'Hard transition' },
+  { i: "'!", o: "'366", name: 'Nang tone' },
   { i: "dh!", o: "d^0", name: 'Voiceless d sound' },
   { i: "d!", o: "d05", name: 'Ejective d sound' },
   { i: "d?", o: "d06", name: 'Implosive d sound' },
