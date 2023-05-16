@@ -29,7 +29,7 @@ test('ka@ga@sh~Uqdjy~a@')
 test('ka@_ga@hha@da@')
 test('ka@ga@VoVo')
 test('sa!a--a-w')
-test('sO-!O--p')
+test('sO-!O--p\'!')
 
 function test(a) {
   console.log(a, tone(a))
