@@ -33,7 +33,7 @@ BASE_VOWEL_GLYPHS.forEach(g => {
             TONE_MARKS.forEach(t => {
               const i = `${g}${v}${n}${t}${s}${l}${a}`
               // these two are treated specially, not getting the variant mark
-              if (i.match(/([ou])#/)) {
+              if (i.match(/([ou])~/)) {
                 const x = RegExp.$1
                 const o = l === '$'
                   ? `${x === 'o' ? 1 : 2}${D[a]}${D[t]}${D[l]}${D[n]}${D[s]}`
@@ -57,6 +57,8 @@ const CONSONANTS = [
   { i: "=.", o: ".", name: 'Period literal' },
   { i: "=?", o: "?", name: 'Question literal' },
   { i: "=!", o: "!", name: 'Exclamation literal' },
+  { i: "=+", o: "+", name: 'Plus' },
+  { i: "=-", o: "-", name: 'Minus' },
   { i: "mh!", o: "m%9", name: 'Voiceless m sound' },
   { i: "mh~", o: "m%", name: 'Aspirated m sound' },
   { i: "mG~", o: "m4", name: 'Velarized m sound' },
@@ -211,7 +213,7 @@ const CONSONANTS = [
   { i: "zw~", o: "z33", name: 'Labialized z sound' },
   { i: "z!", o: "z93", name: 'Ejective z sound' },
   { i: "z", o: "z", name: 'Z sound' },
-  { i: "C#", o: "C3", name: 'Danish th/l sound' },
+  { i: "C~", o: "C3", name: 'Danish th/l sound' },
   { i: "CQ~", o: "C66", name: 'Pharyngealized C sound' },
   { i: "CG~", o: "C6", name: 'Velarized C sound' },
   { i: "Cy~", o: "C5", name: 'Palatalized C sound' },
@@ -266,7 +268,8 @@ const CONSONANTS = [
   { i: "[", o: "[", name: 'Opening bracket' },
   { i: "]", o: "]", name: 'Closing bracket' },
   { i: "|", o: "|", name: 'Pipe' },
-  { i: "#", o: "#", name: 'At sign' },
+  { i: "#", o: "#", name: 'Number sign' },
+  { i: "=@", o: "@", name: 'At sign' },
   { i: "/", o: "/", name: 'Forward slash' },
   { i: "\\", o: "\\", name: 'Backward slash' },
   { i: ":", o: ":", name: 'Colon' }
