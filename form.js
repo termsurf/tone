@@ -35,7 +35,9 @@ BASE_VOWEL_GLYPHS.forEach(g => {
               // these two are treated specially, not getting the variant mark
               if (i.match(/([ou])#/)) {
                 const x = RegExp.$1
-                const o = `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}`
+                const o = l === '$'
+                  ? `${x === 'o' ? 1 : 2}${D[a]}${D[t]}${D[l]}${D[n]}${D[s]}`
+                  : `${x === 'o' ? 1 : 2}${D[l]}${D[a]}${D[t]}${D[n]}${D[s]}`
                 VOWELS.push({ i, o })
               } else {
                 const o = l === '$'
