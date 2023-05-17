@@ -89,6 +89,7 @@ const CONSONANTS = [
   { i: 'nh!', o: 'n%9', name: 'Voiceless n sound' },
   { i: 'nG~', o: 'n4', name: 'Velarized n sound' },
   { i: 'nh~', o: 'n%', name: 'Aspirated n sound' },
+  { i: 'ny~h!', o: 'n%93', name: 'Voiceless palatalized n sound' },
   { i: 'ny~', o: 'n3', name: 'Palatalized n sound' },
   { i: 'n~', o: 'n7', name: 'Dental n sound' },
   { i: 'n', o: 'n', name: 'N sound' },

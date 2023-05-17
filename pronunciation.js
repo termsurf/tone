@@ -50,6 +50,8 @@ function convertIPAToCall(ipa, options = { tones: true }) {
   while (i < parts.length) {
     const part = parts[i++]
     switch (part) {
+      case '\u200c': // non-width joiner
+        break
       case 'ʰ':
         addFeature('aspiration')
         break
@@ -281,7 +283,7 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         addConsonant('p*')
         break
       case 'r':
-        addConsonant('rr')
+        addConsonant('r')
         break
       case 'ɾ':
         addConsonant('r')
@@ -367,7 +369,7 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         }
         break
       case 'ʕ':
-        addConsonant('Q~')
+        addConsonant('Q')
         break
       case 'ʱ':
         addConsonant('hh~')
@@ -390,8 +392,23 @@ function convertIPAToCall(ipa, options = { tones: true }) {
       case 'ĕ':
         addVowel('e')
         break
+      case 'ḛ':
+        addVowel('e')
+        addFeature('nasalization')
+        break
+      case '\u030a':
+        addFeature('voiceless')
+        break
       case `${m.d.tilde}`:
         addFeature(`nasalization`)
+        break
+      case 'ṵ':
+        addVowel('u')
+        addFeature('nasalization')
+        break
+      case 'ḭ':
+        addVowel('i')
+        addFeature('nasalization')
         break
       case '̚':
         addFeature('stop')
@@ -461,6 +478,8 @@ function convertIPAToCall(ipa, options = { tones: true }) {
       case '\u0329': // syllabic
       case '\u02FD': // apical
       case '\u033A': // apical
+      case '+':
+      case "'":
         break
       case '(':
       case ')':
@@ -579,6 +598,11 @@ function convertIPAToCall(ipa, options = { tones: true }) {
       case '\u032F': // non-syllabic
         addFeature('non-syllabic')
         break
+      case '\u031f':
+        break
+      case 'ï':
+        addVowel('i')
+        break
       case 'è':
         addVowel('e')
         captureAllTones('˨')
@@ -661,6 +685,10 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         break
       case '\u0361': // tie
       case '\u035C': // bottom tie
+        break
+      case '\u0300':
+        captureAllTones('˨')
+        result.last.vowels = []
         break
       default:
         throw new Error(part)
@@ -883,6 +911,9 @@ function serialize(result) {
       }
       if (node.dental) {
         out.push('~')
+      }
+      if (node.pharyngealization) {
+        out.push('Q~')
       }
       if (node.palatalization) {
         out.push('y~')
