@@ -33,7 +33,7 @@ const m = {
 
 module.exports = convertIPAToCall
 
-function convertIPAToCall(ipa) {
+function convertIPAToCall(ipa, options = { tones: true }) {
   const result = {
     last: {
       consonants: [],
@@ -190,10 +190,12 @@ function convertIPAToCall(ipa) {
         addConsonant('g?')
         break
       case 'ɟ':
-        addConsonant('gy~')
+        addConsonant('g')
+        addFeature('palatalization')
         break
       case 'ʄ':
-        addConsonant('g?y~')
+        addConsonant('g?')
+        addFeature('palatalization')
         break
       case 'ħ':
         addConsonant('Hh!')
@@ -211,10 +213,12 @@ function convertIPAToCall(ipa) {
         addConsonant('H')
         break
       case 'ç':
-        addConsonant('hy~')
+        addConsonant('h')
+        addFeature('palatalization')
         break
       case 'c':
-        addConsonant('ky~')
+        addConsonant('k')
+        addFeature('palatalization')
         break
       case 'ʐ':
         addConsonant('J')
@@ -226,7 +230,8 @@ function convertIPAToCall(ipa) {
         addConsonant('Z')
         break
       case 'ʑ':
-        addConsonant('jy~')
+        addConsonant('j')
+        addFeature('palatalization')
         break
       case 'k':
         addConsonant('k')
@@ -253,7 +258,8 @@ function convertIPAToCall(ipa) {
         addConsonant('q')
         break
       case 'ɲ':
-        addConsonant('ny~')
+        addConsonant('n')
+        addFeature('palatalization')
         break
       case 'l':
         addConsonant('l')
@@ -262,7 +268,8 @@ function convertIPAToCall(ipa) {
         addConsonant('L')
         break
       case 'ʎ':
-        addConsonant('ly~')
+        addConsonant('l')
+        addFeature('palatalization')
         break
       case 'ǁ':
         addConsonant('l*')
@@ -335,7 +342,8 @@ function convertIPAToCall(ipa) {
         addConsonant('X')
         break
       case 'ɕ':
-        addConsonant('xy~')
+        addConsonant('x')
+        addFeature('palatalization')
         break
       case 'j':
         addConsonant('y')
@@ -376,6 +384,12 @@ function convertIPAToCall(ipa) {
       case 'ɝ':
         addVowel('u~')
         break
+      case 'ŏ':
+        addVowel('o')
+        break
+      case 'ĕ':
+        addVowel('e')
+        break
       case `${m.d.tilde}`:
         addFeature(`nasalization`)
         break
@@ -386,7 +400,7 @@ function convertIPAToCall(ipa) {
         addPunctuation('=.')
         break
       case '-':
-        addPunctuation('-')
+        addPunctuation('=-')
         break
       case '\u031d':
         break
@@ -400,10 +414,6 @@ function convertIPAToCall(ipa) {
       case '\u032a':
         break
       case '\u0339':
-        break
-      case '\u0348':
-        break
-      case '\u0348':
         break
       case '\u035c':
         break
@@ -419,6 +429,9 @@ function convertIPAToCall(ipa) {
       case '\u0329': // syllabic
       case '\u02FD': // apical
       case '\u033A': // apical
+        break
+      case '(':
+      case ')':
         break
       case m.u.tilde:
         addFeature('nasalization')
@@ -556,6 +569,10 @@ function convertIPAToCall(ipa) {
         addVowel('i')
         result.last.vowels = []
         break
+      case 'é':
+        addVowel('e')
+        captureAllTones('˦')
+        result.last.vowels = []
         break
       case 'à':
         addVowel('a')
@@ -648,6 +665,10 @@ function convertIPAToCall(ipa) {
   return serialize(result)
 
   function addTones(tones) {
+    if (!options.tones) {
+      return
+    }
+
     const vowels = result.last.vowels
     let i = 0
 
@@ -767,6 +788,14 @@ function convertIPAToCall(ipa) {
         result.last.consonant.stop = true
         break
       case 'tense':
+        if (result.last.consonant.value.match('x')) {
+          const second =
+            result.last.consonants[result.last.consonants.length - 2]
+          if (second && second.value.match(/[ptk]/)) {
+            second.tense = true
+            break
+          }
+        }
         result.last.consonant.tense = true
         break
       case 'long':
@@ -817,6 +846,9 @@ function serialize(result) {
       if (node.nasalization) {
         out.push('&')
       }
+      if (node.tense) {
+        out.push('@')
+      }
       if (node.dental) {
         out.push('~')
       }
@@ -837,9 +869,6 @@ function serialize(result) {
       }
       if (node.implosion) {
         out.push('?')
-      }
-      if (node.tense) {
-        out.push('@')
       }
       if (node.voice === false) {
         out.push('h!')

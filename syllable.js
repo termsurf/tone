@@ -55,29 +55,42 @@ const SYMBOL = {
 
   m: { type: 'consonant', value: 'm' },
   n: { type: 'consonant', value: 'n' },
+  N: { type: 'consonant', value: 'N' },
   q: { type: 'consonant', value: 'q' },
   g: { type: 'consonant', value: 'g' },
   d: { type: 'consonant', value: 'd' },
   b: { type: 'consonant', value: 'b' },
   p: { type: 'consonant', value: 'p' },
   t: { type: 'consonant', value: 't' },
+  T: { type: 'consonant', value: 'T' },
   k: { type: 'consonant', value: 'k' },
+  K: { type: 'consonant', value: 'K' },
   h: { type: 'consonant', value: 'h' },
+  H: { type: 'consonant', value: 'H' },
   s: { type: 'consonant', value: 's' },
+  S: { type: 'consonant', value: 'S' },
   f: { type: 'consonant', value: 'f' },
+  F: { type: 'consonant', value: 'F' },
   V: { type: 'consonant', value: 'V' },
   v: { type: 'consonant', value: 'v' },
   z: { type: 'consonant', value: 'z' },
+  Z: { type: 'consonant', value: 'Z' },
   j: { type: 'consonant', value: 'j' },
+  J: { type: 'consonant', value: 'J' },
   x: { type: 'consonant', value: 'x' },
+  X: { type: 'consonant', value: 'X' },
   c: { type: 'consonant', value: 'c' },
+  'C~': { type: 'consonant', value: 'C~' },
   C: { type: 'consonant', value: 'C' },
   y: { type: 'consonant', value: 'y' },
+  W: { type: 'consonant', value: 'W' },
   w: { type: 'consonant', value: 'w' },
   Q: { type: 'consonant', value: 'Q' },
   "'": { type: 'consonant', value: "'" },
   l: { type: 'consonant', value: 'l' },
+  L: { type: 'consonant', value: 'L' },
   r: { type: 'consonant', value: 'r' },
+  R: { type: 'consonant', value: 'R' },
   '!': { truncation: true },
   _: { elongation: true },
   '^': { stress: true },
@@ -92,6 +105,7 @@ module.exports = parse
 function parse(string) {
   let x = string
   const chunks = []
+  let i = 0
   while (x.length) {
     let matched = false
     symbol: for (const key in SYMBOL) {
@@ -106,11 +120,13 @@ function parse(string) {
           }
         }
         x = x.slice(key.length)
+        i += key.length
         matched = true
         break symbol
       }
     }
     if (!matched) {
+      console.error(string.slice(0, i))
       throw new Error('Invalid characters found')
     }
   }
@@ -146,6 +162,14 @@ function demarcate(chunks) {
                   case 'e':
                   case 'A':
                   case 'E':
+                    mark = { base: i - 1, head: i - 1 }
+                    marks.push(mark)
+                    break
+                }
+              case 'o':
+                switch (chunk.value) {
+                  case 'a':
+                  case 'A':
                     mark = { base: i - 1, head: i - 1 }
                     marks.push(mark)
                     break
