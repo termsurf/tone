@@ -413,6 +413,8 @@ function convertIPAToCall(ipa) {
         addFeature('short')
         break
       case '\u032A': // dental
+        addFeature('dental')
+        break
       case '\u02CC': // syllablic
       case '\u0329': // syllabic
       case '\u02FD': // apical
@@ -599,6 +601,7 @@ function convertIPAToCall(ipa) {
         result.last.vowels = []
         break
       case '\u02C8': // modifier vertical line
+        result.pendingStress = true
         break
       case '˥':
       case '˦':
@@ -681,6 +684,11 @@ function convertIPAToCall(ipa) {
 
   function addVowel(x) {
     const letter = { type: 'vowel', value: x }
+
+    if (result.pendingStress) {
+      delete result.pendingStress
+      letter.stress = true
+    }
     // we added consonants after the last vowels, now we are adding vowels again.
     if (result.last.vowels.length && result.last.consonants.length) {
       result.last.vowels = []
@@ -727,6 +735,9 @@ function convertIPAToCall(ipa) {
       }
       case 'aspiration':
         result.last.out.aspiration = true
+        break
+      case 'dental':
+        result.last.consonant.dental = true
         break
       case 'pharyngealization':
         result.last.out.pharyngealization = true
@@ -806,6 +817,9 @@ function serialize(result) {
       if (node.nasalization) {
         out.push('&')
       }
+      if (node.dental) {
+        out.push('~')
+      }
       if (node.palatalization) {
         out.push('y~')
       }
@@ -847,6 +861,9 @@ function serialize(result) {
       }
       if (node.long) {
         out.push('_')
+      }
+      if (node.stress) {
+        out.push('^')
       }
     })
   })

@@ -1,0 +1,18 @@
+{
+  "semi": false,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 72,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "avoid",
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "proseWrap": "always",
+  "endOfLine": "lf",
+  "singleAttributePerLine": true,
+  "prettierPath": "./node_modules/prettier",
+  "importOrder": ["^\\w(.*)$", "^@(.*)$", "~(.*)$", "\\..(.*)$", "\\.(.*)$"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
