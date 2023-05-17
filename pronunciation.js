@@ -402,6 +402,38 @@ function convertIPAToCall(ipa, options = { tones: true }) {
       case '-':
         addPunctuation('=-')
         break
+      case 'â':
+      case 'ǎ':
+        addVowel('a')
+        break
+      case 'ǐ':
+      case 'î':
+        addVowel('i')
+        break
+      case 'ó':
+        addVowel('o')
+        captureAllTones('˦')
+        result.last.vowels = []
+        break
+      case 'ô':
+      case 'ǒ':
+        addVowel('o')
+        break
+      case 'ê':
+      case 'ě':
+        addVowel('e')
+        break
+      case 'ǔ':
+      case 'û':
+        addVowel('u')
+        break
+      case 'ý':
+      case 'ŷ':
+        addConsonant('y')
+        break
+      case '\u0302':
+      case '\u030c':
+        break
       case '\u031d':
         break
       case '\u031e':
@@ -799,7 +831,7 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         result.last.consonant.tense = true
         break
       case 'long':
-        result.last.vowel.long = true
+        result.last.out.long = true
         break
       case 'short':
         result.last.vowel.short = true

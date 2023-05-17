@@ -64,6 +64,7 @@ ipa('k͈o̞ms͈o̞mo̞ɭsʰɯkxɯ-na̠-a̠muɾe̞')
 ipa('ɸʷo̞')
 ipa('kxɯnsʰo̞ɾit͡ɕʰida̠')
 ipa('kxɯʎʎikʰa̠da̠')
+ipa('ɔ̂ːi̯.on')
 
 function text(a) {
   const syllables = tone.syllable(a)
