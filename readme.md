@@ -20,32 +20,74 @@
 
 ### Summary
 
-Tone text (esoteric name Hanákana) is a Universal Writing System (UWS), capable of representing all human voice sounds in a concise and readable script. We like to think of them as **modern runes**. This means you can write any human language on Earth in tone text (constructed language or natural language) and read it without having to learn that language's specific quirks. Here is an example of the modern runes using the new [ToneEtch](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.otf) font.
+Tone text (esoteric name Hanákana) is a Universal Writing System (UWS),
+capable of representing all human voice sounds in a concise and readable
+script. We like to think of them as **modern runes**. This means you can
+write any human language on Earth in tone text (constructed language or
+natural language) and read it without having to learn that language's
+specific quirks. Here is an example of the modern runes using the new
+[ToneEtch](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.otf)
+font.
 
 <p align="center">
   <img src="https://github.com/teamtreesurf/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
 </p>
 
-Tone text is a sound-based script like the [Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when you read see a symbol/letter, you know exactly how it is pronounced. There are no weird edge cases or specific words for which you have to memorize the sound. You simply learn the script and can pronounce the words and texts.
+Tone text is a sound-based script like the
+[Ancient Runes](https://en.wikipedia.org/wiki/Runes), which means when
+you read see a symbol/letter, you know exactly how it is pronounced.
+There are no weird edge cases or specific words for which you have to
+memorize the sound. You simply learn the script and can pronounce the
+words and texts.
 
-You can find how to pronounce the letters in the [PDF guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf). Print out the [exercises](https://github.com/teamtreesurf/tone/blob/make/text/exercise.pdf) to learn how to write and pronounce them too!
+You can find how to pronounce the letters in the
+[PDF guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf).
+Print out the
+[exercises](https://github.com/teamtreesurf/tone/blob/make/text/exercise.pdf)
+to learn how to write and pronounce them too!
 
 <p align="center">
   <img src="https://github.com/teamtreesurf/tone/blob/make/view/example.jpg?raw=true" />
 </p>
 
-You may note that Linguistics also has the International Phonetic Alphabet ([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)), which seems to accomplish a similar thing. But the IPA is not for writing anything but the most detailed pronunciation guides, not for writing sentences or long texts. Tone script is meant for the later, for writing like you would in a normal language.
+You may note that Linguistics also has the International Phonetic
+Alphabet
+([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)),
+which seems to accomplish a similar thing. But the IPA is not for
+writing anything but the most detailed pronunciation guides, not for
+writing sentences or long texts. Tone script is meant for the later, for
+writing like you would in a normal language.
 
-The ASCII encoding is mapped to IPA for your knowledge in the [call script](https://github.com/teamtreesurf/call). Ideally, tone script would be included in the Unicode standard, but [that is unlikely](http://www.unicode.org/pending/proposals.html). We have suggested it be used as a writing system [on Mars](https://twitter.com/teamtreesurf/status/1372723474741927938) 😂. Here is a [book](https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638) using it as well.
+The ASCII encoding is mapped to IPA for your knowledge in the
+[call script](https://github.com/teamtreesurf/call). Ideally, tone
+script would be included in the Unicode standard, but
+[that is unlikely](http://www.unicode.org/pending/proposals.html). We
+have suggested it be used as a writing system
+[on Mars](https://twitter.com/teamtreesurf/status/1372723474741927938)
+😂. Here is a
+[book](https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638)
+using it as well.
 
 <br/>
 <br/>
 
 <p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/teamtreesurf/tone/blob/make/view/book.png?raw=true"/></a></p>
 
-It doesn't necessarily play well with dyslexia, which might find the highly symmetric patterns difficult. We think there are far better methods of learning outside of writing systems than trying to invent the perfect script for all cases. To most natural languages, dyslexia is an unsolved problem. We instead strive to make a minimal seed from which knowledge can be modelled from primitive parts, memorized, and then used to derive further knowledge.
+It doesn't necessarily play well with dyslexia, which might find the
+highly symmetric patterns difficult. We think there are far better
+methods of learning outside of writing systems than trying to invent the
+perfect script for all cases. To most natural languages, dyslexia is an
+unsolved problem. We instead strive to make a minimal seed from which
+knowledge can be modelled from primitive parts, memorized, and then used
+to derive further knowledge.
 
-Tone Text is also a monospaced font, to be used eventually for programming. All sounds are derived from 3 base shapes, that for `i`, `a`, and `u`. Rotating and extending tails on them gives you the remaining base letters. Then adding dots to them extends the sound of the base letter slightly. From this it should be straightforward to memorize how to pronounce words in a day or so, and from there you can read and write any language pretty well.
+Tone Text is also a monospaced font, to be used eventually for
+programming. All sounds are derived from 3 base shapes, that for `i`,
+`a`, and `u`. Rotating and extending tails on them gives you the
+remaining base letters. Then adding dots to them extends the sound of
+the base letter slightly. From this it should be straightforward to
+memorize how to pronounce words in a day or so, and from there you can
+read and write any language pretty well.
 
 <p align="center">
   <img src="https://github.com/teamtreesurf/tone/blob/make/view/transform.gif?raw=true" height="300" />
@@ -53,7 +95,13 @@ Tone Text is also a monospaced font, to be used eventually for programming. All 
 
 ### The Alphabet
 
-These are the main sounds. Everything else are variations of these sounds. These "variations" are accomplished in a structured way, see the [guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf). Indic retroflex consonants are added with a dot on the tailless side. Arabic sounds are added with a dot on the tailed side usually. Clicks are mapped to the closest mouth-position-oriented sound. Ejectives and implosives are simply added with accent marks. Etc.
+These are the main sounds. Everything else are variations of these
+sounds. These "variations" are accomplished in a structured way, see the
+[guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf).
+Indic retroflex consonants are added with a dot on the tailless side.
+Arabic sounds are added with a dot on the tailed side usually. Clicks
+are mapped to the closest mouth-position-oriented sound. Ejectives and
+implosives are simply added with accent marks. Etc.
 
 <p align="center">
   <img src="https://github.com/teamtreesurf/tone/blob/make/view/alphabet.png?raw=true" width="500" />
@@ -100,7 +148,11 @@ l
 r
 ```
 
-Everything else is a modification on this base. Here are many more sounds. They are given the numerical value of the corresponding base symbol, and are ordered correspondingly, with retroflex, then pharyngealized, then ejectives, implosives, stops, tenses, clicks. The stops and pharyngealizations don't get any extra points.
+Everything else is a modification on this base. Here are many more
+sounds. They are given the numerical value of the corresponding base
+symbol, and are ordered correspondingly, with retroflex, then
+pharyngealized, then ejectives, implosives, stops, tenses, clicks. The
+stops and pharyngealizations don't get any extra points.
 
 ```
 N n
@@ -154,18 +206,32 @@ Here is the consonant IPA phonology chart mapping.
 
 There are at least 10 classes of numerological encodings:
 
-1. **36 sound encoding**. This is where letters are in order based on their sound, numbered 1-36.
-1. 29 sound encoding. This counts the 14 voiced and unvoiced consonants as 7 instead of 14, as described below.
-1. 22 shape encoding. These are the unique shapes ignoring mirror symmetry. qjfvQxschwkbaoeiE2uAI1.
-1. **16 shape encoding**. These are the unique shapes ignoring rotational symmetry. qnfrQyszhmkpaeIO.
-1. **9 shape encoding**. These are the unique shapes ignoring rotational _and_ mirror symmetry. They are also numbered similarly. qfQshkaeI.
-1. 12 shape encoding. These are the tailless shapes, including all symmetries. They are numbered i, a, o, u.
-1. 10 shape encoding. These are the tailless shapes, ignoring mirror symmetry. They are numbered i, a, u.
-1. 4 shape encoding. These are the tailless shapes, ignoring rotational symmetry. They are numbered i, a, o, u.
-1. 3 shape encoding. These are the tailless shapes, ignoring rotational _and_ mirror symmetry. They are numbered i, a, u.
-1. 2 shape encoding. These are comparing tailed vs. tailless characters, ignoring rotational and mirror symmetry.
+1. **36 sound encoding**. This is where letters are in order based on
+   their sound, numbered 1-36.
+1. 29 sound encoding. This counts the 14 voiced and unvoiced consonants
+   as 7 instead of 14, as described below.
+1. 22 shape encoding. These are the unique shapes ignoring mirror
+   symmetry. qjfvQxschwkbaoeiE2uAI1.
+1. **16 shape encoding**. These are the unique shapes ignoring
+   rotational symmetry. qnfrQyszhmkpaeIO.
+1. **9 shape encoding**. These are the unique shapes ignoring rotational
+   _and_ mirror symmetry. They are also numbered similarly. qfQshkaeI.
+1. 12 shape encoding. These are the tailless shapes, including all
+   symmetries. They are numbered i, a, o, u.
+1. 10 shape encoding. These are the tailless shapes, ignoring mirror
+   symmetry. They are numbered i, a, u.
+1. 4 shape encoding. These are the tailless shapes, ignoring rotational
+   symmetry. They are numbered i, a, o, u.
+1. 3 shape encoding. These are the tailless shapes, ignoring rotational
+   _and_ mirror symmetry. They are numbered i, a, u.
+1. 2 shape encoding. These are comparing tailed vs. tailless characters,
+   ignoring rotational and mirror symmetry.
 
-The most common are the 36 sound encoding, the 16 shape encoding, and the 9 shape encoding. The 16 shape encoding is how you would play a game with one-sided tiles. The 9 shape encoding is how you would play a game with two-sided tiles. The 16 shape encoding can be encoded in hexadecimal. The 9 in digits 1-9.
+The most common are the 36 sound encoding, the 16 shape encoding, and
+the 9 shape encoding. The 16 shape encoding is how you would play a game
+with one-sided tiles. The 9 shape encoding is how you would play a game
+with two-sided tiles. The 16 shape encoding can be encoded in
+hexadecimal. The 9 in digits 1-9.
 
 Here is the 29 sound encoding.
 
@@ -203,15 +269,18 @@ r
 
 ### Usage
 
-To get access to the font for your own system, just click and download the [ToneEtch.ttf](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.ttf) directly.
+To get access to the font for your own system, just click and download
+the
+[ToneEtch.ttf](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.ttf)
+directly.
 
 <h3 id="license">License</h3>
 
-Copyright 2021-2023 <a href='https://drum.work'>TreeSurf</a>
+Copyright 2021-2023 <a href='https://tune.bond'>TuneBond</a>
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
@@ -221,6 +290,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-### TreeSurf
+### TuneBond
 
-This is being developed by the folks at [TreeSurf](https://drum.work), a California-based project for helping humanity master information and computation. TreeSurf started off in the winter of 2008 as a spark of an idea, to forming a company 10 years later in the winter of 2018, to a seed of a project just beginning its development phases. It is entirely bootstrapped by working full time and running [Etsy](https://etsy.com/shop/teamtreesurf) and [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also find us on [Facebook](https://www.facebook.com/teamtreesurf), [Twitter](https://twitter.com/teamtreesurf), and [LinkedIn](https://www.linkedin.com/company/teamtreesurf). Check out our other GitHub projects as well!
+This is being developed by the folks at [TuneBond](https://tune.bond), a
+California-based project for helping humanity master information and
+computation. TuneBond started off in the winter of 2008 as a spark of an
+idea, to forming a company 10 years later in the winter of 2018, to a
+seed of a project just beginning its development phases. It is entirely
+bootstrapped by working full time and running
+[Etsy](https://etsy.com/shop/teamtreesurf) and
+[Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also
+find us on [Facebook](https://www.facebook.com/teamtreesurf),
+[Twitter](https://twitter.com/teamtreesurf), and
+[LinkedIn](https://www.linkedin.com/company/teamtreesurf). Check out our
+other GitHub projects as well!
