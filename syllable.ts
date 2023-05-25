@@ -1,4 +1,27 @@
-const SYMBOL = {
+/* eslint-disable sort-keys/sort-keys-fix */
+type Mark = {
+  aspiration?: boolean
+  click?: boolean
+  dentalization?: boolean
+  ejection?: boolean
+  elongation?: boolean
+  implosion?: boolean
+  labialization?: boolean
+  nasalization?: boolean
+  palatalization?: boolean
+  pharyngealization?: boolean
+  stop?: boolean
+  stress?: boolean
+  tense?: boolean
+  tone?: 'extra high' | 'high' | 'low' | 'extra low'
+  truncation?: boolean
+  type?: 'punctuation' | 'vowel' | 'consonant'
+  value?: string
+  velarization?: boolean
+  voicelessness?: boolean
+}
+
+const MARK: Record<string, Mark> = {
   '++': { tone: 'extra high' },
   '+': { tone: 'high' },
   '--': { tone: 'extra low' },
@@ -38,7 +61,6 @@ const SYMBOL = {
   'p!': { type: 'consonant', value: 'p', ejection: true },
   't!': { type: 'consonant', value: 't', ejection: true },
   'k!': { type: 'consonant', value: 'k', ejection: true },
-  'h!': { type: 'consonant', value: 'h', ejection: true },
   's!': { type: 'consonant', value: 's', ejection: true },
   'f!': { type: 'consonant', value: 'f', ejection: true },
   'v!': { type: 'consonant', value: 'v', ejection: true },
@@ -100,18 +122,18 @@ const SYMBOL = {
   '&': { nasalization: true },
 }
 
-module.exports = parse
+export default parse
 
-function parse(string) {
+function parse(string: string) {
   let x = string
-  const chunks = []
+  const chunks: Array<Mark> = []
   let i = 0
   while (x.length) {
     let matched = false
-    symbol: for (const key in SYMBOL) {
+    symbol: for (const key in MARK) {
       if (x.startsWith(key)) {
-        const val = SYMBOL[key]
-        if (val.type) {
+        const val = MARK[key]
+        if (val && val.type) {
           chunks.push({ ...val })
         } else {
           chunks[chunks.length - 1] = {
@@ -133,11 +155,16 @@ function parse(string) {
   return demarcate(chunks)
 }
 
-function demarcate(chunks) {
+type Slot = {
+  base: number
+  head: number
+}
+
+function demarcate(chunks: Array<Mark>) {
   let state = 'start'
 
-  const marks = []
-  let mark
+  const slots: Array<Slot> = []
+  let slot: Slot | undefined
 
   chunks.forEach((chunk, i) => {
     switch (state) {
@@ -146,13 +173,15 @@ function demarcate(chunks) {
           case 'vowel':
             state = 'vowel'
             break
+          default:
+            break
         }
         break
       case 'vowel':
         switch (chunk.type) {
           case 'vowel': {
             const last = chunks[i - 1]
-            switch (last.value) {
+            switch (last && last.value) {
               case 'i':
                 switch (chunk.value) {
                   case 'U':
@@ -162,25 +191,33 @@ function demarcate(chunks) {
                   case 'e':
                   case 'A':
                   case 'E':
-                    mark = { base: i - 1, head: i - 1 }
-                    marks.push(mark)
+                    slot = { base: i - 1, head: i - 1 }
+                    slots.push(slot)
+                    break
+                  default:
                     break
                 }
               case 'o':
                 switch (chunk.value) {
                   case 'a':
                   case 'A':
-                    mark = { base: i - 1, head: i - 1 }
-                    marks.push(mark)
+                    slot = { base: i - 1, head: i - 1 }
+                    slots.push(slot)
+                    break
+                  default:
                     break
                 }
+              default:
+                break
             }
             break
           }
           case 'consonant':
             state = 'consonant'
-            mark = { base: i, head: i }
-            marks.push(mark)
+            slot = { base: i, head: i }
+            slots.push(slot)
+            break
+          default:
             break
         }
         break
@@ -197,29 +234,40 @@ function demarcate(chunks) {
               case 'r':
               case 'w':
               case 'y':
-                mark.head = i - 1
-                mark = undefined
+                assert(slot)
+                slot.head = i - 1
+                slot = undefined
                 break
               default:
-                if (!mark) {
-                  mark = { base: i }
-                  marks.push(mark)
+                if (!slot) {
+                  slot = { base: i, head: i }
+                  slots.push(slot)
                 }
-                mark.head = i
+                slot.head = i
                 break
             }
             break
+          default:
+            break
         }
+        break
+      default:
         break
     }
   })
 
   const count =
-    !marks.length || marks[marks.length - 1].head !== chunks.length - 1
-      ? marks.length + 1
-      : marks.length
+    !slots.length || slots[slots.length - 1]?.head !== chunks.length - 1
+      ? slots.length + 1
+      : slots.length
 
-  const free = count === marks.length + 1
+  const free = count === slots.length + 1
 
-  return { chunks, marks, free, count }
+  return { chunks, slots, free, count }
+}
+
+function assert(x: unknown): asserts x {
+  if (!x) {
+    throw new Error('assertion failed')
+  }
 }

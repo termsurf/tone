@@ -4,22 +4,23 @@
     "target": "ESNext",
     "lib": ["es2020"],
     "outDir": "host",
-    "rootDir": "make",
+    "rootDir": ".",
     "sourceMap": true,
     "moduleResolution": "node",
     "strictNullChecks": true,
     "strict": true,
     "esModuleInterop": true,
     "noUncheckedIndexedAccess": true,
-    "baseUrl": "./make",
+    "baseUrl": "./",
     "noErrorTruncation": true,
     "paths": {
-      "~": ["./index.js"]
+      "~": ["./index.js"],
+      "@lancejpollard/script-tree": ["./form.d.ts"]
     },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": true
   },
-  "include": ["."],
+  "include": [".", "form.d.ts"],
   "exclude": ["node_modules"]
 }

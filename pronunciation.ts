@@ -1,4 +1,6 @@
-const TONE = {
+type TextList = Record<string, string>
+
+const TONE: TextList = {
   '˥': '++',
   '˦': '+',
   '˧': '',
@@ -6,41 +8,105 @@ const TONE = {
   '˩': '--',
 }
 
-const m = {
+type Feature =
+  | 'implosion'
+  | 'voiceless'
+  | 'aspiration'
+  | 'dental'
+  | 'pharyngealization'
+  | 'short'
+  | 'velarization'
+  | 'nasalization'
+  | 'glottalization'
+  | 'palatalization'
+  | 'non-syllabic'
+  | 'stop'
+  | 'ejection'
+  | 'labialization'
+  | 'long'
+  | 'tense'
+
+const m: { d: TextList; u: TextList } = {
+  d: {
+    acute: '\u0317',
+    ddot: '\u0324',
+    dot: '\u0323',
+    down: '\u032C',
+    grave: '\u0316',
+    ring: '\u0325',
+    tilde: '\u0330',
+  },
   u: {
-    grave: '\u0300',
     acute: '\u0301',
     dacute: '\u030B',
-    dgrave: '\u030F',
-    up: '\u0302',
-    down: '\u030C',
-    dot: '\u0307',
     ddot: '\u0308',
+    dgrave: '\u030F',
+    dot: '\u0307',
+    down: '\u030C',
+    grave: '\u0300',
+    macron: '\u0304',
     ring: '\u030A',
     tilde: '\u0303',
-    macron: '\u0304',
-  },
-  d: {
-    grave: '\u0316',
-    acute: '\u0317',
-    ring: '\u0325',
-    dot: '\u0323',
-    ddot: '\u0324',
-    down: '\u032C',
-    tilde: '\u0330',
+    up: '\u0302',
   },
 }
 
-module.exports = convertIPAToCall
+export default convertIPAToCall
 
-function convertIPAToCall(ipa, options = { tones: true }) {
-  const result = {
+type Make = {
+  last: {
+    consonant: Consonant | null
+    consonants: Array<Consonant>
+    out: Vowel | Consonant | Punctuation | null
+    vowel: Vowel | null
+    vowels: Array<Vowel>
+  }
+  out: Array<Array<Vowel | Consonant | Punctuation>>
+  pendingStress?: boolean
+}
+
+type Punctuation = {
+  type: 'punctuation'
+  value: string
+}
+
+type Consonant = {
+  aspiration?: boolean
+  dental?: boolean
+  ejection?: boolean
+  glottalization?: boolean
+  implosion?: boolean
+  labialization?: boolean
+  long?: boolean
+  palatalization?: boolean
+  pharyngealization?: boolean
+  stop?: boolean
+  tense?: boolean
+  type: 'consonant'
+  value: string
+  velarization?: boolean
+  voice?: boolean
+}
+
+type Vowel = {
+  long?: boolean
+  nasalization?: boolean
+  short?: boolean
+  stress?: boolean
+  syllabic?: boolean
+  tone?: string
+  type: 'vowel'
+  value: string
+}
+
+function convertIPAToCall(ipa: string, options = { tones: true }) {
+  const result: Make = {
     last: {
-      consonants: [],
       consonant: null,
-      vowels: [],
-      vowel: null,
+      consonants: [],
       out: null,
+      vowel: null,
+      vowels: [],
     },
     out: [],
   }
@@ -695,8 +761,8 @@ function convertIPAToCall(ipa, options = { tones: true }) {
     }
   }
 
-  function captureAllTones(first) {
-    const tones = [TONE[first]]
+  function captureAllTones(first: string) {
+    const tones: Array<string> = [TONE[first] as string]
     while (true) {
       switch (parts[i]) {
         case '˥':
@@ -704,9 +770,12 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         case '˧':
         case '˨':
         case '˩':
-          const tone = TONE[parts[i++]]
-          if (tones[tones.length - 1] !== tone) {
-            tones.push(tone)
+          const part = parts[i++]
+          if (part) {
+            const tone = TONE[part]
+            if (tones[tones.length - 1] !== tone && tone) {
+              tones.push(tone)
+            }
           }
           break
         case 'ˀ':
@@ -724,7 +793,7 @@ function convertIPAToCall(ipa, options = { tones: true }) {
 
   return serialize(result)
 
-  function addTones(tones) {
+  function addTones(tones: Array<string>) {
     if (!options.tones) {
       return
     }
@@ -735,36 +804,43 @@ function convertIPAToCall(ipa, options = { tones: true }) {
     while (i < vowels.length - 1 && tones.length) {
       const tone = tones.shift()
       const vowel = vowels[i]
+      assert(vowel)
       vowel.tone = tone
       i++
     }
 
     const lastVowel = vowels[vowels.length - 1]
+    assert(lastVowel)
 
     if (tones.length) {
       lastVowel.tone = tones.shift()
     }
 
-    const newVowels = new Array(tones.length).fill(0).map((x, i) => ({
-      type: 'vowel',
-      value: lastVowel.value,
-      tone: tones[i],
-    }))
+    const newVowels: Array<Vowel> = new Array(tones.length)
+      .fill(0)
+      .map((x, i) => ({
+        tone: tones[i],
+        type: 'vowel',
+        value: lastVowel.value,
+      }))
 
     if (newVowels.length && lastVowel.long) {
-      newVowels[newVowels.length - 1].long = true
+      const newLastVowel = newVowels[newVowels.length - 1]
+      assert(newLastVowel)
+      newLastVowel.long = true
       lastVowel.long = false
     }
 
     if (newVowels.length) {
       result.last.vowels.push(...newVowels)
-      result.last.vowel = result.last.out =
-        newVowels[newVowels.length - 1]
+      const newVowel = newVowels[newVowels.length - 1]
+      assert(newVowel)
+      result.last.vowel = result.last.out = newVowel
     }
   }
 
-  function addVowel(x) {
-    const letter = { type: 'vowel', value: x }
+  function addVowel(x: string) {
+    const letter: Vowel = { type: 'vowel', value: x }
 
     if (result.pendingStress) {
       delete result.pendingStress
@@ -792,12 +868,14 @@ function convertIPAToCall(ipa, options = { tones: true }) {
     result.last.vowel = letter
   }
 
-  function addFeature(type) {
+  function addFeature(type: Feature) {
     switch (type) {
       case 'implosion':
+        assert(result.last.consonant)
         result.last.consonant.implosion = true
         break
       case 'voiceless': {
+        assert(result.last.consonant)
         switch (result.last.consonant.value) {
           case 'b':
             result.last.consonant.value = 'p'
@@ -815,39 +893,47 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         break
       }
       case 'aspiration':
-        result.last.out.aspiration = true
+        assert(result.last.consonant)
+        result.last.consonant.aspiration = true
         break
       case 'dental':
+        assert(result.last.consonant)
         result.last.consonant.dental = true
         break
       case 'pharyngealization':
-        result.last.out.pharyngealization = true
+        assert(result.last.consonant)
+        result.last.consonant.pharyngealization = true
         break
       case 'palatalization':
-        result.last.out.palatalization = true
+        assert(result.last.consonant)
+        result.last.consonant.palatalization = true
         break
       case 'glottalization':
-        result.last.out.glottalization = true
+        assert(result.last.consonant)
+        result.last.consonant.glottalization = true
         break
       case 'velarization':
-        result.last.out.velarization = true
+        assert(result.last.consonant)
+        result.last.consonant.velarization = true
         break
       case 'nasalization':
-        result.last.out.nasalization = true
+        assert(result.last.vowel)
+        result.last.vowel.nasalization = true
         break
       case 'labialization':
-        result.last.out.labialization = true
-        break
-      case 'labialization':
-        result.last.out.labialization = true
+        assert(result.last.consonant)
+        result.last.consonant.labialization = true
         break
       case 'ejection':
+        assert(result.last.consonant)
         result.last.consonant.ejection = true
         break
       case 'stop':
+        assert(result.last.consonant)
         result.last.consonant.stop = true
         break
       case 'tense':
+        assert(result.last.consonant)
         if (result.last.consonant.value.match('x')) {
           const second =
             result.last.consonants[result.last.consonants.length - 2]
@@ -859,12 +945,17 @@ function convertIPAToCall(ipa, options = { tones: true }) {
         result.last.consonant.tense = true
         break
       case 'long':
-        result.last.out.long = true
+        assert(result.last.out)
+        if (result.last.out.type !== 'punctuation') {
+          result.last.out.long = true
+        }
         break
       case 'short':
+        assert(result.last.vowel)
         result.last.vowel.short = true
         break
       case 'non-syllabic':
+        assert(result.last.vowel)
         result.last.vowel.syllabic = false
         break
       default:
@@ -872,9 +963,9 @@ function convertIPAToCall(ipa, options = { tones: true }) {
     }
   }
 
-  function addConsonant(x) {
-    const letter = { type: 'consonant', value: x }
-    const consonantSet = result.last.consonants.length
+  function addConsonant(x: string) {
+    const letter: Consonant = { type: 'consonant', value: x }
+    const consonantSet: Array<Consonant> = result.last.consonants.length
       ? result.last.consonants
       : []
 
@@ -890,75 +981,91 @@ function convertIPAToCall(ipa, options = { tones: true }) {
     result.last.consonant = letter
   }
 
-  function addPunctuation(type) {
+  function addPunctuation(type: string) {
     result.last.consonants = []
     result.last.vowels = []
     result.out.push([{ type: 'punctuation', value: type }])
   }
 }
 
-function serialize(result) {
-  const out = []
+function serialize(result: Make) {
+  const out: Array<string> = []
 
   result.out.forEach(array => {
     array.forEach(node => {
-      out.push(node.value)
-      if (node.nasalization) {
-        out.push('&')
+      const link: Array<string> = [node.value]
+      switch (node.type) {
+        case 'vowel':
+          if (node.nasalization) {
+            link.push('&')
+          }
+          if (node.tone) {
+            link.push(node.tone)
+          }
+          if (node.syllabic === false) {
+            link.push('@')
+          }
+          if (node.short) {
+            link.push('!')
+          }
+          if (node.long) {
+            link.push('_')
+          }
+          if (node.stress) {
+            link.push('^')
+          }
+          break
+        case 'consonant':
+          if (node.tense) {
+            link.push('@')
+          }
+          if (node.dental) {
+            link.push('~')
+          }
+          if (node.pharyngealization) {
+            link.push('Q~')
+          }
+          if (node.palatalization) {
+            link.push('y~')
+          }
+          if (node.velarization) {
+            link.push('G~')
+          }
+          if (node.labialization) {
+            link.push('w~')
+          }
+          if (node.aspiration) {
+            link.push('h~')
+          }
+          if (node.ejection) {
+            link.push('!')
+          }
+          if (node.implosion) {
+            link.push('?')
+          }
+          if (node.voice === false) {
+            link.push('h!')
+          }
+          if (node.stop) {
+            link.push('.')
+          }
+          if (node.long) {
+            link.push(...link.slice())
+          }
+          if (node.glottalization) {
+            throw new Error('glottallization handler missing')
+          }
+        default:
       }
-      if (node.tense) {
-        out.push('@')
-      }
-      if (node.dental) {
-        out.push('~')
-      }
-      if (node.pharyngealization) {
-        out.push('Q~')
-      }
-      if (node.palatalization) {
-        out.push('y~')
-      }
-      if (node.velarization) {
-        out.push('G~')
-      }
-      if (node.labialization) {
-        out.push('w~')
-      }
-      if (node.aspiration) {
-        out.push('h~')
-      }
-      if (node.ejection) {
-        out.push('!')
-      }
-      if (node.implosion) {
-        out.push('?')
-      }
-      if (node.voice === false) {
-        out.push('h!')
-      }
-      if (node.stop) {
-        out.push('.')
-      }
-      if (node.glottalization) {
-        throw new Error('glotallization handler missing')
-      }
-      if (node.tone) {
-        out.push(node.tone)
-      }
-      if (node.syllabic === false) {
-        out.push('@')
-      }
-      if (node.short) {
-        out.push('!')
-      }
-      if (node.long) {
-        out.push('_')
-      }
-      if (node.stress) {
-        out.push('^')
-      }
+      out.push(link.join(''))
     })
   })
 
   return out.join('')
+}
+
+function assert(x: unknown): asserts x {
+  if (!x) {
+    throw new Error('assertion failed')
+  }
 }
