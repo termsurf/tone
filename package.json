@@ -3,6 +3,7 @@
   "version": "1.1.1",
   "main": "host/form.js",
   "type": "module",
+  "license": "Apache 2.0",
   "dependencies": {
     "@lancejpollard/script-tree": "^1.1.0"
   },
