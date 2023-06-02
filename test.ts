@@ -1,5 +1,5 @@
-const tone = require('.')
-const call = require('@drumwork/call')
+import tone from './form.js'
+import call from '@tunebond/call-text'
 
 // text('byu^dy')
 // text('diU--U-m')
@@ -66,7 +66,7 @@ ipa('kxɯnsʰo̞ɾit͡ɕʰida̠')
 ipa('kxɯʎʎikʰa̠da̠')
 ipa('ɔ̂ːi̯.on')
 
-function text(a) {
+function text(a: string) {
   const syllables = tone.syllable(a)
   console.log('text => ' + a)
   console.log('  font => ' + tone(a))
@@ -74,7 +74,7 @@ function text(a) {
   console.log('  free => ' + syllables.free)
 }
 
-function ipa(a) {
+function ipa(a: string) {
   const pron = tone.pronunciation(a)
   console.log('ipa => ' + a)
   console.log('  text => ' + pron)

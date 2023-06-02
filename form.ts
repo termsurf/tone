@@ -1,23 +1,24 @@
+/* eslint-disable sort-keys/sort-keys-fix */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import pronunciation from './pronunciation'
-import syllable from './syllable'
+import pronunciation from './pronunciation.js'
+import syllable from './syllable.js'
 import st from '@lancejpollard/script-tree'
 
 const D: Record<string, string> = {
-  '': '',
   '!': '^', // short vowel
   $: '5', // variant
   '&': '0', // nasal
-  '+': '3',
   '++': '33',
-  '-': '4',
+  '+': '3',
   '--': '44',
+  '-': '4',
   '@': '00', // non-syllabic
   '^': '9', // accent mark
   _: '%', // long vowel
+  '': '',
 }
 
 type Link = { i: string; name?: string; o: string }

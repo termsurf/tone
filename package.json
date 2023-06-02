@@ -1,7 +1,8 @@
 {
   "name": "@tunebond/tone-text",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "host/form.js",
+  "type": "module",
   "dependencies": {
     "@lancejpollard/script-tree": "^1.1.0"
   },
@@ -43,6 +44,7 @@
     "make": "tsc && tsc-alias",
     "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint --ext .ts ./make",
-    "lint:tool": "npm run lint -- --fix"
+    "lint:tool": "npm run lint -- --fix",
+    "test": "npx ts-node-esm test.ts"
   }
 }

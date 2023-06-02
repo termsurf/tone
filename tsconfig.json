@@ -22,5 +22,5 @@
     "noImplicitAny": true
   },
   "include": [".", "form.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "host"]
 }
