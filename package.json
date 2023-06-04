@@ -46,6 +46,7 @@
     "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint --ext .ts ./make",
     "lint:tool": "npm run lint -- --fix",
-    "test": "npx ts-node-esm test.ts"
+    "test": "npx ts-node-esm test.ts",
+    "host": "pnpm make && npm publish --access=public"
   }
 }
