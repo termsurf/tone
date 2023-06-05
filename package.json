@@ -1,5 +1,5 @@
 {
-  "name": "@tunebond/tone-text",
+  "name": "@tunebond/tone",
   "version": "2.0.0",
   "main": "host/form.js",
   "type": "module",
@@ -9,10 +9,14 @@
   },
   "files": [
     "host/form.js",
+    "host/form.js.map",
     "host/syllable.js",
-    "host/pronunciation.js"
+    "host/syllable.js.map",
+    "host/pronunciation.js",
+    "host/pronunciation.js.map"
   ],
   "devDependencies": {
+    "tsx": "^3.12.7",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@tunebond/call-text": "^1.0.0",
     "@types/lodash": "^4.14.194",
@@ -46,7 +50,7 @@
     "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint --ext .ts ./make",
     "lint:tool": "npm run lint -- --fix",
-    "test": "npx ts-node-esm test.ts",
+    "test": "npx tsx test.ts",
     "host": "pnpm make && npm publish --access=public"
   }
 }
