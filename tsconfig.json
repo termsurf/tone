@@ -14,12 +14,13 @@
     "baseUrl": "./",
     "noErrorTruncation": true,
     "paths": {
-      "~": ["./index.js"]
+      "~": ["./index.js"],
+      "@lancejpollard/script-tree": ["./index.d.ts"]
     },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": true
   },
-  "include": [".", "form.d.ts"],
+  "include": [".", "index.d.ts"],
   "exclude": ["node_modules", "host"]
 }
