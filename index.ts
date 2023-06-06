@@ -3,8 +3,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import pronunciation from './pronunciation.js'
-import syllable from './syllable.js'
 import st from '@lancejpollard/script-tree'
 
 const D: Record<string, string> = {
@@ -340,16 +338,14 @@ const CONSONANTS: Array<Link> = [
 
 const SYMBOLS = [...VOWELS, ...CONSONANTS]
 const tree = st.fork(SYMBOLS) as any
-const form = (text: string) => st.form(text, tree) as string
+const make = (text: string) => st.form(text, tree) as string
 
-form.SYMBOLS = SYMBOLS
-
-form.VOWELS = VOWELS
-
-form.CONSONANTS = CONSONANTS
-
-form.list = (text: string) => st.list(text, tree)
-form.pronunciation = pronunciation
-form.syllable = syllable
+const form = {
+  SYMBOLS: SYMBOLS,
+  VOWELS: VOWELS,
+  CONSONANTS: CONSONANTS,
+  // list: (text: string) => st.list(text, tree),
+  make,
+}
 
 export default form

@@ -6,7 +6,7 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/teamtreesurf/tone/blob/make/view/view.svg?raw=true' height='312'/>
+  <img src='https://github.com/tunebond/tone/blob/make/view/view.svg?raw=true' height='312'/>
 </p>
 
 <h3 align='center'>tone</h3>
@@ -18,19 +18,19 @@
 <br/>
 <br/>
 
-### Summary
+## Summary
 
-Tone text (esoteric name Hanákana) is a Universal Writing System (UWS),
+Tone Text (esoteric name Hanákana) is a Universal Writing System (UWS),
 capable of representing all human voice sounds in a concise and readable
 script. We like to think of them as **modern runes**. This means you can
 write any human language on Earth in tone text (constructed language or
 natural language) and read it without having to learn that language's
 specific quirks. Here is an example of the modern runes using the new
-[ToneEtch](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.otf)
+[ToneEtch](https://github.com/tunebond/tone/blob/make/text/ToneEtch.otf)
 font.
 
 <p align="center">
-  <img src="https://github.com/teamtreesurf/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
+  <img src="https://github.com/tunebond/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
 </p>
 
 Tone text is a sound-based script like the
@@ -40,14 +40,8 @@ There are no weird edge cases or specific words for which you have to
 memorize the sound. You simply learn the script and can pronounce the
 words and texts.
 
-You can find how to pronounce the letters in the
-[PDF guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf).
-Print out the
-[exercises](https://github.com/teamtreesurf/tone/blob/make/text/exercise.pdf)
-to learn how to write and pronounce them too!
-
 <p align="center">
-  <img src="https://github.com/teamtreesurf/tone/blob/make/view/example.jpg?raw=true" />
+  <img src="https://github.com/tunebond/tone/blob/make/view/example.jpg?raw=true" />
 </p>
 
 You may note that Linguistics also has the International Phonetic
@@ -55,23 +49,15 @@ Alphabet
 ([IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet)),
 which seems to accomplish a similar thing. But the IPA is not for
 writing anything but the most detailed pronunciation guides, not for
-writing sentences or long texts. Tone script is meant for the later, for
+writing sentences or long texts. Tone Text is meant for the later, for
 writing like you would in a normal language.
 
 The ASCII encoding is mapped to IPA for your knowledge in the
-[call script](https://github.com/teamtreesurf/call). Ideally, tone
-script would be included in the Unicode standard, but
+[Chat Text](https://github.com/tunebond/chat). Ideally, Tone Text would
+be included in the Unicode standard, but
 [that is unlikely](http://www.unicode.org/pending/proposals.html). We
 have suggested it be used as a writing system
-[on Mars](https://twitter.com/teamtreesurf/status/1372723474741927938)
-😂. Here is a
-[book](https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638)
-using it as well.
-
-<br/>
-<br/>
-
-<p align="center"><a href="https://www.amazon.com/32-Languages-Words-Scripts-Multilingual/dp/1951702638"><img width="160" src="https://github.com/teamtreesurf/tone/blob/make/view/book.png?raw=true"/></a></p>
+[on Mars](https://twitter.com/tunebond/status/1372723474741927938) 😂.
 
 It doesn't necessarily play well with dyslexia, which might find the
 highly symmetric patterns difficult. We think there are far better
@@ -90,21 +76,30 @@ memorize how to pronounce words in a day or so, and from there you can
 read and write any language pretty well.
 
 <p align="center">
-  <img src="https://github.com/teamtreesurf/tone/blob/make/view/transform.gif?raw=true" height="300" />
+  <img src="https://github.com/tunebond/tone/blob/make/view/transform.gif?raw=true" height="300" />
 </p>
 
-### The Alphabet
+## Usage
+
+```ts
+import tone from '@tunebond/tone'
+
+// Makes it ready for the font from ASCII.
+tone.make('aa+xa+a-ita-') // => aa3xa3a4ita4
+```
+
+## The Alphabet
 
 These are the main sounds. Everything else are variations of these
 sounds. These "variations" are accomplished in a structured way, see the
-[guide](https://github.com/teamtreesurf/tone/blob/make/text/guide.pdf).
+[guide](https://github.com/tunebond/tone/blob/make/text/guide.pdf).
 Indic retroflex consonants are added with a dot on the tailless side.
 Arabic sounds are added with a dot on the tailed side usually. Clicks
 are mapped to the closest mouth-position-oriented sound. Ejectives and
 implosives are simply added with accent marks. Etc.
 
 <p align="center">
-  <img src="https://github.com/teamtreesurf/tone/blob/make/view/alphabet.png?raw=true" width="500" />
+  <img src="https://github.com/tunebond/tone/blob/make/view/alphabet.png?raw=true" width="500" />
 </p>
 
 Alphabetical order is this (1-36):
@@ -194,15 +189,15 @@ k* k
 l* l
 ```
 
-### Phonology
+## Phonology
 
 Here is the consonant IPA phonology chart mapping.
 
 <p align="center">
-  <img src="https://github.com/teamtreesurf/tone/blob/make/view/phonology.4.png?raw=true" />
+  <img src="https://github.com/tunebond/tone/blob/make/view/phonology.4.png?raw=true" />
 </p>
 
-### Numerology
+## Numerology
 
 There are at least 10 classes of numerological encodings:
 
@@ -267,11 +262,11 @@ l
 r
 ```
 
-### Usage
+## Usage
 
 To get access to the font for your own system, just click and download
 the
-[ToneEtch.ttf](https://github.com/teamtreesurf/tone/blob/make/text/ToneEtch.ttf)
+[ToneEtch.ttf](https://github.com/tunebond/tone/blob/make/text/ToneEtch.ttf)
 directly.
 
 <h3 id="license">License</h3>
@@ -290,7 +285,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-### TuneBond
+## TuneBond
 
 This is being developed by the folks at [TuneBond](https://tune.bond), a
 California-based project for helping humanity master information and
@@ -298,9 +293,9 @@ computation. TuneBond started off in the winter of 2008 as a spark of an
 idea, to forming a company 10 years later in the winter of 2018, to a
 seed of a project just beginning its development phases. It is entirely
 bootstrapped by working full time and running
-[Etsy](https://etsy.com/shop/teamtreesurf) and
+[Etsy](https://etsy.com/shop/tunebond) and
 [Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also
-find us on [Facebook](https://www.facebook.com/teamtreesurf),
-[Twitter](https://twitter.com/teamtreesurf), and
-[LinkedIn](https://www.linkedin.com/company/teamtreesurf). Check out our
+find us on [Facebook](https://www.facebook.com/tunebond),
+[Twitter](https://twitter.com/tunebond), and
+[LinkedIn](https://www.linkedin.com/company/tunebond). Check out our
 other GitHub projects as well!
