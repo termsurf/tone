@@ -92,11 +92,11 @@ tone.make('aa+xa+a-ita-') // => aa3xa3a4ita4
 
 These are the main sounds. Everything else are variations of these
 sounds. These "variations" are accomplished in a structured way, see the
-[guide](https://github.com/tunebond/tone/blob/make/text/guide.pdf).
-Indic retroflex consonants are added with a dot on the tailless side.
-Arabic sounds are added with a dot on the tailed side usually. Clicks
-are mapped to the closest mouth-position-oriented sound. Ejectives and
-implosives are simply added with accent marks. Etc.
+[guide](https://tone.rest). Indic retroflex consonants are added with a
+dot on the tailless side. Arabic sounds are added with a dot on the
+tailed side usually. Clicks are mapped to the closest
+mouth-position-oriented sound. Ejectives and implosives are simply added
+with accent marks. Etc.
 
 <p align="center">
   <img src="https://github.com/tunebond/tone/blob/make/view/alphabet.png?raw=true" width="500" />
