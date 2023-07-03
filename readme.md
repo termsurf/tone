@@ -115,8 +115,8 @@ E
 I
 U
 O
-u#
-o#
+u$
+o$
 m
 n
 q
@@ -241,8 +241,8 @@ E
 I
 U
 O
-u#
-o#
+u$
+o$
 m
 n
 q
