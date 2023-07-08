@@ -269,7 +269,7 @@ the
 [ToneEtch.ttf](https://github.com/tunebond/tone/blob/make/text/ToneEtch.ttf)
 directly.
 
-<h3 id="license">License</h3>
+## License
 
 Copyright 2021-2023 <a href='https://tune.bond'>TuneBond</a>
 
@@ -289,13 +289,7 @@ limitations under the License.
 
 This is being developed by the folks at [TuneBond](https://tune.bond), a
 California-based project for helping humanity master information and
-computation. TuneBond started off in the winter of 2008 as a spark of an
-idea, to forming a company 10 years later in the winter of 2018, to a
-seed of a project just beginning its development phases. It is entirely
-bootstrapped by working full time and running
-[Etsy](https://etsy.com/shop/tunebond) and
-[Amazon](https://www.amazon.com/s?rh=p_27%3AMount+Build) shops. Also
-find us on [Facebook](https://www.facebook.com/tunebond),
-[Twitter](https://twitter.com/tunebond), and
-[LinkedIn](https://www.linkedin.com/company/tunebond). Check out our
-other GitHub projects as well!
+computation. Find us on[Twitter](https://twitter.com/tunebond),
+[LinkedIn](https://www.linkedin.com/company/tunebond), and
+[Facebook](https://www.facebook.com/tunebond). Check out our other
+[GitHub projects](https://github.com/tunebond) as well!
