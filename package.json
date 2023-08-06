@@ -2,7 +2,6 @@
   "name": "@tunebond/tone",
   "version": "3.0.0",
   "main": "host/form.js",
-  "type": "module",
   "license": "Apache 2.0",
   "dependencies": {
     "@lancejpollard/script-tree": "^1.1.0"
@@ -12,7 +11,6 @@
     "host/index.js.map"
   ],
   "devDependencies": {
-    "tsx": "^3.12.7",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@tunebond/call-text": "^1.0.0",
     "@types/lodash": "^4.14.194",
@@ -37,12 +35,17 @@
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
     "kysely": "^0.24.2",
     "prettier": "^2.8.1",
+    "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.8.2",
-    "typescript": "^4.9.4"
+    "tsx": "^3.12.7",
+    "typescript": "^4.9.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "make": "tsc && tsc-alias",
+    "make:1": "webpack",
     "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint --ext .ts ./make",
     "lint:tool": "npm run lint -- --fix",
