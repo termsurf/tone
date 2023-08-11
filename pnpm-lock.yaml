@@ -13,9 +13,6 @@ devDependencies:
   '@trivago/prettier-plugin-sort-imports':
     specifier: ^4.0.0
     version: 4.0.0(@vue/compiler-sfc@3.3.4)(prettier@2.8.1)
-  '@nerdbond/call-text':
-    specifier: ^1.0.0
-    version: 1.0.0
   '@types/lodash':
     specifier: ^4.14.194
     version: 4.14.194
@@ -694,10 +691,6 @@ packages:
     resolution: {integrity: sha512-6cswEWLOcbuv+g7eWQ3KOjOb96JratGV4L4Ma0MS+jSdEmhqgfM7/b7rsp7rxN/pxMG6m23Inf5iBX0a0GU0Ow==}
     dev: false
 
-  /@lancejpollard/script-tree@1.1.1:
-    resolution: {integrity: sha512-5wTW1BWuxPQAec2HhIEiInsNP9S11tEdlmSoaO9upB9y5If9HfmfXfGobYm0sW9eX96JNWeWxgt8eQEKxXaOiw==}
-    dev: true
-
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -764,12 +757,6 @@ packages:
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
-    dev: true
-
-  /@nerdbond/call-text@1.0.0:
-    resolution: {integrity: sha512-2WODplYgq8/PLIV4r6s92aG70ivjLEbLkvBVZho6B12ojOpnaREyS9MWryXlZikk4a2zZMJFeuuWiSwjHlioHA==}
-    dependencies:
-      '@lancejpollard/script-tree': 1.1.1
     dev: true
 
   /@types/eslint-scope@3.7.4:
