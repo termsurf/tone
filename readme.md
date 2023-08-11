@@ -6,7 +6,7 @@
 <br/>
 
 <p align='center'>
-  <img src='https://github.com/tunebond/tone/blob/make/view/view.svg?raw=true' height='312'/>
+  <img src='https://github.com/nerdbond/tone/blob/make/view/view.svg?raw=true' height='312'/>
 </p>
 
 <h3 align='center'>tone</h3>
@@ -26,11 +26,11 @@ script. We like to think of them as **modern runes**. This means you can
 write any human language on Earth in tone text (constructed language or
 natural language) and read it without having to learn that language's
 specific quirks. Here is an example of the modern runes using the new
-[ToneEtch](https://github.com/tunebond/tone/blob/make/text/ToneEtch.otf)
+[ToneEtch](https://github.com/nerdbond/tone/blob/make/text/ToneEtch.otf)
 font.
 
 <p align="center">
-  <img src="https://github.com/tunebond/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
+  <img src="https://github.com/nerdbond/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
 </p>
 
 Tone text is a sound-based script like the
@@ -41,7 +41,7 @@ memorize the sound. You simply learn the script and can pronounce the
 words and texts.
 
 <p align="center">
-  <img src="https://github.com/tunebond/tone/blob/make/view/example.jpg?raw=true" />
+  <img src="https://github.com/nerdbond/tone/blob/make/view/example.jpg?raw=true" />
 </p>
 
 You may note that Linguistics also has the International Phonetic
@@ -53,11 +53,11 @@ writing sentences or long texts. Tone Text is meant for the later, for
 writing like you would in a normal language.
 
 The ASCII encoding is mapped to IPA for your knowledge in the
-[Chat Text](https://github.com/tunebond/chat). Ideally, Tone Text would
+[Chat Text](https://github.com/nerdbond/chat). Ideally, Tone Text would
 be included in the Unicode standard, but
 [that is unlikely](http://www.unicode.org/pending/proposals.html). We
 have suggested it be used as a writing system
-[on Mars](https://twitter.com/tunebond/status/1372723474741927938) 😂.
+[on Mars](https://twitter.com/nerdbond/status/1372723474741927938) 😂.
 
 It doesn't necessarily play well with dyslexia, which might find the
 highly symmetric patterns difficult. We think there are far better
@@ -76,13 +76,13 @@ memorize how to pronounce words in a day or so, and from there you can
 read and write any language pretty well.
 
 <p align="center">
-  <img src="https://github.com/tunebond/tone/blob/make/view/transform.gif?raw=true" height="300" />
+  <img src="https://github.com/nerdbond/tone/blob/make/view/transform.gif?raw=true" height="300" />
 </p>
 
 ## Usage
 
 ```ts
-import tone from '@tunebond/tone'
+import tone from '@nerdbond/tone'
 
 // Makes it ready for the font from ASCII.
 tone.make('aa+xa+a-ita-') // => aa3xa3a4ita4
@@ -99,7 +99,7 @@ mouth-position-oriented sound. Ejectives and implosives are simply added
 with accent marks. Etc.
 
 <p align="center">
-  <img src="https://github.com/tunebond/tone/blob/make/view/alphabet.png?raw=true" width="500" />
+  <img src="https://github.com/nerdbond/tone/blob/make/view/alphabet.png?raw=true" width="500" />
 </p>
 
 Alphabetical order is this (1-36):
@@ -194,7 +194,7 @@ l* l
 Here is the consonant IPA phonology chart mapping.
 
 <p align="center">
-  <img src="https://github.com/tunebond/tone/blob/make/view/phonology.4.png?raw=true" />
+  <img src="https://github.com/nerdbond/tone/blob/make/view/phonology.4.png?raw=true" />
 </p>
 
 ## Numerology
@@ -266,12 +266,12 @@ r
 
 To get access to the font for your own system, just click and download
 the
-[ToneEtch.ttf](https://github.com/tunebond/tone/blob/make/text/ToneEtch.ttf)
+[ToneEtch.ttf](https://github.com/nerdbond/tone/blob/make/text/ToneEtch.ttf)
 directly.
 
 ## License
 
-Copyright 2021-2023 <a href='https://tune.bond'>TuneBond</a>
+Copyright 2021-2023 <a href='https://nerd.bond'>NerdBond</a>
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
@@ -285,11 +285,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-## TuneBond
+## NerdBond
 
-This is being developed by the folks at [TuneBond](https://tune.bond), a
+This is being developed by the folks at [NerdBond](https://nerd.bond), a
 California-based project for helping humanity master information and
-computation. Find us on [Twitter](https://twitter.com/tunebond),
-[LinkedIn](https://www.linkedin.com/company/tunebond), and
-[Facebook](https://www.facebook.com/tunebond). Check out our other
-[GitHub projects](https://github.com/tunebond) as well!
+computation. Find us on [Twitter](https://twitter.com/nerdbond),
+[LinkedIn](https://www.linkedin.com/company/nerdbond), and
+[Facebook](https://www.facebook.com/nerdbond). Check out our other
+[GitHub projects](https://github.com/nerdbond) as well!

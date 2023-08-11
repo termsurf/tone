@@ -1,5 +1,5 @@
 {
-  "name": "@tunebond/tone",
+  "name": "@nerdbond/tone",
   "version": "3.0.0",
   "main": "host/form.js",
   "license": "Apache 2.0",
@@ -12,7 +12,7 @@
   ],
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "@tunebond/call-text": "^1.0.0",
+    "@nerdbond/call-text": "^1.0.0",
     "@types/lodash": "^4.14.194",
     "@types/node": "^18.11.17",
     "@types/prettier": "^2.7.2",

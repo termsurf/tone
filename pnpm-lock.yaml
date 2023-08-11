@@ -13,7 +13,7 @@ devDependencies:
   '@trivago/prettier-plugin-sort-imports':
     specifier: ^4.0.0
     version: 4.0.0(@vue/compiler-sfc@3.3.4)(prettier@2.8.1)
-  '@tunebond/call-text':
+  '@nerdbond/call-text':
     specifier: ^1.0.0
     version: 1.0.0
   '@types/lodash':
@@ -766,7 +766,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@tunebond/call-text@1.0.0:
+  /@nerdbond/call-text@1.0.0:
     resolution: {integrity: sha512-2WODplYgq8/PLIV4r6s92aG70ivjLEbLkvBVZho6B12ojOpnaREyS9MWryXlZikk4a2zZMJFeuuWiSwjHlioHA==}
     dependencies:
       '@lancejpollard/script-tree': 1.1.1
