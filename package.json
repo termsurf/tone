@@ -1,7 +1,7 @@
 {
   "name": "@nerdbond/tone",
-  "version": "3.0.1",
-  "main": "host/form.js",
+  "version": "3.0.2",
+  "main": "./host/index.js",
   "license": "Apache 2.0",
   "dependencies": {
     "@lancejpollard/script-tree": "^1.1.0"
