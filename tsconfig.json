@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
+    "module": "ES2015",
+    "target": "ES2015",
     "lib": ["es2020"],
     "outDir": "host",
     "rootDir": ".",
+    "declaration": true,
     "sourceMap": true,
     "moduleResolution": "node",
     "strictNullChecks": true,
@@ -13,9 +14,6 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": "./",
     "noErrorTruncation": true,
-    "paths": {
-      "~": ["./index.js"]
-    },
     "types": ["node"],
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": true

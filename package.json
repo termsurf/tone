@@ -1,6 +1,6 @@
 {
-  "name": "@nerdbond/tone",
-  "version": "3.0.2",
+  "name": "@wavebond/tone",
+  "version": "3.0.5",
   "main": "./host/index.js",
   "license": "Apache 2.0",
   "dependencies": {
@@ -8,6 +8,7 @@
   },
   "files": [
     "host/index.js",
+    "host/index.d.ts",
     "host/index.js.map"
   ],
   "devDependencies": {

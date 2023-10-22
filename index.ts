@@ -5,7 +5,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import st from '@lancejpollard/script-tree'
 
-console.log(st)
 const D: Record<string, string> = {
   '!': '^', // short vowel
   $: '5', // variant
@@ -20,7 +19,7 @@ const D: Record<string, string> = {
   '': '',
 }
 
-type Link = { i: string; name?: string; o: string }
+export type Link = { i: string; name?: string; o: string }
 
 const VOWELS: Array<Link> = []
 const BASE_VOWEL_GLYPHS = [
