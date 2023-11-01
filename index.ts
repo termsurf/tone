@@ -274,6 +274,7 @@ const CONSONANTS: Array<Link> = [
   { i: 'Cy~', name: 'Palatalized C sound', o: 'C5' },
   { i: 'Cw~', name: 'Labialized C sound', o: 'C55' },
   { i: 'C', name: 'Voiced th sound', o: 'C' },
+  { i: 'cQ~', name: 'Pharyngealized c sound', o: 'c66' },
   { i: 'cy~', name: 'Palatalized c sound', o: 'c5' },
   { i: 'cw~', name: 'Labialized c sound', o: 'c55' },
   { i: 'c', name: 'Unvoiced th sound', o: 'c' },
