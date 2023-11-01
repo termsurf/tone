@@ -328,6 +328,8 @@ const CONSONANTS: Array<Link> = [
   { i: ')', name: 'Closing parenthesis', o: ')' },
   { i: '[', name: 'Opening bracket', o: '[' },
   { i: ']', name: 'Closing bracket', o: ']' },
+  { i: '<', name: 'Opening angle bracket', o: '\u003c' },
+  { i: '>', name: 'Closing angle bracket', o: '\u003e' },
   { i: '|', name: 'Pipe', o: '|' },
   { i: '#', name: 'Number sign', o: '#' },
   { i: '=@', name: 'At sign', o: '@' },
@@ -336,16 +338,33 @@ const CONSONANTS: Array<Link> = [
   { i: ':', name: 'Colon', o: ':' },
 ]
 
-const SYMBOLS = [...VOWELS, ...CONSONANTS]
+const NUMERALS = [
+  { i: '0', o: '\u00a1' },
+  { i: '1', o: '\u00a6' },
+  { i: '2', o: '\u00a2' },
+  { i: '3', o: '\u00a3' },
+  { i: '4', o: '\u00a5' },
+  { i: '5', o: '\u00a4' },
+  { i: '6', o: '\u00a9' },
+  { i: '7', o: '\u00a7' },
+  { i: '8', o: '\u00ab' },
+  { i: '9', o: '\u00ae' },
+]
+
+export const SYMBOLS = [...VOWELS, ...CONSONANTS, ...NUMERALS]
 const tree = st.fork(SYMBOLS) as any
 const make = (text: string) => st.form(text, tree) as string
+const view = (text: string) =>
+  make(text).replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
 const form = {
   SYMBOLS: SYMBOLS,
   VOWELS: VOWELS,
   CONSONANTS: CONSONANTS,
+  NUMERALS: NUMERALS,
   // list: (text: string) => st.list(text, tree),
   make,
+  view,
 }
 
 export default form

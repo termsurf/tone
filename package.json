@@ -46,6 +46,7 @@
   "scripts": {
     "make": "tsc && tsc-alias",
     "make:1": "webpack",
+    "move": "pnpm make && git add . && git commit -am 'save' && npm version patch && pnpm host && git push",
     "scan": "concurrently --kill-others \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint --ext .ts ./make",
     "lint:tool": "npm run lint -- --fix",
