@@ -50,7 +50,7 @@ BASE_VOWEL_GLYPHS.forEach(g => {
             TONE_MARKS.forEach(t => {
               const i = `${g}${v}${n}${t}${s}${l}${a}`
               // these two are treated specially, not getting the variant mark
-              if (i.match(/([ou])~/)) {
+              if (i.match(/([ou])\$/)) {
                 const x = RegExp.$1
                 const o =
                   l === '!'
