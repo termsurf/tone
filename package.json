@@ -1,5 +1,5 @@
 {
-  "name": "@wavebond/tone",
+  "name": "@textsurf/tone",
   "version": "3.0.8",
   "main": "./host/index.js",
   "license": "Apache 2.0",
