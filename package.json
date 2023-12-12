@@ -1,5 +1,5 @@
 {
-  "name": "@textsurf/tone",
+  "name": "@termsurf/tone",
   "version": "3.0.8",
   "main": "./host/index.js",
   "license": "Apache 2.0",
