@@ -20,9 +20,8 @@
 
 ## Discussions
 
-Checkout the
-[discord server](https://discord.com/channels/1209214200392585287/1209214200392585290)
-with any thoughts/comments/questions you have, or start a
+Checkout the [Discord server](https://discord.gg/FB4RYUY8) with any
+thoughts/comments/questions you have, or start a
 [GitHub discussion](https://github.com/termsurf/tone/discussions) if
 you'd like as well.
 
