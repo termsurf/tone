@@ -1,6 +1,6 @@
 {
   "name": "@termsurf/tone",
-  "version": "3.0.8",
+  "version": "3.0.10",
   "main": "./host/index.js",
   "license": "Apache 2.0",
   "dependencies": {
