@@ -22,9 +22,9 @@
 
 Checkout the [Discord server](https://discord.gg/FB4RYUY8) with any
 thoughts/comments/questions you have, or start a
-[GitHub discussion](https://github.com/termsurf/tone/discussions) or the
-[Reddit group](https://www.reddit.com/r/tonetext/) if you'd like as
-well.
+[GitHub discussion](https://github.com/termsurf/tone/discussions) or add
+something to the [Reddit group](https://www.reddit.com/r/tonetext/) if
+you'd like as well.
 
 ## Summary
 
