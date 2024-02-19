@@ -274,7 +274,7 @@ r
 
 To get access to the font for your own system, just click and download
 the
-[ToneEtch.ttf](https://github.com/termsurf/tone/blob/make/text/ToneEtch.ttf)
+[ToneEtch.otf](https://github.com/termsurf/tone/blob/make/text/ToneEtch.otf)
 directly.
 
 ## License
