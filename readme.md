@@ -34,7 +34,8 @@ write any human language on Earth in tone text (constructed language or
 natural language) and read it without having to learn that language's
 specific quirks. Here is an example of the modern runes using the new
 [ToneEtch](https://github.com/termsurf/tone/blob/make/text/ToneEtch.otf)
-font.
+font. You can try it in the
+[interactive online Editor](https://tone.surf/dawn).
 
 <p align="center">
   <img src="https://github.com/termsurf/tone/blob/make/view/tone-etch-2.png?raw=true" width="500" />
