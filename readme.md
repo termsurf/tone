@@ -18,6 +18,14 @@
 <br/>
 <br/>
 
+## Discussions
+
+Checkout the
+[discord server](https://discord.com/channels/1209214200392585287/1209214200392585290)
+with any thoughts/comments/questions you have, or start a
+[GitHub discussion](https://github.com/termsurf/tone/discussions) if
+you'd like as well.
+
 ## Summary
 
 Tone Text (esoteric name Hanákana) is a Universal Writing System (UWS),
